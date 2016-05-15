@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -104,7 +104,7 @@ public class DependencyTableRowHeadersModel extends RowHeadersTableModel {
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.extensions.tables.rowheaders.
+     * @see edu.casesuite.extensions.tables.rowheaders.
      * RowHeadersTableModel#getMaxValue()
      */
     @Override
@@ -115,7 +115,7 @@ public class DependencyTableRowHeadersModel extends RowHeadersTableModel {
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.extensions.tables.rowheaders.
+     * @see edu.casesuite.extensions.tables.rowheaders.
      * RowHeadersTableModel#removeRow()
      */
     @Override
@@ -126,7 +126,7 @@ public class DependencyTableRowHeadersModel extends RowHeadersTableModel {
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.extensions.tables.rowheaders.
+     * @see edu.casesuite.extensions.tables.rowheaders.
      * RowHeadersTableModel#addRow()
      */
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -34,8 +34,8 @@ import edu.casetools.rcase.extensions.tables.container.ContainerTable;
 import edu.casetools.rcase.extensions.tables.container.control.table.ContainerTableModelListener;
 import edu.casetools.rcase.extensions.tables.container.model.ContainerTableModel;
 import edu.casetools.rcase.utils.tables.RowHeaderUtils;
-import edu.casetools.rcase.utils.tables.TableUtils;
 import edu.casetools.rcase.utils.tables.RowHeaderUtils.ROW_HEADER;
+import edu.casetools.rcase.utils.tables.TableUtils;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -116,8 +116,7 @@ public class ContainerTablePanel extends TablePanel {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * edu.middlesex.goodies.casesuite.extensions.tables.TablePanel#getTable()
+     * @see edu.casesuite.extensions.tables.TablePanel#getTable()
      */
     @Override
     public JTable getTable() {

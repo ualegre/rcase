@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -32,22 +32,22 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class CreateContextualEntity creates a Contextual Entity from the
+ * The Class CreateSituationalParameter creates a Situational Parameter from the
  * contextual menu.
  */
-public class CreateContextualEntity extends CreateElement {
+public class CreateSituationalParameter extends CreateElement {
 
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.modelio.menu.CreateElement#
-     * createOwnElement (java.util.List, org.modelio.api.model.IModelingSession)
+     * @see edu.casesuite.modelio.menu.CreateElement# createOwnElement
+     * (java.util.List, org.modelio.api.model.IModelingSession)
      */
     @Override
     public void createOwnElement(List<MObject> selectedElements, IModelingSession session) {
-	String name = I18nMessageService.getString("Names.ContextualEntity");
+	String name = I18nMessageService.getString("Names.SituationalParameter");
 	DiagramUtils.getInstance().createClass(selectedElements, session, name,
-		RCaseStereotypes.STEREOTYPE_CONTEXTUAL_ENTITY);
+		RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER);
     }
 
     /*

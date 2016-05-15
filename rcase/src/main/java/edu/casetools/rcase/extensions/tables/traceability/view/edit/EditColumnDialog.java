@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -50,7 +50,7 @@ public class EditColumnDialog extends EditDialog {
      * (non-Javadoc)
      * 
      * @see
-     * edu.middlesex.goodies.casesuite.extensions.tables.traceability.view.edit
+     * edu.casesuite.extensions.tables.traceability.view.edit
      * .EditDialog#getFilterStereotypes()
      */
     @Override
@@ -62,7 +62,7 @@ public class EditColumnDialog extends EditDialog {
      * (non-Javadoc)
      * 
      * @see
-     * edu.middlesex.goodies.casesuite.extensions.tables.traceability.view.edit
+     * edu.casesuite.extensions.tables.traceability.view.edit
      * .EditDialog#getStereotypes()
      */
     @Override
@@ -74,7 +74,7 @@ public class EditColumnDialog extends EditDialog {
      * (non-Javadoc)
      * 
      * @see
-     * edu.middlesex.goodies.casesuite.extensions.tables.traceability.view.edit
+     * edu.casesuite.extensions.tables.traceability.view.edit
      * .EditDialog#setOkActionCommand()
      */
     @Override

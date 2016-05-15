@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -29,7 +29,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.metamodel.uml.statik.Class;
 
-import edu.casetools.rcase.modelio.properties.pages.ContextualEntityPropertyPage;
+import edu.casetools.rcase.modelio.properties.pages.SituationalParameterPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.RequirementPropertyPage;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
@@ -110,9 +110,9 @@ public class PropertyManager {
     private void getPropertyPages(IMetamodelExtensions extensions, Stereotype ster) {
 
 	if (ster.equals(
-		extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXTUAL_ENTITY,
+		extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER,
 			Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
-	    this.propertyPage = new ContextualEntityPropertyPage();
+	    this.propertyPage = new SituationalParameterPropertyPage();
 	}
 
 	if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT,

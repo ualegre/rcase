@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -66,7 +66,7 @@ public class SatisfyTool extends RelationTool {
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.modelio.diagrams.RelationTool#
+     * @see edu.casesuite.modelio.diagrams.RelationTool#
      * createDependency(org.modelio.metamodel.uml.infrastructure.ModelElement,
      * org.modelio.metamodel.uml.infrastructure.ModelElement)
      */

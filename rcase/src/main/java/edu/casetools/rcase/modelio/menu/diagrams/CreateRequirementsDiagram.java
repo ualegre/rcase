@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -42,7 +42,7 @@ public class CreateRequirementsDiagram extends CreateDiagram {
      * (non-Javadoc)
      * 
      * @see
-     * edu.middlesex.goodies.casesuite.modelio.menu.CreateDiagram#createOwnDiagram
+     * edu.casesuite.modelio.menu.CreateDiagram#createOwnDiagram
      * (java.util.List, org.modelio.api.model.IModelingSession)
      */
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -33,29 +33,30 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class ContextualEntityTool is the tool for creating a contextual entity.
+ * The Class SituationalParameterTool is the tool for creating a contextual
+ * entity.
  */
-public class ContextualEntityTool extends ElementTool {
+public class SituationalParameterTool extends ElementTool {
 
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.modelio.diagrams.ElementTool#
+     * @see edu.casesuite.modelio.diagrams.ElementTool#
      * createOwnElement (org.modelio.api.model.IModelingSession,
      * org.modelio.vcore.smkernel.mapi.MObject)
      */
     @Override
     public MObject createOwnElement(IModelingSession session, MObject element) {
 
-	String name = I18nMessageService.getString("Names.ContextualEntity");
+	String name = I18nMessageService.getString("Names.SituationalParameter");
 	return DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
-		RCaseStereotypes.STEREOTYPE_CONTEXTUAL_ENTITY);
+		RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER);
     }
 
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.modelio.diagrams.ElementTool#
+     * @see edu.casesuite.modelio.diagrams.ElementTool#
      * representAsImage (java.util.List)
      */
     @Override

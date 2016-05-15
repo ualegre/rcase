@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -47,7 +47,7 @@ public class DeriveTool extends RelationTool {
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
 	ModelElement element = (ModelElement) target.getElement();
 	return (element.getStatus().isModifiable())
-		&& (element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXTUAL_ENTITY));
+		&& (element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER));
     }
 
     /*
@@ -62,13 +62,13 @@ public class DeriveTool extends RelationTool {
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
 	ModelElement element = (ModelElement) target.getElement();
-	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXTUAL_ENTITY);
+	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER);
     }
 
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.modelio.diagrams.RelationTool#
+     * @see edu.casesuite.modelio.diagrams.RelationTool#
      * createDependency(org.modelio.metamodel.uml.infrastructure.ModelElement,
      * org.modelio.metamodel.uml.infrastructure.ModelElement)
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -34,9 +34,9 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
-public class ContextualEntityPropertyPage implements IPropertyContent {
+public class SituationalParameterPropertyPage implements IPropertyContent {
 
-    private static final Logger logger = Logger.getLogger(ContextualEntityPropertyPage.class.getName());
+    private static final Logger logger = Logger.getLogger(SituationalParameterPropertyPage.class.getName());
 
     // TODO Reduce the complexity of the switch case
     @Override
@@ -90,51 +90,51 @@ public class ContextualEntityPropertyPage implements IPropertyContent {
 	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 
 	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, element);
-	table.addProperty(I18nMessageService.getString("Ui.ContextualEntity.Property.TagId"), string);
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagId"), string);
 
 	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_COST, element);
-	table.addProperty(I18nMessageService.getString("Ui.ContextualEntity.Property.TagCost"), string);
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagCost"), string);
 
 	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_CONSTRAINTS, element);
-	table.addProperty(I18nMessageService.getString("Ui.ContextualEntity.Property.TagConstraints"), string);
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagConstraints"), string);
 
 	// TagResponsibility
 	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY);
-	table.addProperty(I18nMessageService.getString("Ui.ContextualEntity.Property.TagResponsibility"), property,
-		new String[] { I18nMessageService.getString("Ui.ContextualEntity.Property.TagResponsibility.Pull"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagResponsibility.Push"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagResponsibility.Other") });
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility"), property,
+		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Pull"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Push"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Other") });
 
 	// TagFrequency
 	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_FREQUENCY);
-	table.addProperty(I18nMessageService.getString("Ui.ContextualEntity.Property.TagFrequency"), property,
-		new String[] { I18nMessageService.getString("Ui.ContextualEntity.Property.TagFrequency.Instant"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagFrequency.Interval"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagFrequency.Other") });
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency"), property,
+		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency.Instant"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency.Interval"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency.Other") });
 
 	// TagSource
 	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_SOURCE);
-	table.addProperty(I18nMessageService.getString("Ui.ContextualEntity.Property.TagSource"), property,
-		new String[] { I18nMessageService.getString("Ui.ContextualEntity.Property.TagSource.Hardware"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagSource.Middleware"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagSource.Server"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagSource.Other") });
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource"), property,
+		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource.Hardware"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource.Middleware"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource.Server"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource.Other") });
 
 	// TagSensorType
 	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_SENSORTYPE);
-	table.addProperty(I18nMessageService.getString("Ui.ContextualEntity.Property.TagSensorType"), property,
-		new String[] { I18nMessageService.getString("Ui.ContextualEntity.Property.TagSensorType.Physical"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagSensorType.Virtual"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagSensorType.Logical"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.TagSensorType.Other") });
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType"), property,
+		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType.Physical"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType.Virtual"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType.Logical"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType.Other") });
 
 	// TagAcqProcess
 	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_AQUPROCESS);
-	table.addProperty(I18nMessageService.getString("Ui.ContextualEntity.Property.AcqProcess"), property,
-		new String[] { I18nMessageService.getString("Ui.ContextualEntity.Property.AcqProcess.Sense"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.AcqProcess.Derive"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.AcqProcess.Manual"),
-			I18nMessageService.getString("Ui.ContextualEntity.Property.AcqProcess.Other") });
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess"), property,
+		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess.Sense"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess.Derive"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess.Manual"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess.Other") });
 
     }
 

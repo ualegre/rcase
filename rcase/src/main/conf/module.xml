@@ -35,7 +35,7 @@
                 <Icon path="res/icons/note_16.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="ContextualEntityStereotype" metaclass="Class" is-hidden="false" label="%ContextualEntityStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
+            <Stereotype name="SituationalParameterStereotype" metaclass="Class" is-hidden="false" label="%SituationalParameterStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
                 <Icon path="res/icons/context_16.png"/>
                 <Image path="res/icons/context_look_64.png"/>
                 <TagTypes>
@@ -178,10 +178,10 @@
                     <HParameter name="stereotype" value="UseCaseStereotype"/>
                 </Handler>
             </Command>
-            <Command id="CreateContextualEntity" label="%CreateContextualEntity.label" tooltip="%CreateContextualEntity.tooltip" image="%CreateContextualEntity.image" group="%CreateContextualEntity.group" modify-model="true" group-image="%CreateContextualEntity.groupimage">
+            <Command id="CreateSituationalParameter" label="%CreateSituationalParameter.label" tooltip="%CreateSituationalParameter.tooltip" image="%CreateSituationalParameter.image" group="%CreateSituationalParameter.group" modify-model="true" group-image="%CreateSituationalParameter.groupimage">
                 <Scope metaclass="Package"/>
                 <Scope metaclass="Class"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateContextualEntity"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateSituationalParameter"/>
             </Command>
             <Command id="ContextDependencyDiagram" label="%ContextDependencyDiagram.label" tooltip="%ContextDependencyDiagram.tooltip" image="%ContextDependencyDiagram.image" group="%ContextDependencyDiagram.group" modify-model="true" group-image="%ContextDependencyDiagram.groupimage">
                 <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateContextDependencyDiagram"/>
@@ -209,11 +209,11 @@
                     <HParameter name="stereotype" value="NoteStereotype"/>
                 </Handler>
             </Tool>
-            <Tool id="ContextualEntityTool" label="%ContextualEntityTool.label" tooltip="%ContextualEntityTool.tooltip" image="%ContextualEntityTool.image">
+            <Tool id="SituationalParameterTool" label="%SituationalParameterTool.label" tooltip="%SituationalParameterTool.tooltip" image="%SituationalParameterTool.image">
                 <Scope-target metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.elements.ContextualEntityTool">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.elements.SituationalParameterTool">
                     <HParameter name="metaclass" value="Class"/>
-                    <HParameter name="stereotype" value="ContextualEntityStereotype"/>
+                    <HParameter name="stereotype" value="SituationalParameterStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="RequirementTool" label="%RequirementTool.label" tooltip="%RequirementTool.tooltip" image="%RequirementTool.image">
@@ -236,15 +236,15 @@
             </Tool>
             <Tool id="ContextDependencyTool" label="%ContextDependencyTool.label" tooltip="%ContextDependencyTool.tooltip" image="%ContextDependencyTool.image">
                 <Scope-source metaclass="ModelTree"/>
-                <Scope-target stereotype="ContextualEntityStereotype"/>
+                <Scope-target stereotype="SituationalParameterStereotype"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.ContextDependencyTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="ContextDependencyStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="ContextDeriveTool" label="%ContextDeriveTool.label" tooltip="%ContextDeriveTool.tooltip" image="%ContextDeriveTool.image">
-                <Scope-source stereotype="ContextualEntityStereotype"/>
-                <Scope-target stereotype="ContextualEntityStereotype"/>
+                <Scope-source stereotype="SituationalParameterStereotype"/>
+                <Scope-target stereotype="SituationalParameterStereotype"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.DeriveTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="ContextDeriveStereotype"/>
@@ -302,7 +302,7 @@
             <CommandRef refid="CreateRequirementContainer"/>
             <CommandRef refid="CreateRequirement"/>
             <CommandRef refid="CreateTestCase"/>
-            <CommandRef refid="CreateContextualEntity"/>
+            <CommandRef refid="CreateSituationalParameter"/>
             <CommandRef refid="CreateRequirementsDiagram"/>
             <CommandRef refid="CreateUseCaseDiagram"/>
             <CommandRef refid="ContextDependencyDiagram"/>
@@ -322,7 +322,7 @@
             </DiagramType>
         </Diagrams>
         <Views>
-            <PropertyPage id="RcasePropertyPage" class="edu.casetools.rcase.modelio.properties.RcasePropertyPage" label="%ContextualEntityTool.PropertyPage.label" image="%ContextualEntityTool.PropertyPage.image"/>
+            <PropertyPage id="RcasePropertyPage" class="edu.casetools.rcase.modelio.properties.RcasePropertyPage" label="%SituationalParameterTool.PropertyPage.label" image="%SituationalParameterTool.PropertyPage.image"/>
         </Views>
     </Gui>
     <Dependencies>
