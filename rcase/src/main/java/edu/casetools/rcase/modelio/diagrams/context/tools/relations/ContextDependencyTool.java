@@ -22,11 +22,8 @@ package edu.casetools.rcase.modelio.diagrams.context.tools.relations;
 
 import org.modelio.api.diagram.IDiagramGraphic;
 import org.modelio.api.diagram.IDiagramHandle;
-import org.modelio.metamodel.uml.behavior.usecaseModel.UseCase;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
-import org.modelio.metamodel.uml.statik.Class;
-import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.diagrams.RelationTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
@@ -49,8 +46,8 @@ public class ContextDependencyTool extends RelationTool {
      */
     @Override
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
-	MObject element = target.getElement();
-	return (element.getStatus().isModifiable()) && (acceptedListOfElements(element));
+	ModelElement element = (ModelElement) target.getElement();
+	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
@@ -65,11 +62,7 @@ public class ContextDependencyTool extends RelationTool {
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
 	ModelElement element = (ModelElement) target.getElement();
-	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER);
-    }
-
-    private boolean acceptedListOfElements(MObject element) {
-	return (element instanceof UseCase) || (element instanceof Class);
+	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
     }
 
     /*

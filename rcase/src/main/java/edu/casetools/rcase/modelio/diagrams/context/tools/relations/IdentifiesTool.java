@@ -18,7 +18,7 @@
  * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.diagrams.requirements.tools.relations;
+package edu.casetools.rcase.modelio.diagrams.context.tools.relations;
 
 import org.modelio.api.diagram.IDiagramGraphic;
 import org.modelio.api.diagram.IDiagramHandle;
@@ -27,12 +27,13 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
 import edu.casetools.rcase.modelio.diagrams.RelationTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class CopyTool is the tool for creating a Copy relation.
+ * The Class DeriveTool is the tool for creating a Context Derive relation.
  */
-public class CopyTool extends RelationTool {
+public class IdentifiesTool extends RelationTool {
 
     /*
      * (non-Javadoc)
@@ -44,8 +45,9 @@ public class CopyTool extends RelationTool {
      */
     @Override
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
-
-	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+	ModelElement element = (ModelElement) target.getElement();
+	return (element.getStatus().isModifiable()) && (element.isStereotyped(RCasePeerModule.MODULE_NAME,
+		RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER));
     }
 
     /*
@@ -59,7 +61,8 @@ public class CopyTool extends RelationTool {
      */
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
-	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+	ModelElement element = (ModelElement) target.getElement();
+	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
     }
 
     /*
@@ -72,7 +75,7 @@ public class CopyTool extends RelationTool {
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
 	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
-		RCaseStereotypes.STEREOTYPE_COPY);
+		RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES);
     }
 
 }

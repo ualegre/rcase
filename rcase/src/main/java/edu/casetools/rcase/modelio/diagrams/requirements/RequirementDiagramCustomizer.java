@@ -79,15 +79,16 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
 
     private org.eclipse.gef.palette.PaletteEntry createLinksGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ScopePaletteGroup.Links");
-	String[] toolNames = new String[] { RCaseTools.TOOL_PART, RCaseTools.TOOL_COPY, RCaseTools.TOOL_DERIVE,
-		RCaseTools.TOOL_SATISFY, RCaseTools.TOOL_VERIFY, RCaseTools.TOOL_REFINE, RCaseTools.TOOL_TRACEABILITY };
+	String[] toolNames = new String[] { RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_PART,
+		RCaseTools.TOOL_COPY, RCaseTools.TOOL_DERIVE, RCaseTools.TOOL_SATISFY, RCaseTools.TOOL_VERIFY,
+		RCaseTools.TOOL_REFINE, RCaseTools.TOOL_TRACEABILITY };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ScopePaletteGroup.Nodes");
 	String[] toolNames = new String[] { RCaseTools.TOOL_REQUIREMENTCONTAINER, RCaseTools.TOOL_REQUIREMENT,
-		RCaseTools.TOOL_TESTCASE };
+		RCaseTools.TOOL_SITUATION_OF_INTEREST, RCaseTools.TOOL_TESTCASE };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 

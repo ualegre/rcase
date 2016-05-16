@@ -26,9 +26,11 @@ package edu.casetools.rcase.module.api;
 public class RCaseTools {
 
     // Elements
+    public static final String TOOL_REQUIREMENTCONTAINER = "RequirementContainerTool";
+
     public static final String TOOL_REQUIREMENT = "RequirementTool";
 
-    public static final String TOOL_REQUIREMENTCONTAINER = "RequirementContainerTool";
+    public static final String TOOL_SITUATION_OF_INTEREST = "SituationOfInterestTool";
 
     public static final String TOOL_TESTCASE = "TestCaseTool";
 
@@ -58,6 +60,8 @@ public class RCaseTools {
 
     // Relations
     public static final String TOOL_CONTEXT_DEPENDENCY = "ContextDependencyTool";
+
+    public static final String TOOL_CONTEXT_IDENTIFIES = "IdentifiesTool";
 
     public static final String TOOL_CONTEXT_DERIVE = "ContextDeriveTool";
 

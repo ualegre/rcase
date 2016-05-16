@@ -44,9 +44,8 @@ public class ReqDeriveTool extends RelationTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptFirstElement(IDiagramHandle representation,
-        IDiagramGraphic target) {
-        return acceptRequirement(target);
+    public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
+	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
@@ -59,9 +58,8 @@ public class ReqDeriveTool extends RelationTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptSecondElement(IDiagramHandle representation,
-        IDiagramGraphic source, IDiagramGraphic target) {
-        return acceptRequirement(target);
+    public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
+	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
@@ -72,10 +70,9 @@ public class ReqDeriveTool extends RelationTool {
      * org.modelio.metamodel.uml.infrastructure.ModelElement)
      */
     @Override
-    public Dependency createDependency(ModelElement originElement,
-        ModelElement targetElement) {
-        return DiagramUtils.getInstance().createDependency(originElement,
-            targetElement, RCaseStereotypes.STEREOTYPE_DERIVE);
+    public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
+	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
+		RCaseStereotypes.STEREOTYPE_DERIVE);
     }
 
 }

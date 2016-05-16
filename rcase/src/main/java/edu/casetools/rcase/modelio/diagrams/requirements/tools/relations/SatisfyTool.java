@@ -43,9 +43,8 @@ public class SatisfyTool extends RelationTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptFirstElement(IDiagramHandle representation,
-        IDiagramGraphic target) {
-        return acceptAnyElement(target);
+    public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
+	return acceptAnyElement(target);
     }
 
     /*
@@ -58,9 +57,8 @@ public class SatisfyTool extends RelationTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptSecondElement(IDiagramHandle representation,
-        IDiagramGraphic source, IDiagramGraphic target) {
-        return acceptRequirement(target);
+    public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
+	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
@@ -71,10 +69,9 @@ public class SatisfyTool extends RelationTool {
      * org.modelio.metamodel.uml.infrastructure.ModelElement)
      */
     @Override
-    public Dependency createDependency(ModelElement originElement,
-        ModelElement targetElement) {
-        return DiagramUtils.getInstance().createDependency(originElement,
-            targetElement, RCaseStereotypes.STEREOTYPE_SATISFY);
+    public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
+	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
+		RCaseStereotypes.STEREOTYPE_SATISFY);
     }
 
 }

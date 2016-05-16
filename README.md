@@ -7,8 +7,9 @@ that aids the requirements elicitation phase of a Context-Aware System (C-AS).
 * [Version 0.0.1](https://github.com/casetools/rcase)
 * Other Versions
 
-### Third party libraries
+### Third party libraries and icons
 * see [LIBRARIES](https://github.com/casetools/rcase/blob/master/LIBRARIES.md) file
+* Icons are made by Freepik from [Flaticon] (www.flaticon.com) 
 
 ## License 
 * see [LICENSE](https://github.com/casetools/rcase/blob/master/LICENSE.md) file

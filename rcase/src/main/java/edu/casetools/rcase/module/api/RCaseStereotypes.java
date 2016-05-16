@@ -31,6 +31,8 @@ public class RCaseStereotypes {
     // Elements
     public static final String STEREOTYPE_REQUIREMENT = "RequirementStereotype";
 
+    public static final String STEREOTYPE_SITUATION_OF_INTEREST = "SituationOfInterestStereotype";
+
     public static final String STEREOTYPE_REQUIREMENT_CONTAINER = "RequirementContainerStereotype";
 
     public static final String STEREOTYPE_TESTCASE = "TestCaseStereotype";
@@ -58,6 +60,8 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_CONTEXT_DERIVE = "ContextDeriveStereotype";
 
     public static final String STEREOTYPE_CONTEXT_DEPENDENCY = "ContextDependencyStereotype";
+
+    public static final String STEREOTYPE_CONTEXT_IDENTIFIES = "IdentifiesStereotype";
 
     public static final String STEREOTYPE_DIAGRAM_USECASE = "UseCaseDiagram";
 
