@@ -64,23 +64,19 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 
 	String property = PropertiesUtils.getInstance()
 		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_ID, element);
-	table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagId"), property);
+	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagId"), property);
 
 	property = PropertiesUtils.getInstance()
 		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, element);
-	table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagText"), property);
+	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
 
 	checkDependencies(element, table);
 
     }
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
-	checkDependency(RCaseStereotypes.STEREOTYPE_DERIVE, "Derive", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_COPY, "Copy", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_PART, "Part", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_REFINE, "Refine", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_SATISFY, "Satisfy", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_VERIFY, "Verify", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "ContextDependency", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES, "Identifies", element, table);
     }
 
     private void checkDependency(String stereotype, String name, ModelElement element, IModulePropertyTable table) {

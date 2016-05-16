@@ -56,23 +56,18 @@ public class SituationalParameterPropertyPage implements IPropertyContent {
 		break;
 	    case 4:
 		PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-			RCaseProperties.PROPERTY_CONTEXT_CONSTRAINTS, value, element);
+			RCaseProperties.PROPERTY_CONTEXT_STATUS, value, element);
 		break;
 	    case 5:
-		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY,
+		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_CREATION_PROCESS,
 			value);
 		break;
 	    case 6:
-		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_FREQUENCY, value);
+		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_USER_INVOLVEMENT,
+			value);
 		break;
 	    case 7:
-		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_SOURCE, value);
-		break;
-	    case 8:
-		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_SENSORTYPE, value);
-		break;
-	    case 9:
-		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_AQUPROCESS, value);
+		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_VOLATILITY, value);
 		break;
 	    default:
 		break;
@@ -89,52 +84,46 @@ public class SituationalParameterPropertyPage implements IPropertyContent {
 
 	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 
+	// TagId
 	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, element);
 	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagId"), string);
 
+	// TagCost
 	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_COST, element);
 	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagCost"), string);
 
-	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_CONSTRAINTS, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagConstraints"), string);
+	// TagStatus
+	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_STATUS);
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus"), property,
+		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Raw"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.PreProcessed"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Atomic"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Aggregate") });
 
-	// TagResponsibility
-	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility"), property,
-		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Pull"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Push"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Other") });
+	// TagCreationProcess
+	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_CREATION_PROCESS);
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess"), property,
+		new String[] {
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess.Sensed"),
+			I18nMessageService
+				.getString("Ui.SituationalParameter.Property.TagCreationProcess.PreProcessed"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess.Derived") });
 
-	// TagFrequency
-	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_FREQUENCY);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency"), property,
-		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency.Instant"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency.Interval"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency.Other") });
+	// TagUserInvolvement
+	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_USER_INVOLVEMENT);
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement"), property,
+		new String[] {
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Explicit"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Implicit"),
+			I18nMessageService
+				.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Disassociated") });
 
-	// TagSource
-	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_SOURCE);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource"), property,
-		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource.Hardware"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource.Middleware"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource.Server"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSource.Other") });
-
-	// TagSensorType
-	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_SENSORTYPE);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType"), property,
-		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType.Physical"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType.Virtual"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType.Logical"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagSensorType.Other") });
-
-	// TagAcqProcess
-	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_AQUPROCESS);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess"), property,
-		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess.Sense"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess.Derive"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess.Manual"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.AcqProcess.Other") });
+	// TagVolatility
+	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_VOLATILITY);
+	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility"), property,
+		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Static"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Profiled"),
+			I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Dynamic") });
 
     }
 
