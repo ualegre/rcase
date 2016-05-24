@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Module id="${project.name}" class="edu.casetools.rcase.module.impl.RCaseModule" binaryversion="3.4.00.9023" version="${project.version}.9023" schema-level="2" uid="6fc749d0-fbfa-49d5-af58-4516973b7d50">
+<Module id="${project.name}" class="edu.casetools.rcase.module.impl.RCaseModule" binaryversion="3.4.01" version="${project.version}" schema-level="2" uid="6fc749d0-fbfa-49d5-af58-4516973b7d50">
     <ClassPath>
         <PathEntry path="lib/${project.artifactId}-${project.version}.jar"/>
         <PathEntry path="lib/poi-3.14-20160307.jar"/>

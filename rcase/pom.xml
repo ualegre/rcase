@@ -213,7 +213,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<description>R-CASE (Requirements for Context-Aware Systems Engineering), a module for Modelio (https://www.modelio.org/) that aids the requirements elicitation phase of a Context-Aware System (C-AS).</description>
+	<description>RCASE (Requirements for Context-Aware Systems Engineering), a module for Modelio (https://www.modelio.org/) that aids the requirements elicitation phase of a Context-Aware System (C-AS).</description>
 	<organization>
 		<url>https://github.com/casetools</url>
 		<name>C-ASE Tools</name>
