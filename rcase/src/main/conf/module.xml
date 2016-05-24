@@ -164,6 +164,10 @@
                 <Scope metaclass="ModelTree"/>
                 <Handler class="edu.casetools.rcase.modelio.menu.tables.OpenContainerTable"/>
             </Command>
+            <Command id="OpenContextModelTable" label="%OpenContextModelTable.label" tooltip="%OpenContextModelTable.tooltip" image="%OpenContextModelTable.image" group="%OpenContextModelTable.group" modify-model="true" group-image="%OpenContextModelTable.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.tables.OpenContextModelTable"/>
+            </Command>
             <Command id="CreateRequirement" label="%CreateRequirement.label" tooltip="%CreateRequirement.tooltip" image="%CreateRequirement.image" group="%CreateRequirement.group" modify-model="true" group-image="%CreateRequirement.groupimage">
                 <Scope metaclass="ModelTree"/>
                 <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateRequirement">
@@ -344,6 +348,7 @@
             <CommandRef refid="ContextDependencyDiagram"/>
             <CommandRef refid="OpenContainerTable"/>
             <CommandRef refid="OpenDependencyTable"/>
+            <CommandRef refid="OpenContextModelTable"/>
         </ContextualMenu>
         <Diagrams>
             <DiagramType base-diagram="StaticDiagram" stereotype="DiagramStereotype">

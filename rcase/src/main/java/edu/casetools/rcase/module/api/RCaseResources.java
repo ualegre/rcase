@@ -1,15 +1,15 @@
 /*
  * Copyright 2015 @author Unai Alegre 
  * 
- * This file is part of RCASE (Requirements for Context-Aware Systems Engineering), a module 
+ * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
  * 
- * RCASE is free software: you can redistribute it and/or modify
+ * R-CASE is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * RCASE is distributed in the hope that it will be useful,
+ * R-CASE is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
@@ -40,6 +40,8 @@ public class RCaseResources {
 
     public static final String ICON_DEPENDENCY_TABLE = "res/icons/matrix_16.png";
     public static final String ICON_CONTAINER_TABLE = "res/icons/matrix_16.png";
+
+    public static final String ICON_CONTEXT_MODEL_TABLE = "res/icons/matrix_16.png";
 
     private RCaseResources() {
 

@@ -1,15 +1,15 @@
 /*
  * Copyright 2015 @author Unai Alegre 
  * 
- * This file is part of RCASE (Requirements for Context-Aware Systems Engineering), a module 
+ * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
  * 
- * RCASE is free software: you can redistribute it and/or modify
+ * R-CASE is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * RCASE is distributed in the hope that it will be useful,
+ * R-CASE is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
@@ -20,16 +20,20 @@
  */
 package edu.casetools.rcase.modelio.properties.pages;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.eclipse.core.runtime.AssertionFailedException;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.factory.ExtensionNotFoundException;
+import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
+import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
@@ -125,6 +129,39 @@ public class SituationalParameterPropertyPage implements IPropertyContent {
 			I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Profiled"),
 			I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Dynamic") });
 
+	checkDependencies(element, table);
+    }
+
+    private void checkDependencies(ModelElement element, IModulePropertyTable table) {
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES, "Identifies", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE, "Derives", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "Dependency", element, table);
+    }
+
+    private void checkDependency(String stereotype, String name, ModelElement element, IModulePropertyTable table) {
+	ArrayList<ModelElement> value = new ArrayList<>();
+	String empty = "";
+
+	for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
+	    Dependency dependency = (Dependency) localIterator.next();
+	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
+		value.add(dependency.getImpacted());
+	}
+
+	String valuetab = PropertiesUtils.getInstance().getAbsoluteNamesWithSeparator(value);
+	if (!valuetab.equals(empty)) {
+	    table.addConsultProperty(I18nMessageService.getString("Ui." + name + ".From"), valuetab);
+	}
+
+	value = new ArrayList<>();
+	for (Dependency dependency : element.getDependsOnDependency()) {
+	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
+		value.add(dependency.getDependsOn());
+	}
+	valuetab = PropertiesUtils.getInstance().getAbsoluteNamesWithSeparator(value);
+	if (!valuetab.equals(empty)) {
+	    table.addConsultProperty(I18nMessageService.getString("Ui." + name + ".To"), valuetab);
+	}
     }
 
 }
