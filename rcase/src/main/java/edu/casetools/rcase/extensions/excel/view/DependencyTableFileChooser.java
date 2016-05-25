@@ -25,7 +25,7 @@ import java.io.File;
 import javax.swing.JFileChooser;
 
 import edu.casetools.rcase.extensions.excel.control.DependencyTableExporter;
-import edu.casetools.rcase.extensions.tables.traceability.DependencyTable;
+import edu.casetools.rcase.extensions.tables.implementations.traceability.DependencyTable;
 
 /**
  * The Class DependencyTableFileChooser enables to choose a file where to save

@@ -1,21 +1,21 @@
 /*
  * Copyright 2015 @author Unai Alegre 
  * 
- * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
- * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
+ * This file is part of RCASE (Requirements for Context-Aware Systems Engineering), a module 
+ * of Modelio that aids the requirements elicitation stage of a Context-Aware System (C-AS). 
  * 
- * R-CASE is free software: you can redistribute it and/or modify
+ * RCASE is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * R-CASE is distributed in the hope that it will be useful,
+ * RCASE is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
+ * along with RCASE.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 package edu.casetools.rcase.modelio.menu.tables;
@@ -26,23 +26,21 @@ import org.modelio.api.module.IModule;
 import org.modelio.api.module.commands.DefaultModuleCommandHandler;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.extensions.tables.implementations.container.ContainerTable;
+import edu.casetools.rcase.extensions.tables.implementations.contextmodel.ContextModelTable;
 
 /**
- * The Class OpenContainerTable opens the Requirements Container Table from the
+ * The Class OpenDependencyTable creates the Dependency Table from the
  * contextual menu.
  */
-public class OpenContainerTable extends DefaultModuleCommandHandler {
-
-    private ContainerTable tableDialog;
+public class OpenContextModelTable extends DefaultModuleCommandHandler {
+    private ContextModelTable tableDialog;
 
     /**
-     * Instantiates a new open container table.
+     * Instantiates a new open dependency table.
      */
-    public OpenContainerTable() {
+    public OpenContextModelTable() {
 	super();
 	this.tableDialog = null;
-
     }
 
     /*
@@ -65,13 +63,13 @@ public class OpenContainerTable extends DefaultModuleCommandHandler {
      */
     @Override
     public void actionPerformed(List<MObject> selectedElements, IModule module) {
-	if (null != this.tableDialog)
+	if (this.tableDialog != null)
 	    this.tableDialog.setVisible(true);
 	else
-	    this.tableDialog = new ContainerTable();
-	this.tableDialog.refreshComboAndTable("");
-	this.tableDialog.toFront();
+	    this.tableDialog = new ContextModelTable();
 
+	this.tableDialog.refresh();
+	this.tableDialog.toFront();
     }
 
 }

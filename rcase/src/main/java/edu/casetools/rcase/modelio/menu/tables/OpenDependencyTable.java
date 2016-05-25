@@ -26,7 +26,7 @@ import org.modelio.api.module.IModule;
 import org.modelio.api.module.commands.DefaultModuleCommandHandler;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.extensions.tables.traceability.DependencyTable;
+import edu.casetools.rcase.extensions.tables.implementations.traceability.DependencyTable;
 
 /**
  * The Class OpenDependencyTable creates the Dependency Table from the

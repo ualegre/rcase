@@ -31,7 +31,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.extensions.excel.model.CellType;
 import edu.casetools.rcase.extensions.excel.model.TableCell;
-import edu.casetools.rcase.extensions.tables.traceability.model.DependencyTableModel;
+import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableModel;
 import edu.casetools.rcase.module.api.RCaseExporter;
 import edu.casetools.rcase.utils.ExcelUtils;
 import edu.casetools.rcase.utils.tables.ModelioTableUtils;

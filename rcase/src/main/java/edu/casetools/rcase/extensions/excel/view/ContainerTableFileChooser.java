@@ -25,7 +25,7 @@ import java.io.File;
 import javax.swing.JFileChooser;
 
 import edu.casetools.rcase.extensions.excel.control.ContainerTableExporter;
-import edu.casetools.rcase.extensions.tables.container.ContainerTable;
+import edu.casetools.rcase.extensions.tables.implementations.container.ContainerTable;
 
 /**
  * The Class ContainerTableFileChooser enables to choose a file where to save

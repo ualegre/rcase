@@ -31,9 +31,9 @@ import org.apache.poi.ss.usermodel.Sheet;
 
 import edu.casetools.rcase.extensions.excel.model.CellType;
 import edu.casetools.rcase.extensions.excel.model.TableCell;
-import edu.casetools.rcase.extensions.tables.container.model.ContainerRow;
-import edu.casetools.rcase.extensions.tables.container.model.ContainerTableHeaderData;
-import edu.casetools.rcase.extensions.tables.container.model.ContainerTableModel;
+import edu.casetools.rcase.extensions.tables.headers.TableHeaderData;
+import edu.casetools.rcase.extensions.tables.implementations.container.model.ContainerRow;
+import edu.casetools.rcase.extensions.tables.implementations.container.model.ContainerTableModel;
 import edu.casetools.rcase.module.api.RCaseExporter;
 import edu.casetools.rcase.utils.ExcelUtils;
 
@@ -79,7 +79,7 @@ public class ContainerTableExporter extends Exporter implements Serializable {
     private void createSheet(String sheetName) {
 	Sheet sheet = workbook.createSheet(ExcelUtils.getInstance().createSafeSheetName(sheetName));
 
-	List<ContainerTableHeaderData> columnHeader = table.getData().getxHeaderList();
+	List<TableHeaderData> columnHeader = table.getData().getxHeaderList();
 
 	createColumnHeaders(sheet, columnHeader);
 
@@ -94,10 +94,10 @@ public class ContainerTableExporter extends Exporter implements Serializable {
 	resizeColumn(sheet, columnHeader.size());
     }
 
-    private void createColumnHeaders(Sheet sheet, List<ContainerTableHeaderData> columnHeader) {
+    private void createColumnHeaders(Sheet sheet, List<TableHeaderData> columnHeader) {
 	int columnNumber = 0;
 	Row row = sheet.createRow(0);
-	for (ContainerTableHeaderData content : columnHeader) {
+	for (TableHeaderData content : columnHeader) {
 
 	    Object columnName = content.getName();
 	    Cell cell = row.createCell(columnNumber, 1);

@@ -43,8 +43,10 @@ import org.modelio.metamodel.uml.statik.ConnectorEnd;
 import org.modelio.metamodel.uml.statik.Link;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.extensions.tables.traceability.model.DependencyTableData;
+import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableData;
+import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.ModelioUtils;
 import edu.casetools.rcase.utils.ResourcesManager;
 
@@ -374,8 +376,17 @@ public class ModelioTableUtils {
 	return label;
     }
 
-    public ArrayList<MObject> getSituationalParametersFromSituationOfInterest(MObject element) {
-	// TODO Auto-generated method stub
-	return null;
+    public ArrayList<MObject> getSituationalParametersFromSituationOfInterest(ModelElement element) {
+	ArrayList<MObject> list = new ArrayList<>();
+	for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
+	    Dependency dependency = (Dependency) localIterator.next();
+	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES)) {
+		list.add(dependency.getImpacted());
+	    }
+	}
+
+	return list;
+
     }
+
 }
