@@ -6,7 +6,7 @@
 	<!-- definition -->
 	<groupId>edu.casetools</groupId>
 	<artifactId>rcase</artifactId>
-	<version>0.0.1</version>
+	<version>0.1.0</version>
 
 	<name>RCase</name>
 
@@ -219,5 +219,8 @@
 		<name>C-ASE Tools</name>
 	</organization>
 	<url>https://github.com/casetools/rcase</url>
+	<scm>
+		<url>https://github.com/casetools</url>
+	</scm>
 </project>
 

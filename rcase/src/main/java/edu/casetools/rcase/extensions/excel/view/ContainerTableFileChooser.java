@@ -39,16 +39,16 @@ public class ContainerTableFileChooser extends ExportFileChooser {
     /**
      * Exports the content of the table into the selected file.
      *
-     * @param main
+     * @param mainWindow
      *            the container table.
      */
-    public void export(ContainerTable main) {
+    public void export(ContainerTable mainWindow) {
 
-	int result = this.showSaveDialog(main);
+	int result = this.showSaveDialog(mainWindow);
 
 	if (result == JFileChooser.APPROVE_OPTION) {
 	    File selectedFile = this.getSelectedFile();
-	    this.exporter = new ContainerTableExporter(selectedFile, main.getTablePanel().getTableModel());
+	    this.exporter = new ContainerTableExporter(selectedFile, mainWindow.getTablePanel().getTableModel());
 	    this.exporter.export();
 	}
 
