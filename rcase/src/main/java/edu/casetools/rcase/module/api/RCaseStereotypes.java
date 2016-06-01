@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -31,6 +31,8 @@ public class RCaseStereotypes {
     // Elements
     public static final String STEREOTYPE_REQUIREMENT = "RequirementStereotype";
 
+    public static final String STEREOTYPE_SITUATION_OF_INTEREST = "SituationOfInterestStereotype";
+
     public static final String STEREOTYPE_REQUIREMENT_CONTAINER = "RequirementContainerStereotype";
 
     public static final String STEREOTYPE_TESTCASE = "TestCaseStereotype";
@@ -50,7 +52,7 @@ public class RCaseStereotypes {
     // Diagram
     public static final String STEREOTYPE_DIAGRAM_CONTEXT = "DiagramStereotype";
     // Elements
-    public static final String STEREOTYPE_CONTEXTUAL_ENTITY = "ContextualEntityStereotype";
+    public static final String STEREOTYPE_SITUATIONAL_PARAMETER = "SituationalParameterStereotype";
 
     public static final String STEREOTYPE_USECASE = "UseCaseStereotype";
 
@@ -58,6 +60,8 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_CONTEXT_DERIVE = "ContextDeriveStereotype";
 
     public static final String STEREOTYPE_CONTEXT_DEPENDENCY = "ContextDependencyStereotype";
+
+    public static final String STEREOTYPE_CONTEXT_IDENTIFIES = "IdentifiesStereotype";
 
     public static final String STEREOTYPE_DIAGRAM_USECASE = "UseCaseDiagram";
 

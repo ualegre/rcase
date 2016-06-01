@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -25,7 +25,7 @@ import java.io.File;
 import javax.swing.JFileChooser;
 
 import edu.casetools.rcase.extensions.excel.control.ContainerTableExporter;
-import edu.casetools.rcase.extensions.tables.container.ContainerTable;
+import edu.casetools.rcase.extensions.tables.implementations.container.ContainerTable;
 
 /**
  * The Class ContainerTableFileChooser enables to choose a file where to save

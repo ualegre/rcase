@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -39,7 +39,6 @@ import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 
@@ -132,12 +131,15 @@ public abstract class RelationTool extends DefaultLinkTool {
      *
      * @param target
      *            the target
+     * @param stereotype
+     *            list
+     * 
      * @return true, if successful
      */
-    protected boolean acceptRequirement(IDiagramGraphic target) {
+    protected boolean acceptElement(IDiagramGraphic target, String stereotype) {
 	if (target.getElement() instanceof ModelElement) {
 	    ModelElement modelElement = (ModelElement) target.getElement();
-	    if (modelElement.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT))
+	    if (modelElement.isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
 		return modelElement.getStatus().isModifiable();
 	}
 	return false;

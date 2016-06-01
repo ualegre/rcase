@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -43,9 +43,9 @@ public class CopyTool extends RelationTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptFirstElement(IDiagramHandle representation,
-        IDiagramGraphic target) {
-        return acceptRequirement(target);
+    public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
+
+	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
@@ -58,23 +58,21 @@ public class CopyTool extends RelationTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptSecondElement(IDiagramHandle representation,
-        IDiagramGraphic source, IDiagramGraphic target) {
-        return acceptRequirement(target);
+    public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
+	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.modelio.diagrams.RelationTool#
+     * @see edu.casesuite.modelio.diagrams.RelationTool#
      * createDependency(org.modelio.metamodel.uml.infrastructure.ModelElement,
      * org.modelio.metamodel.uml.infrastructure.ModelElement)
      */
     @Override
-    public Dependency createDependency(ModelElement originElement,
-        ModelElement targetElement) {
-        return DiagramUtils.getInstance().createDependency(originElement,
-            targetElement, RCaseStereotypes.STEREOTYPE_COPY);
+    public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
+	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
+		RCaseStereotypes.STEREOTYPE_COPY);
     }
 
 }

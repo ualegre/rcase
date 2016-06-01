@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -26,7 +26,7 @@ import org.modelio.api.module.IModule;
 import org.modelio.api.module.commands.DefaultModuleCommandHandler;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.extensions.tables.container.ContainerTable;
+import edu.casetools.rcase.extensions.tables.implementations.container.ContainerTable;
 
 /**
  * The Class OpenContainerTable opens the Requirements Container Table from the

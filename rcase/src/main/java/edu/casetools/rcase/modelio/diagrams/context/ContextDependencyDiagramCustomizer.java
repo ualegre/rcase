@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -57,7 +57,8 @@ public class ContextDependencyDiagramCustomizer extends DiagramCustomizer implem
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
-	String[] toolNames = new String[] { RCaseTools.TOOL_CONTEXTUAL_ENTITY };
+	String[] toolNames = new String[] { RCaseTools.TOOL_SITUATIONAL_PARAMETER,
+		RCaseTools.TOOL_SITUATION_OF_INTEREST };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
@@ -70,8 +71,8 @@ public class ContextDependencyDiagramCustomizer extends DiagramCustomizer implem
 
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
-	return createGroup(groupName,
-		new String[] { RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_CONTEXT_DERIVE }, toolRegistry, 0);
+	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_CONTEXT_DERIVE,
+		RCaseTools.TOOL_CONTEXT_IDENTIFIES }, toolRegistry, 0);
     }
 
     /*

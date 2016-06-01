@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -37,29 +37,33 @@ public class RCaseProperties {
      * Requirement related properties
      **************************************************************************/
 
-    public static final String PROPERTY_REQUIREMENT_ID = "ReqTagId";
+    public static final String PROPERTY_REQUIREMENT_ID = "SOIId";
 
-    public static final String PROPERTY_REQUIREMENT_DESCRIPTION = "TagText";
+    public static final String PROPERTY_REQUIREMENT_DESCRIPTION = "SOIText";
 
     /****************************************************************************
-     * Context related properties
+     * Situation of Interest related properties
      **************************************************************************/
-    // Contextual Entity
+
+    public static final String PROPERTY_SITUATION_OF_INTEREST_ID = "ReqTagId";
+
+    public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "TagText";
+
+    /****************************************************************************
+     * Situational Parameter related properties
+     **************************************************************************/
+    // Situational Parameter
     public static final String PROPERTY_CONTEXT_ID = "CETagId";
 
     public static final String PROPERTY_CONTEXT_COST = "TagCost";
 
-    public static final String PROPERTY_CONTEXT_CONSTRAINTS = "TagConstraints";
+    public static final String PROPERTY_CONTEXT_STATUS = "TagStatus";
 
-    public static final String PROPERTY_CONTEXT_RESPONSIBILITY = "TagResponsibility";
+    public static final String PROPERTY_CONTEXT_CREATION_PROCESS = "TagCreationProcess";
 
-    public static final String PROPERTY_CONTEXT_FREQUENCY = "TagFrequency";
+    public static final String PROPERTY_CONTEXT_USER_INVOLVEMENT = "TagUserInvolvement";
 
-    public static final String PROPERTY_CONTEXT_SOURCE = "TagSource";
-
-    public static final String PROPERTY_CONTEXT_SENSORTYPE = "TagSensorType";
-
-    public static final String PROPERTY_CONTEXT_AQUPROCESS = "TagAcqProcess";
+    public static final String PROPERTY_CONTEXT_VOLATILITY = "TagVolatility";
 
     private RCaseProperties() {
 

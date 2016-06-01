@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -26,9 +26,11 @@ package edu.casetools.rcase.module.api;
 public class RCaseTools {
 
     // Elements
+    public static final String TOOL_REQUIREMENTCONTAINER = "RequirementContainerTool";
+
     public static final String TOOL_REQUIREMENT = "RequirementTool";
 
-    public static final String TOOL_REQUIREMENTCONTAINER = "RequirementContainerTool";
+    public static final String TOOL_SITUATION_OF_INTEREST = "SituationOfInterestTool";
 
     public static final String TOOL_TESTCASE = "TestCaseTool";
 
@@ -50,7 +52,7 @@ public class RCaseTools {
 
     // Elements
 
-    public static final String TOOL_CONTEXTUAL_ENTITY = "ContextualEntityTool";
+    public static final String TOOL_SITUATIONAL_PARAMETER = "SituationalParameterTool";
 
     public static final String TOOL_USE_CASE = "UseCaseTool";
 
@@ -58,6 +60,8 @@ public class RCaseTools {
 
     // Relations
     public static final String TOOL_CONTEXT_DEPENDENCY = "ContextDependencyTool";
+
+    public static final String TOOL_CONTEXT_IDENTIFIES = "IdentifiesTool";
 
     public static final String TOOL_CONTEXT_DERIVE = "ContextDeriveTool";
 

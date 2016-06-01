@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -20,6 +20,8 @@
  */
 package edu.casetools.rcase.utils.tables;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -41,8 +43,10 @@ import org.modelio.metamodel.uml.statik.ConnectorEnd;
 import org.modelio.metamodel.uml.statik.Link;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.extensions.tables.traceability.model.DependencyTableData;
+import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableData;
+import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.ModelioUtils;
 import edu.casetools.rcase.utils.ResourcesManager;
 
@@ -159,6 +163,51 @@ public class ModelioTableUtils {
 	result.add("↙");
 	result.add("↗↙");
 	result.add("");
+	return result;
+    }
+
+    /**
+     * Gets the possible values.
+     *
+     * @return the possible values
+     */
+    public Vector<String> getStatusPossibleValues() {
+	String[] values = new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Raw"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.PreProcessed"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Atomic"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Aggregate") };
+	Vector<String> result = new Vector<String>(Arrays.asList(values));
+
+	return result;
+    }
+
+    public Vector<String> getCreationProcessPossibleValues() {
+	String[] values = new String[] {
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess.Sensed"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess.PreProcessed"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess.Derived") };
+	Vector<String> result = new Vector<String>(Arrays.asList(values));
+
+	return result;
+    }
+
+    public Vector<String> getUserInterventionPossibleValues() {
+	String[] values = new String[] {
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Explicit"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Implicit"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Disassociated") };
+	Vector<String> result = new Vector<String>(Arrays.asList(values));
+
+	return result;
+    }
+
+    public Vector<String> getVolatilityPossibleValues() {
+	String[] values = new String[] {
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Static"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Profiled"),
+		I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Dynamic") };
+	Vector<String> result = new Vector<String>(Arrays.asList(values));
+
 	return result;
     }
 
@@ -326,4 +375,18 @@ public class ModelioTableUtils {
 
 	return label;
     }
+
+    public ArrayList<MObject> getSituationalParametersFromSituationOfInterest(ModelElement element) {
+	ArrayList<MObject> list = new ArrayList<>();
+	for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
+	    Dependency dependency = (Dependency) localIterator.next();
+	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES)) {
+		list.add(dependency.getImpacted());
+	    }
+	}
+
+	return list;
+
+    }
+
 }

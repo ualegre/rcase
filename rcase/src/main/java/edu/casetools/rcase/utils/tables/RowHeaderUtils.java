@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -36,13 +36,13 @@ import javax.swing.table.JTableHeader;
 
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.extensions.tables.container.control.table.ContainerRowHeaderListener;
-import edu.casetools.rcase.extensions.tables.container.model.ContainerRowHeadersModel;
-import edu.casetools.rcase.extensions.tables.rowheaders.RowHeaderAdjustmentListener;
-import edu.casetools.rcase.extensions.tables.rowheaders.RowHeaderRenderer;
-import edu.casetools.rcase.extensions.tables.rowheaders.RowHeadersComponentListener;
-import edu.casetools.rcase.extensions.tables.rowheaders.RowHeadersTableModel;
-import edu.casetools.rcase.extensions.tables.traceability.model.DependencyTableRowHeadersModel;
+import edu.casetools.rcase.extensions.tables.headers.RowHeaderAdjustmentListener;
+import edu.casetools.rcase.extensions.tables.headers.RowHeaderRenderer;
+import edu.casetools.rcase.extensions.tables.headers.RowHeadersComponentListener;
+import edu.casetools.rcase.extensions.tables.headers.RowHeadersTableModel;
+import edu.casetools.rcase.extensions.tables.implementations.container.control.table.ContainerRowHeaderListener;
+import edu.casetools.rcase.extensions.tables.implementations.container.model.ContainerRowHeadersModel;
+import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableRowHeadersModel;
 
 // TODO: Auto-generated Javadoc
 /**

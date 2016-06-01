@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -40,6 +40,8 @@ public class RCaseResources {
 
     public static final String ICON_DEPENDENCY_TABLE = "res/icons/matrix_16.png";
     public static final String ICON_CONTAINER_TABLE = "res/icons/matrix_16.png";
+
+    public static final String ICON_CONTEXT_MODEL_TABLE = "res/icons/matrix_16.png";
 
     private RCaseResources() {
 

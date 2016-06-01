@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 @author Unai Alegre @company Middlesex University
+ * Copyright 2015 @author Unai Alegre 
  * 
  * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
  * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
@@ -40,7 +40,7 @@ public class CommonPropertyPage implements IPropertyContent {
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.modelio.properties.IPropertyContent#
+     * @see edu.casesuite.modelio.properties.IPropertyContent#
      * update (org.modelio.metamodel.uml.infrastructure.ModelElement,
      * org.modelio.api.module.propertiesPage.IModulePropertyTable)
      */
@@ -71,7 +71,7 @@ public class CommonPropertyPage implements IPropertyContent {
     /*
      * (non-Javadoc)
      * 
-     * @see edu.middlesex.goodies.casesuite.modelio.properties.IPropertyContent#
+     * @see edu.casesuite.modelio.properties.IPropertyContent#
      * changeProperty(org.modelio.metamodel.uml.infrastructure.ModelElement,
      * int, java.lang.String)
      */
