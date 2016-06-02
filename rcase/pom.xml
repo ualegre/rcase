@@ -219,5 +219,8 @@
 		<name>C-ASE Tools</name>
 	</organization>
 	<url>https://github.com/casetools/rcase</url>
+	<scm>
+		<url>https://github.com/casetools</url>
+	</scm>
 </project>
 
