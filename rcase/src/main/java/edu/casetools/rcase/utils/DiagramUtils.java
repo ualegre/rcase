@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.modelio.api.model.IModelingSession;
-import org.modelio.api.model.IUmlModel;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.diagrams.StaticDiagram;
 import org.modelio.metamodel.diagrams.UseCaseDiagram;
 import org.modelio.metamodel.factory.ExtensionNotFoundException;

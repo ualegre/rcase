@@ -23,7 +23,7 @@ package edu.casetools.rcase.modelio.menu.tables;
 import java.util.List;
 
 import org.modelio.api.module.IModule;
-import org.modelio.api.module.commands.DefaultModuleCommandHandler;
+import org.modelio.api.module.command.DefaultModuleCommandHandler;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.extensions.tables.implementations.traceability.DependencyTable;

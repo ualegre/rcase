@@ -20,8 +20,8 @@
  */
 package edu.casetools.rcase.modelio.diagrams.requirements.tools.relations;
 
-import org.modelio.api.diagram.IDiagramGraphic;
-import org.modelio.api.diagram.IDiagramHandle;
+import org.modelio.api.modelio.diagram.IDiagramGraphic;
+import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
@@ -43,9 +43,8 @@ public class PartTool extends RelationTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptFirstElement(IDiagramHandle representation,
-        IDiagramGraphic target) {
-        return acceptAnyElement(target);
+    public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
+	return acceptAnyElement(target);
     }
 
     /*
@@ -58,9 +57,8 @@ public class PartTool extends RelationTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptSecondElement(IDiagramHandle representation,
-        IDiagramGraphic source, IDiagramGraphic target) {
-        return acceptAnyElement(target);
+    public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
+	return acceptAnyElement(target);
     }
 
     /*
@@ -71,10 +69,9 @@ public class PartTool extends RelationTool {
      * org.modelio.metamodel.uml.infrastructure.ModelElement)
      */
     @Override
-    public Dependency createDependency(ModelElement originElement,
-        ModelElement targetElement) {
-        return DiagramUtils.getInstance().createDependency(originElement,
-            targetElement, RCaseStereotypes.STEREOTYPE_PART);
+    public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
+	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
+		RCaseStereotypes.STEREOTYPE_PART);
     }
 
 }

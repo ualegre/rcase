@@ -20,8 +20,8 @@
  */
 package edu.casetools.rcase.modelio.diagrams.context.tools.relations;
 
-import org.modelio.api.diagram.IDiagramGraphic;
-import org.modelio.api.diagram.IDiagramHandle;
+import org.modelio.api.modelio.diagram.IDiagramGraphic;
+import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
@@ -46,8 +46,8 @@ public class DeriveTool extends RelationTool {
     @Override
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
 	ModelElement element = (ModelElement) target.getElement();
-	return (element.getStatus().isModifiable())
-		&& (element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER));
+	return (element.getStatus().isModifiable()) && (element.isStereotyped(RCasePeerModule.MODULE_NAME,
+		RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER));
     }
 
     /*

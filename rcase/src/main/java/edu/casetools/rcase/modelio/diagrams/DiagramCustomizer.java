@@ -20,15 +20,11 @@
  */
 package edu.casetools.rcase.modelio.diagrams;
 
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.gef.palette.MarqueeToolEntry;
 import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteEntry;
 import org.eclipse.gef.palette.SelectionToolEntry;
-import org.modelio.api.diagram.IDiagramService;
-import org.modelio.api.module.IModule;
+import org.modelio.api.modelio.diagram.IDiagramService;
 
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 
@@ -50,24 +46,6 @@ public class DiagramCustomizer {
 	commonGroup.add(new SelectionToolEntry());
 	commonGroup.add(new MarqueeToolEntry());
 	return commonGroup;
-    }
-
-    /**
-     * Initializes the customizer.
-     *
-     * @param module
-     *            the module where the diagram is going to be customized.
-     * @param tools
-     *            the tool palette that is going to be customized.
-     * @param hParameters
-     *            the h parameters
-     * @param keepBasePalette
-     *            the variable selects whether if to keep the base palette of
-     *            the original diagram or start from scratch.
-     */
-    public void initialize(IModule module, List<org.modelio.api.diagram.tools.PaletteEntry> tools,
-	    Map<String, String> hParameters, boolean keepBasePalette) {
-	/* Method empty because is forced */
     }
 
     /**

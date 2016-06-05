@@ -23,9 +23,9 @@ package edu.casetools.rcase.extensions.tables.implementations.container.control.
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 
-import org.modelio.api.model.IModelingSession;
-import org.modelio.api.model.ITransaction;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
@@ -80,7 +80,8 @@ public class ContainerTableModelListener implements TableModelListener {
 	try {
 	    transaction = session.createTransaction(
 		    I18nMessageService.getString("Info.Session.Create", new String[] { " Update Property" }));
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME, tagName, value, (ModelElement) element);
+	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME, tagName, value,
+		    (ModelElement) element);
 	    transaction.commit();
 	    transaction.close();
 	} finally {

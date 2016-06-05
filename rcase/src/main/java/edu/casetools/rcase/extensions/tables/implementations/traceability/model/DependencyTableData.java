@@ -24,8 +24,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.modelio.api.model.IMetamodelExtensions;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.vcore.smkernel.mapi.MObject;

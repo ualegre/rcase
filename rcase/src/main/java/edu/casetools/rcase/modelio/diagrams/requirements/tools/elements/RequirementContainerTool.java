@@ -22,9 +22,9 @@ package edu.casetools.rcase.modelio.diagrams.requirements.tools.elements;
 
 import java.util.List;
 
-import org.modelio.api.diagram.IDiagramGraphic;
-import org.modelio.api.diagram.IDiagramNode;
-import org.modelio.api.model.IModelingSession;
+import org.modelio.api.modelio.diagram.IDiagramGraphic;
+import org.modelio.api.modelio.diagram.IDiagramNode;
+import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.diagrams.ElementTool;
@@ -41,8 +41,8 @@ public class RequirementContainerTool extends ElementTool {
     /*
      * (non-Javadoc)
      * 
-     * @see edu.casesuite.modelio.diagrams.ElementTool#
-     * createOwnElement (org.modelio.api.model.IModelingSession,
+     * @see edu.casesuite.modelio.diagrams.ElementTool# createOwnElement
+     * (org.modelio.api.model.IModelingSession,
      * org.modelio.vcore.smkernel.mapi.MObject)
      */
     @Override
@@ -55,8 +55,8 @@ public class RequirementContainerTool extends ElementTool {
     /*
      * (non-Javadoc)
      * 
-     * @see edu.casesuite.modelio.diagrams.ElementTool#
-     * representAsImage (java.util.List)
+     * @see edu.casesuite.modelio.diagrams.ElementTool# representAsImage
+     * (java.util.List)
      */
     @Override
     protected List<IDiagramGraphic> representAsImage(List<IDiagramGraphic> graph) {

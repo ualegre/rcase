@@ -1,99 +1,117 @@
-/*
- * Copyright 2015 @author Unai Alegre 
- * 
- * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
- * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
- * 
- * R-CASE is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * R-CASE is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Modelio. If not, see <http://www.gnu.org/licenses/>.
- * 
- */
 package edu.casetools.rcase.module.impl;
 
-import org.modelio.api.model.IModelingSession;
 import org.modelio.api.module.AbstractJavaModule;
-import org.modelio.api.module.IModuleAPIConfiguration;
-import org.modelio.api.module.IModuleSession;
-import org.modelio.api.module.IModuleUserConfiguration;
-import org.modelio.api.module.IParameterEditionModel;
-import org.modelio.metamodel.mda.ModuleComponent;
+import org.modelio.api.module.context.IModuleContext;
+import org.modelio.api.module.lifecycle.IModuleLifeCycleHandler;
+import org.modelio.api.module.parameter.IParameterEditionModel;
 
+/**
+ * Implementation of the IModule interface.
+ * <br>All Modelio java modules should inherit from this class.
+ * 
+ */
 public class RCaseModule extends AbstractJavaModule {
 
-    private RCasePeerModule peerModule = null;
+	private RCasePeerModule peerModule = null;
 
-    private RCaseSession session = null;
+	private RCaseSession session = null;
+	
+	private static RCaseModule instance;
 
-    public RCaseModule(IModelingSession modelingSession, ModuleComponent moduleComponent,
-	    IModuleUserConfiguration moduleConfiguration, IModuleAPIConfiguration peerConfiguration) {
-	super(modelingSession, moduleComponent, moduleConfiguration);
-	this.session = new RCaseSession(this);
-	this.peerModule = new RCasePeerModule(this, peerConfiguration);
-	this.peerModule.init();
-    }
-
-    @Override
-    public RCasePeerModule getPeerModule() {
-	return this.peerModule;
-    }
-
-    @Override
-    public IModuleSession getSession() {
-	return this.session;
-    }
-
-    @Override
-    public IParameterEditionModel getParametersEditionModel() {
-	if (null == parameterEditionModel) {
-	    parameterEditionModel = super.getParametersEditionModel();
+	public RCaseModule getInstance() {
+		return instance;
 	}
-	return parameterEditionModel;
-    }
 
+	@Override
+	public RCasePeerModule getPeerModule() {
+		return this.peerModule;
+	}
+
+	/**
+	 * Return the lifecycle handler attached to the current module.
+	 * <p>
+	 * <p>
+	 * This handler is used to manage the module lifecycle by declaring the
+	 * desired implementation on start, select... methods.
+	 */
+	@Override
+	public IModuleLifeCycleHandler getLifeCycleHandler() {
+		return this.session;
+	}
+
+	/**
+	 * Method automatically called just after the creation of the module.
+	 * <p>
+	 * <p>
+	 * The module is automatically instanciated at the beginning of the MDA
+	 * lifecycle and constructor implementation is not accessible to the module
+	 * developer.
+	 * <p>
+	 * <p>
+	 * The <code>init</code> method allows the developer to execute the desired initialization code at this step. For
+     * example, this is the perfect place to register any IViewpoint this module provides.
+	 *
+	 *
+	 * @see org.modelio.api.module.AbstractJavaModule#init()
+	 */
+	@Override
+	public void init() {
+		// Add the module initialization code
+	    super.init();
+	}
+
+    /**
+     * Method automatically called just before the disposal of the module.
+     * <p>
+     * <p>
+     * 
+     * 
+     * The <code>uninit</code> method allows the developer to execute the desired un-initialization code at this step.
+     * For example, if IViewpoints have been registered in the {@link #init()} method, this method is the perfect place
+     * to remove them.
+     * <p>
+     * <p>
+     * 
+     * This method should never be called by the developer because it is already invoked by the tool.
+     * 
+     * @see org.modelio.api.module.AbstractJavaModule#uninit()
+     */
     @Override
+    public void uninit() {
+        // Add the module un-initialization code
+        super.uninit();
+    }
+    
+	/**
+	 * Builds a new module.
+	 * <p>
+	 * <p>
+	 * This constructor must not be called by the user. It is automatically
+	 * invoked by Modelio when the module is installed, selected or started.
+	 * @param moduleContext context of the module, needed to access Modelio features.
+	 */
+	public RCaseModule(IModuleContext moduleContext) {
+		super(moduleContext);
+		this.session = new RCaseSession(this);
+		this.peerModule = new RCasePeerModule(this, moduleContext.getPeerConfiguration());
+		this.peerModule.init();
+		instance = this;
+	}
+
+	/**
+	 * @see org.modelio.api.module.AbstractJavaModule#getParametersEditionModel()
+	 */
+	@Override
+	public IParameterEditionModel getParametersEditionModel() {
+	    if (this.parameterEditionModel == null) {
+	        this.parameterEditionModel = super.getParametersEditionModel();
+	    }
+		return this.parameterEditionModel;
+	}
+	
+	@Override
     public String getModuleImagePath() {
-	return "/res/icons/module_16.png";
-    }
-
-    @Override
-    public int hashCode() {
-	final int prime = 31;
-	int result = super.hashCode();
-	result = prime * result + ((peerModule == null) ? 0 : peerModule.hashCode());
-	result = prime * result + ((session == null) ? 0 : session.hashCode());
-	return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	if (this == obj)
-	    return true;
-	if (!super.equals(obj))
-	    return false;
-	if (getClass() != obj.getClass())
-	    return false;
-	RCaseModule other = (RCaseModule) obj;
-	if (peerModule == null) {
-	    if (other.peerModule != null)
-		return false;
-	} else if (!peerModule.equals(other.peerModule))
-	    return false;
-	if (session == null) {
-	    if (other.session != null)
-		return false;
-	} else if (!session.equals(other.session))
-	    return false;
-	return true;
+        return "/res/icons/module_16.png";
     }
 
 }

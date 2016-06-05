@@ -22,8 +22,8 @@ package edu.casetools.rcase.modelio.properties;
 
 import java.util.List;
 
-import org.modelio.api.model.IMetamodelExtensions;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;

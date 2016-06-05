@@ -22,7 +22,7 @@ package edu.casetools.rcase.modelio.menu.nodes;
 
 import java.util.List;
 
-import org.modelio.api.model.IModelingSession;
+import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.module.IModule;
 import org.modelio.vcore.smkernel.mapi.MObject;
 

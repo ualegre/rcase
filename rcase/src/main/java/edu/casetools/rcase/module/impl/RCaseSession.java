@@ -1,78 +1,75 @@
-/*
- * Copyright 2015 @author Unai Alegre 
- * 
- * This file is part of R-CASE (Requirements for Context-Aware Systems Engineering), a module 
- * of Modelio that aids the requirements elicitation phase of a Context-Aware System (C-AS). 
- * 
- * R-CASE is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * R-CASE is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
- * 
- */
 package edu.casetools.rcase.module.impl;
 
-import org.modelio.api.log.ILogService;
-import org.modelio.api.modelio.Modelio;
-import org.modelio.api.module.DefaultModuleSession;
-import org.modelio.api.module.ModuleException;
+import java.util.Map;
+
+import org.modelio.api.module.context.log.ILogService;
+import org.modelio.api.module.lifecycle.DefaultModuleLifeCycleHandler;
+import org.modelio.api.module.lifecycle.ModuleException;
 import org.modelio.vbasic.version.Version;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class RCaseSession.
+ * Implementation of the IModuleLifeCycleHandler interface.
+ * <br>This default implementation may be inherited by the module developers in order to simplify the code writing of the module session.
  */
-public class RCaseSession extends DefaultModuleSession {
+public class RCaseSession extends DefaultModuleLifeCycleHandler {
 
-    /**
-     * Instantiates a new r case session.
-     *
-     * @param module
-     *            the module
-     */
-    public RCaseSession(RCaseModule module) {
-	super(module);
-    }
+	/**
+	 * Constructor.
+	 * @param module the Module this session is instanciated for.
+	 */
+	public RCaseSession(RCaseModule module) {
+		super(module);
+	}
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.modelio.api.module.DefaultModuleSession#start()
-     */
-    @Override
-    public boolean start() throws ModuleException {
-	// get the version of the module
-	Version moduleVersion = module.getVersion();
+	/**
+	 * @see org.modelio.api.module.DefaultModuleLifeCycleHandler#start()
+	 */
+	@Override
+	public boolean start() throws ModuleException {
+		// get the version of the module
+		Version moduleVersion = this.module.getVersion();
 
-	// get the Modelio log service
-	ILogService logService = Modelio.getInstance().getLogService();
+		// get the Modelio log service
+		ILogService logService = this.module.getModuleContext().getLogService();
 
-	String message = "Start of " + module.getName() + " " + moduleVersion;
-	logService.info(module, message);
-	return super.start();
-    }
+		String message = "Start of " + this.module.getName() + " " + moduleVersion;
+		logService.info(message);
+		return super.start();
+	}
 
-    /**
-     * Install.
-     *
-     * @param modelioPath
-     *            the modelio path
-     * @param mdaPath
-     *            the mda path
-     * @return true, if successful
-     * @throws ModuleException
-     *             the module exception
-     */
-    public static boolean install(String modelioPath, String mdaPath) throws ModuleException {
-	return DefaultModuleSession.install(modelioPath, mdaPath);
-    }
+	/**
+	 * @see org.modelio.api.module.DefaultModuleLifeCycleHandler#stop()
+	 */
+	@Override
+	public void stop() throws ModuleException {
+		super.stop();
+	}
 
+	public static boolean install(String modelioPath, String mdaPath) throws ModuleException {
+		return DefaultModuleLifeCycleHandler.install(modelioPath, mdaPath);
+	}
+
+	/**
+	 * @see org.modelio.api.module.DefaultModuleLifeCycleHandler#select()
+	 */
+	@Override
+	public boolean select() throws ModuleException {
+		return super.select();
+	}
+
+	/**
+	 * @see org.modelio.api.module.DefaultModuleLifeCycleHandler#unselect()
+	 */
+	@Override
+	public void unselect() throws ModuleException {
+		super.unselect();
+	}
+
+	/**
+	 * @see org.modelio.api.module.DefaultModuleLifeCycleHandler#upgrade(org.modelio.api.modelio.Version, java.util.Map)
+	 */
+	@Override
+	public void upgrade(Version oldVersion, Map<String, String> oldParameters) throws ModuleException {
+		super.upgrade(oldVersion, oldParameters);
+	}
 }

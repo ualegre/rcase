@@ -22,15 +22,15 @@ package edu.casetools.rcase.modelio.menu;
 
 import java.util.List;
 
-import org.modelio.api.diagram.IDiagramHandle;
-import org.modelio.api.diagram.IDiagramService;
-import org.modelio.api.diagram.dg.IDiagramDG;
-import org.modelio.api.diagram.style.IStyleHandle;
-import org.modelio.api.model.IModelingSession;
-import org.modelio.api.model.ITransaction;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.diagram.IDiagramHandle;
+import org.modelio.api.modelio.diagram.IDiagramService;
+import org.modelio.api.modelio.diagram.dg.IDiagramDG;
+import org.modelio.api.modelio.diagram.style.IStyleHandle;
+import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.api.module.IModule;
-import org.modelio.api.module.commands.DefaultModuleCommandHandler;
+import org.modelio.api.module.command.DefaultModuleCommandHandler;
 import org.modelio.metamodel.diagrams.AbstractDiagram;
 import org.modelio.metamodel.diagrams.StaticDiagram;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;

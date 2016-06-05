@@ -28,11 +28,11 @@ import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import org.modelio.api.model.IMetamodelExtensions;
-import org.modelio.api.model.IModelingSession;
-import org.modelio.api.model.ITransaction;
-import org.modelio.api.model.IUmlModel;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.model.IMetamodelExtensions;
+import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.api.modelio.model.ITransaction;
+import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.factory.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;

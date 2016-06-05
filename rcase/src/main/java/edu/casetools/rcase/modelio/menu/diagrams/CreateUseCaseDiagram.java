@@ -22,7 +22,7 @@ package edu.casetools.rcase.modelio.menu.diagrams;
 
 import java.util.List;
 
-import org.modelio.api.model.IModelingSession;
+import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.module.IModule;
 import org.modelio.metamodel.diagrams.StaticDiagram;
 import org.modelio.metamodel.diagrams.UseCaseDiagram;
@@ -42,23 +42,16 @@ public class CreateUseCaseDiagram extends CreateDiagram {
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * edu.casesuite.modelio.menu.CreateDiagram#createOwnDiagram
+     * @see edu.casesuite.modelio.menu.CreateDiagram#createOwnDiagram
      * (java.util.List, org.modelio.api.model.IModelingSession)
      */
     @Override
-    protected StaticDiagram createOwnDiagram(List<MObject> selectedElements,
-        IModelingSession session) {
-        String name =
-            I18nMessageService
-                .getString("Ui.Command.CreateUseCaseDiagram.Label");
-        UseCaseDiagram diagram =
-            DiagramUtils.getInstance().createUseCaseDiagram(selectedElements,
-                session, name, RCaseStereotypes.STEREOTYPE_DIAGRAM_USECASE);
-        diagram =
-            (UseCaseDiagram) addStyle(diagram,
-                RCaseResources.STYLE_USECASE_DIAGRAM);
-        return diagram;
+    protected StaticDiagram createOwnDiagram(List<MObject> selectedElements, IModelingSession session) {
+	String name = I18nMessageService.getString("Ui.Command.CreateUseCaseDiagram.Label");
+	UseCaseDiagram diagram = DiagramUtils.getInstance().createUseCaseDiagram(selectedElements, session, name,
+		RCaseStereotypes.STEREOTYPE_DIAGRAM_USECASE);
+	diagram = (UseCaseDiagram) addStyle(diagram, RCaseResources.STYLE_USECASE_DIAGRAM);
+	return diagram;
     }
 
     /*
@@ -70,7 +63,7 @@ public class CreateUseCaseDiagram extends CreateDiagram {
      */
     @Override
     public boolean accept(List<MObject> selectedElements, IModule module) {
-        return commonCheck(selectedElements, module);
+	return commonCheck(selectedElements, module);
     }
 
     /*
@@ -82,7 +75,7 @@ public class CreateUseCaseDiagram extends CreateDiagram {
      */
     @Override
     public boolean isActiveFor(List<MObject> selectedElements, IModule module) {
-        return commonCheck(selectedElements, module);
+	return commonCheck(selectedElements, module);
     }
 
 }

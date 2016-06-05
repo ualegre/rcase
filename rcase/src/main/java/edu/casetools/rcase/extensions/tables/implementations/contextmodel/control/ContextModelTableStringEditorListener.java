@@ -25,9 +25,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
-import org.modelio.api.model.IModelingSession;
-import org.modelio.api.model.ITransaction;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelStringTableEditor;

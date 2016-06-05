@@ -26,8 +26,8 @@ import java.util.List;
 
 import javax.swing.ListModel;
 
-import org.modelio.api.model.IMetamodelExtensions;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.metamodel.uml.behavior.usecaseModel.UseCase;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;

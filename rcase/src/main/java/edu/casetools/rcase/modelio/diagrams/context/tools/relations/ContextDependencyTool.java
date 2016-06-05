@@ -20,8 +20,8 @@
  */
 package edu.casetools.rcase.modelio.diagrams.context.tools.relations;
 
-import org.modelio.api.diagram.IDiagramGraphic;
-import org.modelio.api.diagram.IDiagramHandle;
+import org.modelio.api.modelio.diagram.IDiagramGraphic;
+import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 

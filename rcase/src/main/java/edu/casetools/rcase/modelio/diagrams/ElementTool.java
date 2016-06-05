@@ -26,13 +26,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.modelio.api.diagram.IDiagramGraphic;
-import org.modelio.api.diagram.IDiagramHandle;
-import org.modelio.api.diagram.IDiagramNode;
-import org.modelio.api.diagram.tools.DefaultBoxTool;
-import org.modelio.api.model.IModelingSession;
-import org.modelio.api.model.ITransaction;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.diagram.IDiagramGraphic;
+import org.modelio.api.modelio.diagram.IDiagramHandle;
+import org.modelio.api.modelio.diagram.IDiagramNode;
+import org.modelio.api.modelio.diagram.tools.DefaultBoxTool;
+import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.metamodel.diagrams.AbstractDiagram;
 import org.modelio.vcore.smkernel.mapi.MObject;
 

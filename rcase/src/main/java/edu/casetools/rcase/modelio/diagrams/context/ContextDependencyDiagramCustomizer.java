@@ -20,12 +20,15 @@
  */
 package edu.casetools.rcase.modelio.diagrams.context;
 
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.gef.palette.PaletteRoot;
-import org.modelio.api.diagram.IDiagramCustomizer;
-import org.modelio.api.diagram.IDiagramService;
 import org.modelio.api.modelio.Modelio;
+import org.modelio.api.modelio.diagram.IDiagramCustomizer;
+import org.modelio.api.modelio.diagram.IDiagramService;
+import org.modelio.api.modelio.diagram.tools.PaletteEntry;
+import org.modelio.api.module.IModule;
 
 import edu.casetools.rcase.modelio.diagrams.DiagramCustomizer;
 import edu.casetools.rcase.module.api.RCaseTools;
@@ -73,6 +76,24 @@ public class ContextDependencyDiagramCustomizer extends DiagramCustomizer implem
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
 	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_CONTEXT_DERIVE,
 		RCaseTools.TOOL_CONTEXT_IDENTIFIES }, toolRegistry, 0);
+    }
+
+    /**
+     * Initializes the customizer.
+     *
+     * @param module
+     *            the module where the diagram is going to be customized.
+     * @param tools
+     *            the tool palette that is going to be customized.
+     * @param hParameters
+     *            the h parameters
+     * @param keepBasePalette
+     *            the variable selects whether if to keep the base palette of
+     *            the original diagram or start from scratch.
+     */
+    public void initialize(IModule module, List<PaletteEntry> tools, Map<String, String> hParameters,
+	    boolean keepBasePalette) {
+	/* Method empty because is forced */
     }
 
     /*

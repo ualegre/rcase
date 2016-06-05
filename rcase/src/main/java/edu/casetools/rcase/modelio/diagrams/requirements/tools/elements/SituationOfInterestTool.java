@@ -22,9 +22,9 @@ package edu.casetools.rcase.modelio.diagrams.requirements.tools.elements;
 
 import java.util.List;
 
-import org.modelio.api.diagram.IDiagramGraphic;
-import org.modelio.api.diagram.IDiagramNode;
-import org.modelio.api.model.IModelingSession;
+import org.modelio.api.modelio.diagram.IDiagramGraphic;
+import org.modelio.api.modelio.diagram.IDiagramNode;
+import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.diagrams.ElementTool;

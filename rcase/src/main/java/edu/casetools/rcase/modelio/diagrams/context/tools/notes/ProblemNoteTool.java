@@ -20,9 +20,9 @@
  */
 package edu.casetools.rcase.modelio.diagrams.context.tools.notes;
 
-import org.modelio.api.diagram.IDiagramGraphic;
-import org.modelio.api.diagram.IDiagramHandle;
-import org.modelio.api.model.IUmlModel;
+import org.modelio.api.modelio.diagram.IDiagramGraphic;
+import org.modelio.api.modelio.diagram.IDiagramHandle;
+import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.factory.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Note;
@@ -45,24 +45,20 @@ public class ProblemNoteTool extends NoteTool {
      * org.modelio.api.diagram.IDiagramGraphic)
      */
     @Override
-    public boolean acceptElement(IDiagramHandle representation,
-        IDiagramGraphic targetNode) {
-        return defaultAcceptElement(representation, targetNode);
+    public boolean acceptElement(IDiagramHandle representation, IDiagramGraphic targetNode) {
+	return defaultAcceptElement(representation, targetNode);
     }
 
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * edu.casesuite.modelio.diagrams.NoteTool#createOwnNote
+     * @see edu.casesuite.modelio.diagrams.NoteTool#createOwnNote
      * (org.modelio.api.model.IUmlModel,
      * org.modelio.metamodel.uml.infrastructure.ModelElement)
      */
     @Override
-    protected Note createOwnNote(IUmlModel model, ModelElement owner)
-        throws ExtensionNotFoundException {
-        return DiagramUtils.getInstance().createNote(model, owner,
-            RCaseTools.PROBLEM);
+    protected Note createOwnNote(IUmlModel model, ModelElement owner) throws ExtensionNotFoundException {
+	return DiagramUtils.getInstance().createNote(model, owner, RCaseTools.PROBLEM);
     }
 
 }
