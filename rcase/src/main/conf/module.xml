@@ -76,12 +76,20 @@
                 <Image path="res/icons/testcase_64.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="ContextDependencyStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDependencyStereotype.label" uid="51d9ee5e-84f2-4f31-bbfe-5c2ac97d5569">
+            <Stereotype name="TriggersStereotype" metaclass="Dependency" is-hidden="false" label="%TriggersStereotype.label" uid="b62eca7a-05f3-481b-a29d-24899f211a5c">
                 <Icon path="%ContextDependencyTool.image"/>
                 <Image path="%ContextDependencyTool.image"/>
                 <TagTypes/>
                 <NoteTypes>
                     <NoteType name="ContextNote" label="Note" is-hidden="false" uid="2e73c34c-3c7d-483e-b81a-7a8fc47a4bf2"/>
+                </NoteTypes>
+            </Stereotype>
+            <Stereotype name="ContextDependencyStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDependencyStereotype.label" uid="51d9ee5e-84f2-4f31-bbfe-5c2ac97d5569">
+                <Icon path="%ContextDependencyTool.image"/>
+                <Image path="%ContextDependencyTool.image"/>
+                <TagTypes/>
+                <NoteTypes>
+                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="4fd86e3d-7bc6-41f4-b287-4eb1fff24ca8"/>
                 </NoteTypes>
             </Stereotype>
             <Stereotype name="IdentifiesStereotype" metaclass="Dependency" is-hidden="false" label="%IdentifiesStereotype.label" uid="a5f97076-da2d-4f08-b391-9c0a9341e6f0">
@@ -263,6 +271,14 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.TestCaseTool">
                     <HParameter name="metaclass" value="Class"/>
                     <HParameter name="stereotype" value="TestCaseStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="TriggersTool" label="%TriggersTool.label" tooltip="%TriggersTool.tooltip" image="%TriggersTool.image">
+                <Scope-source metaclass="SituationalParameterStereotype"/>
+                <Scope-target stereotype="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.TriggersTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="TriggersStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="ContextDependencyTool" label="%ContextDependencyTool.label" tooltip="%ContextDependencyTool.tooltip" image="%ContextDependencyTool.image">

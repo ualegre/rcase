@@ -75,6 +75,8 @@ public class RCaseTools {
 
     public static final String RATIONALE = "Rationale";
 
+    public static final String TOOL_TRIGGERS = "TriggersTool";
+
     private RCaseTools() {
 
     }

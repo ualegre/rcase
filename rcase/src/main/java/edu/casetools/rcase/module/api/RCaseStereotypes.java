@@ -67,6 +67,8 @@ public class RCaseStereotypes {
 
     public static final String DEFAULT_STEREOTYPE = STEREOTYPE_COPY;
 
+    public static final String STEREOTYPE_TRIGGERS = "TriggersStereotype";
+
     private RCaseStereotypes() {
 
     }

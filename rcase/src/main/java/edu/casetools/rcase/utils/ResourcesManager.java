@@ -67,7 +67,7 @@ public class ResourcesManager {
      * @return the image
      */
     public String getImage(String imageName) {
-	return this.module.getConfiguration().getModuleResourcesPath()
+	return this.module.getModuleContext().getConfiguration().getModuleResourcesPath().toString()
 		// + File.separator + "res" + File.separator + "icons"
 		+ File.separator + imageName;
     }
