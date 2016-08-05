@@ -74,15 +74,13 @@ public class ContextModelTableData implements Serializable {
 
     private void createHeaders() {
 	String[] columnNames = { "Table.ContextModel.Header.Name", "Table.ContextModel.Header.Id",
-		"Table.ContextModel.Header.Cost", "Table.ContextModel.Header.Status",
-		"Table.ContextModel.Header.CreationProcess", "Table.ContextModel.Header.UserInvolvement",
-		"Table.ContextModel.Header.Volatility" };
+		"Table.ContextModel.Header.Responsibility", "Table.ContextModel.Header.Frequency",
+		"Table.ContextModel.Header.LibType" };
 	String[] properties = { RCaseProperties.PROPERTY_NAME, RCaseProperties.PROPERTY_CONTEXT_ID,
-		RCaseProperties.PROPERTY_CONTEXT_COST, RCaseProperties.PROPERTY_CONTEXT_STATUS,
-		RCaseProperties.PROPERTY_CONTEXT_CREATION_PROCESS, RCaseProperties.PROPERTY_CONTEXT_USER_INVOLVEMENT,
-		RCaseProperties.PROPERTY_CONTEXT_VOLATILITY };
-	DataTypes[] dataTypes = { DataTypes.STRING_TYPE, DataTypes.STRING_TYPE, DataTypes.STRING_TYPE,
-		DataTypes.COMBOBOX_TYPE, DataTypes.COMBOBOX_TYPE, DataTypes.COMBOBOX_TYPE, DataTypes.COMBOBOX_TYPE };
+		RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY, RCaseProperties.PROPERTY_CONTEXT_FREQUENCY,
+		RCaseProperties.PROPERTY_CONTEXT_LIBTYPE };
+	DataTypes[] dataTypes = { DataTypes.STRING_TYPE, DataTypes.STRING_TYPE, DataTypes.COMBOBOX_TYPE,
+		DataTypes.STRING_TYPE, DataTypes.COMBOBOX_TYPE };
 
 	if ((columnNames.length == properties.length) && (columnNames.length == dataTypes.length)
 		&& (dataTypes.length == properties.length)) {

@@ -40,11 +40,9 @@
                 <Image path="res/icons/context_look_64.png"/>
                 <TagTypes>
                     <TagType name="CETagId" uid="8790413a-37c1-4222-a99d-1e45a92fa80d" label="%SituationalParameterStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagCost" uid="b3912a7f-cb03-425c-bd4f-eb995a3bb727" label="%SituationalParameterStereotype.properties.cost" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagStatus" uid="9c72e01e-df2f-484a-9191-02a13a69ca26" label="%SituationalParameterStereotype.properties.status" parameter-card="2" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagCreationProcess" uid="ce358a44-c103-4db6-a861-dc33beb96964" label="%SituationalParameterStereotype.properties.creationProcess" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagUserInvolvement" uid="2ab91184-f1af-4179-a182-aa6f9ea7d346" label="%SituationalParameterStereotype.properties.userInvolvement" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagVolatility" uid="46952323-adcb-436d-9950-5b4b9df2f2a0" label="%SituationalParameterStereotype.properties.volatility" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagResponsibility" uid="9c72e01e-df2f-484a-9191-02a13a69ca26" label="%SituationalParameterStereotype.properties.responsibility" parameter-card="2" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagFrequency" uid="ce358a44-c103-4db6-a861-dc33beb96964" label="%SituationalParameterStereotype.properties.frequency" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagLibType" uid="2ab91184-f1af-4179-a182-aa6f9ea7d346" label="%SituationalParameterStereotype.properties.libType" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
                 <NoteTypes>
                     <NoteType name="ContextNote" label="Note" is-hidden="false" uid="990cb938-bf1d-49e4-af37-4389def2752d"/>

@@ -26,20 +26,14 @@ public class ContextModelTableRow {
 		situationalParameter));
 
 	// TagCost
-	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_COST,
+	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY,
 		situationalParameter));
 
 	// TagStatus
-	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_STATUS));
+	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_FREQUENCY));
 
 	// TagCreationProcess
-	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_CREATION_PROCESS));
-
-	// TagUserInvolvement
-	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_USER_INVOLVEMENT));
-
-	// TagVolatility
-	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_VOLATILITY));
+	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_LIBTYPE));
 
     }
 

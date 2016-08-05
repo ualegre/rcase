@@ -106,41 +106,26 @@ public class ContextModelTablePanel extends TablePanel {
 	List<String> possibleValues;
 	switch (column) {
 	case 0:
-	    // Name
-	    // element.setName(value);
 	    setStringEditor(tableColumn);
 	    break;
 	case 1:
-	    // ID
-	    // PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-	    // RCaseProperties.PROPERTY_CONTEXT_ID, value, element);
 	    setStringEditor(tableColumn);
 	    break;
 	case 2:
-	    // Cost
-	    // PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-	    // RCaseProperties.PROPERTY_CONTEXT_COST, value, element);
-	    setStringEditor(tableColumn);
+	    // Responsibility
+	    possibleValues = ModelioTableUtils.getInstance().getResponsibilityPossibleValues();
+	    setComboBoxEditor(tableColumn, possibleValues);
 	    break;
 	case 3:
-	    // Status
-	    possibleValues = ModelioTableUtils.getInstance().getStatusPossibleValues();
-	    setComboBoxEditor(tableColumn, possibleValues);
+	    // Frequency
+	    setStringEditor(tableColumn);
 	    break;
 	case 4:
-	    // Creation Process
-	    possibleValues = ModelioTableUtils.getInstance().getCreationProcessPossibleValues();
+	    // Library Attribute Types
+	    possibleValues = ModelioTableUtils.getInstance().getLibTypesPossibleValues();
 	    setComboBoxEditor(tableColumn, possibleValues);
 	    break;
-	case 5:
-	    // User intervention
-	    possibleValues = ModelioTableUtils.getInstance().getUserInterventionPossibleValues();
-	    setComboBoxEditor(tableColumn, possibleValues);
-	    break;
-	case 6:
-	    // Volatility
-	    possibleValues = ModelioTableUtils.getInstance().getVolatilityPossibleValues();
-	    setComboBoxEditor(tableColumn, possibleValues);
+	default:
 	    break;
 	}
     }
