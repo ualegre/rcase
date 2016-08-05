@@ -51,15 +51,15 @@ public class StringTableModelListener implements TableModelListener {
 	    int column = event.getColumn();
 	    int row = event.getFirstRow();
 	    ContextModelTableData data = this.tablePanel.getTableModel().getData();
-	    ModelElement situationalParameter = data.getDataList().get(column).getSituationalParameter();
+	    ModelElement ContextAttribute = data.getDataList().get(column).getContextAttribute();
 
 	    String tagName = data.getHeaders().get(column).getTagName();
 	    String newValue = data.getDataList().get(row).get(column).toString();
 
 	    if (row == 0 && tagName.equals(RCaseProperties.PROPERTY_NAME)) {
-		updateNameChanges(newValue, situationalParameter);
+		updateNameChanges(newValue, ContextAttribute);
 	    } else {
-		updateTagChanges(tagName, newValue, situationalParameter);
+		updateTagChanges(tagName, newValue, ContextAttribute);
 	    }
 
 	    selectInterval(column, row);

@@ -50,9 +50,9 @@ public class RCaseProperties {
     public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "TagText";
 
     /****************************************************************************
-     * Situational Parameter related properties
+     * Context Attribute related properties
      **************************************************************************/
-    // Situational Parameter
+    // Context Attribute
     public static final String PROPERTY_CONTEXT_ID = "CETagId";
 
     public static final String PROPERTY_CONTEXT_RESPONSIBILITY = "TagResponsibility";

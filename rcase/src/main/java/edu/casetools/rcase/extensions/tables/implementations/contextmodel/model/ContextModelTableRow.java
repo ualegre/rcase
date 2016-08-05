@@ -10,24 +10,24 @@ import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
 public class ContextModelTableRow {
-    ModelElement situationalParameter;
+    ModelElement ContextAttribute;
     ArrayList<Object> values;
 
-    public ContextModelTableRow(MObject situationalParameter) {
-	this.situationalParameter = (ModelElement) situationalParameter;
+    public ContextModelTableRow(MObject ContextAttribute) {
+	this.ContextAttribute = (ModelElement) ContextAttribute;
 	this.update();
     }
 
     private void update() {
 	values = new ArrayList<>();
-	values.add(situationalParameter.getName());
+	values.add(ContextAttribute.getName());
 	// TagId
 	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID,
-		situationalParameter));
+		ContextAttribute));
 
 	// TagCost
 	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY,
-		situationalParameter));
+		ContextAttribute));
 
 	// TagStatus
 	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_FREQUENCY));
@@ -38,7 +38,7 @@ public class ContextModelTableRow {
     }
 
     private String getTag(String propertyName) {
-	String status = situationalParameter.getTagValue(RCasePeerModule.MODULE_NAME, propertyName);
+	String status = ContextAttribute.getTagValue(RCasePeerModule.MODULE_NAME, propertyName);
 	if (status != null)
 	    return status;
 	return "";
@@ -57,7 +57,7 @@ public class ContextModelTableRow {
 	return values.size();
     }
 
-    public ModelElement getSituationalParameter() {
-	return situationalParameter;
+    public ModelElement getContextAttribute() {
+	return ContextAttribute;
     }
 }

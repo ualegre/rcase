@@ -52,7 +52,7 @@ public class RCaseTools {
 
     // Elements
 
-    public static final String TOOL_SITUATIONAL_PARAMETER = "SituationalParameterTool";
+    public static final String TOOL_CONTEXT_ATTRIBUTE = "ContextAttributeTool";
 
     public static final String TOOL_USE_CASE = "UseCaseTool";
 

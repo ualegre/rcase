@@ -50,7 +50,7 @@ public class ContextNoteTool extends NoteTool {
     public boolean acceptElement(IDiagramHandle representation, IDiagramGraphic targetNode) {
 	if (defaultAcceptElement(representation, targetNode))
 	    return ((ModelElement) targetNode.getElement()).isStereotyped(RCasePeerModule.MODULE_NAME,
-		    RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER);
+		    RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
 
 	return false;
     }

@@ -47,7 +47,7 @@ public class IdentifiesTool extends RelationTool {
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
 	ModelElement element = (ModelElement) target.getElement();
 	return (element.getStatus().isModifiable()) && (element.isStereotyped(RCasePeerModule.MODULE_NAME,
-		RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER));
+		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE));
     }
 
     /*

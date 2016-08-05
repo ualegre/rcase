@@ -38,9 +38,9 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
-public class SituationalParameterPropertyPage implements IPropertyContent {
+public class ContextAttributePropertyPage implements IPropertyContent {
 
-    private static final Logger logger = Logger.getLogger(SituationalParameterPropertyPage.class.getName());
+    private static final Logger logger = Logger.getLogger(ContextAttributePropertyPage.class.getName());
 
     // TODO Reduce the complexity of the switch case
     @Override
@@ -82,26 +82,26 @@ public class SituationalParameterPropertyPage implements IPropertyContent {
 
 	// TagId
 	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagId"), string);
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagId"), string);
 
 	// TagResponsibility
 	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility"), property,
-		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Pull"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Push") });
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility"), property,
+		new String[] { I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Pull"),
+			I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Push") });
 
 	// TagFrequency
 	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_FREQUENCY, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagFrequency"), string);
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagFrequency"), string);
 
 	// TagLibType
 	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_LIBTYPE);
-	table.addProperty(I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType"), property,
-		new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.None"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.Sensor"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.Location"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.Broadcast"),
-			I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.Bluetooth") });
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType"), property,
+		new String[] { I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.None"),
+			I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Sensor"),
+			I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Location"),
+			I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Broadcast"),
+			I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Bluetooth") });
 
 	checkDependencies(element, table);
     }

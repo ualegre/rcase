@@ -32,10 +32,10 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class CreateSituationalParameter creates a Situational Parameter from the
+ * The Class CreateContextAttribute creates a Context Attribute from the
  * contextual menu.
  */
-public class CreateSituationalParameter extends CreateElement {
+public class CreateContextAttribute extends CreateElement {
 
     /*
      * (non-Javadoc)
@@ -45,9 +45,9 @@ public class CreateSituationalParameter extends CreateElement {
      */
     @Override
     public void createOwnElement(List<MObject> selectedElements, IModelingSession session) {
-	String name = I18nMessageService.getString("Names.SituationalParameter");
+	String name = I18nMessageService.getString("Names.ContextAttribute");
 	DiagramUtils.getInstance().createClass(selectedElements, session, name,
-		RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER);
+		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
     }
 
     /*

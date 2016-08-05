@@ -173,8 +173,8 @@ public class ModelioTableUtils {
      */
     public Vector<String> getResponsibilityPossibleValues() {
 	String[] values = new String[] {
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Pull"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagResponsibility.Push") };
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Pull"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Push") };
 	Vector<String> result = new Vector<String>(Arrays.asList(values));
 
 	return result;
@@ -182,11 +182,11 @@ public class ModelioTableUtils {
 
     public Vector<String> getLibTypesPossibleValues() {
 	String[] values = new String[] {
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.None"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.Sensor"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.Location"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.Broadcast"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagLibType.Bluetooth") };
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.None"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Sensor"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Location"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Broadcast"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Bluetooth") };
 	Vector<String> result = new Vector<String>(Arrays.asList(values));
 
 	return result;
@@ -357,7 +357,7 @@ public class ModelioTableUtils {
 	return label;
     }
 
-    public ArrayList<MObject> getSituationalParametersFromSituationOfInterest(ModelElement element) {
+    public ArrayList<MObject> getContextAttributesFromSituationOfInterest(ModelElement element) {
 	ArrayList<MObject> list = new ArrayList<>();
 	for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
 	    Dependency dependency = (Dependency) localIterator.next();

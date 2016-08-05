@@ -143,15 +143,15 @@ public class ContextModelTableData implements Serializable {
 
     private void updateScope() {
 	MObject element = ModelioUtils.getInstance().getElementByName(scope);
-	ArrayList<MObject> situationalParameters = ModelioTableUtils.getInstance()
-		.getSituationalParametersFromSituationOfInterest((ModelElement) element);
+	ArrayList<MObject> ContextAttributes = ModelioTableUtils.getInstance()
+		.getContextAttributesFromSituationOfInterest((ModelElement) element);
 	dataList = new ArrayList<>();
-	setSituationalParameters(situationalParameters);
+	setContextAttributes(ContextAttributes);
     }
 
-    private void setSituationalParameters(ArrayList<MObject> situationalParameters) {
-	for (int i = 0; i < situationalParameters.size(); i++) {
-	    ContextModelTableRow row = new ContextModelTableRow(situationalParameters.get(i));
+    private void setContextAttributes(ArrayList<MObject> ContextAttributes) {
+	for (int i = 0; i < ContextAttributes.size(); i++) {
+	    ContextModelTableRow row = new ContextModelTableRow(ContextAttributes.get(i));
 	    dataList.add(row);
 	}
     }
@@ -160,8 +160,8 @@ public class ContextModelTableData implements Serializable {
 	dataList = new ArrayList<>();
 	ArrayList<MObject> list = new ArrayList<>();
 	list = (ArrayList<MObject>) TableUtils.getInstance().getAllElementsStereotypedAs(list,
-		RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER);
-	setSituationalParameters(list);
+		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
+	setContextAttributes(list);
     }
 
     public void update() {

@@ -33,10 +33,10 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class SituationalParameterTool is the tool for creating a contextual
+ * The Class ContextAttributeTool is the tool for creating a contextual
  * entity.
  */
-public class SituationalParameterTool extends ElementTool {
+public class ContextAttributeTool extends ElementTool {
 
     /*
      * (non-Javadoc)
@@ -48,9 +48,9 @@ public class SituationalParameterTool extends ElementTool {
     @Override
     public MObject createOwnElement(IModelingSession session, MObject element) {
 
-	String name = I18nMessageService.getString("Names.SituationalParameter");
+	String name = I18nMessageService.getString("Names.ContextAttribute");
 	return DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
-		RCaseStereotypes.STEREOTYPE_SITUATIONAL_PARAMETER);
+		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
     }
 
     /*
