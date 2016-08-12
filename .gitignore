@@ -1,4 +1,5 @@
-rcase/target/
+rcase/target/*
+!rcase/target/*.jmdac
 rcase/.settings
 rcase/src/test
 /sonar-project.properties

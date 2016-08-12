@@ -6,7 +6,7 @@
 	<!-- definition -->
 	<groupId>edu.casetools</groupId>
 	<artifactId>rcase</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.2</version>
 
 	<name>RCase</name>
 
@@ -210,13 +210,9 @@
 		</pluginManagement>
 	</build>
 	<description>R-CASE (Requirements for Context-Aware Systems Engineering), a module for Modelio (https://www.modelio.org/) that aids the requirements elicitation phase of a Context-Aware System (C-AS).</description>
-	<organization>
-		<url>https://github.com/casetools</url>
-		<name>C-ASE Tools</name>
-	</organization>
-	<url>https://github.com/casetools/rcase</url>
+	<url>https://github.com/ualegre/rcase</url>
 	<scm>
-		<url>https://github.com/casetools</url>
+		<url>https://github.com/ualegre/rcase</url>
 	</scm>
 </project>
 
