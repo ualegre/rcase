@@ -32,7 +32,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelStringTableEditor;
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelTableModel;
-import edu.casetools.rcase.modelio.properties.pages.SituationalParameterPropertyPage;
+import edu.casetools.rcase.modelio.properties.pages.ContextAttributePropertyPage;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 
 // TODO: Auto-generated Javadoc
@@ -48,7 +48,7 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 public class ContextModelTableStringEditorListener implements ActionListener {
     ContextModelStringTableEditor editor;
     ContextModelTableModel model;
-    SituationalParameterPropertyPage propertyManager;
+    ContextAttributePropertyPage propertyManager;
 
     /**
      * Instantiates a new table editor listener.
@@ -62,7 +62,7 @@ public class ContextModelTableStringEditorListener implements ActionListener {
 	    ContextModelTableModel model) {
 	this.model = model;
 	this.editor = tableEditor;
-	propertyManager = new SituationalParameterPropertyPage();
+	propertyManager = new ContextAttributePropertyPage();
     }
 
     /*
@@ -78,7 +78,7 @@ public class ContextModelTableStringEditorListener implements ActionListener {
 	int row = this.editor.getRow();
 	ITransaction transaction = null;
 	IModelingSession session = Modelio.getInstance().getModelingSession();
-	ModelElement element = model.getData().getDataList().get(row).getSituationalParameter();
+	ModelElement element = model.getData().getDataList().get(row).getContextAttribute();
 	try {
 	    transaction = session.createTransaction(
 		    I18nMessageService.getString("Info.Session.Create", new String[] { " Update Property" }));

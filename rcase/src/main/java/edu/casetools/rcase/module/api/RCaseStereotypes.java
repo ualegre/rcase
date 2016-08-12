@@ -52,7 +52,7 @@ public class RCaseStereotypes {
     // Diagram
     public static final String STEREOTYPE_DIAGRAM_CONTEXT = "DiagramStereotype";
     // Elements
-    public static final String STEREOTYPE_SITUATIONAL_PARAMETER = "SituationalParameterStereotype";
+    public static final String STEREOTYPE_CONTEXT_ATTRIBUTE = "ContextAttributeStereotype";
 
     public static final String STEREOTYPE_USECASE = "UseCaseStereotype";
 
@@ -66,6 +66,8 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_DIAGRAM_USECASE = "UseCaseDiagram";
 
     public static final String DEFAULT_STEREOTYPE = STEREOTYPE_COPY;
+
+    public static final String STEREOTYPE_TRIGGERS = "TriggersStereotype";
 
     private RCaseStereotypes() {
 

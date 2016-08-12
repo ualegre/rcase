@@ -35,16 +35,14 @@
                 <Icon path="res/icons/note_16.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="SituationalParameterStereotype" metaclass="Class" is-hidden="false" label="%SituationalParameterStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
+            <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
                 <Icon path="res/icons/context_16.png"/>
                 <Image path="res/icons/context_look_64.png"/>
                 <TagTypes>
-                    <TagType name="CETagId" uid="8790413a-37c1-4222-a99d-1e45a92fa80d" label="%SituationalParameterStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagCost" uid="b3912a7f-cb03-425c-bd4f-eb995a3bb727" label="%SituationalParameterStereotype.properties.cost" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagStatus" uid="9c72e01e-df2f-484a-9191-02a13a69ca26" label="%SituationalParameterStereotype.properties.status" parameter-card="2" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagCreationProcess" uid="ce358a44-c103-4db6-a861-dc33beb96964" label="%SituationalParameterStereotype.properties.creationProcess" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagUserInvolvement" uid="2ab91184-f1af-4179-a182-aa6f9ea7d346" label="%SituationalParameterStereotype.properties.userInvolvement" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagVolatility" uid="46952323-adcb-436d-9950-5b4b9df2f2a0" label="%SituationalParameterStereotype.properties.volatility" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CETagId" uid="8790413a-37c1-4222-a99d-1e45a92fa80d" label="%ContextAttributeStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagResponsibility" uid="9c72e01e-df2f-484a-9191-02a13a69ca26" label="%ContextAttributeStereotype.properties.responsibility" parameter-card="2" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagFrequency" uid="ce358a44-c103-4db6-a861-dc33beb96964" label="%ContextAttributeStereotype.properties.frequency" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagLibType" uid="2ab91184-f1af-4179-a182-aa6f9ea7d346" label="%ContextAttributeStereotype.properties.libType" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
                 <NoteTypes>
                     <NoteType name="ContextNote" label="Note" is-hidden="false" uid="990cb938-bf1d-49e4-af37-4389def2752d"/>
@@ -76,12 +74,20 @@
                 <Image path="res/icons/testcase_64.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="ContextDependencyStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDependencyStereotype.label" uid="51d9ee5e-84f2-4f31-bbfe-5c2ac97d5569">
+            <Stereotype name="TriggersStereotype" metaclass="Dependency" is-hidden="false" label="%TriggersStereotype.label" uid="b62eca7a-05f3-481b-a29d-24899f211a5c">
                 <Icon path="%ContextDependencyTool.image"/>
                 <Image path="%ContextDependencyTool.image"/>
                 <TagTypes/>
                 <NoteTypes>
                     <NoteType name="ContextNote" label="Note" is-hidden="false" uid="2e73c34c-3c7d-483e-b81a-7a8fc47a4bf2"/>
+                </NoteTypes>
+            </Stereotype>
+            <Stereotype name="ContextDependencyStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDependencyStereotype.label" uid="51d9ee5e-84f2-4f31-bbfe-5c2ac97d5569">
+                <Icon path="%ContextDependencyTool.image"/>
+                <Image path="%ContextDependencyTool.image"/>
+                <TagTypes/>
+                <NoteTypes>
+                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="4fd86e3d-7bc6-41f4-b287-4eb1fff24ca8"/>
                 </NoteTypes>
             </Stereotype>
             <Stereotype name="IdentifiesStereotype" metaclass="Dependency" is-hidden="false" label="%IdentifiesStereotype.label" uid="a5f97076-da2d-4f08-b391-9c0a9341e6f0">
@@ -203,10 +209,10 @@
                     <HParameter name="stereotype" value="UseCaseStereotype"/>
                 </Handler>
             </Command>
-            <Command id="CreateSituationalParameter" label="%CreateSituationalParameter.label" tooltip="%CreateSituationalParameter.tooltip" image="%CreateSituationalParameter.image" group="%CreateSituationalParameter.group" modify-model="true" group-image="%CreateSituationalParameter.groupimage">
+            <Command id="CreateContextAttribute" label="%CreateContextAttribute.label" tooltip="%CreateContextAttribute.tooltip" image="%CreateContextAttributer.image" group="%CreateContextAttribute.group" modify-model="true" group-image="%CreateContextAttribute.groupimage">
                 <Scope metaclass="Package"/>
                 <Scope metaclass="Class"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateSituationalParameter"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateContextAttribute"/>
             </Command>
             <Command id="ContextDependencyDiagram" label="%ContextDependencyDiagram.label" tooltip="%ContextDependencyDiagram.tooltip" image="%ContextDependencyDiagram.image" group="%ContextDependencyDiagram.group" modify-model="true" group-image="%ContextDependencyDiagram.groupimage">
                 <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateContextDependencyDiagram"/>
@@ -234,11 +240,11 @@
                     <HParameter name="stereotype" value="NoteStereotype"/>
                 </Handler>
             </Tool>
-            <Tool id="SituationalParameterTool" label="%SituationalParameterTool.label" tooltip="%SituationalParameterTool.tooltip" image="%SituationalParameterTool.image">
+            <Tool id="ContextAttributeTool" label="%ContextAttributeTool.label" tooltip="%ContextAttributeTool.tooltip" image="%ContextAttributeTool.image">
                 <Scope-target metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.elements.SituationalParameterTool">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.elements.ContextAttributeTool">
                     <HParameter name="metaclass" value="Class"/>
-                    <HParameter name="stereotype" value="SituationalParameterStereotype"/>
+                    <HParameter name="stereotype" value="ContextAttributeStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="RequirementTool" label="%RequirementTool.label" tooltip="%RequirementTool.tooltip" image="%RequirementTool.image">
@@ -265,9 +271,17 @@
                     <HParameter name="stereotype" value="TestCaseStereotype"/>
                 </Handler>
             </Tool>
+            <Tool id="TriggersTool" label="%TriggersTool.label" tooltip="%TriggersTool.tooltip" image="%TriggersTool.image">
+                <Scope-source metaclass="ContextAttributeStereotype"/>
+                <Scope-target stereotype="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.TriggersTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="TriggersStereotype"/>
+                </Handler>
+            </Tool>
             <Tool id="ContextDependencyTool" label="%ContextDependencyTool.label" tooltip="%ContextDependencyTool.tooltip" image="%ContextDependencyTool.image">
                 <Scope-source metaclass="ModelTree"/>
-                <Scope-target stereotype="SituationalParameterStereotype"/>
+                <Scope-target stereotype="ContextAttributeStereotype"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.ContextDependencyTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="ContextDependencyStereotype"/>
@@ -282,8 +296,8 @@
                 </Handler>
             </Tool>
             <Tool id="ContextDeriveTool" label="%ContextDeriveTool.label" tooltip="%ContextDeriveTool.tooltip" image="%ContextDeriveTool.image">
-                <Scope-source stereotype="SituationalParameterStereotype"/>
-                <Scope-target stereotype="SituationalParameterStereotype"/>
+                <Scope-source stereotype="ContextAttributeStereotype"/>
+                <Scope-target stereotype="ContextAttributeStereotype"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.DeriveTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="ContextDeriveStereotype"/>
@@ -342,7 +356,7 @@
             <CommandRef refid="CreateRequirement"/>
             <CommandRef refid="CreateSituationOfInterest"/>
             <CommandRef refid="CreateTestCase"/>
-            <CommandRef refid="CreateSituationalParameter"/>
+            <CommandRef refid="CreateContextAttribute"/>
             <CommandRef refid="CreateRequirementsDiagram"/>
             <CommandRef refid="CreateUseCaseDiagram"/>
             <CommandRef refid="ContextDependencyDiagram"/>
@@ -363,7 +377,7 @@
             </DiagramType>
         </Diagrams>
         <Views>
-            <PropertyPage id="RcasePropertyPage" class="edu.casetools.rcase.modelio.properties.RcasePropertyPage" label="%SituationalParameterTool.PropertyPage.label" image="%SituationalParameterTool.PropertyPage.image"/>
+            <PropertyPage id="RcasePropertyPage" class="edu.casetools.rcase.modelio.properties.RcasePropertyPage" label="%ContextAttributeTool.PropertyPage.label" image="%ContextAttributeTool.PropertyPage.image"/>
         </Views>
     </Gui>
     <Dependencies>

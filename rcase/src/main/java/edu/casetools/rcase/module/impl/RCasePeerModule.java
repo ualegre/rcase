@@ -4,6 +4,8 @@ import org.modelio.api.module.context.configuration.IModuleAPIConfiguration;
 import org.modelio.vbasic.version.Version;
 
 import edu.casetools.rcase.module.api.IRCasePeerModule;
+import edu.casetools.rcase.module.api.RCaseResources;
+import edu.casetools.rcase.utils.ResourcesManager;
 
 /**
  * Implementation of Module services <br>
@@ -29,7 +31,14 @@ public class RCasePeerModule implements IRCasePeerModule {
     }
 
     public void init() {
+	ResourcesManager.getInstance().setJMDAC(module);
+	initStyles();
+    }
 
+    private void initStyles() {
+	String[] styles = { RCaseResources.STYLE_CONTEXT_DIAGRAM, RCaseResources.STYLE_REQUIREMENTS_DIAGRAM,
+		RCaseResources.STYLE_USECASE_DIAGRAM };
+	ResourcesManager.getInstance().registerStyles(styles);
     }
 
     /**

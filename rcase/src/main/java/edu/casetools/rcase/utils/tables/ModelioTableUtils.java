@@ -171,41 +171,22 @@ public class ModelioTableUtils {
      *
      * @return the possible values
      */
-    public Vector<String> getStatusPossibleValues() {
-	String[] values = new String[] { I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Raw"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.PreProcessed"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Atomic"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagStatus.Aggregate") };
+    public Vector<String> getResponsibilityPossibleValues() {
+	String[] values = new String[] {
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Pull"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Push") };
 	Vector<String> result = new Vector<String>(Arrays.asList(values));
 
 	return result;
     }
 
-    public Vector<String> getCreationProcessPossibleValues() {
+    public Vector<String> getLibTypesPossibleValues() {
 	String[] values = new String[] {
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess.Sensed"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess.PreProcessed"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagCreationProcess.Derived") };
-	Vector<String> result = new Vector<String>(Arrays.asList(values));
-
-	return result;
-    }
-
-    public Vector<String> getUserInterventionPossibleValues() {
-	String[] values = new String[] {
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Explicit"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Implicit"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagUserInvolvement.Disassociated") };
-	Vector<String> result = new Vector<String>(Arrays.asList(values));
-
-	return result;
-    }
-
-    public Vector<String> getVolatilityPossibleValues() {
-	String[] values = new String[] {
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Static"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Profiled"),
-		I18nMessageService.getString("Ui.SituationalParameter.Property.TagVolatility.Dynamic") };
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.None"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Sensor"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Location"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Broadcast"),
+		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Bluetooth") };
 	Vector<String> result = new Vector<String>(Arrays.asList(values));
 
 	return result;
@@ -376,7 +357,7 @@ public class ModelioTableUtils {
 	return label;
     }
 
-    public ArrayList<MObject> getSituationalParametersFromSituationOfInterest(ModelElement element) {
+    public ArrayList<MObject> getContextAttributesFromSituationOfInterest(ModelElement element) {
 	ArrayList<MObject> list = new ArrayList<>();
 	for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
 	    Dependency dependency = (Dependency) localIterator.next();

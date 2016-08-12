@@ -60,7 +60,7 @@ public class ContextDependencyDiagramCustomizer extends DiagramCustomizer implem
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
-	String[] toolNames = new String[] { RCaseTools.TOOL_SITUATIONAL_PARAMETER,
+	String[] toolNames = new String[] { RCaseTools.TOOL_CONTEXT_ATTRIBUTE,
 		RCaseTools.TOOL_SITUATION_OF_INTEREST };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }

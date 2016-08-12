@@ -1,10 +1,6 @@
-rcase/target/antrun
-rcase/target/archive-tmp
-rcase/target/classes
-rcase/target/lib
-rcase/target/maven-archiver
-rcase/target/test-classes
-rcase/target/*.jar
+rcase/target/*
+!rcase/target/*.jmdac
+rcase/src/main/resources
 rcase/.settings
 rcase/src/test
 /sonar-project.properties

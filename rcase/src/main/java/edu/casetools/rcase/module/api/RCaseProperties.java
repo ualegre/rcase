@@ -50,20 +50,16 @@ public class RCaseProperties {
     public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "TagText";
 
     /****************************************************************************
-     * Situational Parameter related properties
+     * Context Attribute related properties
      **************************************************************************/
-    // Situational Parameter
+    // Context Attribute
     public static final String PROPERTY_CONTEXT_ID = "CETagId";
 
-    public static final String PROPERTY_CONTEXT_COST = "TagCost";
+    public static final String PROPERTY_CONTEXT_RESPONSIBILITY = "TagResponsibility";
 
-    public static final String PROPERTY_CONTEXT_STATUS = "TagStatus";
+    public static final String PROPERTY_CONTEXT_FREQUENCY = "TagFrequency";
 
-    public static final String PROPERTY_CONTEXT_CREATION_PROCESS = "TagCreationProcess";
-
-    public static final String PROPERTY_CONTEXT_USER_INVOLVEMENT = "TagUserInvolvement";
-
-    public static final String PROPERTY_CONTEXT_VOLATILITY = "TagVolatility";
+    public static final String PROPERTY_CONTEXT_LIBTYPE = "TagLibType";
 
     private RCaseProperties() {
 
