@@ -2,12 +2,12 @@
 <Module id="${project.name}" class="edu.casetools.rcase.module.impl.RCaseModule" binaryversion="3.5.00" version="${project.version}" schema-level="2" uid="e72aca77-aa9a-4a78-85d0-f41a487effb9">
     <ClassPath>
         <PathEntry path="lib/${project.artifactId}-${project.version}.jar"/>
-        <PathEntry path="lib/poi-3.14-20160307.jar"/>
-        <PathEntry path="lib/poi-ooxml-schemas-3.14-20160307.jar"/>
-        <PathEntry path="lib/poi-ooxml-3.14-20160307.jar"/>
-        <PathEntry path="lib/xmlbeans-2.6.0.jar"/>
-        <PathEntry path="xml-apis-2.0.2.jar"/>
         <PathEntry path="lib/commons-lang3-3.1.jar"/>
+        <PathEntry path="lib/poi-3.14.jar"/>
+        <PathEntry path="lib/poi-ooxml-3.14.jar"/>
+        <PathEntry path="lib/poi-ooxml-schemas-3.14.jar"/>
+        <PathEntry path="lib/xml-apis-2.0.2.jar"/>
+        <PathEntry path="lib/xmlbeans-2.6.0.jar"/>
     </ClassPath>
     <Profiles>
         <Profile uid="2cdf2f6e-9dd9-4ba7-9ac7-03aaa252b749" id="rcase.entities">
@@ -209,7 +209,7 @@
                     <HParameter name="stereotype" value="UseCaseStereotype"/>
                 </Handler>
             </Command>
-            <Command id="CreateContextAttribute" label="%CreateContextAttribute.label" tooltip="%CreateContextAttribute.tooltip" image="%CreateContextAttributer.image" group="%CreateContextAttribute.group" modify-model="true" group-image="%CreateContextAttribute.groupimage">
+            <Command id="CreateContextAttribute" label="%CreateContextAttribute.label" tooltip="%CreateContextAttribute.tooltip" image="%CreateContextAttribute.image" group="%CreateContextAttribute.group" modify-model="true" group-image="%CreateContextAttribute.groupimage">
                 <Scope metaclass="Package"/>
                 <Scope metaclass="Class"/>
                 <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateContextAttribute"/>
