@@ -37,17 +37,19 @@ public class RCaseProperties {
      * Requirement related properties
      **************************************************************************/
 
-    public static final String PROPERTY_REQUIREMENT_ID = "SOIId";
+    public static final String PROPERTY_REQUIREMENT_ID = "ReqTagId";
 
-    public static final String PROPERTY_REQUIREMENT_DESCRIPTION = "SOIText";
+    public static final String PROPERTY_REQUIREMENT_DESCRIPTION = "TagText";
 
     /****************************************************************************
      * Situation of Interest related properties
      **************************************************************************/
 
-    public static final String PROPERTY_SITUATION_OF_INTEREST_ID = "ReqTagId";
+    public static final String PROPERTY_SITUATION_OF_INTEREST_ID = "SOIId";
 
-    public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "TagText";
+    public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "SOIText";
+
+    public static final String PROPERTY_SITUATION_OF_INTEREST_DETECTION = "SOIDetection";
 
     /****************************************************************************
      * Context Attribute related properties

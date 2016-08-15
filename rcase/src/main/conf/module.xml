@@ -54,6 +54,7 @@
                 <TagTypes>
                     <TagType name="SOIId" uid="28536190-5b6e-4a32-88df-17b2a9feef03" label="%SituationOfInterestStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="SOIText" uid="8b8b9cb6-5186-4fb1-8f14-f39932a05346" label="%SituationOfInterestStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="SOIDetection" uid="4da1ecc2-d106-43c0-9785-0bc8b6020dc7" label="%SituationOfInterestStereotype.properties.detection" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="RequirementStereotype" metaclass="Class" is-hidden="false" label="%RequirementStereotype.label" uid="ab289f43-9605-4853-a2f9-03e665e2754a">
