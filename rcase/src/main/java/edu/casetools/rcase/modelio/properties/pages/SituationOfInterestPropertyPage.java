@@ -51,6 +51,10 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, value, element);
 	    break;
+	case 4:
+	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DETECTION, value, element);
+	    break;
 	default:
 	    break;
 	}
@@ -70,6 +74,10 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, element);
 	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
 
+	property = PropertiesUtils.getInstance()
+		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DETECTION, element);
+	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagDescription"), property);
+
 	checkDependencies(element, table);
 
     }
@@ -77,6 +85,7 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "ContextDependency", element, table);
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES, "Identifies", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
     }
 
     private void checkDependency(String stereotype, String name, ModelElement element, IModulePropertyTable table) {
