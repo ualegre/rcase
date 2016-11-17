@@ -63,9 +63,11 @@ public class SituationOfInterestTool extends ElementTool {
 
 	if ((null != graph) && (!graph.isEmpty()) && (graph.get(0) instanceof IDiagramNode)) {
 	    IDiagramNode dnode = (IDiagramNode) graph.get(0);
-	    dnode.setProperty("FILLCOLOR", "228,228,228");
+	    dnode.setProperty("FILLCOLOR", "231,231,231");
+	    dnode.setProperty("REPMODE", "SIMPLE");
 	    dnode.setProperty("FILLMODE", "SOLID");
-	    dnode.setProperty("LINECOLOR", "0,0,0");
+	    dnode.setProperty("LINECOLOR", "45,57,86");
+	    dnode.setProperty("TEXTCOLOR", "45,57,86");
 	    dnode.setProperty("INTAUTOUNMASK", "TRUE");
 	    dnode.setProperty("INNERUNMASKFILTER", "ALL");
 	}
