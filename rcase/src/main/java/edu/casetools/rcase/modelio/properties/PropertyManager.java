@@ -22,17 +22,17 @@ package edu.casetools.rcase.modelio.properties;
 
 import java.util.List;
 
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.metamodel.uml.statik.Class;
 
+import edu.casetools.rcase.modelio.properties.pages.ContextAttributePropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.RequirementPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.SituationOfInterestPropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.ContextAttributePropertyPage;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -97,7 +97,7 @@ public class PropertyManager {
 
     private void init(ModelElement element) {
 	this.propertyPage = null;
-	extensions = Modelio.getInstance().getModelingSession().getMetamodelExtensions();
+	extensions = RCaseModule.getInstance().getModuleContext().getModelingSession().getMetamodelExtensions();
 	sterList = PropertiesUtils.getInstance().computePropertyList(element);
     }
 
@@ -110,20 +110,21 @@ public class PropertyManager {
 
     private void getPropertyPages(IMetamodelExtensions extensions, Stereotype ster) {
 
-	if (ster.equals(
-		extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE,
-			Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+	if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE, RCaseModule.getInstance().getModuleContext()
+			.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
 	    this.propertyPage = new ContextAttributePropertyPage();
 	}
 
 	if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT,
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+			.getMClass(Class.class)))) {
 	    this.propertyPage = new RequirementPropertyPage();
 	}
 
-	if (ster.equals(
-		extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST,
-			Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+	if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+		RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST, RCaseModule.getInstance().getModuleContext()
+			.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
 	    this.propertyPage = new SituationOfInterestPropertyPage();
 	}
     }

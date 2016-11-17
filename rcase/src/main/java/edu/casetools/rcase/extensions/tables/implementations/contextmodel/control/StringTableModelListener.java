@@ -23,7 +23,6 @@ package edu.casetools.rcase.extensions.tables.implementations.contextmodel.contr
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
@@ -33,6 +32,7 @@ import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.view.ContextModelTablePanel;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -68,7 +68,7 @@ public class StringTableModelListener implements TableModelListener {
     }
 
     private void updateNameChanges(String value, ModelElement element) {
-	IModelingSession session = Modelio.getInstance().getModelingSession();
+	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
 	ITransaction transaction = session.createTransaction(
 		I18nMessageService.getString("Info.Session.Create", new String[] { " Update Name" }));
 	element.setName(value);
@@ -78,7 +78,7 @@ public class StringTableModelListener implements TableModelListener {
 
     private void updateTagChanges(String tagName, String value, MObject element) {
 	ITransaction transaction = null;
-	IModelingSession session = Modelio.getInstance().getModelingSession();
+	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
 	try {
 	    transaction = session.createTransaction(
 		    I18nMessageService.getString("Info.Session.Create", new String[] { "Update Property" }));

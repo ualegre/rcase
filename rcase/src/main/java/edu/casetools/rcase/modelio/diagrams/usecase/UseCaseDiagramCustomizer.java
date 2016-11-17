@@ -26,7 +26,6 @@ import java.util.Map;
 
 import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteRoot;
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.diagram.IDiagramCustomizer;
 import org.modelio.api.modelio.diagram.tools.PaletteEntry;
 import org.modelio.api.module.IModule;
@@ -34,6 +33,7 @@ import org.modelio.api.module.IModule;
 import edu.casetools.rcase.modelio.diagrams.DiagramCustomizer;
 import edu.casetools.rcase.module.api.RCaseTools;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 
 /**
  * The Class UseCaseDiagramCustomizer customizes the palette of the Use Case
@@ -56,8 +56,8 @@ public class UseCaseDiagramCustomizer extends DiagramCustomizer implements IDiag
 		PaletteDrawer currentDrawer = (PaletteDrawer) children;
 		String drawerLabel = currentDrawer.getLabel();
 		if (drawerLabel.equals(I18nMessageService.getString("UseCasePaletteGroup.Nodes"))) {
-		    currentDrawer.add(3,
-			    Modelio.getInstance().getDiagramService().getRegisteredTool(RCaseTools.TOOL_USECASE));
+		    currentDrawer.add(3, RCaseModule.getInstance().getModuleContext().getModelioServices()
+			    .getDiagramService().getRegisteredTool(RCaseTools.TOOL_USECASE));
 		    currentDrawer.getChildren().remove(4);
 		}
 	    }

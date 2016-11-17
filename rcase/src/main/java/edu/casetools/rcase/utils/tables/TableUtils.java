@@ -26,7 +26,6 @@ import java.util.List;
 
 import javax.swing.ListModel;
 
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.metamodel.uml.behavior.usecaseModel.UseCase;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
@@ -36,6 +35,7 @@ import org.modelio.metamodel.uml.statik.Class;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.api.RCaseStereotypes;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.ModelioUtils;
 
@@ -149,7 +149,7 @@ public class TableUtils {
      * @return the all dependencies
      */
     public Collection<Dependency> getAllDependencies() {
-	return Modelio.getInstance().getModelingSession().findByClass(Dependency.class);
+	return RCaseModule.getInstance().getModuleContext().getModelingSession().findByClass(Dependency.class);
     }
 
     private ArrayList<Stereotype> getStereotypesFromDependency(ArrayList<Stereotype> list, Dependency dependency) {
@@ -170,9 +170,11 @@ public class TableUtils {
      * @return the dependency stereotpye from name
      */
     public Stereotype getDependencyStereotpyeFromName(String stereotypeName) {
-	IMetamodelExtensions stereotypes = Modelio.getInstance().getModelingSession().getMetamodelExtensions();
+	IMetamodelExtensions stereotypes = RCaseModule.getInstance().getModuleContext().getModelingSession()
+		.getMetamodelExtensions();
 	return stereotypes.getStereotype(RCasePeerModule.MODULE_NAME, stereotypeName,
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Dependency.class));
+		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+			.getMClass(Dependency.class));
 
     }
 
@@ -184,19 +186,22 @@ public class TableUtils {
      * @return the stereotypes from names
      */
     public List<Stereotype> getStereotypesFromNames(ListModel<String> stereotypeNames) {
-	IMetamodelExtensions stereotypes = Modelio.getInstance().getModelingSession().getMetamodelExtensions();
+	IMetamodelExtensions stereotypes = RCaseModule.getInstance().getModuleContext().getModelingSession()
+		.getMetamodelExtensions();
 	Stereotype stereotype;
 	ArrayList<Stereotype> xStereotypes = new ArrayList<>();
 	for (int i = 0; i < stereotypeNames.getSize(); i++) {
 	    stereotype = stereotypes.getStereotype(RCasePeerModule.MODULE_NAME, stereotypeNames.getElementAt(i),
-		    Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Class.class));
+		    RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService()
+			    .getMetamodel().getMClass(Class.class));
 	    if (null != stereotype)
 		xStereotypes.add(stereotype);
 	}
 
 	for (int i = 0; i < stereotypeNames.getSize(); i++) {
 	    stereotype = stereotypes.getStereotype(RCasePeerModule.MODULE_NAME, stereotypeNames.getElementAt(i),
-		    Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(UseCase.class));
+		    RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService()
+			    .getMetamodel().getMClass(UseCase.class));
 	    if (null != stereotype)
 		xStereotypes.add(stereotype);
 	}

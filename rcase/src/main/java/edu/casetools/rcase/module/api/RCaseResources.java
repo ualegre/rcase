@@ -39,9 +39,11 @@ public class RCaseResources {
      **************************************************************************/
 
     public static final String ICON_DEPENDENCY_TABLE = "res/icons/matrix_16.png";
-    public static final String ICON_CONTAINER_TABLE = "res/icons/matrix_16.png";
+    public static final String ICON_CONTAINER_TABLE = ICON_DEPENDENCY_TABLE;
 
     public static final String ICON_CONTEXT_MODEL_TABLE = "res/icons/matrix_16.png";
+
+    public static final String ICON_MODULE = "/res/icons/module_16.png";
 
     private RCaseResources() {
 

@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.diagrams.StaticDiagram;
@@ -40,6 +39,7 @@ import org.modelio.metamodel.uml.statik.NameSpace;
 import org.modelio.metamodel.uml.statik.Package;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 
 // TODO: Auto-generated Javadoc
@@ -114,8 +114,8 @@ public class DiagramUtils {
      */
     public Class createClass(List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
-	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName,
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Class.class));
+	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, RCaseModule.getInstance()
+		.getModuleContext().getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class));
 	for (MObject element : selectedElements) {
 	    Class createdElement = session.getModel().createClass(name, (NameSpace) element, stereotype);
 	    DiagramUtils.getInstance().setFreeName(createdElement, name);
@@ -139,8 +139,8 @@ public class DiagramUtils {
      */
     public UseCase createUseCase(List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
-	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName,
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(UseCase.class));
+	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, RCaseModule.getInstance()
+		.getModuleContext().getModelioServices().getMetamodelService().getMetamodel().getMClass(UseCase.class));
 
 	for (MObject element : selectedElements) {
 	    UseCase createdElement = session.getModel().createUseCase(name, (NameSpace) element, stereotype);
@@ -165,8 +165,8 @@ public class DiagramUtils {
      */
     public Package createPackage(List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
-	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName,
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Package.class));
+	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, RCaseModule.getInstance()
+		.getModuleContext().getModelioServices().getMetamodelService().getMetamodel().getMClass(Package.class));
 
 	for (MObject element : selectedElements) {
 	    Package createdElement = session.getModel().createPackage(name, (NameSpace) element, stereotype);
@@ -192,7 +192,8 @@ public class DiagramUtils {
     public StaticDiagram createDiagram(List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
 	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName,
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(StaticDiagram.class));
+		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+			.getMClass(StaticDiagram.class));
 	for (MObject element : selectedElements) {
 	    StaticDiagram diagram;
 	    diagram = session.getModel().createStaticDiagram(name, (ModelElement) element, stereotype);
@@ -218,7 +219,8 @@ public class DiagramUtils {
     public UseCaseDiagram createUseCaseDiagram(List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
 	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName,
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(UseCaseDiagram.class));
+		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+			.getMClass(UseCaseDiagram.class));
 	for (MObject element : selectedElements) {
 	    UseCaseDiagram diagram;
 	    diagram = session.getModel().createUseCaseDiagram(name, (ModelElement) element, stereotype);
@@ -259,8 +261,8 @@ public class DiagramUtils {
      */
     public Dependency createDependency(ModelElement origin, ModelElement target, String stereotype) {
 	try {
-	    Dependency dependency = Modelio.getInstance().getModelingSession().getModel().createDependency(origin,
-		    target, RCasePeerModule.MODULE_NAME, stereotype);
+	    Dependency dependency = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel()
+		    .createDependency(origin, target, RCasePeerModule.MODULE_NAME, stereotype);
 	    dependency.setName("");
 	    return dependency;
 	} catch (ExtensionNotFoundException e) {

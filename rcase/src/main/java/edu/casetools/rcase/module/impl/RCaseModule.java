@@ -5,6 +5,8 @@ import org.modelio.api.module.context.IModuleContext;
 import org.modelio.api.module.lifecycle.IModuleLifeCycleHandler;
 import org.modelio.api.module.parameter.IParameterEditionModel;
 
+import edu.casetools.rcase.module.api.RCaseResources;
+
 /**
  * Implementation of the IModule interface. <br>
  * All Modelio java modules should inherit from this class.
@@ -18,7 +20,25 @@ public class RCaseModule extends AbstractJavaModule {
 
     private static RCaseModule instance;
 
-    public RCaseModule getInstance() {
+    /**
+     * Builds a new module.
+     * <p>
+     * <p>
+     * This constructor must not be called by the user. It is automatically
+     * invoked by Modelio when the module is installed, selected or started.
+     * 
+     * @param moduleContext
+     *            context of the module, needed to access Modelio features.
+     */
+    public RCaseModule(IModuleContext moduleContext) {
+	super(moduleContext);
+	this.session = new RCaseSession(this);
+	this.peerModule = new RCasePeerModule(this, moduleContext.getPeerConfiguration());
+	this.peerModule.init();
+	instance = this;
+    }
+
+    public static RCaseModule getInstance() {
 	return instance;
     }
 
@@ -86,24 +106,6 @@ public class RCaseModule extends AbstractJavaModule {
     }
 
     /**
-     * Builds a new module.
-     * <p>
-     * <p>
-     * This constructor must not be called by the user. It is automatically
-     * invoked by Modelio when the module is installed, selected or started.
-     * 
-     * @param moduleContext
-     *            context of the module, needed to access Modelio features.
-     */
-    public RCaseModule(IModuleContext moduleContext) {
-	super(moduleContext);
-	this.session = new RCaseSession(this);
-	this.peerModule = new RCasePeerModule(this, moduleContext.getPeerConfiguration());
-	this.peerModule.init();
-	instance = this;
-    }
-
-    /**
      * @see org.modelio.api.module.AbstractJavaModule#getParametersEditionModel()
      */
     @Override
@@ -116,7 +118,7 @@ public class RCaseModule extends AbstractJavaModule {
 
     @Override
     public String getModuleImagePath() {
-	return "/res/icons/module_16.png";
+	return RCaseResources.ICON_MODULE;
     }
 
 }

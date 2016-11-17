@@ -24,12 +24,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.modelio.api.modelio.Modelio;
 import org.modelio.metamodel.uml.behavior.usecaseModel.UseCase;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.metamodel.uml.statik.Class;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.tables.ModelioTableUtils;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
@@ -67,8 +67,10 @@ public class DependencyTableDataHandler implements Serializable {
 
     private ArrayList<Stereotype> getAllProjectElementsStereotypes() {
 	ArrayList<Stereotype> elements = new ArrayList<>();
-	Collection<Class> classes = Modelio.getInstance().getModelingSession().findByClass(Class.class);
-	Collection<UseCase> useCases = Modelio.getInstance().getModelingSession().findByClass(UseCase.class);
+	Collection<Class> classes = RCaseModule.getInstance().getModuleContext().getModelingSession()
+		.findByClass(Class.class);
+	Collection<UseCase> useCases = RCaseModule.getInstance().getModuleContext().getModelingSession()
+		.findByClass(UseCase.class);
 
 	for (Class clas : classes) {
 	    elements = getStereotypesFromClasses(elements, clas);

@@ -25,7 +25,6 @@ import java.util.logging.Logger;
 
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.diagram.IDiagramLink;
@@ -40,6 +39,7 @@ import org.modelio.metamodel.uml.infrastructure.Note;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 
 /**
  * The Class NoteTool has the common methods to create the tool of a note.
@@ -78,7 +78,7 @@ public abstract class NoteTool extends DefaultAttachedBoxTool {
     @Override
     public void actionPerformed(IDiagramHandle paramIDiagramHandle, IDiagramGraphic paramIDiagramGraphic,
 	    IDiagramLink.LinkRouterKind paramLinkRouterKind, ILinkPath paramILinkPath, Point paramPoint) {
-	IModelingSession session = Modelio.getInstance().getModelingSession();
+	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
 	IUmlModel model = session.getModel();
 	ITransaction transaction = session
 		.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "" }));

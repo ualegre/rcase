@@ -26,7 +26,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.diagram.IDiagramNode;
@@ -37,6 +36,7 @@ import org.modelio.metamodel.diagrams.AbstractDiagram;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 
 /**
  * The Class ElementTool has the common methods to create the tool of a diagram
@@ -131,7 +131,7 @@ public abstract class ElementTool extends DefaultBoxTool {
     public ITransaction createElement(IDiagramHandle representation, MObject element, IDiagramGraphic target, // NOSONAR
 	    Rectangle rect) {
 
-	IModelingSession session = Modelio.getInstance().getModelingSession();
+	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
 
 	ITransaction transaction = session
 		.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "" }));

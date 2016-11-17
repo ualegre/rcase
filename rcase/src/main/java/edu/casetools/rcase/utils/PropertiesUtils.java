@@ -27,7 +27,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.eclipse.emf.common.util.EList;
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.factory.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
@@ -39,6 +38,7 @@ import org.modelio.metamodel.uml.infrastructure.TaggedValue;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.api.RCaseProperties;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 
 // TODO: Auto-generated Javadoc
@@ -75,7 +75,7 @@ public class PropertiesUtils {
      * @return true, if successful
      */
     public boolean accept(MObject selectedElement) {
-	IUmlModel model = Modelio.getInstance().getModelingSession().getModel();
+	IUmlModel model = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel();
 
 	for (MObject libRoot : model.getLibraryRoots()) {
 	    if (selectedElement.equals(libRoot))
@@ -185,7 +185,7 @@ public class PropertiesUtils {
 
 	TaggedValue tag = null;
 	EList<TaggedValue> tagElements = element.getTag();
-	IUmlModel model = Modelio.getInstance().getModelingSession().getModel();
+	IUmlModel model = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel();
 
 	if (!tagElements.isEmpty()) {
 	    for (TaggedValue currentTag : tagElements) {
@@ -257,7 +257,7 @@ public class PropertiesUtils {
 
     private void createTaggedValue(String modulename, String name, String values, ModelElement element) {
 	try {
-	    TaggedValue taggedValue = Modelio.getInstance().getModelingSession().getModel()
+	    TaggedValue taggedValue = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel()
 		    .createTaggedValue(modulename, name, element);
 	    element.getTag().add(taggedValue);
 	    if (!taggedValue.getDefinition().getParamNumber().equals(ZERO))
@@ -279,7 +279,7 @@ public class PropertiesUtils {
      */
     public void setTaggedValue(String name, ModelElement elt, String value) {
 	EList<TaggedValue> tagElements = elt.getTag();
-	IUmlModel model = Modelio.getInstance().getModelingSession().getModel();
+	IUmlModel model = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel();
 	if (!tagElements.isEmpty()) {
 	    for (TaggedValue tag : tagElements) {
 		String tagname = tag.getDefinition().getName();
@@ -330,7 +330,7 @@ public class PropertiesUtils {
     public void setTaggedValue(TaggedValue foundTagValue, ModelElement elt, String value, ModelElement related,
 	    String modulelink, String stereotypeLink) {
 	TagParameter firstElt;
-	IUmlModel model = Modelio.getInstance().getModelingSession().getModel();
+	IUmlModel model = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel();
 	ArrayList<Dependency> linksList = new ArrayList<>(elt.getDependsOnDependency());
 	for (Dependency existingLinks : linksList) {
 	    if (existingLinks.isStereotyped(modulelink, stereotypeLink)) {

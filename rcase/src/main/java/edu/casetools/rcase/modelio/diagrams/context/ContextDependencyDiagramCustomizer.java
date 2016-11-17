@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.gef.palette.PaletteRoot;
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.diagram.IDiagramCustomizer;
 import org.modelio.api.modelio.diagram.IDiagramService;
 import org.modelio.api.modelio.diagram.tools.PaletteEntry;
@@ -33,6 +32,7 @@ import org.modelio.api.module.IModule;
 import edu.casetools.rcase.modelio.diagrams.DiagramCustomizer;
 import edu.casetools.rcase.module.api.RCaseTools;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 
 /**
  * The Class ContextDependencyDiagramCustomizer customizes the palette of the
@@ -49,7 +49,8 @@ public class ContextDependencyDiagramCustomizer extends DiagramCustomizer implem
      */
     @Override
     public void fillPalette(PaletteRoot paletteRoot) {
-	IDiagramService toolRegistry = Modelio.getInstance().getDiagramService();
+	IDiagramService toolRegistry = RCaseModule.getInstance().getModuleContext().getModelioServices()
+		.getDiagramService();
 
 	paletteRoot.add(createBasics());
 	paletteRoot.add(createNodesGroup(toolRegistry));

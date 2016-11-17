@@ -24,13 +24,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.api.RCaseStereotypes;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
@@ -73,7 +73,8 @@ public class DependencyTableData implements Serializable {
      * Instantiates a new dependency table data.
      */
     public DependencyTableData() {
-	IMetamodelExtensions extensions = Modelio.getInstance().getModelingSession().getMetamodelExtensions();
+	IMetamodelExtensions extensions = RCaseModule.getInstance().getModuleContext().getModelingSession()
+		.getMetamodelExtensions();
 
 	xStereotypes = initDefaultStereotypes(extensions);
 	yStereotypes = initDefaultStereotypes(extensions);
@@ -88,14 +89,15 @@ public class DependencyTableData implements Serializable {
     private ArrayList<Stereotype> initDefaultStereotypes(IMetamodelExtensions extensions) {
 	ArrayList<Stereotype> stereotypes = new ArrayList<>();
 	stereotypes.add(extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT,
-		Modelio.getInstance().getMetamodelService().getMetamodel()
+		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
 			.getMClass(org.modelio.metamodel.uml.statik.Class.class)));
 	return stereotypes;
     }
 
     private Stereotype initDefaultLinkStereotype(IMetamodelExtensions extensions) {
 	return extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.DEFAULT_STEREOTYPE,
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Dependency.class));
+		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+			.getMClass(Dependency.class));
     }
 
     private ArrayList<Stereotype> initDefaultStereotypeFilter() {

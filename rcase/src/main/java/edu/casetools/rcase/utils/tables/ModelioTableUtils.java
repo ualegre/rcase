@@ -28,7 +28,6 @@ import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
@@ -46,6 +45,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableData;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.ModelioUtils;
 import edu.casetools.rcase.utils.ResourcesManager;
@@ -113,7 +113,7 @@ public class ModelioTableUtils {
      *            the requirement
      */
     public void removeRequirement(MObject requirement) {
-	IModelingSession session = Modelio.getInstance().getModelingSession();
+	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
 	ITransaction transaction = session
 		.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "" }));
 	requirement.delete();
@@ -181,8 +181,7 @@ public class ModelioTableUtils {
     }
 
     public Vector<String> getLibTypesPossibleValues() {
-	String[] values = new String[] {
-		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.None"),
+	String[] values = new String[] { I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.None"),
 		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Sensor"),
 		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Location"),
 		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Broadcast"),
@@ -205,7 +204,7 @@ public class ModelioTableUtils {
      *            the value
      */
     public void setVal(Object col, Object row, Object depth, Object value) {
-	IModelingSession session = Modelio.getInstance().getModelingSession();
+	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
 	IUmlModel model = session.getModel();
 	ModelElement source = (ModelElement) row;
 	ModelElement target = (ModelElement) col;
@@ -291,10 +290,12 @@ public class ModelioTableUtils {
 
     private void createConnectorValue(IUmlModel model, ModelElement target, ModelElement source, Stereotype ster,
 	    Object value) {
-	IMetamodelExtensions extensions = Modelio.getInstance().getModelingSession().getMetamodelExtensions();
+	IMetamodelExtensions extensions = RCaseModule.getInstance().getModuleContext().getModelingSession()
+		.getMetamodelExtensions();
 	Connector co = model.createConnector((BindableInstance) source, (BindableInstance) target, "");
 	Stereotype coster = extensions.getStereotype(ster.getModule().getName(), ster.getName(),
-		Modelio.getInstance().getMetamodelService().getMetamodel().getMClass(Connector.class));
+		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+			.getMClass(Connector.class));
 	setNavigableLinks(ster, value, co, coster);
     }
 
