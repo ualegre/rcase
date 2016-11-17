@@ -4,7 +4,7 @@ R-CASE (Requirements for Context-Aware Systems Engineering), a module for Modeli
 that aids the requirements elicitation phase of a Context-Aware System (C-AS).
  
 ## Download
-* [Version 0.2.4](https://github.com/casetools/rcase)
+* [Latest Version](https://github.com/casetools/rcase)
 * Other Versions
 
 ### Third party libraries and icons
@@ -13,9 +13,6 @@ that aids the requirements elicitation phase of a Context-Aware System (C-AS).
 
 ## License 
 * see [LICENSE](https://github.com/casetools/rcase/blob/master/LICENSE.md) file
-
-## Version 
-* Version 0.2.4
 
 ## How-to use this code
 * see [INSTRUCTIONS](https://github.com/casetools/rcase/blob/master/INSTRUCTIONS.md) file
