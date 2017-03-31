@@ -34,12 +34,6 @@
             <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
                 <Icon path="res/icons/context_16.png"/>
                 <Image path="res/icons/context_look_64.png"/>
-                <TagTypes>
-                    <TagType name="CETagId" uid="8790413a-37c1-4222-a99d-1e45a92fa80d" label="%ContextAttributeStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagResponsibility" uid="9c72e01e-df2f-484a-9191-02a13a69ca26" label="%ContextAttributeStereotype.properties.responsibility" parameter-card="2" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagFrequency" uid="ce358a44-c103-4db6-a861-dc33beb96964" label="%ContextAttributeStereotype.properties.frequency" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagLibType" uid="2ab91184-f1af-4179-a182-aa6f9ea7d346" label="%ContextAttributeStereotype.properties.libType" parameter-card="1" is-hidden="false" is-signed="false"/>
-                </TagTypes>
             </Stereotype>
             <Stereotype name="SituationOfInterestStereotype" metaclass="Class" is-hidden="false" label="%SituationOfInterestStereotype.label" uid="7454269e-aa2f-4534-8d2a-4224ccca5577">
                 <Icon path="res/icons/situation_16.png"/>
@@ -180,7 +174,7 @@
                 <Scope metaclass="Class"/>
                 <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateContextAttribute"/>
             </Command>
-            <Command id="ContextDependencyDiagram" label="%ContextDependencyDiagram.label" tooltip="%ContextDependencyDiagram.tooltip" image="%ContextDependencyDiagram.image" group="%ContextDependencyDiagram.group" modify-model="true" group-image="%ContextDependencyDiagram.groupimage">
+            <Command id="CreateContextDependencyDiagram" label="%CreateContextDependencyDiagram.label" tooltip="%CreateContextDependencyDiagram.tooltip" image="%CreateContextDependencyDiagram.image" group="%CreateContextDependencyDiagram.group" modify-model="true" group-image="%CreateContextDependencyDiagram.groupimage">
                 <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateContextDependencyDiagram"/>
             </Command>
             <Command id="CreateRequirementsDiagram" label="%CreateRequirementsDiagram.label" tooltip="%CreateRequirementsDiagram.tooltip" image="%CreateRequirementsDiagram.image" group="%CreateRequirementsDiagram.group" modify-model="true" group-image="%CreateRequirementsDiagram.groupimage">
@@ -318,7 +312,7 @@
             <CommandRef refid="CreateContextAttribute"/>
             <CommandRef refid="CreateRequirementsDiagram"/>
             <CommandRef refid="CreateUseCaseDiagram"/>
-            <CommandRef refid="ContextDependencyDiagram"/>
+            <CommandRef refid="CreateContextDependencyDiagram"/>
             <CommandRef refid="OpenContainerTable"/>
             <CommandRef refid="OpenDependencyTable"/>
             <CommandRef refid="OpenContextModelTable"/>
