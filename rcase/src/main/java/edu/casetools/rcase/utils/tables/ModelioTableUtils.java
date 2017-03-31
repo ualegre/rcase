@@ -98,10 +98,10 @@ public class ModelioTableUtils {
 	    String result) {
 
 	for (Dependency dp : source.getDependsOnDependency()) {
-	    result = getDependsOn(dp, target, data, result, "↗");
+	    result = getDependsOn(dp, target, data, result, "->");
 	}
 	for (Dependency invdp : target.getDependsOnDependency()) {
-	    result = getDependsOn(invdp, source, data, result, "↙");
+	    result = getDependsOn(invdp, source, data, result, "<-");
 	}
 	return result;
     }
@@ -141,10 +141,10 @@ public class ModelioTableUtils {
 		    data.getLinkStereotype().getName()))) {
 		if (target.equals(end.getOppositeOwner())) {
 		    if (end.isNavigable()) {
-			result = result + "↗";
+			result = result + "->";
 		    }
 		    if (end.getOpposite().isNavigable()) {
-			result = result + "↙";
+			result = result + "<-";
 		    }
 		}
 	    }
@@ -159,9 +159,9 @@ public class ModelioTableUtils {
      */
     public Vector<String> getPossibleValues() {
 	Vector<String> result = new Vector<String>();
-	result.add("↗");
-	result.add("↙");
-	result.add("↗↙");
+	result.add("->");
+	result.add("<-");
+	result.add("<->");
 	result.add("");
 	return result;
     }
@@ -228,9 +228,9 @@ public class ModelioTableUtils {
 	Dependency link = null;
 
 	link = createLink(target, source, ster, link);
-	createDependency(model, target, source, ster, value, link, "↗");
+	createDependency(model, target, source, ster, value, link, "->");
 	link = createInvLink(target, source, ster);
-	createDependency(model, source, target, ster, value, link, "↙");
+	createDependency(model, source, target, ster, value, link, "<-");
     }
 
     private Dependency createInvLink(ModelElement target, ModelElement source, Stereotype ster) {
@@ -259,13 +259,13 @@ public class ModelioTableUtils {
 
     private void createDependency(IUmlModel model, ModelElement target, ModelElement source, Stereotype ster,
 	    Object value, Dependency link, String relation) {
-	if ((null == link) && ((value.equals(relation)) || (value.equals("↗↙"))))
+	if ((null == link) && ((value.equals(relation)) || (value.equals("<->"))))
 	    try {
 		model.createDependency(source, target, ster.getModule().getName(), ster.getName());
 	    } catch (ExtensionNotFoundException e) {
 		e.printStackTrace();
 	    }
-	else if ((null != link) && (!value.equals(relation)) && (!value.equals("↗↙"))) {
+	else if ((null != link) && (!value.equals(relation)) && (!value.equals("<->"))) {
 	    link.delete();
 	}
     }
@@ -275,15 +275,15 @@ public class ModelioTableUtils {
 	ConnectorEnd fend = null;
 	fend = createConnectorEnd(target, source, ster, fend);
 
-	if ((null == fend) && ((value.equals("↗")) || (value.equals("↗↙")) || (value.equals("↙")))) {
+	if ((null == fend) && ((value.equals("->")) || (value.equals("<->")) || (value.equals("<-")))) {
 	    createConnectorValue(model, target, source, ster, value);
 	} else if ((null != fend) && (value.equals(""))) {
 	    fend.getOpposite().delete();
 	    fend.getLink().delete();
 	    fend.delete();
-	} else if ((fend.isNavigable()) && (!value.equals("↗"))) {
+	} else if ((fend.isNavigable()) && (!value.equals("->"))) {
 	    fend.setNavigable(false);
-	} else if ((fend.getOpposite().isNavigable()) && (!value.equals("↙"))) {
+	} else if ((fend.getOpposite().isNavigable()) && (!value.equals("<-"))) {
 	    fend.getOpposite().setNavigable(false);
 	}
     }
@@ -319,17 +319,17 @@ public class ModelioTableUtils {
 	    co.getExtension().add(coster);
 	}
 
-	if ((value.equals("↗")) || (value.equals("↗↙"))) {
+	if ((value.equals("->")) || (value.equals("<->"))) {
 	    co.getLinkEnd().get(0).setNavigable(true);
 	    co.getLinkEnd().get(1).setNavigable(false);
 	}
 
-	if ((value.equals("↙")) || (value.equals("↗↙"))) {
+	if ((value.equals("<-")) || (value.equals("<->"))) {
 	    co.getLinkEnd().get(0).setNavigable(false);
 	    co.getLinkEnd().get(1).setNavigable(true);
 	}
 
-	if (value.equals("↗↙")) {
+	if (value.equals("<->")) {
 	    co.getLinkEnd().get(0).setNavigable(true);
 	    co.getLinkEnd().get(1).setNavigable(true);
 	}
