@@ -11,7 +11,7 @@
     </ClassPath>
     <Profiles>
         <Profile uid="2cdf2f6e-9dd9-4ba7-9ac7-03aaa252b749" id="rcase.entities">
-            <Stereotype name="DiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%DiagramStereotype.label" uid="dffece0a-4ca4-41d9-ba2d-679df37dfb27">
+            <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="dffece0a-4ca4-41d9-ba2d-679df37dfb27">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
                 <TagTypes/>
@@ -328,7 +328,7 @@
             <CommandRef refid="OpenContextModelTable"/>
         </ContextualMenu>
         <Diagrams>
-            <DiagramType base-diagram="StaticDiagram" stereotype="DiagramStereotype">
+            <DiagramType base-diagram="StaticDiagram" stereotype="ContextDiagramStereotype">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.ContextDependencyDiagramCustomizer"/>
             </DiagramType>
             <DiagramType base-diagram="UseCaseDiagram" stereotype="UseCaseDiagram">

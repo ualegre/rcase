@@ -50,7 +50,7 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_REFINE = "RefineStereotype";
 
     // Diagram
-    public static final String STEREOTYPE_DIAGRAM_CONTEXT = "DiagramStereotype";
+    public static final String STEREOTYPE_DIAGRAM_CONTEXT = "ContextDiagramStereotype";
     // Elements
     public static final String STEREOTYPE_CONTEXT_ATTRIBUTE = "ContextAttributeStereotype";
 
