@@ -34,6 +34,10 @@
             <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
                 <Icon path="res/icons/context_16.png"/>
                 <Image path="res/icons/context_look_64.png"/>
+                <TagTypes>
+                    <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextDependencyStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagText" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="$ContextDependencyStereotype.properties.text" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
             </Stereotype>
             <Stereotype name="SituationOfInterestStereotype" metaclass="Class" is-hidden="false" label="%SituationOfInterestStereotype.label" uid="7454269e-aa2f-4534-8d2a-4224ccca5577">
                 <Icon path="res/icons/situation_16.png"/>

@@ -41,11 +41,11 @@ public class RequirementPropertyPage implements IPropertyContent {
 
 	switch (row) {
 	case 1:
-	    element.setName(value);
+	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    RCaseProperties.PROPERTY_REQUIREMENT_ID, value, element);
 	    break;
 	case 2:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_REQUIREMENT_ID,
-		    value, element);
+	    element.setName(value);
 	    break;
 	case 3:
 	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
@@ -60,10 +60,11 @@ public class RequirementPropertyPage implements IPropertyContent {
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
 
-	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
-
 	String property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_ID,
 		element);
+
+	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
+
 	table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagId"), property);
 
 	property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_DESCRIPTION,

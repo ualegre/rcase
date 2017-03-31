@@ -48,22 +48,14 @@ public class ContextAttributePropertyPage implements IPropertyContent {
 	try {
 	    switch (row) {
 	    case 1:
-		element.setName(value);
-		break;
-	    case 2:
 		PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 			RCaseProperties.PROPERTY_CONTEXT_ID, value, element);
 		break;
+	    case 2:
+		element.setName(value);
+		break;
 	    case 3:
-		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY,
-			value);
-		break;
-	    case 4:
-		PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-			RCaseProperties.PROPERTY_CONTEXT_FREQUENCY, value, element);
-		break;
-	    case 5:
-		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_LIBTYPE, value);
+		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_TEXT, value);
 		break;
 	    default:
 		break;
@@ -78,30 +70,15 @@ public class ContextAttributePropertyPage implements IPropertyContent {
     public void update(ModelElement element, IModulePropertyTable table) {
 	String property;
 
-	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
-
 	// TagId
 	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, element);
 	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagId"), string);
 
-	// TagResponsibility
-	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY);
-	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility"), property,
-		new String[] { I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Pull"),
-			I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Push") });
+	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 
-	// TagFrequency
-	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_FREQUENCY, element);
-	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagFrequency"), string);
-
-	// TagLibType
-	property = element.getTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_LIBTYPE);
-	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType"), property,
-		new String[] { I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.None"),
-			I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Sensor"),
-			I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Location"),
-			I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Broadcast"),
-			I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Bluetooth") });
+	// TagText
+	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_TEXT, element);
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagText"), string);
 
 	checkDependencies(element, table);
     }

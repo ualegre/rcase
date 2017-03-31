@@ -22,18 +22,11 @@ public class ContextModelTableRow {
 	values = new ArrayList<>();
 	values.add(ContextAttribute.getName());
 	// TagId
-	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID,
-		ContextAttribute));
+	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, ContextAttribute));
 
-	// TagCost
-	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY,
-		ContextAttribute));
-
-	// TagStatus
-	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_FREQUENCY));
-
-	// TagCreationProcess
-	values.add(getTag(RCaseProperties.PROPERTY_CONTEXT_LIBTYPE));
+	// TagText
+	values.add(
+		PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_TEXT, ContextAttribute));
 
     }
 

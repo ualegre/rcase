@@ -74,13 +74,10 @@ public class ContextModelTableData implements Serializable {
 
     private void createHeaders() {
 	String[] columnNames = { "Table.ContextModel.Header.Name", "Table.ContextModel.Header.Id",
-		"Table.ContextModel.Header.Responsibility", "Table.ContextModel.Header.Frequency",
-		"Table.ContextModel.Header.LibType" };
-	String[] properties = { RCaseProperties.PROPERTY_NAME, RCaseProperties.PROPERTY_CONTEXT_ID,
-		RCaseProperties.PROPERTY_CONTEXT_RESPONSIBILITY, RCaseProperties.PROPERTY_CONTEXT_FREQUENCY,
-		RCaseProperties.PROPERTY_CONTEXT_LIBTYPE };
-	DataTypes[] dataTypes = { DataTypes.STRING_TYPE, DataTypes.STRING_TYPE, DataTypes.COMBOBOX_TYPE,
-		DataTypes.STRING_TYPE, DataTypes.COMBOBOX_TYPE };
+		"Table.ContextModel.Header.Text" };
+	String[] properties = { RCaseProperties.PROPERTY_CONTEXT_ID, RCaseProperties.PROPERTY_NAME,
+		RCaseProperties.PROPERTY_CONTEXT_TEXT };
+	DataTypes[] dataTypes = { DataTypes.STRING_TYPE, DataTypes.STRING_TYPE, DataTypes.STRING_TYPE };
 
 	if ((columnNames.length == properties.length) && (columnNames.length == dataTypes.length)
 		&& (dataTypes.length == properties.length)) {

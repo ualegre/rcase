@@ -55,13 +55,9 @@ public class RCaseProperties {
      * Context Attribute related properties
      **************************************************************************/
     // Context Attribute
-    public static final String PROPERTY_CONTEXT_ID = "CETagId";
+    public static final String PROPERTY_CONTEXT_ID = "CATagId";
 
-    public static final String PROPERTY_CONTEXT_RESPONSIBILITY = "TagResponsibility";
-
-    public static final String PROPERTY_CONTEXT_FREQUENCY = "TagFrequency";
-
-    public static final String PROPERTY_CONTEXT_LIBTYPE = "TagLibType";
+    public static final String PROPERTY_CONTEXT_TEXT = "CATagText";
 
     private RCaseProperties() {
 

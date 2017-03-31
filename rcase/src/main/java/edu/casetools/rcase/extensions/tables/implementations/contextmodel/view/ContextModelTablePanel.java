@@ -34,7 +34,6 @@ import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelStringTableEditor;
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelTableData;
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelTableModel;
-import edu.casetools.rcase.utils.tables.ModelioTableUtils;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -112,18 +111,7 @@ public class ContextModelTablePanel extends TablePanel {
 	    setStringEditor(tableColumn);
 	    break;
 	case 2:
-	    // Responsibility
-	    possibleValues = ModelioTableUtils.getInstance().getResponsibilityPossibleValues();
-	    setComboBoxEditor(tableColumn, possibleValues);
-	    break;
-	case 3:
-	    // Frequency
 	    setStringEditor(tableColumn);
-	    break;
-	case 4:
-	    // Library Attribute Types
-	    possibleValues = ModelioTableUtils.getInstance().getLibTypesPossibleValues();
-	    setComboBoxEditor(tableColumn, possibleValues);
 	    break;
 	default:
 	    break;
