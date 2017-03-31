@@ -31,10 +31,6 @@
                 <Image path="res/icons/usecase_16.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="NoteStereotype" metaclass="Note" is-hidden="false" label="%NoteStereotype.label" uid="82e224c6-b692-4391-8d79-b42b5ee02cac">
-                <Icon path="res/icons/note_16.png"/>
-                <TagTypes/>
-            </Stereotype>
             <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
                 <Icon path="res/icons/context_16.png"/>
                 <Image path="res/icons/context_look_64.png"/>
