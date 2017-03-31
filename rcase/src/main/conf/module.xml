@@ -44,9 +44,6 @@
                     <TagType name="TagFrequency" uid="ce358a44-c103-4db6-a861-dc33beb96964" label="%ContextAttributeStereotype.properties.frequency" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="TagLibType" uid="2ab91184-f1af-4179-a182-aa6f9ea7d346" label="%ContextAttributeStereotype.properties.libType" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="990cb938-bf1d-49e4-af37-4389def2752d"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="SituationOfInterestStereotype" metaclass="Class" is-hidden="false" label="%SituationOfInterestStereotype.label" uid="7454269e-aa2f-4534-8d2a-4224ccca5577">
                 <Icon path="res/icons/situation_16.png"/>
@@ -79,65 +76,41 @@
                 <Icon path="%ContextDependencyTool.image"/>
                 <Image path="%ContextDependencyTool.image"/>
                 <TagTypes/>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="2e73c34c-3c7d-483e-b81a-7a8fc47a4bf2"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="ContextDependencyStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDependencyStereotype.label" uid="51d9ee5e-84f2-4f31-bbfe-5c2ac97d5569">
                 <Icon path="%ContextDependencyTool.image"/>
                 <Image path="%ContextDependencyTool.image"/>
                 <TagTypes/>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="4fd86e3d-7bc6-41f4-b287-4eb1fff24ca8"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="IdentifiesStereotype" metaclass="Dependency" is-hidden="false" label="%IdentifiesStereotype.label" uid="a5f97076-da2d-4f08-b391-9c0a9341e6f0">
                 <Icon path="%IdentifiesTool.image"/>
                 <Image path="%IdentifiesTool.image"/>
                 <TagTypes/>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="3263be86-f7ad-4f94-9e69-3026779bed15"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="ContextDeriveStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDeriveStereotype.label" uid="f65478dc-7d4e-4d4f-891a-9fc076915c58">
                 <Icon path="%ContextDeriveTool.image"/>
                 <Image path="%ContextDeriveTool.image"/>
                 <TagTypes/>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="cc1db9d0-4fc4-4b8a-9a36-5c3c3b74752d"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="DeriveStereotype" metaclass="Dependency" is-hidden="false" label="%DeriveStereotype.label" uid="bee908f6-3a27-4708-b415-fc0028625df0">
                 <Icon path="%DeriveStereotype.image"/>
                 <Image path="%DeriveStereotype.image"/>
                 <TagTypes/>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="5ee94cdc-adbb-40be-946d-e5b8d014e888"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="SatisfyStereotype" metaclass="Dependency" is-hidden="false" label="%SatisfyStereotype.label" uid="e149af64-3d69-4b6e-b09a-3a46c31c4804">
                 <Icon path="%SatisfyStereotype.image"/>
                 <Image path="%SatisfyStereotype.image"/>
                 <TagTypes/>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="9bf849b7-7b25-46af-a712-4991fa092e94"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="VerifyStereotype" metaclass="Dependency" is-hidden="false" label="%VerifyStereotype.label" uid="cdbd29f6-9bdf-4575-83aa-0f453d119769">
                 <Icon path="%VerifyStereotype.image"/>
                 <Image path="%VerifyStereotype.image"/>
                 <TagTypes/>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="931e9758-9375-4c01-90b5-f02183460fe0"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="RefineStereotype" metaclass="Dependency" is-hidden="false" label="%RefineStereotype.label" uid="ce120e4a-84e7-44aa-abf6-ab8c048484c2">
                 <Icon path="%RefineStereotype.image"/>
                 <Image path="%RefineStereotype.image"/>
                 <TagTypes/>
-                <NoteTypes>
-                    <NoteType name="ContextNote" label="Note" is-hidden="false" uid="53e4bd90-7f49-42fb-8448-0ebafb9136f8"/>
-                </NoteTypes>
             </Stereotype>
             <Stereotype name="CopyStereotype" metaclass="Dependency" is-hidden="false" label="Copy" uid="a8e923e2-f188-4cf6-8be1-a798154206ac">
                 <Icon path="res/icons/copy.png"/>
@@ -153,10 +126,6 @@
                 <TagTypes>
                     <TagType name="TagName" uid="2727e4d0-b3ae-4518-85af-1639a76380e6" label="Name" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
-                <NoteTypes>
-                    <NoteType name="Problem" label="Problem" is-hidden="false" uid="b5120441-da57-439c-b6da-c383c5e62ed7"/>
-                    <NoteType name="Rationale" label="Rationale" is-hidden="false" uid="007ccf10-4bc5-403d-98db-2e6dd57d4e1d"/>
-                </NoteTypes>
             </MetaclassReference>
         </Profile>
     </Profiles>
@@ -232,13 +201,6 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.tools.UseCaseTool">
                     <HParameter name="metaclass" value="UseCase"/>
                     <HParameter name="stereotype" value="UseCaseStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="NoteTool" label="%NoteTool.label" tooltip="%NoteTool.tooltip" image="%NoteTool.image">
-                <Scope-target stereotype="DiagramStereotype"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.notes.ContextNoteTool">
-                    <HParameter name="metaclass" value="Note"/>
-                    <HParameter name="stereotype" value="NoteStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="ContextAttributeTool" label="%ContextAttributeTool.label" tooltip="%ContextAttributeTool.tooltip" image="%ContextAttributeTool.image">

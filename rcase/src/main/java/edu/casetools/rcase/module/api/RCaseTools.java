@@ -65,8 +65,6 @@ public class RCaseTools {
 
     public static final String TOOL_CONTEXT_DERIVE = "ContextDeriveTool";
 
-    public static final String TOOL_CONTEXT_NOTE = "ContextNote";
-
     // Elements
 
     public static final String TOOL_USECASE = "UseCaseTool";
