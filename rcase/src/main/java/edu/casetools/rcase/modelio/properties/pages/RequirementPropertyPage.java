@@ -38,76 +38,73 @@ public class RequirementPropertyPage implements IPropertyContent {
 
     @Override
     public void changeProperty(ModelElement element, int row, String value) {
-
-	switch (row) {
-	case 1:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_REQUIREMENT_ID, value, element);
-	    break;
-	case 2:
-	    element.setName(value);
-	    break;
-	case 3:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_REQUIREMENT_DESCRIPTION, value, element);
-	    break;
-	default:
-	    break;
-	}
-
+		switch (row) {
+			case 1:
+			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+				    RCaseProperties.PROPERTY_REQUIREMENT_ID, value, element);
+			    break;
+			case 2:
+			    element.setName(value);
+			    break;
+			case 3:
+			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+				    RCaseProperties.PROPERTY_REQUIREMENT_DESCRIPTION, value, element);
+			    break;
+			default:
+			    break;
+		}
     }
 
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
-
-	String property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_ID,
-		element);
-
-	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
-
-	table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagId"), property);
-
-	property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_DESCRIPTION,
-		element);
-	table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagText"), property);
-
-	checkDependencies(element, table);
+	
+		String property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_ID,
+				element);		
+		table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagId"), property);
+		
+		table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
+	
+		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_DESCRIPTION,
+			element);
+		table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagText"), property);
+	
+		checkDependencies(element, table);
 
     }
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
-	checkDependency(RCaseStereotypes.STEREOTYPE_DERIVE, "Derive", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_COPY, "Copy", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_PART, "Part", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_REFINE, "Refine", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_SATISFY, "Satisfy", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_VERIFY, "Verify", element, table);
+		checkDependency(RCaseStereotypes.STEREOTYPE_DERIVE, "Derive", element, table);
+		checkDependency(RCaseStereotypes.STEREOTYPE_COPY, "Copy", element, table);
+		checkDependency(RCaseStereotypes.STEREOTYPE_PART, "Part", element, table);
+		checkDependency(RCaseStereotypes.STEREOTYPE_REFINE, "Refine", element, table);
+		checkDependency(RCaseStereotypes.STEREOTYPE_SATISFY, "Satisfy", element, table);
+		checkDependency(RCaseStereotypes.STEREOTYPE_VERIFY, "Verify", element, table);
     }
 
     private void checkDependency(String stereotype, String name, ModelElement element, IModulePropertyTable table) {
-	ArrayList<ModelElement> value = new ArrayList<>();
-	String empty = "";
-
-	for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
-	    Dependency dependency = (Dependency) localIterator.next();
-	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
-		value.add(dependency.getImpacted());
-	}
-
-	String valuetab = PropertiesUtils.getInstance().getAbsoluteNamesWithSeparator(value);
-	if (!valuetab.equals(empty)) {
-	    table.addConsultProperty(I18nMessageService.getString("Ui." + name + ".From"), valuetab);
-	}
-
-	value = new ArrayList<>();
-	for (Dependency dependency : element.getDependsOnDependency()) {
-	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
-		value.add(dependency.getDependsOn());
-	}
-	valuetab = PropertiesUtils.getInstance().getAbsoluteNamesWithSeparator(value);
-	if (!valuetab.equals(empty)) {
-	    table.addConsultProperty(I18nMessageService.getString("Ui." + name + ".To"), valuetab);
-	}
+		ArrayList<ModelElement> value = new ArrayList<>();
+		String empty = "";
+	
+		for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
+		    Dependency dependency = (Dependency) localIterator.next();
+		    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
+			value.add(dependency.getImpacted());
+		}
+	
+		String valuetab = PropertiesUtils.getInstance().getAbsoluteNamesWithSeparator(value);
+		if (!valuetab.equals(empty)) {
+		    table.addConsultProperty(I18nMessageService.getString("Ui." + name + ".From"), valuetab);
+		}
+	
+		value = new ArrayList<>();
+		for (Dependency dependency : element.getDependsOnDependency()) {
+		    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
+			value.add(dependency.getDependsOn());
+		}
+		valuetab = PropertiesUtils.getInstance().getAbsoluteNamesWithSeparator(value);
+		if (!valuetab.equals(empty)) {
+		    table.addConsultProperty(I18nMessageService.getString("Ui." + name + ".To"), valuetab);
+		}
     }
 
 }
