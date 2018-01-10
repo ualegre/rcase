@@ -68,7 +68,6 @@ public class ContextAttributePropertyPage implements IPropertyContent {
 
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
-	String property;
 
 	// TagId
 	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, element);

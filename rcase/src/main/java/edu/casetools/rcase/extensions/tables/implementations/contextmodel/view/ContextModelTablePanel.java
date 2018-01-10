@@ -21,7 +21,6 @@
 package edu.casetools.rcase.extensions.tables.implementations.contextmodel.view;
 
 import java.awt.FontMetrics;
-import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -30,7 +29,6 @@ import javax.swing.table.TableColumn;
 import edu.casetools.rcase.extensions.tables.TablePanel;
 import edu.casetools.rcase.extensions.tables.headers.ColumnHeaderRenderer;
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.control.StringTableModelListener;
-import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelComboBoxTableEditor;
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelStringTableEditor;
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelTableData;
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelTableModel;
@@ -57,65 +55,64 @@ public class ContextModelTablePanel extends TablePanel {
      * Inits the component.
      */
     public void initComponent() {
-	initTable();
-	initScrollPane();
+		initTable();
+		initScrollPane();
     }
 
     private void initTable() {
-	table = new JTable();
-	this.tableModel = new ContextModelTableModel();
-	this.tableModel.addTableModelListener(new StringTableModelListener(this));
-	table.setSurrendersFocusOnKeystroke(true);
+		table = new JTable();
+		this.tableModel = new ContextModelTableModel();
+		this.tableModel.addTableModelListener(new StringTableModelListener(this));
+		table.setSurrendersFocusOnKeystroke(true);
 
     }
 
     private void refresh() {
-	this.tableModel.refresh();
-	table.setModel(this.tableModel);
-	setComboBoxStyle();
-	table.repaint();
-	// RowHeaderUtils.getInstance().addRowHeader(table,
-	// ROW_HEADER.DEPENDENCY,
-	// this.tableModel.getData().getyHeaderList());
-	refreshRowHeaderRenderer();
+		this.tableModel.refresh();
+		table.setModel(this.tableModel);
+		setComboBoxStyle();
+		table.repaint();
+		// RowHeaderUtils.getInstance().addRowHeader(table,
+		// ROW_HEADER.DEPENDENCY,
+		// this.tableModel.getData().getyHeaderList());
+		refreshRowHeaderRenderer();
 
     }
 
     private void refreshRowHeaderRenderer() {
-	int widthFactor;
-	for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
-	    TableColumn col = table.getColumnModel().getColumn(i);
-	    col.setHeaderRenderer(new ColumnHeaderRenderer());
-	    JLabel label = new JLabel((String) col.getHeaderValue());
-	    FontMetrics fontMetrics = label.getFontMetrics(label.getFont());
-	    widthFactor = fontMetrics.stringWidth(label.getText());
-	    col.setPreferredWidth(widthFactor + 25);
-	}
-	// this.scroller.set
+		int widthFactor;
+		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+		    TableColumn col = table.getColumnModel().getColumn(i);
+		    col.setHeaderRenderer(new ColumnHeaderRenderer());
+		    JLabel label = new JLabel((String) col.getHeaderValue());
+		    FontMetrics fontMetrics = label.getFontMetrics(label.getFont());
+		    widthFactor = fontMetrics.stringWidth(label.getText());
+		    col.setPreferredWidth(widthFactor + 25);
+		}
+		// this.scroller.set
     }
 
     private void setComboBoxStyle() {
-	for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
-	    TableColumn tableColumn = table.getColumnModel().getColumn(i);
-	    getContextModelTableEditor(tableColumn, i);
-	}
+		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+		    TableColumn tableColumn = table.getColumnModel().getColumn(i);
+		    getContextModelTableEditor(tableColumn, i);
+		}
     }
 
     private void getContextModelTableEditor(TableColumn tableColumn, int column) {
-	List<String> possibleValues;
-	switch (column) {
-	case 0:
-	    setStringEditor(tableColumn);
-	    break;
-	case 1:
-	    setStringEditor(tableColumn);
-	    break;
-	case 2:
-	    setStringEditor(tableColumn);
-	    break;
-	default:
-	    break;
-	}
+		switch (column) {
+		case 0:
+		    setStringEditor(tableColumn);
+		    break;
+		case 1:
+		    setStringEditor(tableColumn);
+		    break;
+		case 2:
+		    setStringEditor(tableColumn);
+		    break;
+		default:
+		    break;
+		}
     }
 
     private void setStringEditor(TableColumn tableColumn) {
@@ -124,11 +121,11 @@ public class ContextModelTablePanel extends TablePanel {
 	tableColumn.setCellEditor(comboBoxEditor);
     }
 
-    private void setComboBoxEditor(TableColumn tableColumn, List<String> possibleValues) {
-	ContextModelComboBoxTableEditor comboBoxEditor;
-	comboBoxEditor = new ContextModelComboBoxTableEditor(possibleValues, this.tableModel);
-	tableColumn.setCellEditor(comboBoxEditor);
-    }
+//    private void setComboBoxEditor(TableColumn tableColumn, List<String> possibleValues) {
+//		ContextModelComboBoxTableEditor comboBoxEditor;
+//		comboBoxEditor = new ContextModelComboBoxTableEditor(possibleValues, this.tableModel);
+//		tableColumn.setCellEditor(comboBoxEditor);
+//    }
 
     /**
      * Refresh.

@@ -6,7 +6,6 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.api.RCaseProperties;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
 public class ContextModelTableRow {
@@ -30,12 +29,12 @@ public class ContextModelTableRow {
 
     }
 
-    private String getTag(String propertyName) {
-	String status = ContextAttribute.getTagValue(RCasePeerModule.MODULE_NAME, propertyName);
-	if (status != null)
-	    return status;
-	return "";
-    }
+//    private String getTag(String propertyName) {
+//	String status = ContextAttribute.getTagValue(RCasePeerModule.MODULE_NAME, propertyName);
+//	if (status != null)
+//	    return status;
+//	return "";
+//    }
 
     public void set(int column, Object value) {
 	values.set(column, value);
