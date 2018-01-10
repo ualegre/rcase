@@ -28,7 +28,7 @@ import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.diagrams.StaticDiagram;
 import org.modelio.metamodel.diagrams.UseCaseDiagram;
-import org.modelio.metamodel.factory.ExtensionNotFoundException;
+import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.behavior.usecaseModel.UseCase;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;

@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 
 import org.eclipse.core.runtime.AssertionFailedException;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
-import org.modelio.metamodel.factory.ExtensionNotFoundException;
+import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 

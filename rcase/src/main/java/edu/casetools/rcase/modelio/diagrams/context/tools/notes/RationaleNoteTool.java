@@ -23,7 +23,7 @@ package edu.casetools.rcase.modelio.diagrams.context.tools.notes;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.model.IUmlModel;
-import org.modelio.metamodel.factory.ExtensionNotFoundException;
+import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Note;
 

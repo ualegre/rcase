@@ -32,10 +32,11 @@ import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.api.modelio.model.IUmlModel;
-import org.modelio.metamodel.factory.ExtensionNotFoundException;
+import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
+import org.modelio.metamodel.uml.infrastructure.UmlModelElement;
 import org.modelio.metamodel.uml.statik.BindableInstance;
 import org.modelio.metamodel.uml.statik.Connector;
 import org.modelio.metamodel.uml.statik.ConnectorEnd;
@@ -135,19 +136,21 @@ public class ModelioTableUtils {
 
     private String getDoubleRelationship(ModelElement source, ModelElement target, DependencyTableData data,
 	    String result) {
-	for (ConnectorEnd end : source.getRepresentingEnd()) {
-	    Link link = end.getLink();
-	    if ((null != link) && (link.isStereotyped(data.getLinkStereotype().getModule().getName(),
-		    data.getLinkStereotype().getName()))) {
-		if (target.equals(end.getOppositeOwner())) {
-		    if (end.isNavigable()) {
-			result = result + "->";
-		    }
-		    if (end.getOpposite().isNavigable()) {
-			result = result + "<-";
-		    }
+    	if(source instanceof UmlModelElement){
+			for (ConnectorEnd end : ((UmlModelElement) source).getRepresentingEnd()) {
+			    Link link = end.getLink();
+			    if ((null != link) && (link.isStereotyped(data.getLinkStereotype().getModule().getName(),
+				    data.getLinkStereotype().getName()))) {
+				if (target.equals(end.getOppositeOwner())) {
+				    if (end.isNavigable()) {
+					result = result + "->";
+				    }
+				    if (end.getOpposite().isNavigable()) {
+					result = result + "<-";
+				    }
+				}
+			}
 		}
-	    }
 	}
 	return result;
     }
@@ -301,14 +304,17 @@ public class ModelioTableUtils {
 
     private ConnectorEnd createConnectorEnd(ModelElement target, ModelElement source, Stereotype ster,
 	    ConnectorEnd fend) {
-	for (Iterator<?> e = source.getRepresentingEnd().iterator(); ((Iterator<?>) e).hasNext();) {
-	    ConnectorEnd end = (ConnectorEnd) ((Iterator<?>) e).next();
-	    Link link = end.getLink();
-
-	    if ((null != link) && (link.isStereotyped(ster.getModule().getName(), ster.getName()))
-		    && (target.equals(end.getOppositeOwner()))) {
-		fend = end;
-	    }
+    	
+    	if(source instanceof UmlModelElement){
+			for (Iterator<?> e = ((UmlModelElement) source).getRepresentingEnd().iterator(); ((Iterator<?>) e).hasNext();) {
+			    ConnectorEnd end = (ConnectorEnd) ((Iterator<?>) e).next();
+			    Link link = end.getLink();
+		
+			    if ((null != link) && (link.isStereotyped(ster.getModule().getName(), ster.getName()))
+				    && (target.equals(end.getOppositeOwner()))) {
+				fend = end;
+			    }
+		}
 
 	}
 	return fend;

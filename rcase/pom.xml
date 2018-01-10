@@ -35,7 +35,7 @@
 		<dependency>
 			<groupId>org.modelio</groupId>
 			<artifactId>MDAKit</artifactId>
-			<version>[3.5.0,3.5.1)</version>
+			<version>[3.7.0,3.7.1)</version>
 			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
@@ -97,7 +97,7 @@
 			<plugin>
 				<groupId>org.modelio</groupId>
 				<artifactId>modelio-maven-plugin</artifactId>
-				<version>3.5.0.01</version>
+				<version>3.7.0.01</version>
 				<executions>
 					<execution>
 						<id>ModuleValidation</id>
@@ -218,7 +218,7 @@
 									<pluginExecutionFilter>
 										<groupId>org.modelio</groupId>
 										<artifactId>modelio-maven-plugin</artifactId>
-										<versionRange>[3.5.0.00,3.6.0.00)</versionRange>
+										<versionRange>[3.7.0.00,3.8.0.00)</versionRange>
 										<goals>
 											<goal>
 												module-configuration
