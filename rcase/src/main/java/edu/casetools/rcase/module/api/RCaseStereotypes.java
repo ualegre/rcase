@@ -68,6 +68,15 @@ public class RCaseStereotypes {
     public static final String DEFAULT_STEREOTYPE = STEREOTYPE_COPY;
 
     public static final String STEREOTYPE_TRIGGERS = "TriggersStereotype";
+    
+	public static final String STEREOTYPE_DIAGRAM_STAKEHOLDER = "StakeholderDiagramStereotype";
+	public static final String STEREOTYPE_STAKEHOLDER = "StakeholderStereotype";
+	public static final String STEREOTYPE_USER_PROFILE = "UserProfileStereotype";
+	public static final String STEREOTYPE_VALUE = "ValueStereotype";
+	public static final String STEREOTYPE_VALUE_ENHANCER = "ValueEnhancerStereotype";
+	public static final String STEREOTYPE_PARTICIPATION = "ParticipationStereotype";
+	public static final String STEREOTYPE_GRID = "GridStereotype";
+	
 
     private RCaseStereotypes() {
 

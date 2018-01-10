@@ -75,6 +75,18 @@ public class RCaseTools {
 
     public static final String TOOL_TRIGGERS = "TriggersTool";
 
+	public static final String TOOL_STAKEHOLDER = "StakeholderTool";
+
+	public static final String TOOL_USER_PROFILE = "UserProfileTool";
+
+	public static final String TOOL_VALUE = "ValueTool";
+
+	public static final String TOOL_VALUE_ENHANCER = "ValueEnhancerTool";
+
+	public static final String TOOL_PARTICIPATION = "ParticipationTool";
+
+	public static final String TOOL_GRID = "GridTool";
+
     private RCaseTools() {
 
     }

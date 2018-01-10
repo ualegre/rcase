@@ -33,6 +33,8 @@ public class RCaseResources {
     public static final String STYLE_REQUIREMENTS_DIAGRAM = "requirements_diagram.style";
 
     public static final String STYLE_USECASE_DIAGRAM = "use_case_diagram.style";
+    
+	public static final String STYLE_STAKEHOLDER_DIAGRAM = "stakeholder_diagram.style";
 
     /****************************************************************************
      * Icons

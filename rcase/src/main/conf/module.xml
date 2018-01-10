@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Module id="${project.name}" class="edu.casetools.rcase.module.impl.RCaseModule" binaryversion="3.5.00" version="${project.version}" schema-level="2" uid="e72aca77-aa9a-4a78-85d0-f41a487effb9">
+<Module id="${project.name}" class="edu.casetools.rcase.module.impl.RCaseModule" binaryversion="3.7.00" version="${project.version}" schema-level="2" uid="e72aca77-aa9a-4a78-85d0-f41a487effb9">
     <ClassPath>
         <PathEntry path="lib/${project.artifactId}-${project.version}.jar"/>
         <PathEntry path="lib/commons-lang3-3.1.jar"/>
@@ -11,7 +11,30 @@
     </ClassPath>
     <Profiles>
         <Profile uid="2cdf2f6e-9dd9-4ba7-9ac7-03aaa252b749" id="rcase.entities">
-            <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="dffece0a-4ca4-41d9-ba2d-679df37dfb27">
+            <Stereotype name="StakeholderDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%StakeholderDiagramStereotype.label" uid="10111770-bfe4-4a03-9bff-947e23685c22">
+                <Icon path="res/icons/stakeholder/stakeholder_diagram.png"/>
+            </Stereotype>
+            <Stereotype name="StakeholderStereotype" metaclass="Class" is-hidden="false" label="%StakeholderStereotype.label" uid="bb1c77b2-2128-4d8d-ae67-9cdfff8acdd5">
+                <Icon path="res/icons/stakeholder/element/stakeholder_16.png"/>
+                <Image path="res/icons/stakeholder/element/stakeholder_64.png"/>
+            </Stereotype>
+            <Stereotype name="UserProfileStereotype" metaclass="Class" is-hidden="false" label="%UserProfileStereotype.label" uid="1481b9ff-6b4c-44f4-86dd-db684e52c4b7">
+                <Icon path="res/icons/stakeholder/element/userprofile_16.png"/>
+                <Image path="res/icons/stakeholder/element/userprofile_64.png"/>
+            </Stereotype>
+            <Stereotype name="ValueStereotype" metaclass="Class" is-hidden="false" label="%ValueStereotype.label" uid="c8edfdf9-b9e6-4be1-9971-49867221ba47">
+                <Icon path="res/icons/stakeholder/element/value_16.png"/>
+            </Stereotype>
+            <Stereotype name="ValueEnhancerStereotype" metaclass="Class" is-hidden="false" label="%ValueEnhancerStereotype.label" uid="44f3b074-d690-4074-a80a-e5f996f20d92">
+                <Icon path="res/icons/stakeholder/element/valuenhancer_16.png"/>
+            </Stereotype>
+            <Stereotype name="ParticipationStereotype" metaclass="Class" is-hidden="false" label="%ParticipationStereotype.label" uid="a4fd40ac-7af3-4f2a-9c87-ca241896ae92">
+                <Icon path="res/icons/stakeholder/element/participation_16.png"/>
+            </Stereotype>
+            <Stereotype name="GridStereotype" metaclass="Package" is-hidden="false" label="%GridStereotype.label" uid="e5639866-72f6-42e6-89ee-f388e854a0a5">
+                <Icon path="res/icons/stakeholder/element/grid_16.png"/>
+            </Stereotype>
+            <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
                 <TagTypes/>
@@ -173,6 +196,10 @@
                     <HParameter name="stereotype" value="UseCaseStereotype"/>
                 </Handler>
             </Command>
+            <Command id="CreateStakeholderDiagram" label="%CreateStakeholderDiagram.label" tooltip="%CreateStakeholderDiagram.tooltip" image="%CreateStakeholderDiagram.image" group="%CreateStakeholderDiagram.group" modify-model="true" group-image="%CreateStakeholderDiagram.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateStakeholderDiagram"/>
+            </Command>
             <Command id="CreateContextAttribute" label="%CreateContextAttribute.label" tooltip="%CreateContextAttribute.tooltip" image="%CreateContextAttribute.image" group="%CreateContextAttribute.group" modify-model="true" group-image="%CreateContextAttribute.groupimage">
                 <Scope metaclass="Package"/>
                 <Scope metaclass="Class"/>
@@ -191,6 +218,42 @@
             </Command>
         </Commands>
         <Tools>
+            <Tool id="StakeholderTool" label="%StakeholderTool.label" tooltip="%StakeholderTool.tooltip" image="%StakeholderTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.StakeholderTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="StakeholderStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="UserProfileTool" label="%UserProfileTool.label" tooltip="%UserProfileTool.tooltip" image="%UserProfileTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.UserProfileTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="UserProfileStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ValueTool" label="%ValueTool.label" tooltip="%ValueTool.tooltip" image="%ValueTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.ValueTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="ValueStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ValueEnhancerTool" label="%ValueEnhancerTool.label" tooltip="%ValueEnhancerTool.tooltip" image="%ValueEnhancerTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.ValueEnhancerTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="ValueEnhancerStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ParticipationTool" label="%ParticipationTool.label" tooltip="%ParticipationTool.tooltip" image="%ParticipationTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.ParticipationTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="ParticipationStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="GridTool" label="%GridTool.label" tooltip="%GridTool.tooltip" image="%GridTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.GridTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="GridStereotype"/>
+                </Handler>
+            </Tool>
             <Tool id="UseCaseTool" label="%UseCaseTool.label" tooltip="%UseCaseTool.tooltip" image="%UseCaseTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.tools.UseCaseTool">
                     <HParameter name="metaclass" value="UseCase"/>
@@ -314,6 +377,7 @@
             <CommandRef refid="CreateSituationOfInterest"/>
             <CommandRef refid="CreateTestCase"/>
             <CommandRef refid="CreateContextAttribute"/>
+            <CommandRef refid="CreateStakeholderDiagram"/>
             <CommandRef refid="CreateRequirementsDiagram"/>
             <CommandRef refid="CreateUseCaseDiagram"/>
             <CommandRef refid="CreateContextDependencyDiagram"/>
@@ -322,6 +386,9 @@
             <CommandRef refid="OpenContextModelTable"/>
         </ContextualMenu>
         <Diagrams>
+            <DiagramType base-diagram="StaticDiagram" stereotype="StakeholderDiagramStereotype">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.StakeholderDiagramCustomizer"/>
+            </DiagramType>
             <DiagramType base-diagram="StaticDiagram" stereotype="ContextDiagramStereotype">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.ContextDependencyDiagramCustomizer"/>
             </DiagramType>
