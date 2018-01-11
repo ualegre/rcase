@@ -97,7 +97,7 @@ public class RCaseTools {
 
 	public static final String TOOL_PROVIDE = "ProvideTool";
 
-	public static final String TOOL_GOAL = "SoftGoalTool";
+	public static final String TOOL_GOAL = "GoalTool";
 	
 	public static final String TOOL_SOFT_GOAL = "SoftGoalTool";
 	

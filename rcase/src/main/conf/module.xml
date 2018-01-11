@@ -92,10 +92,10 @@
                     <TagType name="ObjTagDescription" uid="a8d33a2e-68ee-437a-bf25-a298e32da3aa" label="%ObjectiveStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="GoalStereotype" metaclass="Class" is-hidden="false" label="%GoalStereotype.label" uid="18e1e7eb-dc45-43a4-8f68-f080887a32e2">
+            <Stereotype name="GoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%GoalStereotype.label" uid="18e1e7eb-dc45-43a4-8f68-f080887a32e2">
                 <Icon path="%GoalTool.image"/>
             </Stereotype>
-            <Stereotype name="SoftGoalStereotype" metaclass="Class" is-hidden="false" label="%SoftGoalStereotype.label" uid="ff5a1d7e-2d8d-4144-9a18-f35690e92c6e">
+            <Stereotype name="SoftGoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%SoftGoalStereotype.label" uid="ff5a1d7e-2d8d-4144-9a18-f35690e92c6e">
                 <Icon path="%SoftGoalTool.image"/>
             </Stereotype>
             <Stereotype name="ResourceStereotype" metaclass="Class" is-hidden="false" label="%ResourceStereotype.label" uid="2f0cf76d-fc37-498a-9974-5f6de8358ac0">
@@ -376,6 +376,60 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.relations.HasTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="HasStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="GoalTool" label="%GoalTool.label" tooltip="%GoalTool.tooltip" image="%GoalTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.elements.GoalTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="GoalStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="SoftGoalTool" label="%SoftGoalTool.label" tooltip="%SoftGoalTool.tooltip" image="%SoftGoalTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.elements.SoftGoalTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="SoftGoalStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ResourceTool" label="%ResourceTool.label" tooltip="%ResourceTool.tooltip" image="%ResourceTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.elements.ResourceTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="ValueStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ObstacleTool" label="%ObstacleTool.label" tooltip="%ObstacleTool.tooltip" image="%ObstacleTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.elements.ObstacleTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="ObstacleStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="AndTool" label="%AndTool.label" tooltip="%AndTool.tooltip" image="%AndTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.relations.AndTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="AndStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="OrTool" label="%OrTool.label" tooltip="%OrTool.tooltip" image="%OrTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.relations.OrTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="OrStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="XorTool" label="%XorTool.label" tooltip="%XorTool.tooltip" image="%XorTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.relations.XorTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="XorStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="MitigatesTool" label="%MitigatesTool.label" tooltip="%MitigatesTool.tooltip" image="%MitigatesTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.relations.MitigatesTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="MitigatesStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="HindersTool" label="%HindersTool.label" tooltip="%HindersTool.tooltip" image="%HindersTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.relations.HindersTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="HindersStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="UseCaseTool" label="%UseCaseTool.label" tooltip="%UseCaseTool.tooltip" image="%UseCaseTool.image">
