@@ -80,6 +80,11 @@
             <Stereotype name="HasStereotype" metaclass="Dependency" is-hidden="false" label="%HasStereotype.label" uid="744e4f0b-d962-4c5d-a9ce-9984440d8eff">
                 <Icon path="res/icons/stakeholder/relation/has_16.png"/>
             </Stereotype>
+            <Stereotype name="ObjectiveDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ObjectiveDiagramStereotype.label" uid="">
+                <Icon path="res/icons/objective_diagram.png"/>
+                <Image path="res/icons/objective_diagram.png"/>
+                <TagTypes/>
+            </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
