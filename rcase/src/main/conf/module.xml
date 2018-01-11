@@ -92,7 +92,7 @@
                     <TagType name="ObjTagDescription" uid="a8d33a2e-68ee-437a-bf25-a298e32da3aa" label="%ObjectiveStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="GoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%GoalStereotype.label" uid="18e1e7eb-dc45-43a4-8f68-f080887a32e2">
+            <Stereotype name="GoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%GoalStereotype.label" uid="">
                 <Icon path="%GoalTool.image"/>
             </Stereotype>
             <Stereotype name="SoftGoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%SoftGoalStereotype.label" uid="ff5a1d7e-2d8d-4144-9a18-f35690e92c6e">
