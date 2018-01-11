@@ -46,7 +46,7 @@ public class CreateObjectiveDiagram extends CreateDiagram {
      */
     @Override
     protected StaticDiagram createOwnDiagram(List<MObject> selectedElements, IModelingSession session) {
-	String name = I18nMessageService.getString("Ui.Command.CreateStakeholderDiagram.Label");
+	String name = I18nMessageService.getString("Ui.Command.CreateObjectiveDiagram.Label");
 	StaticDiagram diagram = DiagramUtils.getInstance().createDiagram(selectedElements, session, name,
 		RCaseStereotypes.STEREOTYPE_DIAGRAM_OBJECTIVE);
 	diagram = (StaticDiagram) addStyle(diagram, RCaseResources.STYLE_OBJECTIVE_DIAGRAM);
