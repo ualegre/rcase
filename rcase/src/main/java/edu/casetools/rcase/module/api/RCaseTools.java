@@ -97,6 +97,24 @@ public class RCaseTools {
 
 	public static final String TOOL_PROVIDE = "ProvideTool";
 
+	public static final String TOOL_GOAL = "SoftGoalTool";
+	
+	public static final String TOOL_SOFT_GOAL = "SoftGoalTool";
+	
+	public static final String TOOL_RESOURCE = "ResourceTool";
+	
+	public static final String TOOL_OBSTACLE = "ObstacleTool";
+	
+	public static final String TOOL_HINDERS = "HindersTool";
+	
+	public static final String TOOL_MITIGATES = "MitigatesTool";
+
+	public static final String TOOL_AND = "AndTool";
+
+	public static final String TOOL_OR = "OrTool";
+
+	public static final String TOOL_XOR = "XorTool";
+
     private RCaseTools() {
 
     }

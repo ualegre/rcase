@@ -62,8 +62,8 @@ public class ObjectiveDiagramCustomizer extends DiagramCustomizer implements IDi
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
-	String[] toolNames = new String[] { RCaseTools.TOOL_STAKEHOLDER, RCaseTools.TOOL_USER_PROFILE, RCaseTools.TOOL_VALUE, 
-										RCaseTools.TOOL_VALUE_ENHANCER, RCaseTools.TOOL_PARTICIPATION, RCaseTools.TOOL_ETHICAL_PROFILE };
+	String[] toolNames = new String[] { RCaseTools.TOOL_GOAL, RCaseTools.TOOL_SOFT_GOAL, RCaseTools.TOOL_RESOURCE, 
+										RCaseTools.TOOL_OBSTACLE};
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
     
@@ -83,8 +83,8 @@ public class ObjectiveDiagramCustomizer extends DiagramCustomizer implements IDi
 
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
-	String[] toolNames = new String[] { RCaseTools.TOOL_INTERESTED_IN, RCaseTools.TOOL_REQUEST,
-			RCaseTools.TOOL_PROVIDE, RCaseTools.TOOL_HAS };
+	String[] toolNames = new String[] { RCaseTools.TOOL_AND, RCaseTools.TOOL_OR, RCaseTools.TOOL_XOR, RCaseTools.TOOL_REQUEST,
+			RCaseTools.TOOL_PROVIDE, RCaseTools.TOOL_HINDERS, RCaseTools.TOOL_MITIGATES };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 

@@ -80,49 +80,49 @@
             <Stereotype name="HasStereotype" metaclass="Dependency" is-hidden="false" label="%HasStereotype.label" uid="744e4f0b-d962-4c5d-a9ce-9984440d8eff">
                 <Icon path="res/icons/stakeholder/relation/has_16.png"/>
             </Stereotype>
-            <Stereotype name="ObjectiveDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ObjectiveDiagramStereotype.label" uid="">
+            <Stereotype name="ObjectiveDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ObjectiveDiagramStereotype.label" uid="0f024d6f-9b95-4eb3-919b-e07908a12524">
                 <Icon path="res/icons/objective_diagram.png"/>
                 <Image path="res/icons/objective_diagram.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="ObjectiveStereotype" metaclass="Class" is-hidden="false" label="%ObjectiveStereotype.label" uid="">
+            <Stereotype name="ObjectiveStereotype" metaclass="Class" is-hidden="false" label="%ObjectiveStereotype.label" uid="114ca726-1fba-4dfe-afac-f7ced98c352c">
                 <Icon path="%ObjectiveTool.image"/>
                 <TagTypes>
-                    <TagType name="ObjTagId" uid="" label="%ObjectiveStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ObjTagPriority" uid="" label="$ObjectiveStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ObjTagDescription" uid="" label="%ObjectiveStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagId" uid="c1ae226f-1b19-4e0e-a712-584aaad7f660" label="%ObjectiveStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagPriority" uid="1d606f46-0fdd-413c-bf25-518533c06a2e" label="$ObjectiveStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagDescription" uid="a8d33a2e-68ee-437a-bf25-a298e32da3aa" label="%ObjectiveStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
-             <Stereotype name="GoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%GoalStereotype.label" uid="">
+            <Stereotype name="GoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%GoalStereotype.label" uid="18e1e7eb-dc45-43a4-8f68-f080887a32e2">
                 <Icon path="%GoalTool.image"/>
             </Stereotype>
-             <Stereotype name="SoftGoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%SoftGoalStereotype.label" uid="">
+            <Stereotype name="SoftGoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%SoftGoalStereotype.label" uid="ff5a1d7e-2d8d-4144-9a18-f35690e92c6e">
                 <Icon path="%SoftGoalTool.image"/>
             </Stereotype>
-             <Stereotype name="ResourceStereotype" metaclass="Class" is-hidden="false" label="%ResourceStereotype.label" uid="">
+            <Stereotype name="ResourceStereotype" metaclass="Class" is-hidden="false" label="%ResourceStereotype.label" uid="2f0cf76d-fc37-498a-9974-5f6de8358ac0">
                 <Icon path="%ResourceTool.image"/>
             </Stereotype>
-             <Stereotype name="ObstacleStereotype" metaclass="Class" is-hidden="false" label="%ObstacleStereotype.label" uid="">
+            <Stereotype name="ObstacleStereotype" metaclass="Class" is-hidden="false" label="%ObstacleStereotype.label" uid="d72e0988-b2e1-479a-be80-b5a5a42fc927">
                 <Icon path="%ObstacleTool.image"/>
             </Stereotype>
-            <Stereotype name="RefineObjStereotype" metaclass="Dependency" is-hidden="false" label="%RefineObjStereotype.label" uid="">
+            <Stereotype name="RefineObjStereotype" metaclass="Dependency" is-hidden="false" label="%RefineObjStereotype.label" uid="e6d8c6f2-e1fa-419b-91b3-7d7fab369d1f">
                 <Icon path="%RefineObjTool.image"/>
             </Stereotype>
-            <Stereotype name="AndStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%AndStereotype.label" uid="">
+            <Stereotype name="AndStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%AndStereotype.label" uid="b653dbeb-ae71-4e97-a95e-263ed4ae5836">
                 <Icon path="%AndTool.image"/>
             </Stereotype>
-            <Stereotype name="OrStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%OrStereotype.label" uid="">
+            <Stereotype name="OrStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%OrStereotype.label" uid="634aec5b-b6b4-4601-a40a-6701ff474875">
                 <Icon path="%OrTool.image"/>
             </Stereotype>
-            <Stereotype name="XorStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%XorStereotype.label" uid="">
+            <Stereotype name="XorStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%XorStereotype.label" uid="ed90fe02-9e28-41eb-a758-ef63120f7956">
                 <Icon path="%XorTool.image"/>
-            </Stereotype> 
-            <Stereotype name="MitigatesStereotype" metaclass="Dependency" is-hidden="false" label="%MitigatesStereotype.label" uid="">
+            </Stereotype>
+            <Stereotype name="MitigatesStereotype" metaclass="Dependency" is-hidden="false" label="%MitigatesStereotype.label" uid="ab607f4d-8d23-4b18-ac02-4adf5b9f5692">
                 <Icon path="%MitigatesTool.image"/>
             </Stereotype>
-            <Stereotype name="HindersStereotype" metaclass="Dependency" is-hidden="false" label="%HindersStereotype.label" uid="">
+            <Stereotype name="HindersStereotype" metaclass="Dependency" is-hidden="false" label="%HindersStereotype.label" uid="c60c8b3b-c28d-482e-88ba-f2df807b3304">
                 <Icon path="%HindersTool.image"/>
-            </Stereotype>                                                                                                    
+            </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
@@ -503,7 +503,7 @@
             <CommandRef refid="CreateTestCase"/>
             <CommandRef refid="CreateContextAttribute"/>
             <CommandRef refid="CreateStakeholderDiagram"/>
-            <CommandRef refid="CreateObjectiveDiagram"/>            
+            <CommandRef refid="CreateObjectiveDiagram"/>
             <CommandRef refid="CreateRequirementsDiagram"/>
             <CommandRef refid="CreateUseCaseDiagram"/>
             <CommandRef refid="CreateContextDependencyDiagram"/>
