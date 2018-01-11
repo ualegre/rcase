@@ -86,13 +86,43 @@
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="ObjectiveStereotype" metaclass="Class" is-hidden="false" label="%ObjectiveStereotype.label" uid="">
-                <Icon path="res/icons/objectives/elements/objective_16.png"/>
+                <Icon path="%ObjectiveTool.image"/>
                 <TagTypes>
-                    <TagType name="ObjTagId" uid="" label="%ValueStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ObjTagPriority" uid="" label="$ValueStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ValueTagType" uid="" label="%ValueStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagId" uid="" label="%ObjectiveStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagPriority" uid="" label="$ObjectiveStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagDescription" uid="" label="%ObjectiveStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
+             <Stereotype name="GoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%GoalStereotype.label" uid="">
+                <Icon path="%GoalTool.image"/>
+            </Stereotype>
+             <Stereotype name="SoftGoalStereotype" metaclass="ObjectiveStereotype" is-hidden="false" label="%SoftGoalStereotype.label" uid="">
+                <Icon path="%SoftGoalTool.image"/>
+            </Stereotype>
+             <Stereotype name="ResourceStereotype" metaclass="Class" is-hidden="false" label="%ResourceStereotype.label" uid="">
+                <Icon path="%ResourceTool.image"/>
+            </Stereotype>
+             <Stereotype name="ObstacleStereotype" metaclass="Class" is-hidden="false" label="%ObstacleStereotype.label" uid="">
+                <Icon path="%ObstacleTool.image"/>
+            </Stereotype>
+            <Stereotype name="RefineObjStereotype" metaclass="Dependency" is-hidden="false" label="%RefineObjStereotype.label" uid="">
+                <Icon path="%RefineObjTool.image"/>
+            </Stereotype>
+            <Stereotype name="AndStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%AndStereotype.label" uid="">
+                <Icon path="%AndTool.image"/>
+            </Stereotype>
+            <Stereotype name="OrStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%OrStereotype.label" uid="">
+                <Icon path="%OrTool.image"/>
+            </Stereotype>
+            <Stereotype name="XorStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%XorStereotype.label" uid="">
+                <Icon path="%XorTool.image"/>
+            </Stereotype> 
+            <Stereotype name="MitigatesStereotype" metaclass="Dependency" is-hidden="false" label="%MitigatesStereotype.label" uid="">
+                <Icon path="%MitigatesTool.image"/>
+            </Stereotype>
+            <Stereotype name="HindersStereotype" metaclass="Dependency" is-hidden="false" label="%HindersStereotype.label" uid="">
+                <Icon path="%HindersTool.image"/>
+            </Stereotype>                                                                                                    
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
@@ -258,6 +288,10 @@
             <Command id="CreateStakeholderDiagram" label="%CreateStakeholderDiagram.label" tooltip="%CreateStakeholderDiagram.tooltip" image="%CreateStakeholderDiagram.image" group="%CreateStakeholderDiagram.group" modify-model="true" group-image="%CreateStakeholderDiagram.groupimage">
                 <Scope metaclass="ModelTree"/>
                 <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateStakeholderDiagram"/>
+            </Command>
+            <Command id="CreateObjectiveDiagram" label="%CreateObjectiveDiagram.label" tooltip="%CreateObjectiveDiagram.tooltip" image="%CreateObjectiveDiagram.image" group="%CreateObjectiveDiagram.group" modify-model="true" group-image="%CreateObjectiveDiagram.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateObjectiveDiagram"/>
             </Command>
             <Command id="CreateContextAttribute" label="%CreateContextAttribute.label" tooltip="%CreateContextAttribute.tooltip" image="%CreateContextAttribute.image" group="%CreateContextAttribute.group" modify-model="true" group-image="%CreateContextAttribute.groupimage">
                 <Scope metaclass="Package"/>
@@ -469,6 +503,7 @@
             <CommandRef refid="CreateTestCase"/>
             <CommandRef refid="CreateContextAttribute"/>
             <CommandRef refid="CreateStakeholderDiagram"/>
+            <CommandRef refid="CreateObjectiveDiagram"/>            
             <CommandRef refid="CreateRequirementsDiagram"/>
             <CommandRef refid="CreateUseCaseDiagram"/>
             <CommandRef refid="CreateContextDependencyDiagram"/>

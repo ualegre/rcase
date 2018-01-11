@@ -35,6 +35,8 @@ public class RCaseResources {
     public static final String STYLE_USECASE_DIAGRAM = "use_case_diagram.style";
     
 	public static final String STYLE_STAKEHOLDER_DIAGRAM = "stakeholder_diagram.style";
+	
+	public static final String STYLE_OBJECTIVE_DIAGRAM = "objective_diagram.style";
 
     /****************************************************************************
      * Icons
@@ -46,6 +48,8 @@ public class RCaseResources {
     public static final String ICON_CONTEXT_MODEL_TABLE = "res/icons/matrix_16.png";
 
     public static final String ICON_MODULE = "/res/icons/module_16.png";
+
+
 
     private RCaseResources() {
 

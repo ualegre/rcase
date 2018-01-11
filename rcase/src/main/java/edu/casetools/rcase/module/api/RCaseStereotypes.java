@@ -82,6 +82,8 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_PROVIDE = "ProvideStereotype";
 	public static final String STEREOTYPE_HAS = "HasStereotype";
 	
+	public static final String STEREOTYPE_DIAGRAM_OBJECTIVE = "ObjectiveDiagramStereotype";
+	
 
     private RCaseStereotypes() {
 
