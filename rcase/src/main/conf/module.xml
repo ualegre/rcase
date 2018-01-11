@@ -85,6 +85,14 @@
                 <Image path="res/icons/objective_diagram.png"/>
                 <TagTypes/>
             </Stereotype>
+            <Stereotype name="ObjectiveStereotype" metaclass="Class" is-hidden="false" label="%ObjectiveStereotype.label" uid="">
+                <Icon path="res/icons/objectives/elements/objective_16.png"/>
+                <TagTypes>
+                    <TagType name="ObjTagId" uid="" label="%ValueStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagPriority" uid="" label="$ValueStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ValueTagType" uid="" label="%ValueStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
+            </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
