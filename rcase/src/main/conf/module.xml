@@ -313,6 +313,8 @@
                 </Handler>
             </Tool>
             <Tool id="RequestTool" label="%RequestTool.label" tooltip="%RequestTool.tooltip" image="%RequestTool.image">
+                <Scope-source stereotype="StakeholderStereotype"/>
+                <Scope-target stereotype="ValueStereotype"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.relations.RequestTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="RequestStereotype"/>

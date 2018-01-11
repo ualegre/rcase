@@ -58,7 +58,7 @@ public class UseCaseTool extends ElementTool {
      * (java.util.List)
      */
     @Override
-    protected List<IDiagramGraphic> representAsImage(List<IDiagramGraphic> graph) {
+    protected List<IDiagramGraphic> representationConfigs(List<IDiagramGraphic> graph) {
 
 	if ((null != graph) && (!graph.isEmpty()) && (graph.get(0) instanceof IDiagramNode)) {
 	    IDiagramNode dnode = (IDiagramNode) graph.get(0);

@@ -52,7 +52,7 @@ public abstract class ElementTool extends DefaultBoxTool {
      *            the graph
      * @return the list
      */
-    protected abstract List<IDiagramGraphic> representAsImage(List<IDiagramGraphic> graph);
+    protected abstract List<IDiagramGraphic> representationConfigs(List<IDiagramGraphic> graph);
 
     /**
      * Creates the customized element.
@@ -140,7 +140,7 @@ public abstract class ElementTool extends DefaultBoxTool {
 
 	List<IDiagramGraphic> graph = representation.unmask(createdElement, rect.x, rect.y);
 
-	graph = representAsImage(graph);
+	graph = representationConfigs(graph);
 
 	if ((null != graph) && (!graph.isEmpty()) && (graph.get(0) instanceof IDiagramNode)) {
 	    ((IDiagramNode) graph.get(0)).setBounds(rect);
@@ -174,7 +174,7 @@ public abstract class ElementTool extends DefaultBoxTool {
 		return elementAdaptor;
     }
     
-    protected  void setDefaultProperties(IDiagramNode dnode) {
+    protected  void setDefaultRepresentationConfigs(IDiagramNode dnode) {
 	    dnode.setProperty("REPMODE", "STRUCTURED");
 	    dnode.setProperty("FILLMODE", "SOLID");
 	    dnode.setProperty("LINECOLOR", "0,0,0");

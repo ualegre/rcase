@@ -27,6 +27,7 @@ import java.util.logging.Logger;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.diagram.IDiagramLink;
+import org.modelio.api.modelio.diagram.IDiagramNode;
 import org.modelio.api.modelio.diagram.ILinkPath;
 import org.modelio.api.modelio.diagram.InvalidDestinationPointException;
 import org.modelio.api.modelio.diagram.InvalidPointsPathException;
@@ -103,6 +104,7 @@ public abstract class RelationTool extends DefaultLinkTool {
 	IDiagramLink link = (IDiagramLink) graphic;
 	if (null != link) {
 	    link.setRouterKind(kind);
+	    
 	    try {
 		link.setPath(path);
 	    } catch (InvalidPointsPathException | InvalidSourcePointException | InvalidDestinationPointException e) {
@@ -110,6 +112,18 @@ public abstract class RelationTool extends DefaultLinkTool {
 	    }
 	}
     }
+    
+    
+    protected List<IDiagramGraphic> representationConfigs(List<IDiagramGraphic> graph) {
+
+	if ((null != graph) && (!graph.isEmpty()) && (graph.get(0) instanceof IDiagramNode)) {
+	    IDiagramNode dnode = (IDiagramNode) graph.get(0);
+	    dnode.setProperty("ACCESS_CONNECTIONROUTER", "DIRECT");
+	}
+
+	return graph;
+    }
+    
 
     /**
      * Accept method to accept any elements.

@@ -83,8 +83,9 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
 
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
-	return createGroup(groupName, new String[] { RCaseTools.TOOL_INTERESTED_IN, RCaseTools.TOOL_REQUEST,
-			RCaseTools.TOOL_PROVIDE, RCaseTools.TOOL_HAS }, toolRegistry, 0);
+	String[] toolNames = new String[] { RCaseTools.TOOL_INTERESTED_IN, RCaseTools.TOOL_REQUEST,
+			RCaseTools.TOOL_PROVIDE, RCaseTools.TOOL_HAS };
+	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
     /**
