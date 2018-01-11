@@ -30,9 +30,12 @@ import org.modelio.metamodel.uml.statik.Class;
 
 import edu.casetools.rcase.modelio.properties.pages.ContextAttributePropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.EthicalProfilePropertyPage;
+import edu.casetools.rcase.modelio.properties.pages.ParticipationPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.RequirementPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.SituationOfInterestPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.StakeholderPropertyPage;
+import edu.casetools.rcase.modelio.properties.pages.ValueEnhancerPropertyPage;
+import edu.casetools.rcase.modelio.properties.pages.ValuePropertyPage;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
@@ -140,6 +143,24 @@ public class PropertyManager {
 				RCaseStereotypes.STEREOTYPE_ETHICAL_PROFILE, RCaseModule.getInstance().getModuleContext()
 					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
 			    this.propertyPage = new EthicalProfilePropertyPage();
+		}
+		
+		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_VALUE, RCaseModule.getInstance().getModuleContext()
+					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+			    this.propertyPage = new ValuePropertyPage();
+		}
+		
+		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_VALUE_ENHANCER, RCaseModule.getInstance().getModuleContext()
+					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+			    this.propertyPage = new ValueEnhancerPropertyPage();
+		}
+		
+		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_PARTICIPATION, RCaseModule.getInstance().getModuleContext()
+					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+			    this.propertyPage = new ParticipationPropertyPage();
 		}
 	    
 	

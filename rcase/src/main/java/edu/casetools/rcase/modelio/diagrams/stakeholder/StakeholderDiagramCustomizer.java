@@ -54,6 +54,7 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
 
 	paletteRoot.add(createBasics());
 	paletteRoot.add(createNodesGroup(toolRegistry));
+	paletteRoot.add(createGridGroup(toolRegistry));
 	paletteRoot.add(createRelationsGroup(toolRegistry));
 	paletteRoot.add(createNotesGroup(toolRegistry));
 	paletteRoot.add(createDefaultFreeDrawingGroup(toolRegistry));
@@ -62,7 +63,14 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
 	String[] toolNames = new String[] { RCaseTools.TOOL_STAKEHOLDER, RCaseTools.TOOL_USER_PROFILE, RCaseTools.TOOL_VALUE, 
-										RCaseTools.TOOL_VALUE_ENHANCER, RCaseTools.TOOL_PARTICIPATION, RCaseTools.TOOL_GRID, RCaseTools.TOOL_ETHICAL_PROFILE};
+										RCaseTools.TOOL_VALUE_ENHANCER, RCaseTools.TOOL_PARTICIPATION, RCaseTools.TOOL_ETHICAL_PROFILE };
+	return createGroup(groupName, toolNames, toolRegistry, 0);
+    }
+    
+    private org.eclipse.gef.palette.PaletteEntry createGridGroup(IDiagramService toolRegistry) {
+	String groupName = I18nMessageService.getString("ContextPaletteGroup.Grid");
+	String[] toolNames = new String[] { // IRCaseTools.TOOL_USE_CASE,
+		RCaseTools.TOOL_GRID };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
@@ -75,8 +83,8 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
 
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
-	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DERIVE, RCaseTools.TOOL_CONTEXT_IDENTIFIES,
-		RCaseTools.TOOL_CONTEXT_DEPENDENCY }, toolRegistry, 0);
+	return createGroup(groupName, new String[] { RCaseTools.TOOL_INTERESTED_IN, RCaseTools.TOOL_REQUEST,
+			RCaseTools.TOOL_PROVIDE, RCaseTools.TOOL_HAS }, toolRegistry, 0);
     }
 
     /**

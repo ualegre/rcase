@@ -65,12 +65,7 @@ public class EthicalProfileTool extends ElementTool {
 
 	if ((null != graph) && (!graph.isEmpty()) && (graph.get(0) instanceof IDiagramNode)) {
 	    IDiagramNode dnode = (IDiagramNode) graph.get(0);
-	    dnode.setProperty("REPMODE", "STRUCTURED");
-	    dnode.setProperty("FILLMODE", "SOLID");
-	    dnode.setProperty("LINECOLOR", "0,0,0");
-	    dnode.setProperty("TEXTCOLOR", "0,0,0");
-	    dnode.setProperty("INTAUTOUNMASK", "TRUE");
-	    dnode.setProperty("INNERUNMASKFILTER", "ALL");
+	    this.setDefaultProperties(dnode);
 	    dnode.setProperty("FILLCOLOR", RCaseColours.YELLOW2);
 	}
 

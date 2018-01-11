@@ -61,27 +61,45 @@ public class RCaseProperties {
 
 	public static final String PROPERTY_STAKEHOLDER_ID = "StakTagId";
 
-	public static final String PROPERTY_STAKEHOLDER_DESCRIPTION = "TagDescription";
+	public static final String PROPERTY_STAKEHOLDER_DESCRIPTION = "StakTagDescription";
 
-	public static final String PROPERTY_STAKEHOLDER_TYPE = "TagType";
+	public static final String PROPERTY_STAKEHOLDER_TYPE = "StakTagType";
 
-	public static final String PROPERTY_STAKEHOLDER_SUPPORT = "TagSupport";
+	public static final String PROPERTY_STAKEHOLDER_SUPPORT = "StakTagSupport";
 
-	public static final String PROPERTY_STAKEHOLDER_POWER = "TagPower";
+	public static final String PROPERTY_STAKEHOLDER_POWER = "StakTagPower";
 
 	public static final String PROPERTY_ETHICAL_PROFILE_ID = "EthProfTagId";
 
-	public static final String PROPERTY_ETHICAL_PROFILE_DESCRIPTION = "TagDescription";
+	public static final String PROPERTY_ETHICAL_PROFILE_DESCRIPTION = "EthTagDescription";
 
-	public static final String PROPERTY_ETHICAL_PROFILE_GOV_DEPENDENCY = "TagGovDependency";
+	public static final String PROPERTY_ETHICAL_PROFILE_GOV_DEPENDENCY = "EthTagGovDependency";
 
-	public static final String PROPERTY_ETHICAL_PROFILE_VULNERABILITY = "TagVulnerability";
+	public static final String PROPERTY_ETHICAL_PROFILE_VULNERABILITY = "EthTagVulnerability";
 
-	public static final String PROPERTY_ETHICAL_PROFILE_GRAVITY = "TagGravity";
+	public static final String PROPERTY_ETHICAL_PROFILE_GRAVITY = "EthTagGravity";
 
-	public static final String PROPERTY_ETHICAL_PROFILE_VALUE_IN_RISK = "TagValueInRisk";
+	public static final String PROPERTY_ETHICAL_PROFILE_VALUE_IN_RISK = "EthTagValueInRisk";
 
-	public static final String PROPERTY_ETHICAL_PROFILE_POLICY_IMPACT = "TagPolicyImpact";
+	public static final String PROPERTY_ETHICAL_PROFILE_POLICY_IMPACT = "EthTagPolicyImpact";
+
+	public static final String PROPERTY_VALUE_ID = "ValueTagId";
+
+	public static final String PROPERTY_VALUE_DESCRIPTION = "ValueTagDescription";
+
+	public static final String PROPERTY_VALUE_TYPE = "ValueTagType";
+
+	public static final String PROPERTY_VALUE_ENHANCER_ID = "ValueEnhTagId";
+
+	public static final String PROPERTY_VALUE_ENHANCER_DESCRIPTION = "ValueEnhTagDescription";
+
+	public static final String PROPERTY_VALUE_ENHANCER_TYPE = "ValueEnhTagType";
+
+	public static final String PROPERTY_PARTICIPATION_ID = "PartTagId";
+
+	public static final String PROPERTY_PARTICIPATION_DESCRIPTION = "PartTagDescription";
+
+	public static final String PROPERTY_PARTICIPATION_TYPE = "PartTagType";
 
     private RCaseProperties() {
 

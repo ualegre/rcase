@@ -89,6 +89,14 @@ public class RCaseTools {
 
 	public static final String TOOL_ETHICAL_PROFILE = "EthicalProfileTool";
 
+	public static final String TOOL_INTERESTED_IN = "InterestedInTool";
+
+	public static final String TOOL_REQUEST = "RequestTool";
+
+	public static final String TOOL_HAS = "HasTool";
+
+	public static final String TOOL_PROVIDE = "ProvideTool";
+
     private RCaseTools() {
 
     }
