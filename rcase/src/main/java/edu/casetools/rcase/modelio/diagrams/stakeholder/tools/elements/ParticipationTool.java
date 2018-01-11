@@ -28,6 +28,7 @@ import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.diagrams.ElementTool;
+import edu.casetools.rcase.module.api.RCaseColours;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.DiagramUtils;
@@ -64,9 +65,8 @@ public class ParticipationTool extends ElementTool {
 
 	if ((null != graph) && (!graph.isEmpty()) && (graph.get(0) instanceof IDiagramNode)) {
 	    IDiagramNode dnode = (IDiagramNode) graph.get(0);
-	    dnode.setProperty("REPMODE", "IMAGE");
-	    dnode.setProperty("INTAUTOUNMASK", "TRUE");
-	    dnode.setProperty("INNERUNMASKFILTER", "ALL");
+	    this.setDefaultProperties(dnode);
+	    dnode.setProperty("FILLCOLOR", RCaseColours.YELLOW2);
 	}
 
 	return graph;

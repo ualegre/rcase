@@ -17,6 +17,13 @@
             <Stereotype name="StakeholderStereotype" metaclass="Class" is-hidden="false" label="%StakeholderStereotype.label" uid="bb1c77b2-2128-4d8d-ae67-9cdfff8acdd5">
                 <Icon path="res/icons/stakeholder/element/stakeholder_16.png"/>
                 <Image path="res/icons/stakeholder/element/stakeholder_64.png"/>
+                <TagTypes>
+                    <TagType name="StakTagId" uid="246cb680-413a-4936-9dd9-4363ab5d138b" label="%StakeholderStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagDescription" uid="990034d6-506b-46dd-9d4c-2b8f399d744d" label="$StakeholderStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagType" uid="e8361356-c825-44df-a2d7-8f35fed3750f" label="%StakeholderStereotype.properties.type" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagSupport" uid="b1decfb3-8fb3-4b8b-a01e-55605b16d732" label="$StakeholderStereotype.properties.support" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagPower" uid="a9b5168b-f8dd-494c-b3bc-64e3ec197367" label="$StakeholderStereotype.properties.power" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
             </Stereotype>
             <Stereotype name="UserProfileStereotype" metaclass="Class" is-hidden="false" label="%UserProfileStereotype.label" uid="1481b9ff-6b4c-44f4-86dd-db684e52c4b7">
                 <Icon path="res/icons/stakeholder/element/userprofile_16.png"/>
@@ -24,12 +31,39 @@
             </Stereotype>
             <Stereotype name="ValueStereotype" metaclass="Class" is-hidden="false" label="%ValueStereotype.label" uid="c8edfdf9-b9e6-4be1-9971-49867221ba47">
                 <Icon path="res/icons/stakeholder/element/value_16.png"/>
+                <TagTypes>
+                    <TagType name="ValueTagId" uid="" label="%ValueStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagDescription" uid="" label="$ValueStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagValueType" uid="" label="%ValueStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/> 
+                </TagTypes>
             </Stereotype>
             <Stereotype name="ValueEnhancerStereotype" metaclass="Class" is-hidden="false" label="%ValueEnhancerStereotype.label" uid="44f3b074-d690-4074-a80a-e5f996f20d92">
                 <Icon path="res/icons/stakeholder/element/valuenhancer_16.png"/>
+                <TagTypes>
+                    <TagType name="ValueEnhTagId" uid="" label="%ValueEnhancerStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagDescription" uid="" label="$ValueEnhancerStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagValueType" uid="" label="%ValueEnhancerStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/> 
+                </TagTypes>
             </Stereotype>
             <Stereotype name="ParticipationStereotype" metaclass="Class" is-hidden="false" label="%ParticipationStereotype.label" uid="a4fd40ac-7af3-4f2a-9c87-ca241896ae92">
                 <Icon path="res/icons/stakeholder/element/participation_16.png"/>
+                <TagTypes>
+                    <TagType name="PartTagId" uid="" label="%ParticipationStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagDescription" uid="" label="$ParticipationStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagValueType" uid="" label="%ParticipationStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/> 
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="EthicalProfileStereotype" metaclass="Package" is-hidden="false" label="%EthicalProfileStereotype.label" uid="337d48a9-821f-4bbc-8656-509d5490bb51">
+                <Icon path="res/icons/stakeholder/element/ethicalprofile_16.png"/>
+                <TagTypes>
+                    <TagType name="EthProfTagId" uid="62c94b9d-b48f-4a41-9942-ffc7753bb53c" label="%EthicalProfileStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagDescription" uid="bd518b02-4a44-4ba0-9110-03a66ee1d9b5" label="$EthicalProfileStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagGovDependency" uid="2effb4e0-99e9-483c-86b5-e011a1f5f6ff" label="%EthicalProfileStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagVulnerability" uid="586a799e-4698-4d60-af58-9666fd003d29" label="$EthicalProfileStereotype.properties.vulnerability" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagGravity" uid="2a2121e6-d119-4517-b193-4f5cd958991b" label="$EthicalProfileStereotype.properties.gravity" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagValueInRisk" uid="d33ffe7b-164e-4ac1-b220-fd9155c0d225" label="$EthicalProfileStereotype.properties.valueinrisk" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagPolicyImpact" uid="c37eb22e-8c87-4525-a19a-91b99fc5654a" label="$EthicalProfileStereotype.properties.policyimpact" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
             </Stereotype>
             <Stereotype name="GridStereotype" metaclass="Package" is-hidden="false" label="%GridStereotype.label" uid="e5639866-72f6-42e6-89ee-f388e854a0a5">
                 <Icon path="res/icons/stakeholder/element/grid_16.png"/>
@@ -246,6 +280,12 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.ParticipationTool">
                     <HParameter name="metaclass" value="Class"/>
                     <HParameter name="stereotype" value="ParticipationStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="EthicalProfileTool" label="%EthicalProfileTool.label" tooltip="%EthicalProfileTool.tooltip" image="%EthicalProfileTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.EthicalProfileTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="EthicalProfileStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="GridTool" label="%GridTool.label" tooltip="%GridTool.tooltip" image="%GridTool.image">

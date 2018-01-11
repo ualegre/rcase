@@ -59,6 +59,30 @@ public class RCaseProperties {
 
     public static final String PROPERTY_CONTEXT_TEXT = "CATagText";
 
+	public static final String PROPERTY_STAKEHOLDER_ID = "StakTagId";
+
+	public static final String PROPERTY_STAKEHOLDER_DESCRIPTION = "TagDescription";
+
+	public static final String PROPERTY_STAKEHOLDER_TYPE = "TagType";
+
+	public static final String PROPERTY_STAKEHOLDER_SUPPORT = "TagSupport";
+
+	public static final String PROPERTY_STAKEHOLDER_POWER = "TagPower";
+
+	public static final String PROPERTY_ETHICAL_PROFILE_ID = "EthProfTagId";
+
+	public static final String PROPERTY_ETHICAL_PROFILE_DESCRIPTION = "TagDescription";
+
+	public static final String PROPERTY_ETHICAL_PROFILE_GOV_DEPENDENCY = "TagGovDependency";
+
+	public static final String PROPERTY_ETHICAL_PROFILE_VULNERABILITY = "TagVulnerability";
+
+	public static final String PROPERTY_ETHICAL_PROFILE_GRAVITY = "TagGravity";
+
+	public static final String PROPERTY_ETHICAL_PROFILE_VALUE_IN_RISK = "TagValueInRisk";
+
+	public static final String PROPERTY_ETHICAL_PROFILE_POLICY_IMPACT = "TagPolicyImpact";
+
     private RCaseProperties() {
 
     }

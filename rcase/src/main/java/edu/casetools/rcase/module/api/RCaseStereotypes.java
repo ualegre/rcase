@@ -76,6 +76,7 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_VALUE_ENHANCER = "ValueEnhancerStereotype";
 	public static final String STEREOTYPE_PARTICIPATION = "ParticipationStereotype";
 	public static final String STEREOTYPE_GRID = "GridStereotype";
+	public static final String STEREOTYPE_ETHICAL_PROFILE = "EthicalProfileStereotype";
 	
 
     private RCaseStereotypes() {

@@ -9,7 +9,7 @@ that aids the requirements elicitation phase of a Context-Aware System (C-AS).
 
 ### Third party libraries and icons
 * see [LIBRARIES](https://github.com/casetools/rcase/blob/master/LIBRARIES.md) file
-* Icons are made by Freepik, Flaticon and Dave Gandy, obtained from [Flaticon] (www.flaticon.com) 
+* Icons are made by Freepik, Flaticon, Dave Gandy, and Hand Drawn Goods. Obtained from [Flaticon] (www.flaticon.com) 
 
 ## License 
 * see [LICENSE](https://github.com/casetools/rcase/blob/master/LICENSE.md) file

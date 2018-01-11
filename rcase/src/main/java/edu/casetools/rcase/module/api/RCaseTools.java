@@ -87,6 +87,8 @@ public class RCaseTools {
 
 	public static final String TOOL_GRID = "GridTool";
 
+	public static final String TOOL_ETHICAL_PROFILE = "EthicalProfileTool";
+
     private RCaseTools() {
 
     }

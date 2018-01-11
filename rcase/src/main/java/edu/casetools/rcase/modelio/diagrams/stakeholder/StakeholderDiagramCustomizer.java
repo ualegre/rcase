@@ -62,7 +62,7 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
 	String[] toolNames = new String[] { RCaseTools.TOOL_STAKEHOLDER, RCaseTools.TOOL_USER_PROFILE, RCaseTools.TOOL_VALUE, 
-										RCaseTools.TOOL_VALUE_ENHANCER, RCaseTools.TOOL_PARTICIPATION, RCaseTools.TOOL_GRID};
+										RCaseTools.TOOL_VALUE_ENHANCER, RCaseTools.TOOL_PARTICIPATION, RCaseTools.TOOL_GRID, RCaseTools.TOOL_ETHICAL_PROFILE};
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 

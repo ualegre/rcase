@@ -169,9 +169,18 @@ public abstract class ElementTool extends DefaultBoxTool {
      * @return the array list
      */
     protected ArrayList<MObject> adaptElement(MObject element) {
-	ArrayList<MObject> elementAdaptor = new ArrayList<>();
-	elementAdaptor.add(element);
-	return elementAdaptor;
+		ArrayList<MObject> elementAdaptor = new ArrayList<>();
+		elementAdaptor.add(element);
+		return elementAdaptor;
     }
+    
+    protected  void setDefaultProperties(IDiagramNode dnode) {
+	    dnode.setProperty("REPMODE", "STRUCTURED");
+	    dnode.setProperty("FILLMODE", "SOLID");
+	    dnode.setProperty("LINECOLOR", "0,0,0");
+	    dnode.setProperty("TEXTCOLOR", "0,0,0");
+	    dnode.setProperty("INTAUTOUNMASK", "TRUE");
+	    dnode.setProperty("INNERUNMASKFILTER", "ALL");
+	}
 
 }
