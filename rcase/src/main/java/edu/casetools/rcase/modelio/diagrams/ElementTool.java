@@ -74,7 +74,7 @@ public abstract class ElementTool extends DefaultBoxTool {
      */
     @Override
     public boolean acceptElement(IDiagramHandle representation, IDiagramGraphic target) {
-	return target.getElement().isModifiable();
+	return true;
     }
 
     /*

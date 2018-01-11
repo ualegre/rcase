@@ -68,16 +68,16 @@
             <Stereotype name="GridStereotype" metaclass="Package" is-hidden="false" label="%GridStereotype.label" uid="e5639866-72f6-42e6-89ee-f388e854a0a5">
                 <Icon path="res/icons/stakeholder/element/grid_16.png"/>
             </Stereotype>
-            <Stereotype name="InterestedInStereotype" metaclass="Dependency" is-hidden="false" label="%InterestedInStereotype.label" uid="9b2d0bb7-09ba-487c-ad43-c7e2c5114276">
+            <Stereotype name="InterestedInStereotype" metaclass="Dependency" is-hidden="false" label="%InterestedInStereotype.label" uid="8fdbf90f-1649-4f74-a1fa-8605ef202510">
                 <Icon path="res/icons/stakeholder/relation/interestedin_16.png"/>
             </Stereotype>
-            <Stereotype name="RequestStereotype" metaclass="Dependency" is-hidden="false" label="%RequestStereotype.label" uid="d4fbc30b-5d5b-41d7-96f3-28f60bebb75d">
+            <Stereotype name="RequestStereotype" metaclass="Dependency" is-hidden="false" label="%RequestStereotype.label" uid="ead77ad4-0284-4521-b285-c5b1f339e149">
                 <Icon path="res/icons/stakeholder/relation/request_16.png"/>
             </Stereotype>
-            <Stereotype name="ProvideStereotype" metaclass="Dependency" is-hidden="false" label="%ProvideStereotype.label" uid="ec2aec6d-d75b-4c6a-ae7d-5f929234dbc2">
+            <Stereotype name="ProvideStereotype" metaclass="Dependency" is-hidden="false" label="%ProvideStereotype.label" uid="6073afda-18f6-4d60-bf01-a40563300d55">
                 <Icon path="res/icons/stakeholder/relation/provide_16.png"/>
             </Stereotype>
-            <Stereotype name="HasStereotype" metaclass="Dependency" is-hidden="false" label="%HasStereotype.label" uid="83fa9c6e-def0-42ca-b48a-0358e4930406">
+            <Stereotype name="HasStereotype" metaclass="Dependency" is-hidden="false" label="%HasStereotype.label" uid="744e4f0b-d962-4c5d-a9ce-9984440d8eff">
                 <Icon path="res/icons/stakeholder/relation/has_16.png"/>
             </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">

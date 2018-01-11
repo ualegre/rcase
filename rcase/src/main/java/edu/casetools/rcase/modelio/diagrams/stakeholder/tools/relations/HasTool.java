@@ -59,7 +59,8 @@ public class HasTool extends RelationTool {
      */
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
-	return (acceptElement(target, RCaseStereotypes.STEREOTYPE_PARTICIPATION) || acceptElement(target, RCaseStereotypes.STEREOTYPE_ETHICAL_PROFILE));
+	return (acceptElement(target, RCaseStereotypes.STEREOTYPE_PARTICIPATION) || acceptElement(target, RCaseStereotypes.STEREOTYPE_ETHICAL_PROFILE)
+			|| acceptElement(target, RCaseStereotypes.STEREOTYPE_USER_PROFILE)|| acceptElement(target, RCaseStereotypes.STEREOTYPE_STAKEHOLDER));
     }
 
     /*
