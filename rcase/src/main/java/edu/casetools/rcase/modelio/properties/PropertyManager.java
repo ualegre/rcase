@@ -169,6 +169,12 @@ public class PropertyManager {
 					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
 			    this.propertyPage = new ObjectivePropertyPage();
 		}
+		
+		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_REFINEOBJ, RCaseModule.getInstance().getModuleContext()
+					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+			    this.propertyPage = new ObjectivePropertyPage();
+		}
 	    
 	
     }

@@ -92,7 +92,8 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_MITIGATES = "MitigatesStereotype";
 	public static final String STEREOTYPE_AND = "AndStereotype";	
 	public static final String STEREOTYPE_OR = "OrStereotype";	
-	public static final String STEREOTYPE_XOR = "XorStereotype";	
+	public static final String STEREOTYPE_XOR = "XorStereotype";
+	public static final String STEREOTYPE_REFINEOBJ = "RefineObjStereotype";	
     private RCaseStereotypes() {
 
     }
