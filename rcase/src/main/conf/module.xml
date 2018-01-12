@@ -143,7 +143,11 @@
             <Stereotype name="TestCaseStereotype" metaclass="Class" is-hidden="false" label="Test Case" uid="7908ce65-ef46-44c9-9d38-a5c7567f01b3">
                 <Icon path="res/icons/requirements/elements/testcase_16.png"/>
                 <Image path="res/icons/requirements/elements/testcase_64.png"/>
-                <TagTypes/>
+                <TagTypes>
+                    <TagType name="TestCaseTagId" uid="" label="%TestCaseStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TestCaseTagText" uid="" label="$TestCaseStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TestCaseVerdict" uid="" label="$TestCaseStereotype.properties.verdict" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
             </Stereotype>
             <Stereotype name="DeriveStereotype" metaclass="Dependency" is-hidden="false" label="%DeriveStereotype.label" uid="bee908f6-3a27-4708-b415-fc0028625df0">
                 <Icon path="res/icons/requirements/relations/derive_16.png"/>
