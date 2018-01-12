@@ -88,7 +88,7 @@
                 <Icon path="res/icons/objectives/elements/objective_16.png"/>
                 <TagTypes>
                     <TagType name="ObjTagId" uid="c1ae226f-1b19-4e0e-a712-584aaad7f660" label="%ObjectiveStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ObjTagPriority" uid="1d606f46-0fdd-413c-bf25-518533c06a2e" label="$ObjectiveStereotype.properties.prioritylvl" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagPriority" uid="bd5fb67a-7b44-4948-b553-0e4adab35967" label="$ObjectiveStereotype.properties.prioritylvl" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="ObjTagDescription" uid="a8d33a2e-68ee-437a-bf25-a298e32da3aa" label="%ObjectiveStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
@@ -108,19 +108,19 @@
                 <Icon path="res/icons/objectives/relations/refineobj_16.png"/>
             </Stereotype>
             <Stereotype name="AndStereotype" metaclass="Dependency" is-hidden="false" label="%AndStereotype.label" uid="b653dbeb-ae71-4e97-a95e-263ed4ae5836">
-                <Icon path="%AndTool.image"/>
+                <Icon path="res/icons/objectives/relations/and_16.png"/>
             </Stereotype>
             <Stereotype name="OrStereotype" metaclass="Dependency" is-hidden="false" label="%OrStereotype.label" uid="634aec5b-b6b4-4601-a40a-6701ff474875">
-                <Icon path="%OrTool.image"/>
+                <Icon path="res/icons/objectives/relations/or_16.png"/>
             </Stereotype>
             <Stereotype name="XorStereotype" metaclass="Dependency" is-hidden="false" label="%XorStereotype.label" uid="ed90fe02-9e28-41eb-a758-ef63120f7956">
-                <Icon path="%XorTool.image"/>
+                <Icon path="res/icons/objectives/relations/xor_16.png"/>
             </Stereotype>
             <Stereotype name="MitigatesStereotype" metaclass="Dependency" is-hidden="false" label="%MitigatesStereotype.label" uid="ab607f4d-8d23-4b18-ac02-4adf5b9f5692">
-                <Icon path="%MitigatesTool.image"/>
+                <Icon path="res/icons/objectives/relations/mitigates_16.png"/>
             </Stereotype>
             <Stereotype name="HindersStereotype" metaclass="Dependency" is-hidden="false" label="%HindersStereotype.label" uid="c60c8b3b-c28d-482e-88ba-f2df807b3304">
-                <Icon path="%HindersTool.image"/>
+                <Icon path="res/icons/objectives/relations/hinders_16.png"/>
             </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>

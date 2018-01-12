@@ -76,7 +76,7 @@ public class ObjectivePropertyPage implements IPropertyContent {
 
 	property = PropertiesUtils.getInstance()
 		.getTaggedValue(RCaseProperties.PROPERTY_OBJECTIVE_DESCRIPTION, element);
-	table.addProperty(I18nMessageService.getString("Objective.properties.prioritytype.description"), property);
+	table.addProperty(I18nMessageService.getString("Objective.properties.description"), property);
 
 	
 
