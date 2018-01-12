@@ -119,6 +119,18 @@ public class RCaseTools {
 	
 	public static final String TOOL_PROVIDE_OBJ = "ProvideObjTool";
 
+	public static final String MAKE_HELP = "MakeTool";	
+	
+	public static final String TOOL_HELP = "HelpTool";
+	
+	public static final String TOOL_UNKNOWN = "UnknownTool";
+	
+	public static final String TOOL_HURT = "HurtTool";
+	
+	public static final String TOOL_BREAK = "BreakTool";
+	
+	public static final String TOOL_EQUALS = "EqualsTool";	
+
     private RCaseTools() {
 
     }
