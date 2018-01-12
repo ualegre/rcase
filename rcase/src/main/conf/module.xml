@@ -136,6 +136,8 @@
                 <TagTypes>
                     <TagType name="ReqTagId" uid="10c44c3f-75d8-4d12-830f-197cf428449e" label="%RequirementStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="TagText" uid="11aafaca-cd1a-4006-8f09-816ca7a57b7b" label="$RequirementStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ReqTagCategory" uid="" label="$RequirementStereotype.properties.category" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ReqTagType" uid="" label="$RequirementStereotype.properties.type" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="TestCaseStereotype" metaclass="Class" is-hidden="false" label="Test Case" uid="7908ce65-ef46-44c9-9d38-a5c7567f01b3">
@@ -155,12 +157,15 @@
             <Stereotype name="RefineStereotype" metaclass="Dependency" is-hidden="false" label="%RefineStereotype.label" uid="ce120e4a-84e7-44aa-abf6-ab8c048484c2">
                 <Icon path="res/icons/requirements/relations/refine_16.png"/>
             </Stereotype>
-            <Stereotype name="CopyStereotype" metaclass="Dependency" is-hidden="false" label="Copy" uid="a8e923e2-f188-4cf6-8be1-a798154206ac">
+            <Stereotype name="CopyStereotype" metaclass="Dependency" is-hidden="false" label="copy" uid="a8e923e2-f188-4cf6-8be1-a798154206ac">
                 <Icon path="res/icons/requirements/relations/copy_16.png"/>
             </Stereotype>
-            <Stereotype name="PartStereotype" metaclass="Dependency" is-hidden="false" label="Part" uid="61732314-f937-496a-95ef-0ba24d13ee54">
+            <Stereotype name="PartStereotype" metaclass="Dependency" is-hidden="false" label="part" uid="61732314-f937-496a-95ef-0ba24d13ee54">
                 <Icon path="res/icons/requirements/relations/part.png"/>
-            </Stereotype>         
+            </Stereotype>    
+            <Stereotype name="ContributesStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="">
+                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
+            </Stereotype>       
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
