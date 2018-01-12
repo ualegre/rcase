@@ -115,6 +115,10 @@ public class RCaseTools {
 
 	public static final String TOOL_XOR = "XorTool";
 
+	public static final String TOOL_REQUEST_OBJ = "RequestObjTool";
+	
+	public static final String TOOL_PROVIDE_OBJ = "ProvideObjTool";
+
     private RCaseTools() {
 
     }

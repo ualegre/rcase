@@ -432,6 +432,18 @@
                     <HParameter name="stereotype" value="HindersStereotype"/>
                 </Handler>
             </Tool>
+            <Tool id="RequestObjTool" label="%RequestTool.label" tooltip="%RequestTool.tooltip" image="%RequestTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.relations.RequestTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="RequestStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ProvideObjTool" label="%ProvideTool.label" tooltip="%ProvideTool.tooltip" image="%ProvideTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.objective.tools.relations.ProvideTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="ProvideStereotype"/>
+                </Handler>
+            </Tool>
             <Tool id="UseCaseTool" label="%UseCaseTool.label" tooltip="%UseCaseTool.tooltip" image="%UseCaseTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.tools.UseCaseTool">
                     <HParameter name="metaclass" value="UseCase"/>
