@@ -40,14 +40,10 @@ public class RefineObjPropertyPage implements IPropertyContent {
 	
     @Override
     public void changeProperty(ModelElement element, int row, String value) {
-    	switch (row) {
-		case 1:
-		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		 
+    	PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_REFINE_OBJ_REFINEMENT_TYPE, value, element);
-		    break;				    
-		default:
-		    break;
-	}
+
 
     }
 
