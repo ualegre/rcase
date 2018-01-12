@@ -119,7 +119,7 @@ public class RCaseTools {
 	
 	public static final String TOOL_PROVIDE_OBJ = "ProvideObjTool";
 
-	public static final String MAKE_HELP = "MakeTool";	
+	public static final String TOOL_MAKE = "MakeTool";	
 	
 	public static final String TOOL_HELP = "HelpTool";
 	

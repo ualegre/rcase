@@ -92,7 +92,7 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
     private org.eclipse.gef.palette.PaletteEntry createObjectivesLinksGroup(IDiagramService toolRegistry) {
 		String groupName = I18nMessageService.getString("ScopePaletteGroup.Links.Objectives");
 		String[] toolNames = new String[] { RCaseTools.TOOL_MAKE, RCaseTools.TOOL_HELP,
-			RCaseTools.TOOL_UNKNOWN, RCaseTools.TOOL_HURT, RCaseTools.TOOL_BREAK, RCaseTools.TOOL_EQUAL };
+			RCaseTools.TOOL_UNKNOWN, RCaseTools.TOOL_HURT, RCaseTools.TOOL_BREAK, RCaseTools.TOOL_EQUALS };
 		return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
