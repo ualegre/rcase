@@ -144,9 +144,9 @@
                 <Icon path="res/icons/requirements/elements/testcase_16.png"/>
                 <Image path="res/icons/requirements/elements/testcase_64.png"/>
                 <TagTypes>
-                    <TagType name="TestCaseTagId" uid="" label="%TestCaseStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TestCaseTagText" uid="" label="$TestCaseStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TestCaseVerdict" uid="" label="$TestCaseStereotype.properties.verdict" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TestCaseTagId" uid="2f0bcd73-9554-4fd9-80ce-1ca307f60283" label="%TestCaseStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TestCaseTagText" uid="7ee16cb4-fb07-495f-b8de-f217c8ac3c0e" label="$TestCaseStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TestCaseVerdict" uid="b1e75ad8-2218-446a-8a52-bd134f49c269" label="$TestCaseStereotype.properties.verdict" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="DeriveStereotype" metaclass="Dependency" is-hidden="false" label="%DeriveStereotype.label" uid="bee908f6-3a27-4708-b415-fc0028625df0">
@@ -170,24 +170,24 @@
             <Stereotype name="ContributesStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="44f8ae79-ca37-4c89-b717-880a31670c06">
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
             </Stereotype>
-            <Stereotype name="MakeStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="">
+            <Stereotype name="MakeStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="3823c59d-590a-40fb-8c9f-36d4797f7411">
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
             </Stereotype>
-            <Stereotype name="HelpStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="">
+            <Stereotype name="HelpStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="2ca83aa6-4de8-4ab9-8420-90ce90f517dc">
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
             </Stereotype>
-            <Stereotype name="UnknownStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="">
+            <Stereotype name="UnknownStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="3fed5eb7-5ee8-4d89-97c4-2bc170fa1726">
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
             </Stereotype>
-            <Stereotype name="HurtStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="">
-                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
-            </Stereotype> 
-            <Stereotype name="BreakStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="">
+            <Stereotype name="HurtStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="8e2c5cf5-eb86-4f8b-99aa-72c3775882ca">
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
             </Stereotype>
-            <Stereotype name="EqualStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="">
+            <Stereotype name="BreakStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="d1873e95-ba75-4f1e-a6aa-dbd5f2d07731">
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
-            </Stereotype>         
+            </Stereotype>
+            <Stereotype name="EqualStereotype" metaclass="Dependency" is-hidden="false" label="contributes" uid="757131a4-852e-4914-a9d0-ea6f74abce45">
+                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
+            </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
@@ -516,48 +516,48 @@
                     <HParameter name="stereotype" value="RefineStereotype"/>
                 </Handler>
             </Tool>
-          <Tool id="MakeTool" label="%MakeTool.label" tooltip="%MakeTool.tooltip" image="%MakeTool.image">
+            <Tool id="MakeTool" label="%MakeTool.label" tooltip="%MakeTool.tooltip" image="%MakeTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.MakeTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="MakeStereotype"/>
                 </Handler>
             </Tool>
-          <Tool id="HelpTool" label="%HelpTool.label" tooltip="%HelpTool.tooltip" image="%HelpTool.image">
+            <Tool id="HelpTool" label="%HelpTool.label" tooltip="%HelpTool.tooltip" image="%HelpTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.HelpTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="HelpStereotype"/>
                 </Handler>
             </Tool>
-          <Tool id="UnknownTool" label="%UnknownTool.label" tooltip="%UnknownTool.tooltip" image="%UnknownTool.image">
+            <Tool id="UnknownTool" label="%UnknownTool.label" tooltip="%UnknownTool.tooltip" image="%UnknownTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.UnknownTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="UnknownStereotype"/>
                 </Handler>
             </Tool>
-          <Tool id="HurtTool" label="%HurtTool.label" tooltip="%HurtTool.tooltip" image="%HurtTool.image">
+            <Tool id="HurtTool" label="%HurtTool.label" tooltip="%HurtTool.tooltip" image="%HurtTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.HurtTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="HurtStereotype"/>
                 </Handler>
             </Tool>
-          <Tool id="BreakTool" label="%BreakTool.label" tooltip="%BreakTool.tooltip" image="%BreakTool.image">
+            <Tool id="BreakTool" label="%BreakTool.label" tooltip="%BreakTool.tooltip" image="%BreakTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.BreakTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="BreakStereotype"/>
                 </Handler>
-            </Tool>  
-          <Tool id="EqualTool" label="%EqualTool.label" tooltip="%EqualTool.tooltip" image="%EqualTool.image">
+            </Tool>
+            <Tool id="EqualTool" label="%EqualTool.label" tooltip="%EqualTool.tooltip" image="%EqualTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.EqualTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="EqualStereotype"/>
                 </Handler>
-            </Tool>                                                                                                              
+            </Tool>
             <Tool id="UseCaseTool" label="%UseCaseTool.label" tooltip="%UseCaseTool.tooltip" image="%UseCaseTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.tools.UseCaseTool">
                     <HParameter name="metaclass" value="UseCase"/>
                     <HParameter name="stereotype" value="UseCaseStereotype"/>
                 </Handler>
-            </Tool>            
+            </Tool>
             <Tool id="ContextAttributeTool" label="%ContextAttributeTool.label" tooltip="%ContextAttributeTool.tooltip" image="%ContextAttributeTool.image">
                 <Scope-target metaclass="ModelTree"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.elements.ContextAttributeTool">

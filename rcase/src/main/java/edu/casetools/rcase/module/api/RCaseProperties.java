@@ -113,6 +113,12 @@ public class RCaseProperties {
 
 	public static final String PROPERTY_REQUIREMENT_TYPE = "ReqTagType";
 
+	public static final String PROPERTY_TESTCASE_ID = "TestCaseTagId";
+
+	public static final String PROPERTY_TESTCASE_DESCRIPTION = "TestCaseTagText";
+
+	public static final String PROPERTY_TESTCASE_VERDICT = "TestCaseVerdict";
+
     private RCaseProperties() {
 
     }
