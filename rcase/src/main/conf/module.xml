@@ -106,6 +106,9 @@
             </Stereotype>
             <Stereotype name="RefineObjStereotype" metaclass="Dependency" is-hidden="false" label="%RefineObjStereotype.label" uid="e6d8c6f2-e1fa-419b-91b3-7d7fab369d1f">
                 <Icon path="res/icons/objectives/relations/refineobj_16.png"/>
+                <TagTypes>
+                    <TagType name="RefTypeTag" uid="e608bc99-9ac8-411e-b44a-f47e05455513" label="%RefineObjStereotype.properties.type" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
             </Stereotype>
             <Stereotype name="AndStereotype" metaclass="Dependency" is-hidden="false" label="%AndStereotype.label" uid="b653dbeb-ae71-4e97-a95e-263ed4ae5836">
                 <Icon path="res/icons/objectives/relations/and_16.png"/>

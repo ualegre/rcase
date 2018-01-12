@@ -72,7 +72,7 @@ public class XorTool extends RelationTool {
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
 	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
-		RCaseStereotypes.STEREOTYPE_XOR);
+		RCaseStereotypes.STEREOTYPE_REFINEOBJ);
     }
 
 }

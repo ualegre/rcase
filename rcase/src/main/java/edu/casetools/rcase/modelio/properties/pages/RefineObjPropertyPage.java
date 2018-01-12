@@ -24,22 +24,36 @@ import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
+import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
+import edu.casetools.rcase.utils.PropertiesUtils;
 
 public class RefineObjPropertyPage implements IPropertyContent {
 
+	String type;
+	
+	public RefineObjPropertyPage(){
+		type = "";
+	}
+	
     @Override
     public void changeProperty(ModelElement element, int row, String value) {
-
+    	switch (row) {
+		case 1:
+		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    RCaseProperties.PROPERTY_REFINE_OBJ_REFINEMENT_TYPE, value, element);
+		    break;				    
+		default:
+		    break;
+	}
 
     }
 
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
 
-	String type = "";
 		if (element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_AND)){
 			type = I18nMessageService.getString("RefineObj.properties.refinementtype.and");
 		} else if (element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OR)){

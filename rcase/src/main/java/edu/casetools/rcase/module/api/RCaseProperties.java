@@ -107,6 +107,8 @@ public class RCaseProperties {
 
 	public static final String PROPERTY_OBJECTIVE_DESCRIPTION = "ObjTagDescription";
 
+	public static final String PROPERTY_REFINE_OBJ_REFINEMENT_TYPE = "RefTypeTag";
+
     private RCaseProperties() {
 
     }

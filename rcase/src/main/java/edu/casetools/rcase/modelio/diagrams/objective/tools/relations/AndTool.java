@@ -72,7 +72,7 @@ public class AndTool extends RelationTool {
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
 	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
-		RCaseStereotypes.STEREOTYPE_AND);
+		RCaseStereotypes.STEREOTYPE_REFINEOBJ);
     }
 
 }
