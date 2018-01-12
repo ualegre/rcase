@@ -22,11 +22,13 @@ package edu.casetools.rcase.modelio.diagrams.objective.tools.relations;
 
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
+import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
 import edu.casetools.rcase.modelio.diagrams.RelationTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
@@ -71,8 +73,19 @@ public class XorTool extends RelationTool {
      */
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
-	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
+    	Dependency dependency = DiagramUtils.getInstance().createDependency(originElement, targetElement,
 		RCaseStereotypes.STEREOTYPE_REFINEOBJ);
+    	addStereotype(dependency);
+    	return dependency;
     }
+
+	private void addStereotype(Dependency dependency) {
+		try {
+			dependency.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_XOR);
+		} catch (ExtensionNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
