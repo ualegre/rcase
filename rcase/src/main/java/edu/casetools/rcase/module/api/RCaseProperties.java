@@ -101,6 +101,12 @@ public class RCaseProperties {
 
 	public static final String PROPERTY_PARTICIPATION_TYPE = "PartTagType";
 
+	public static final String PROPERTY_OBJECTIVE_ID = "ObjTagId";
+
+	public static final String PROPERTY_OBJECTIVE_PRIORITY_LVL = "ObjTagPriority";
+
+	public static final String PROPERTY_OBJECTIVE_DESCRIPTION = "ObjTagDescription";
+
     private RCaseProperties() {
 
     }
