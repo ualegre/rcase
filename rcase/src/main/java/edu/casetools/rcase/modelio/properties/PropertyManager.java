@@ -32,9 +32,11 @@ import edu.casetools.rcase.modelio.properties.pages.ContextAttributePropertyPage
 import edu.casetools.rcase.modelio.properties.pages.EthicalProfilePropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.ObjectivePropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.ParticipationPropertyPage;
+import edu.casetools.rcase.modelio.properties.pages.RefineObjPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.RequirementPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.SituationOfInterestPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.StakeholderPropertyPage;
+import edu.casetools.rcase.modelio.properties.pages.TestCasePropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.ValueEnhancerPropertyPage;
 import edu.casetools.rcase.modelio.properties.pages.ValuePropertyPage;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
@@ -173,7 +175,7 @@ public class PropertyManager {
 		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
 				RCaseStereotypes.STEREOTYPE_REFINEOBJ, RCaseModule.getInstance().getModuleContext()
 					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
-			    this.propertyPage = new ObjectivePropertyPage();
+			    this.propertyPage = new RefineObjPropertyPage();
 		}
 		
 		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
