@@ -185,7 +185,7 @@
             <Stereotype name="BreakStereotype" metaclass="Dependency" is-hidden="false" label="%BreakStereotype.label" uid="d1873e95-ba75-4f1e-a6aa-dbd5f2d07731">
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
             </Stereotype>
-            <Stereotype name="EqualStereotype" metaclass="Dependency" is-hidden="false" label="%EqualStereotype.label" uid="757131a4-852e-4914-a9d0-ea6f74abce45">
+            <Stereotype name="EqualStereotype" metaclass="Dependency" is-hidden="false" label="%EqualStereotype.label" uid="">
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
             </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">

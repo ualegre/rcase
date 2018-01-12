@@ -129,7 +129,7 @@ public class RCaseTools {
 	
 	public static final String TOOL_BREAK = "BreakTool";
 	
-	public static final String TOOL_EQUALS = "EqualsTool";	
+	public static final String TOOL_EQUALS = "EqualTool";	
 
     private RCaseTools() {
 
