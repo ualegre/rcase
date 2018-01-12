@@ -67,8 +67,6 @@ public class ObjectivePropertyPage implements IPropertyContent {
 
 	property = PropertiesUtils.getInstance()
 		.getTaggedValue(RCaseProperties.PROPERTY_OBJECTIVE_PRIORITY_LVL, element);
-	property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_STAKEHOLDER_POWER,
-			element);
 	table.addProperty(I18nMessageService.getString("Objective.properties.prioritytype"), property,
 			new String[] { I18nMessageService.getString("Objective.properties.prioritytype.normal"),
 				I18nMessageService.getString("Objective.properties.prioritytype.important"),
