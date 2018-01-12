@@ -56,7 +56,7 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
 	paletteRoot.add(createNodesGroup(toolRegistry));
 	paletteRoot.add(createGridGroup(toolRegistry));
 	paletteRoot.add(createRelationsGroup(toolRegistry));
-	paletteRoot.add(createNotesGroup(toolRegistry));
+	paletteRoot.add(createDefaultNotesGroup(toolRegistry));
 	paletteRoot.add(createDefaultFreeDrawingGroup(toolRegistry));
     }
 
@@ -71,13 +71,6 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Grid");
 	String[] toolNames = new String[] { // IRCaseTools.TOOL_USE_CASE,
 		RCaseTools.TOOL_GRID };
-	return createGroup(groupName, toolNames, toolRegistry, 0);
-    }
-
-    private org.eclipse.gef.palette.PaletteEntry createNotesGroup(IDiagramService toolRegistry) {
-	String groupName = I18nMessageService.getString("ContextPaletteGroup.Notes");
-	String[] toolNames = new String[] { // IRCaseTools.TOOL_USE_CASE,
-		RCaseTools.TOOL_NOTE };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
