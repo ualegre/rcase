@@ -125,14 +125,45 @@
             <Stereotype name="HindersStereotype" metaclass="Dependency" is-hidden="false" label="%HindersStereotype.label" uid="c60c8b3b-c28d-482e-88ba-f2df807b3304">
                 <Icon path="res/icons/objectives/relations/hinders_16.png"/>
             </Stereotype>
+            <Stereotype name="RequirementsDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%RequirementsDiagramStereotype.label" uid="ef810f79-c808-4f48-943f-27c2d8c74333">
+                <Icon path="res/icons/requirements/requirements_diagram.png"/>
+                <Image path="res/icons/requirements/requirements_diagram.png"/>
+                <TagTypes/>
+            </Stereotype>
+            <Stereotype name="RequirementStereotype" metaclass="Class" is-hidden="false" label="%RequirementStereotype.label" uid="ab289f43-9605-4853-a2f9-03e665e2754a">
+                <Icon path="res/icons/requirements/elements/requirements_16.png"/>
+                <Image path="res/icons/requirements/elements/requirements_64.png"/>
+                <TagTypes>
+                    <TagType name="ReqTagId" uid="10c44c3f-75d8-4d12-830f-197cf428449e" label="%RequirementStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagText" uid="11aafaca-cd1a-4006-8f09-816ca7a57b7b" label="$RequirementStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="TestCaseStereotype" metaclass="Class" is-hidden="false" label="Test Case" uid="7908ce65-ef46-44c9-9d38-a5c7567f01b3">
+                <Icon path="res/icons/requirements/elements/testcase_16.png"/>
+                <Image path="res/icons/requirements/elements/testcase_64.png"/>
+                <TagTypes/>
+            </Stereotype>   
+			<Stereotype name="DeriveStereotype" metaclass="Dependency" is-hidden="false" label="%DeriveStereotype.label" uid="bee908f6-3a27-4708-b415-fc0028625df0">
+                <Icon path="res/icons/requirements/relations/derive_16.png"/>
+            </Stereotype>
+            <Stereotype name="SatisfyStereotype" metaclass="Dependency" is-hidden="false" label="%SatisfyStereotype.label" uid="e149af64-3d69-4b6e-b09a-3a46c31c4804">
+                <Icon path="res/icons/requirements/relations/satisfy_16.png"/>
+            </Stereotype>
+            <Stereotype name="VerifyStereotype" metaclass="Dependency" is-hidden="false" label="%VerifyStereotype.label" uid="cdbd29f6-9bdf-4575-83aa-0f453d119769">
+                <Icon path="res/icons/requirements/relations/verify_16.png"/>
+            </Stereotype>
+            <Stereotype name="RefineStereotype" metaclass="Dependency" is-hidden="false" label="%RefineStereotype.label" uid="ce120e4a-84e7-44aa-abf6-ab8c048484c2">
+                <Icon path="res/icons/requirements/relations/refine_16.png"/>
+            </Stereotype>
+            <Stereotype name="CopyStereotype" metaclass="Dependency" is-hidden="false" label="Copy" uid="a8e923e2-f188-4cf6-8be1-a798154206ac">
+                <Icon path="res/icons/requirements/relations/copy_16.png"/>
+            </Stereotype>
+            <Stereotype name="PartStereotype" metaclass="Dependency" is-hidden="false" label="Part" uid="61732314-f937-496a-95ef-0ba24d13ee54">
+                <Icon path="res/icons/requirements/relations/part.png"/>
+            </Stereotype>         
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
-                <TagTypes/>
-            </Stereotype>
-            <Stereotype name="RequirementDiagram" metaclass="StaticDiagram" is-hidden="false" label="%RequirementsDiagramStereotype.label" uid="ef810f79-c808-4f48-943f-27c2d8c74333">
-                <Icon path="res/icons/requirements_diagram.png"/>
-                <Image path="res/icons/requirements_diagram.png"/>
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="UseCaseDiagram" metaclass="UseCaseDiagram" is-hidden="false" label="%UseCaseDiagramStereotype.label" uid="7b6c0ef8-e2a3-4a6f-9838-33edbe9e1a1b">
@@ -162,24 +193,13 @@
                     <TagType name="SOIDetection" uid="4da1ecc2-d106-43c0-9785-0bc8b6020dc7" label="%SituationOfInterestStereotype.properties.detection" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="RequirementStereotype" metaclass="Class" is-hidden="false" label="%RequirementStereotype.label" uid="ab289f43-9605-4853-a2f9-03e665e2754a">
-                <Icon path="res/icons/requirements_16.png"/>
-                <Image path="res/icons/requirements_64.png"/>
-                <TagTypes>
-                    <TagType name="ReqTagId" uid="10c44c3f-75d8-4d12-830f-197cf428449e" label="%RequirementStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagText" uid="11aafaca-cd1a-4006-8f09-816ca7a57b7b" label="$RequirementStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                </TagTypes>
-            </Stereotype>
+
             <Stereotype name="RequirementContainerStereotype" metaclass="Package" is-hidden="false" label="%RequirementContainerStereotype.label" uid="cb19ff30-98c8-43f1-b098-e5d8ceba2782">
                 <Icon path="res/icons/requirements_container_16.png"/>
                 <Image path="%RequirementTool.image"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="TestCaseStereotype" metaclass="Class" is-hidden="false" label="Test Case" uid="7908ce65-ef46-44c9-9d38-a5c7567f01b3">
-                <Icon path="res/icons/testcase_16.png"/>
-                <Image path="res/icons/testcase_64.png"/>
-                <TagTypes/>
-            </Stereotype>
+
             <Stereotype name="TriggersStereotype" metaclass="Dependency" is-hidden="false" label="%TriggersStereotype.label" uid="b62eca7a-05f3-481b-a29d-24899f211a5c">
                 <Icon path="%ContextDependencyTool.image"/>
                 <Image path="%ContextDependencyTool.image"/>
@@ -200,36 +220,7 @@
                 <Image path="%ContextDeriveTool.image"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="DeriveStereotype" metaclass="Dependency" is-hidden="false" label="%DeriveStereotype.label" uid="bee908f6-3a27-4708-b415-fc0028625df0">
-                <Icon path="%DeriveStereotype.image"/>
-                <Image path="%DeriveStereotype.image"/>
-                <TagTypes/>
-            </Stereotype>
-            <Stereotype name="SatisfyStereotype" metaclass="Dependency" is-hidden="false" label="%SatisfyStereotype.label" uid="e149af64-3d69-4b6e-b09a-3a46c31c4804">
-                <Icon path="%SatisfyStereotype.image"/>
-                <Image path="%SatisfyStereotype.image"/>
-                <TagTypes/>
-            </Stereotype>
-            <Stereotype name="VerifyStereotype" metaclass="Dependency" is-hidden="false" label="%VerifyStereotype.label" uid="cdbd29f6-9bdf-4575-83aa-0f453d119769">
-                <Icon path="%VerifyStereotype.image"/>
-                <Image path="%VerifyStereotype.image"/>
-                <TagTypes/>
-            </Stereotype>
-            <Stereotype name="RefineStereotype" metaclass="Dependency" is-hidden="false" label="%RefineStereotype.label" uid="ce120e4a-84e7-44aa-abf6-ab8c048484c2">
-                <Icon path="%RefineStereotype.image"/>
-                <Image path="%RefineStereotype.image"/>
-                <TagTypes/>
-            </Stereotype>
-            <Stereotype name="CopyStereotype" metaclass="Dependency" is-hidden="false" label="Copy" uid="a8e923e2-f188-4cf6-8be1-a798154206ac">
-                <Icon path="res/icons/copy.png"/>
-                <Image path="res/icons/copy.png"/>
-                <TagTypes/>
-            </Stereotype>
-            <Stereotype name="PartStereotype" metaclass="Dependency" is-hidden="false" label="Part" uid="61732314-f937-496a-95ef-0ba24d13ee54">
-                <Icon path="res/icons/part.png"/>
-                <Image path="res/icons/part.png"/>
-                <TagTypes/>
-            </Stereotype>
+            
             <MetaclassReference uid="08dbbc2b-9618-430c-823c-0795122efa3a" metaclass="ModelElement">
                 <TagTypes>
                     <TagType name="TagName" uid="2727e4d0-b3ae-4518-85af-1639a76380e6" label="Name" parameter-card="1" is-hidden="false" is-signed="false"/>
@@ -447,6 +438,60 @@
                     <HParameter name="stereotype" value="ProvideStereotype"/>
                 </Handler>
             </Tool>
+            <Tool id="RequirementTool" label="%RequirementTool.label" tooltip="%RequirementTool.tooltip" image="%RequirementTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.RequirementTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="RequirementStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="RequirementContainerTool" label="%RequirementContainerTool.label" tooltip="%RequirementContainerTool.tooltip" image="%RequirementContainerTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.RequirementContainerTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="RequirementContainerStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="TestCaseTool" label="%TestCaseTool.label" tooltip="%TestCaseTool.tooltip" image="%TestCaseTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.TestCaseTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="TestCaseStereotype"/>
+                </Handler>
+            </Tool>
+ <Tool id="ReqPart" label="%Part.label" tooltip="%Part.tooltip" image="%Part.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.PartTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="PartStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ReqCopy" label="%Copy.label" tooltip="%Copy.tooltip" image="%Copy.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.CopyTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="CopyStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ReqDerive" label="%ContextDeriveTool.label" tooltip="%ContextDeriveTool.tooltip" image="%ContextDeriveTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.ReqDeriveTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="DeriveStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ReqSatisfy" label="%Satisfy.label" tooltip="%Satisfy.tooltip" image="%Satisfy.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.SatisfyTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="SatisfyStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ReqVerify" label="%Verify.label" tooltip="%Verify.tooltip" image="%Verify.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.VerifyTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="VerifyStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ReqRefine" label="%Refine.label" tooltip="%Refine.tooltip" image="%Refine.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.RefineTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="RefineStereotype"/>
+                </Handler>
+            </Tool>
             <Tool id="UseCaseTool" label="%UseCaseTool.label" tooltip="%UseCaseTool.tooltip" image="%UseCaseTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.tools.UseCaseTool">
                     <HParameter name="metaclass" value="UseCase"/>
@@ -460,28 +505,11 @@
                     <HParameter name="stereotype" value="ContextAttributeStereotype"/>
                 </Handler>
             </Tool>
-            <Tool id="RequirementTool" label="%RequirementTool.label" tooltip="%RequirementTool.tooltip" image="%RequirementTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.RequirementTool">
-                    <HParameter name="metaclass" value="Class"/>
-                    <HParameter name="stereotype" value="RequirementStereotype"/>
-                </Handler>
-            </Tool>
+
             <Tool id="SituationOfInterestTool" label="%SituationOfInterestTool.label" tooltip="%SituationOfInterestTool.tooltip" image="%SituationOfInterestTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.SituationOfInterestTool">
                     <HParameter name="metaclass" value="Class"/>
                     <HParameter name="stereotype" value="SituationOfInterestStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="RequirementContainerTool" label="%RequirementContainerTool.label" tooltip="%RequirementContainerTool.tooltip" image="%RequirementContainerTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.RequirementContainerTool">
-                    <HParameter name="metaclass" value="Class"/>
-                    <HParameter name="stereotype" value="RequirementContainerStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="TestCaseTool" label="%TestCaseTool.label" tooltip="%TestCaseTool.tooltip" image="%TestCaseTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.TestCaseTool">
-                    <HParameter name="metaclass" value="Class"/>
-                    <HParameter name="stereotype" value="TestCaseStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="TriggersTool" label="%TriggersTool.label" tooltip="%TriggersTool.tooltip" image="%TriggersTool.image">
@@ -526,42 +554,6 @@
                     <HParameter name="metaclass" value="Note"/>
                 </Handler>
             </Tool>
-            <Tool id="ReqPart" label="%Part.label" tooltip="%Part.tooltip" image="%Part.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.PartTool">
-                    <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="PartStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="ReqCopy" label="%Copy.label" tooltip="%Copy.tooltip" image="%Copy.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.CopyTool">
-                    <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="CopyStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="ReqDerive" label="%ContextDeriveTool.label" tooltip="%ContextDeriveTool.tooltip" image="%ContextDeriveTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.ReqDeriveTool">
-                    <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="DeriveStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="ReqSatisfy" label="%Satisfy.label" tooltip="%Satisfy.tooltip" image="%Satisfy.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.SatisfyTool">
-                    <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="SatisfyStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="ReqVerify" label="%Verify.label" tooltip="%Verify.tooltip" image="%Verify.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.VerifyTool">
-                    <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="VerifyStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="ReqRefine" label="%Refine.label" tooltip="%Refine.tooltip" image="%Refine.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.RefineTool">
-                    <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="RefineStereotype"/>
-                </Handler>
-            </Tool>
         </Tools>
         <ContextualMenu>
             <CommandRef refid="CreateUseCase"/>
@@ -586,7 +578,7 @@
             <DiagramType base-diagram="StaticDiagram" stereotype="ObjectiveDiagramStereotype">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.objective.ObjectiveDiagramCustomizer"/>
             </DiagramType>
-            <DiagramType base-diagram="StaticDiagram" stereotype="RequirementDiagram">
+            <DiagramType base-diagram="StaticDiagram" stereotype="RequirementsDiagramStereotype">
                 <Palette keepBasePalette="false"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.RequirementDiagramCustomizer"/>
             </DiagramType>

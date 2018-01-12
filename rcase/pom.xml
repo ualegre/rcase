@@ -6,7 +6,7 @@
 	<!-- definition -->
 	<groupId>edu.casetools</groupId>
 	<artifactId>rcase</artifactId>
-	<version>0.2.8</version>
+	<version>0.2.9</version>
 
 	<name>RCase</name>
 

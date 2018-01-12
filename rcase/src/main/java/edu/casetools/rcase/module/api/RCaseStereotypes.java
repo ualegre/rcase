@@ -27,7 +27,7 @@ package edu.casetools.rcase.module.api;
 public class RCaseStereotypes {
 
     // Diagram
-    public static final String STEREOTYPE_DIAGRAM_REQUIREMENTS = "RequirementDiagram";
+    public static final String STEREOTYPE_DIAGRAM_REQUIREMENTS = "RequirementsDiagramStereotype";
     // Elements
     public static final String STEREOTYPE_REQUIREMENT = "RequirementStereotype";
 
