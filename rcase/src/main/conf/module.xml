@@ -85,27 +85,27 @@
                 <Image path="res/icons/objectives/objective_diagram.png"/>
             </Stereotype>
             <Stereotype name="ObjectiveStereotype" metaclass="Class" is-hidden="false" label="%ObjectiveStereotype.label" uid="114ca726-1fba-4dfe-afac-f7ced98c352c">
-                <Icon path="%ObjectiveTool.image"/>
+                <Icon path="res/icons/objectives/elements/objective_16.png"/>
                 <TagTypes>
                     <TagType name="ObjTagId" uid="c1ae226f-1b19-4e0e-a712-584aaad7f660" label="%ObjectiveStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ObjTagPriority" uid="1d606f46-0fdd-413c-bf25-518533c06a2e" label="$ObjectiveStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ObjTagDescription" uid="a8d33a2e-68ee-437a-bf25-a298e32da3aa" label="%ObjectiveStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagPriority" uid="1d606f46-0fdd-413c-bf25-518533c06a2e" label="$ObjectiveStereotype.properties.prioritylvl" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagDescription" uid="a8d33a2e-68ee-437a-bf25-a298e32da3aa" label="%ObjectiveStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="GoalStereotype" metaclass="Class" is-hidden="false" label="%GoalStereotype.label" uid="2abe19ae-1875-4c32-974c-215a02a372b1">
-                <Icon path="%GoalTool.image"/>
+            <Stereotype name="GoalStereotype" metaclass="Class" is-hidden="false" label="%GoalStereotype.label" uid="1e7f1bea-a109-45a5-bb7e-40c8e743438b">
+                <Icon path="res/icons/objectives/elements/goal_16.png"/>
             </Stereotype>
             <Stereotype name="SoftGoalStereotype" metaclass="Class" is-hidden="false" label="%SoftGoalStereotype.label" uid="ff5a1d7e-2d8d-4144-9a18-f35690e92c6e">
-                <Icon path="%SoftGoalTool.image"/>
+                <Icon path="res/icons/objectives/elements/softgoal_16.png"/>
             </Stereotype>
             <Stereotype name="ResourceStereotype" metaclass="Class" is-hidden="false" label="%ResourceStereotype.label" uid="2f0cf76d-fc37-498a-9974-5f6de8358ac0">
-                <Icon path="%ResourceTool.image"/>
+                <Icon path="res/icons/objectives/elements/resource_16.png"/>
             </Stereotype>
             <Stereotype name="ObstacleStereotype" metaclass="Class" is-hidden="false" label="%ObstacleStereotype.label" uid="d72e0988-b2e1-479a-be80-b5a5a42fc927">
-                <Icon path="%ObstacleTool.image"/>
+                <Icon path="res/icons/objectives/elements/obstacle_16.png"/>
             </Stereotype>
             <Stereotype name="RefineObjStereotype" metaclass="Dependency" is-hidden="false" label="%RefineObjStereotype.label" uid="e6d8c6f2-e1fa-419b-91b3-7d7fab369d1f">
-                <Icon path="%RefineObjTool.image"/>
+                <Icon path="res/icons/objectives/relations/refineobj_16.png"/>
             </Stereotype>
             <Stereotype name="AndStereotype" metaclass="RefineObjStereotype" is-hidden="false" label="%AndStereotype.label" uid="b653dbeb-ae71-4e97-a95e-263ed4ae5836">
                 <Icon path="%AndTool.image"/>
