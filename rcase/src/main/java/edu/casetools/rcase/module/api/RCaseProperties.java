@@ -109,6 +109,10 @@ public class RCaseProperties {
 
 	public static final String PROPERTY_REFINE_OBJ_REFINEMENT_TYPE = "RefTypeTag";
 
+	public static final String PROPERTY_REQUIREMENT_CATEGORY = "ReqTagCategory";
+
+	public static final String PROPERTY_REQUIREMENT_TYPE = "ReqTagType";
+
     private RCaseProperties() {
 
     }
