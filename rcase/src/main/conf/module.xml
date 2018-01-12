@@ -199,7 +199,7 @@
                 </TagTypes>
             </Stereotype>
             <Stereotype name="RequirementContainerStereotype" metaclass="Package" is-hidden="false" label="%RequirementContainerStereotype.label" uid="cb19ff30-98c8-43f1-b098-e5d8ceba2782">
-                <Icon path="res/icons/requirements_container_16.png"/>
+                <Icon path="res/icons/requirements/elements/requirements_container_16.png"/>
                 <Image path="%RequirementTool.image"/>
                 <TagTypes/>
             </Stereotype>
