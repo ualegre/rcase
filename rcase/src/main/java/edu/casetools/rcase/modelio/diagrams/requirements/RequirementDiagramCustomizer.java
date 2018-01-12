@@ -50,15 +50,16 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
      */
     @Override
     public void fillPalette(PaletteRoot paletteRoot) {
-	IDiagramService toolRegistry = RCaseModule.getInstance().getModuleContext().getModelioServices()
-		.getDiagramService();
-	PaletteDrawer commonGroup = createBasics();
-
-	paletteRoot.add(commonGroup);
-	paletteRoot.add(createNodesGroup(toolRegistry));
-	paletteRoot.add(createLinksGroup(toolRegistry));
-	paletteRoot.add(createDefaultNotesGroup(toolRegistry));
-	paletteRoot.add(createDefaultFreeDrawingGroup(toolRegistry));
+		IDiagramService toolRegistry = RCaseModule.getInstance().getModuleContext().getModelioServices()
+			.getDiagramService();
+		PaletteDrawer commonGroup = createBasics();
+	
+		paletteRoot.add(commonGroup);
+		paletteRoot.add(createNodesGroup(toolRegistry));
+		paletteRoot.add(createObjectivesLinksGroup(toolRegistry));
+		paletteRoot.add(createRequirementsLinksGroup(toolRegistry));
+		paletteRoot.add(createDefaultNotesGroup(toolRegistry));
+		paletteRoot.add(createDefaultFreeDrawingGroup(toolRegistry));
     }
 
     /*
@@ -68,7 +69,7 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
      */
     @Override
     public boolean keepBasePalette() {
-	return false;
+    	return false;
     }
 
     /*
@@ -78,23 +79,34 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
      */
     @Override
     public Map<String, String> getParameters() {
-	return null;
+    	return null;
     }
-
-    private org.eclipse.gef.palette.PaletteEntry createLinksGroup(IDiagramService toolRegistry) {
-	String groupName = I18nMessageService.getString("ScopePaletteGroup.Links");
-	String[] toolNames = new String[] { RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_TRIGGERS,
-		RCaseTools.TOOL_PART, RCaseTools.TOOL_COPY, RCaseTools.TOOL_DERIVE, RCaseTools.TOOL_SATISFY,
-		RCaseTools.TOOL_VERIFY, RCaseTools.TOOL_REFINE, RCaseTools.TOOL_TRACEABILITY };
-	return createGroup(groupName, toolNames, toolRegistry, 0);
-    }
-
+    
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
-	String groupName = I18nMessageService.getString("ScopePaletteGroup.Nodes");
-	String[] toolNames = new String[] { RCaseTools.TOOL_REQUIREMENTCONTAINER, RCaseTools.TOOL_REQUIREMENT,
-		RCaseTools.TOOL_SITUATION_OF_INTEREST, RCaseTools.TOOL_TESTCASE };
-	return createGroup(groupName, toolNames, toolRegistry, 0);
+		String groupName = I18nMessageService.getString("ScopePaletteGroup.Nodes");
+		String[] toolNames = new String[] { RCaseTools.TOOL_REQUIREMENTCONTAINER, RCaseTools.TOOL_REQUIREMENT,
+			RCaseTools.TOOL_SITUATION_OF_INTEREST, RCaseTools.TOOL_TESTCASE };
+		return createGroup(groupName, toolNames, toolRegistry, 0);
     }
+    
+    private org.eclipse.gef.palette.PaletteEntry createObjectivesLinksGroup(IDiagramService toolRegistry) {
+		String groupName = I18nMessageService.getString("ScopePaletteGroup.Links.Objectives");
+		String[] toolNames = new String[] { RCaseTools.TOOL_MAKE, RCaseTools.TOOL_HELP,
+			RCaseTools.TOOL_UNKNOWN, RCaseTools.TOOL_HURT, RCaseTools.TOOL_BREAK, RCaseTools.TOOL_EQUAL };
+		return createGroup(groupName, toolNames, toolRegistry, 0);
+    }
+
+    private org.eclipse.gef.palette.PaletteEntry createRequirementsLinksGroup(IDiagramService toolRegistry) {
+		String groupName = I18nMessageService.getString("ScopePaletteGroup.Links.Requirements");
+		String[] toolNames = new String[] { RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_TRIGGERS,
+			RCaseTools.TOOL_PART, RCaseTools.TOOL_COPY, RCaseTools.TOOL_DERIVE, RCaseTools.TOOL_SATISFY,
+			RCaseTools.TOOL_VERIFY, RCaseTools.TOOL_REFINE, RCaseTools.TOOL_TRACEABILITY };
+		return createGroup(groupName, toolNames, toolRegistry, 0);
+    }
+
+
+    
+
 
     /**
      * Initializes the customizer.
