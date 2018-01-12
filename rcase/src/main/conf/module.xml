@@ -171,22 +171,22 @@
                 <Icon path="res/icons/requirements/relations/contributes_16.png"/>
             </Stereotype>
             <Stereotype name="MakeStereotype" metaclass="Dependency" is-hidden="false" label="%MakeStereotype.label" uid="3823c59d-590a-40fb-8c9f-36d4797f7411">
-                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
+                <Icon path="res/icons/requirements/relations/make_16.png"/>
             </Stereotype>
             <Stereotype name="HelpStereotype" metaclass="Dependency" is-hidden="false" label="%HelpStereotype.label" uid="2ca83aa6-4de8-4ab9-8420-90ce90f517dc">
-                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
+                <Icon path="res/icons/requirements/relations/help_16.png"/>
             </Stereotype>
             <Stereotype name="UnknownStereotype" metaclass="Dependency" is-hidden="false" label="%UnknownStereotype.label" uid="3fed5eb7-5ee8-4d89-97c4-2bc170fa1726">
-                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
+                <Icon path="res/icons/requirements/relations/unknown_16.png"/>
             </Stereotype>
             <Stereotype name="HurtStereotype" metaclass="Dependency" is-hidden="false" label="%HurtStereotype.label" uid="8e2c5cf5-eb86-4f8b-99aa-72c3775882ca">
-                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
+                <Icon path="res/icons/requirements/relations/hurt_16.png"/>
             </Stereotype>
             <Stereotype name="BreakStereotype" metaclass="Dependency" is-hidden="false" label="%BreakStereotype.label" uid="d1873e95-ba75-4f1e-a6aa-dbd5f2d07731">
-                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
+                <Icon path="res/icons/requirements/relations/break_16.png"/>
             </Stereotype>
-            <Stereotype name="EqualStereotype" metaclass="Dependency" is-hidden="false" label="%EqualStereotype.label" uid="">
-                <Icon path="res/icons/requirements/relations/contributes_16.png"/>
+            <Stereotype name="EqualStereotype" metaclass="Dependency" is-hidden="false" label="%EqualStereotype.label" uid="a6b4af6e-995d-488b-bd81-bdace7b7a156">
+                <Icon path="res/icons/requirements/relations/equals_16.png"/>
             </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
