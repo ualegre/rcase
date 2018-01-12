@@ -93,7 +93,15 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_AND = "AndStereotype";	
 	public static final String STEREOTYPE_OR = "OrStereotype";	
 	public static final String STEREOTYPE_XOR = "XorStereotype";
-	public static final String STEREOTYPE_REFINEOBJ = "RefineObjStereotype";	
+	public static final String STEREOTYPE_REFINEOBJ = "RefineObjStereotype";
+	
+	public static final String STEREOTYPE_CONTRIBUTION = "ContributesStereotype";
+	public static final String STEREOTYPE_MAKE = "MakeStereotype";
+	public static final String STEREOTYPE_HELP = "HelpStereotype";
+	public static final String STEREOTYPE_UNKNOWN = "UnknownStereotype";
+	public static final String STEREOTYPE_HURT = "HurtStereotype";
+	public static final String STEREOTYPE_BREAK = "BreakStereotype";
+	public static final String STEREOTYPE_EQUAL = "EqualStereotype";
     private RCaseStereotypes() {
 
     }
