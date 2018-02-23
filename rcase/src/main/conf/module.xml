@@ -80,7 +80,7 @@
             <Stereotype name="HasStereotype" metaclass="Dependency" is-hidden="false" label="%HasStereotype.label" uid="744e4f0b-d962-4c5d-a9ce-9984440d8eff">
                 <Icon path="res/icons/stakeholder/relation/has_16.png"/>
             </Stereotype>
-            <Stereotype name="InfluencesStereotype" metaclass="Dependency" is-hidden="false" label="%InfluencesStereotype.label" uid="a926d93e-8b27-4792-8e51-5801c22bd152">
+            <Stereotype name="InfluenceStereotype" metaclass="Dependency" is-hidden="false" label="%InfluencesStereotype.label" uid="a926d93e-8b27-4792-8e51-5801c22bd152">
                 <Icon path="res/icons/stakeholder/relation/influence_16.png"/>
             </Stereotype>
             <Stereotype name="EnhanceStereotype" metaclass="Dependency" is-hidden="false" label="%EnhanceStereotype.label" uid="10faf718-dbb6-450d-b6e8-9d19a89f76f7">
