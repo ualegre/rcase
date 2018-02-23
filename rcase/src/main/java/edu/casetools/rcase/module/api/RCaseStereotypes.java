@@ -82,6 +82,7 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_PROVIDE = "ProvideStereotype";
 	public static final String STEREOTYPE_HAS = "HasStereotype";
 	public static final String STEREOTYPE_INFLUENCE = "InfluenceStereotype";
+	public static final String STEREOTYPE_ENHANCE = "EnhanceStereotype";
 	
 	public static final String STEREOTYPE_DIAGRAM_OBJECTIVE = "ObjectiveDiagramStereotype";
 	public static final String STEREOTYPE_GOAL = "GoalStereotype";
@@ -103,6 +104,7 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_HURT = "HurtStereotype";
 	public static final String STEREOTYPE_BREAK = "BreakStereotype";
 	public static final String STEREOTYPE_EQUAL = "EqualStereotype";
+
 
     private RCaseStereotypes() {
 

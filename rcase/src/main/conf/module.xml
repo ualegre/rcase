@@ -83,6 +83,9 @@
             <Stereotype name="InfluencesStereotype" metaclass="Dependency" is-hidden="false" label="%InfluencesStereotype.label" uid="a926d93e-8b27-4792-8e51-5801c22bd152">
                 <Icon path="res/icons/stakeholder/relation/influence_16.png"/>
             </Stereotype>
+            <Stereotype name="EnhanceStereotype" metaclass="Dependency" is-hidden="false" label="%EnhanceStereotype.label" uid="10faf718-dbb6-450d-b6e8-9d19a89f76f7">
+                <Icon path="res/icons/stakeholder/relation/enhance_16.png"/>
+            </Stereotype>
             <Stereotype name="ObjectiveDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ObjectiveDiagramStereotype.label" uid="327448fe-a32e-48bc-86a3-203ab2aa4334">
                 <Icon path="res/icons/objectives/objective_diagram.png"/>
                 <Image path="res/icons/objectives/objective_diagram.png"/>
@@ -403,6 +406,12 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.relations.InfluenceTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="InfluenceStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="EnhanceTool" label="%EnhanceTool.label" tooltip="%EnhanceTool.tooltip" image="%EnhanceTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.relations.EnhanceTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="EnhanceStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="GoalTool" label="%GoalTool.label" tooltip="%GoalTool.tooltip" image="%GoalTool.image">

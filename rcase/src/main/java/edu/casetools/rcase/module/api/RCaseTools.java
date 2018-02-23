@@ -96,6 +96,8 @@ public class RCaseTools {
 	public static final String TOOL_HAS = "HasTool";
 	
 	public static final String TOOL_INFLUENCE = "InfluenceTool";
+	
+	public static final String TOOL_ENHANCE = "EnhanceTool";
 
 	public static final String TOOL_PROVIDE = "ProvideTool";
 
@@ -133,7 +135,6 @@ public class RCaseTools {
 	
 	public static final String TOOL_EQUALS = "EqualTool";
 
-	
 
     private RCaseTools() {
 
