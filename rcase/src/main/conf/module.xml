@@ -19,10 +19,10 @@
                 <Image path="res/icons/stakeholder/element/stakeholder_64.png"/>
                 <TagTypes>
                     <TagType name="StakTagId" uid="246cb680-413a-4936-9dd9-4363ab5d138b" label="%StakeholderStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="StakTagDescription" uid="990034d6-506b-46dd-9d4c-2b8f399d744d" label="$StakeholderStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="StakTagDescription" uid="990034d6-506b-46dd-9d4c-2b8f399d744d" label="%StakeholderStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="StakTagType" uid="e8361356-c825-44df-a2d7-8f35fed3750f" label="%StakeholderStereotype.properties.type" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="StakTagSupport" uid="b1decfb3-8fb3-4b8b-a01e-55605b16d732" label="$StakeholderStereotype.properties.support" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="StakTagPower" uid="a9b5168b-f8dd-494c-b3bc-64e3ec197367" label="$StakeholderStereotype.properties.power" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="StakTagSupport" uid="b1decfb3-8fb3-4b8b-a01e-55605b16d732" label="%StakeholderStereotype.properties.support" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="StakTagPower" uid="a9b5168b-f8dd-494c-b3bc-64e3ec197367" label="%StakeholderStereotype.properties.power" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="UserProfileStereotype" metaclass="Class" is-hidden="false" label="%UserProfileStereotype.label" uid="1481b9ff-6b4c-44f4-86dd-db684e52c4b7">
@@ -33,7 +33,7 @@
                 <Icon path="res/icons/stakeholder/element/value_16.png"/>
                 <TagTypes>
                     <TagType name="ValueTagId" uid="44b3adc3-a130-4300-ba6d-ad7a3ccc1378" label="%ValueStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ValueTagDescription" uid="979414f1-393d-4631-8b99-19c29058f8fc" label="$ValueStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ValueTagDescription" uid="979414f1-393d-4631-8b99-19c29058f8fc" label="%ValueStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="ValueTagType" uid="8a15e975-5335-415d-9e1b-9d13231c80d1" label="%ValueStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
@@ -41,7 +41,7 @@
                 <Icon path="res/icons/stakeholder/element/valuenhancer_16.png"/>
                 <TagTypes>
                     <TagType name="ValueEnhTagId" uid="99e9067b-be43-42d8-b7ee-6958bced0641" label="%ValueEnhancerStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ValueEnhTagDescription" uid="d5e2a98c-d996-4f09-b04d-cc427edfde44" label="$ValueEnhancerStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ValueEnhTagDescription" uid="d5e2a98c-d996-4f09-b04d-cc427edfde44" label="%ValueEnhancerStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="ValueEnhTagType" uid="cb80e4d7-a88b-4bcd-a0fd-167fb651d008" label="%ValueEnhancerStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
@@ -49,7 +49,7 @@
                 <Icon path="res/icons/stakeholder/element/participation_16.png"/>
                 <TagTypes>
                     <TagType name="PartTagId" uid="bda6ca13-e173-4a89-9306-fafe7e4c2e5b" label="%ParticipationStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="PartTagDescription" uid="0907559d-9f7e-4749-8560-aa3efe19c25c" label="$ParticipationStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="PartTagDescription" uid="0907559d-9f7e-4749-8560-aa3efe19c25c" label="%ParticipationStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="PartTagType" uid="3937a714-8f4e-47f0-9dd3-607dd9ea47ba" label="%ParticipationStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
@@ -57,12 +57,12 @@
                 <Icon path="res/icons/stakeholder/element/ethicalprofile_16.png"/>
                 <TagTypes>
                     <TagType name="EthProfTagId" uid="62c94b9d-b48f-4a41-9942-ffc7753bb53c" label="%EthicalProfileStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="EthTagDescription" uid="bd518b02-4a44-4ba0-9110-03a66ee1d9b5" label="$EthicalProfileStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="EthTagDescription" uid="bd518b02-4a44-4ba0-9110-03a66ee1d9b5" label="%EthicalProfileStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="EthTagGovDependency" uid="2effb4e0-99e9-483c-86b5-e011a1f5f6ff" label="%EthicalProfileStereotype.properties.govdependency" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="EthTagVulnerability" uid="586a799e-4698-4d60-af58-9666fd003d29" label="$EthicalProfileStereotype.properties.vulnerability" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="EthTagGravity" uid="2a2121e6-d119-4517-b193-4f5cd958991b" label="$EthicalProfileStereotype.properties.gravity" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="EthTagValueInRisk" uid="d33ffe7b-164e-4ac1-b220-fd9155c0d225" label="$EthicalProfileStereotype.properties.valueinrisk" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="EthTagPolicyImpact" uid="c37eb22e-8c87-4525-a19a-91b99fc5654a" label="$EthicalProfileStereotype.properties.policyimpact" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="EthTagVulnerability" uid="586a799e-4698-4d60-af58-9666fd003d29" label="%EthicalProfileStereotype.properties.vulnerability" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="EthTagGravity" uid="2a2121e6-d119-4517-b193-4f5cd958991b" label="%EthicalProfileStereotype.properties.gravity" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="EthTagValueInRisk" uid="d33ffe7b-164e-4ac1-b220-fd9155c0d225" label="%EthicalProfileStereotype.properties.valueinrisk" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="EthTagPolicyImpact" uid="c37eb22e-8c87-4525-a19a-91b99fc5654a" label="%EthicalProfileStereotype.properties.policyimpact" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="GridStereotype" metaclass="Package" is-hidden="false" label="%GridStereotype.label" uid="e5639866-72f6-42e6-89ee-f388e854a0a5">
@@ -94,7 +94,7 @@
                 <Icon path="res/icons/objectives/elements/objective_16.png"/>
                 <TagTypes>
                     <TagType name="ObjTagId" uid="c1ae226f-1b19-4e0e-a712-584aaad7f660" label="%ObjectiveStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ObjTagPriority" uid="bd5fb67a-7b44-4948-b553-0e4adab35967" label="$ObjectiveStereotype.properties.prioritylvl" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ObjTagPriority" uid="bd5fb67a-7b44-4948-b553-0e4adab35967" label="%ObjectiveStereotype.properties.prioritylvl" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="ObjTagDescription" uid="a8d33a2e-68ee-437a-bf25-a298e32da3aa" label="%ObjectiveStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
@@ -141,9 +141,9 @@
                 <Image path="res/icons/requirements/elements/requirements_64.png"/>
                 <TagTypes>
                     <TagType name="ReqTagId" uid="10c44c3f-75d8-4d12-830f-197cf428449e" label="%RequirementStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TagText" uid="11aafaca-cd1a-4006-8f09-816ca7a57b7b" label="$RequirementStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ReqTagCategory" uid="05826116-be7a-48e5-b73b-29b7f722a668" label="$RequirementStereotype.properties.category" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="ReqTagType" uid="6791870f-03b7-4ae0-9c8a-88a184879443" label="$RequirementStereotype.properties.type" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TagText" uid="11aafaca-cd1a-4006-8f09-816ca7a57b7b" label="%RequirementStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ReqTagCategory" uid="05826116-be7a-48e5-b73b-29b7f722a668" label="%RequirementStereotype.properties.category" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="ReqTagType" uid="6791870f-03b7-4ae0-9c8a-88a184879443" label="%RequirementStereotype.properties.type" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="TestCaseStereotype" metaclass="Class" is-hidden="false" label="Test Case" uid="7908ce65-ef46-44c9-9d38-a5c7567f01b3">
@@ -151,8 +151,8 @@
                 <Image path="res/icons/requirements/elements/testcase_64.png"/>
                 <TagTypes>
                     <TagType name="TestCaseTagId" uid="2f0bcd73-9554-4fd9-80ce-1ca307f60283" label="%TestCaseStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TestCaseTagText" uid="7ee16cb4-fb07-495f-b8de-f217c8ac3c0e" label="$TestCaseStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="TestCaseVerdict" uid="b1e75ad8-2218-446a-8a52-bd134f49c269" label="$TestCaseStereotype.properties.verdict" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TestCaseTagText" uid="7ee16cb4-fb07-495f-b8de-f217c8ac3c0e" label="%TestCaseStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="TestCaseVerdict" uid="b1e75ad8-2218-446a-8a52-bd134f49c269" label="%TestCaseStereotype.properties.verdict" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="DeriveStereotype" metaclass="Dependency" is-hidden="false" label="%DeriveStereotype.label" uid="bee908f6-3a27-4708-b415-fc0028625df0">
@@ -214,7 +214,7 @@
                 <Image path="res/icons/context_look_64.png"/>
                 <TagTypes>
                     <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextDependencyStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CATagText" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="$ContextDependencyStereotype.properties.text" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagText" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextDependencyStereotype.properties.text" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="SituationOfInterestStereotype" metaclass="Class" is-hidden="false" label="%SituationOfInterestStereotype.label" uid="7454269e-aa2f-4534-8d2a-4224ccca5577">
