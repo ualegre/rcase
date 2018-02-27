@@ -75,7 +75,7 @@ public class ContextDependencyDiagramCustomizer extends DiagramCustomizer implem
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
 	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DERIVE, RCaseTools.TOOL_CONTEXT_IDENTIFIES,
-		RCaseTools.TOOL_CONTEXT_DEPENDENCY }, toolRegistry, 0);
+		RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_TRACEABILITY  }, toolRegistry, 0);
     }
 
     /**

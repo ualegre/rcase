@@ -69,7 +69,7 @@ public class ObjectiveDiagramCustomizer extends DiagramCustomizer implements IDi
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
 	String[] toolNames = new String[] { RCaseTools.TOOL_AND, RCaseTools.TOOL_OR, RCaseTools.TOOL_XOR, RCaseTools.TOOL_REQUEST_OBJ,
-			RCaseTools.TOOL_PROVIDE_OBJ, RCaseTools.TOOL_HINDERS, RCaseTools.TOOL_MITIGATES };
+			RCaseTools.TOOL_PROVIDE_OBJ, RCaseTools.TOOL_HINDERS, RCaseTools.TOOL_MITIGATES, RCaseTools.TOOL_TRACEABILITY  };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
