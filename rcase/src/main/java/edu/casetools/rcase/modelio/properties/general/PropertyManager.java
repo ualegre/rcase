@@ -18,7 +18,7 @@
  * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.properties;
+package edu.casetools.rcase.modelio.properties.general;
 
 import java.util.List;
 
@@ -28,17 +28,17 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.metamodel.uml.statik.Class;
 
-import edu.casetools.rcase.modelio.properties.pages.ContextAttributePropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.EthicalProfilePropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.ObjectivePropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.ParticipationPropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.RefineObjPropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.RequirementPropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.SituationOfInterestPropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.StakeholderPropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.TestCasePropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.ValueEnhancerPropertyPage;
-import edu.casetools.rcase.modelio.properties.pages.ValuePropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.ContextAttributePropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.EthicalProfilePropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.ObjectivePropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.ParticipationPropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.RefineObjPropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.RequirementPropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.SituationOfInterestPropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.StakeholderPropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.TestCasePropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.ValueEnhancerPropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.ValuePropertyPage;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;

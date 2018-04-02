@@ -31,7 +31,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelComboBoxTableEditor;
 import edu.casetools.rcase.extensions.tables.implementations.contextmodel.model.ContextModelTableModel;
-import edu.casetools.rcase.modelio.properties.pages.ContextAttributePropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.ContextAttributePropertyPage;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
 

@@ -18,45 +18,50 @@
  * along with Modelio. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.properties.pages;
+package edu.casetools.rcase.modelio.properties.general.pages;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import org.eclipse.core.runtime.AssertionFailedException;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
+import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
-import edu.casetools.rcase.modelio.properties.IPropertyContent;
+import edu.casetools.rcase.modelio.properties.general.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
-public class SituationOfInterestPropertyPage implements IPropertyContent {
+public class ContextAttributePropertyPage implements IPropertyContent {
 
+    private static final Logger logger = Logger.getLogger(ContextAttributePropertyPage.class.getName());
+
+    // TODO Reduce the complexity of the switch case
     @Override
     public void changeProperty(ModelElement element, int row, String value) {
-
-	switch (row) {
-	case 1:
-	    element.setName(value);
-	    break;
-	case 2:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_ID, value, element);
-	    break;
-	case 3:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, value, element);
-	    break;
-	case 4:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DETECTION, value, element);
-	    break;
-	default:
-	    break;
+	try {
+	    switch (row) {
+	    case 1:
+		PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			RCaseProperties.PROPERTY_CONTEXT_ID, value, element);
+		break;
+	    case 2:
+		element.setName(value);
+		break;
+	    case 3:
+		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_TEXT, value);
+		break;
+	    default:
+		break;
+	    }
+	} catch (ExtensionNotFoundException | AssertionFailedException e) {
+	    logger.log(Level.SEVERE, e.getMessage(), e);
 	}
 
     }
@@ -64,28 +69,23 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
 
+	// TagId
+	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, element);
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagId"), string);
+
 	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 
-	String property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_ID, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagId"), property);
-
-	property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
-
-	property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DETECTION, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagDescription"), property);
+	// TagText
+	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_TEXT, element);
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagText"), string);
 
 	checkDependencies(element, table);
-
     }
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
-	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "ContextDependency", element, table);
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES, "Identifies", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE, "Derives", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "Dependency", element, table);
     }
 
     private void checkDependency(String stereotype, String name, ModelElement element, IModulePropertyTable table) {

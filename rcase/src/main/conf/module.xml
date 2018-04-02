@@ -667,7 +667,7 @@
             </DiagramType>
         </Diagrams>
         <Views>
-            <PropertyPage id="RcasePropertyPage" class="edu.casetools.rcase.modelio.properties.RcasePropertyPage" label="%ContextAttributeTool.PropertyPage.label" image="%ContextAttributeTool.PropertyPage.image"/>
+            <PropertyPage id="RcasePropertyPage" class="edu.casetools.rcase.modelio.properties.general.RcasePropertyPage" label="%ContextAttributeTool.PropertyPage.label" image="%ContextAttributeTool.PropertyPage.image"/>
         </Views>
     </Gui>
     <Dependencies>

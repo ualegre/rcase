@@ -18,37 +18,37 @@
  * along with Modelio. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.properties.pages;
+package edu.casetools.rcase.modelio.properties.general.pages;
 
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
-import edu.casetools.rcase.modelio.properties.IPropertyContent;
+import edu.casetools.rcase.modelio.properties.general.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
-public class ParticipationPropertyPage implements IPropertyContent {
+public class TestCasePropertyPage implements IPropertyContent {
 
     @Override
     public void changeProperty(ModelElement element, int row, String value) {
 		switch (row) {
 			case 1:
 			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-				    RCaseProperties.PROPERTY_PARTICIPATION_ID, value, element);
+				    RCaseProperties.PROPERTY_TESTCASE_ID, value, element);
 			    break;
 			case 2:
 			    element.setName(value);
 			    break;
 			case 3:
 			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-				    RCaseProperties.PROPERTY_PARTICIPATION_DESCRIPTION, value, element);
+				    RCaseProperties.PROPERTY_TESTCASE_DESCRIPTION, value, element);
 			    break;
 			case 4:
 			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-				    RCaseProperties.PROPERTY_PARTICIPATION_TYPE, value, element);
-			    break;
+				    RCaseProperties.PROPERTY_TESTCASE_VERDICT, value, element);
+			    break;			    
 			default:
 			    break;
 		}
@@ -57,31 +57,20 @@ public class ParticipationPropertyPage implements IPropertyContent {
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
 	
-		String property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_PARTICIPATION_ID,
+		String property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_TESTCASE_ID,
 				element);		
-		table.addProperty(I18nMessageService.getString("EthicalProfile.properties.id"), property);
+		table.addProperty(I18nMessageService.getString("TestCaseStereotype.properties.id"), property);
 		
 		table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 	
-		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_PARTICIPATION_DESCRIPTION,
+		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_TESTCASE_DESCRIPTION,
 			element);
-		table.addProperty(I18nMessageService.getString("EthicalProfile.properties.desciption"), property);
-		
-		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_PARTICIPATION_TYPE,
+		table.addProperty(I18nMessageService.getString("TestCaseStereotype.properties.desciption"), property);
+
+		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_TESTCASE_VERDICT,
 				element);
-		table.addProperty(I18nMessageService.getString("Participation.properties.participationtype"), property,
-				new String[] { I18nMessageService.getString("Participation.properties.participationtype.notengaged"),
-					I18nMessageService.getString("Participation.properties.participationtype.datasource"),
-					I18nMessageService.getString("Participation.properties.participationtype.inform"),
-					I18nMessageService.getString("Participation.properties.participationtype.consult"),
-					I18nMessageService.getString("Participation.properties.participationtype.involve"),
-					I18nMessageService.getString("Participation.properties.participationtype.collaborate"),
-					I18nMessageService.getString("Participation.properties.participationtype.empower")});
-	
-
+			table.addProperty(I18nMessageService.getString("TestCaseStereotype.properties.verdict"), property);
 		
-
-
     }
 
 

@@ -18,7 +18,7 @@
  * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.properties;
+package edu.casetools.rcase.modelio.properties.general;
 
 import java.util.ArrayList;
 import java.util.Iterator;

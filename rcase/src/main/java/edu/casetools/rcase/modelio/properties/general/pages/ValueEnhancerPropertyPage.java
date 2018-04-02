@@ -18,36 +18,36 @@
  * along with Modelio. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.properties.pages;
+package edu.casetools.rcase.modelio.properties.general.pages;
 
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
-import edu.casetools.rcase.modelio.properties.IPropertyContent;
+import edu.casetools.rcase.modelio.properties.general.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
-public class ValuePropertyPage implements IPropertyContent {
+public class ValueEnhancerPropertyPage implements IPropertyContent {
 
     @Override
     public void changeProperty(ModelElement element, int row, String value) {
 		switch (row) {
 			case 1:
 			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-				    RCaseProperties.PROPERTY_VALUE_ID, value, element);
+				    RCaseProperties.PROPERTY_VALUE_ENHANCER_ID, value, element);
 			    break;
 			case 2:
 			    element.setName(value);
 			    break;
 			case 3:
 			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-				    RCaseProperties.PROPERTY_VALUE_DESCRIPTION, value, element);
+				    RCaseProperties.PROPERTY_VALUE_ENHANCER_DESCRIPTION, value, element);
 			    break;
 			case 4:
 			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-				    RCaseProperties.PROPERTY_VALUE_TYPE, value, element);
+			    RCaseProperties.PROPERTY_VALUE_ENHANCER_TYPE, value, element);
 			    break;
 			default:
 			    break;
@@ -57,23 +57,26 @@ public class ValuePropertyPage implements IPropertyContent {
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
 	
-		String property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_VALUE_ID,
+		String property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_VALUE_ENHANCER_ID,
 				element);		
 		table.addProperty(I18nMessageService.getString("EthicalProfile.properties.id"), property);
 		
 		table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 	
-		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_VALUE_DESCRIPTION,
+		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_VALUE_ENHANCER_DESCRIPTION,
 			element);
 		table.addProperty(I18nMessageService.getString("EthicalProfile.properties.desciption"), property);
 		
-		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_VALUE_TYPE,
+		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_VALUE_ENHANCER_TYPE,
 				element);
-		table.addProperty(I18nMessageService.getString("Value.properties.valuetype"), property,
-				new String[] { I18nMessageService.getString("Value.properties.valuetype.good"),
-					I18nMessageService.getString("Value.properties.valuetype.service"),
-					I18nMessageService.getString("Value.properties.valuetype.information")});
+		table.addProperty(I18nMessageService.getString("ValueEnhancer.properties.enhancertype"), property,
+				new String[] { I18nMessageService.getString("ValueEnhancer.properties.enhancertype.product"),
+					I18nMessageService.getString("ValueEnhancer.properties.enhancertype.process")});
 	
+
+		
+
+
     }
 
 
