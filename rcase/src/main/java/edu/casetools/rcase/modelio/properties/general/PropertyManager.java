@@ -28,6 +28,8 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.metamodel.uml.statik.Class;
 
+import edu.casetools.rcase.modelio.properties.CommonPropertyPage;
+import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.modelio.properties.general.pages.ContextAttributePropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.EthicalProfilePropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.ObjectivePropertyPage;
