@@ -100,10 +100,10 @@ public class ReqAuditRuleManager {
 	private boolean hasContribution(MObject objective) {
 		boolean hasContribution = false;
 		
-		for (Iterator<?> localIterator = ((ModelElement) objective).getImpactedDependency().iterator(); localIterator.hasNext();) {
+		for (Iterator<?> localIterator = ((ModelElement) objective).getDependsOnDependency().iterator(); localIterator.hasNext();) {
 		    Dependency dependency = (Dependency) localIterator.next();
 		    
-		    if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTRIBUTION)){
+		    if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REFINEOBJ)){
 		    	hasContribution = true;
 		    }   	
 		}
