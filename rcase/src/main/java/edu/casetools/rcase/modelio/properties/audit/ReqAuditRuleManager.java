@@ -19,8 +19,8 @@ import edu.casetools.rcase.utils.tables.TableUtils;
 
 public class ReqAuditRuleManager {
 	
-	public enum SATISFACTION {SATISFIED, PARTIALLY_SATISFIED, UNKNOWN, PARTIALLY_DISSATISFIED, DISSATISFIED};
-	public enum VERDICT {PASS, WARNING, FAIL};
+	public enum SATISFACTION {SATISFIED, PARTIALLY_SATISFIED, UNKNOWN, PARTIALLY_DISSATISFIED, DISSATISFIED, NOT_EVALUATED};
+	public enum VERDICT {PASS, WARNING, FAIL, UNDEFINED_PRIORITY};
 	private HashMap<MObject,SATISFACTION> satisfactionResults;
 	private final String CRITICAL  = I18nMessageService.getString("Objective.properties.prioritytype.critical");
 	private final String IMPORTANT = I18nMessageService.getString("Objective.properties.prioritytype.important");
@@ -33,6 +33,9 @@ public class ReqAuditRuleManager {
 		auditSatisfactionFunctions();		
 		for(Entry<MObject, SATISFACTION> entry : satisfactionResults.entrySet()){
 			ModelElement objective = (ModelElement) entry.getKey();
+			if(auditObjectivePriority(objective,"")){
+				return VERDICT.UNDEFINED_PRIORITY;
+			}
 			if(entry.getValue() == SATISFACTION.DISSATISFIED){
 				if(auditObjectivePriority(objective,CRITICAL)){
 					return VERDICT.FAIL;
@@ -49,7 +52,7 @@ public class ReqAuditRuleManager {
 	private boolean auditObjectivePriority(ModelElement objective, String priorityLvl) {
 		String priorityLevel = PropertiesUtils.getInstance()
 		.getTaggedValue(RCaseProperties.PROPERTY_OBJECTIVE_PRIORITY_LVL, objective);
-		return priorityLevel.equals(priorityLvl);
+		return (priorityLevel.equals(priorityLvl));
 	}
 
 
@@ -150,7 +153,9 @@ public class ReqAuditRuleManager {
 			return SATISFACTION.PARTIALLY_SATISFIED;
 		else if (hasNegativeContribution && !hasSatisfactionContribution && !hasPositiveContribution && !hasUnknownContribution){
 			return SATISFACTION.PARTIALLY_DISSATISFIED;
-		} else return null;
+		} else if (!hasSatisfactionContribution && !hasPositiveContribution && !hasUnknownContribution && !hasNegativeContribution && !hasDissatisfactionContribution) 
+			return SATISFACTION.DISSATISFIED;
+		else return SATISFACTION.NOT_EVALUATED;
 	}
 
 	
