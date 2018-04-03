@@ -64,22 +64,24 @@ public class ReqAuditRuleManager {
 		if(childrenObjectives.isEmpty()){
 			auditLowLevelObjective(objective);
 		}else if(satisfactionResults.get(objective) == null){
-			auditChildrenObjectives(objective);
+			for(MObject childObjective: childrenObjectives)
+			{
+				if(satisfactionResults.get(childObjective)==null)
+					auditChildrenObjectives(childObjective);
+			}
 		}
 	}
 	
 	public List<MObject> getChildrenObjectives(MObject objective){		
 		List<MObject> childrenObjective = new ArrayList<>();
-		for (Iterator<?> localIterator = ((ModelElement) objective).getDependsOnDependency().iterator(); localIterator.hasNext();) {
-		    MObject relationship = (MObject) localIterator.next();
-		    if(((ModelElement) relationship).isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REFINEOBJ)){
-		    	for(MObject childObjective : relationship.getCompositionChildren()){
-			    	if(((ModelElement) relationship).isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OBJECTIVE)){
-			    		childrenObjective.add(childObjective);
-			    	}
-		    	}
-
-		    }
+		for (Iterator<?> localIterator = ((ModelElement) objective).getImpactedDependency().iterator(); localIterator.hasNext();) {
+		    Dependency relationship = (Dependency) localIterator.next();
+		    	
+			    if(((ModelElement) relationship).isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REFINEOBJ)){
+				    	if(((ModelElement) relationship.getImpacted()).isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OBJECTIVE)){
+				    		childrenObjective.add(relationship.getImpacted());
+				    	}
+			    }
 		}
 		return childrenObjective;
 	}
