@@ -10,7 +10,6 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.modelio.properties.audit.ReqAuditRuleManager.SATISFACTION;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
-import edu.casetools.rcase.module.impl.RCaseModule;
 
 public class ReqAuditPropertyPage implements IPropertyContent {
 
@@ -18,7 +17,6 @@ public class ReqAuditPropertyPage implements IPropertyContent {
 	@Override
 	    public void changeProperty(ModelElement element, int row, String value) {
 		 	//No property changes are allowed.
-		 	Modelio.getInstance().getNavigationService().fireNavigate((MObject)element);
 	    }
 
 	    @Override
