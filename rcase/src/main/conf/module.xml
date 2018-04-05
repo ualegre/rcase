@@ -668,7 +668,7 @@
         </Diagrams>
         <Views>
             <PropertyPage id="RcasePropertyPage" class="edu.casetools.rcase.modelio.properties.general.RcasePropertyTab" label="%PropertyPage.General.label" image="%PropertyPage.General.image"/>
-            <PropertyPage id="ReqAuditPropertyPage" class="edu.casetools.rcase.modelio.properties.audit.ReqAuditPropertyTab" label="%PropertyPage.ReqAudit.label" image="%PropertyPage.ReqAudit.image"/>
+            <PropertyPage id="ObjAuditPropertyPage" class="edu.casetools.rcase.modelio.properties.audit.ObjAuditPropertyTab" label="%PropertyPage.ObjAudit.label" image="%PropertyPage.ObjAudit.image"/>
         </Views>
     </Gui>
     <Dependencies>

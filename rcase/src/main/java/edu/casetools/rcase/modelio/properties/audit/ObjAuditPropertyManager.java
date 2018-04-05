@@ -35,7 +35,7 @@ import edu.casetools.rcase.utils.PropertiesUtils;
 /**
  * The Class PropertyManager manages all the property pages.
  */
-public class ReqAuditPropertyManager {
+public class ObjAuditPropertyManager {
     private IPropertyContent propertyPage;
     private IMetamodelExtensions extensions;
     private List<Stereotype> sterList;
@@ -112,7 +112,7 @@ public class ReqAuditPropertyManager {
 //		    this.propertyPage = new ContextAttributePropertyPage();
 //		}
     	
-    	this.propertyPage = new ReqAuditPropertyPage();
+    	this.propertyPage = new ObjAuditPropertyPage();
 	
     }
     

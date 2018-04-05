@@ -17,7 +17,7 @@ import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
-public class ReqAuditRuleManager {
+public class ObjAuditRuleManager {
 	
 	public enum SATISFACTION {SATISFIED, PARTIALLY_SATISFIED, UNKNOWN, PARTIALLY_DISSATISFIED, DISSATISFIED, NOT_EVALUATED};
 	public enum VERDICT {PASS, WARNING, FAIL, UNDEFINED_PRIORITY};
@@ -25,7 +25,7 @@ public class ReqAuditRuleManager {
 	private final String CRITICAL  = I18nMessageService.getString("Objective.properties.prioritytype.critical");
 	private final String IMPORTANT = I18nMessageService.getString("Objective.properties.prioritytype.important");
 	
-	public ReqAuditRuleManager(){
+	public ObjAuditRuleManager(){
 		satisfactionResults = new HashMap<>();
 	}
 	

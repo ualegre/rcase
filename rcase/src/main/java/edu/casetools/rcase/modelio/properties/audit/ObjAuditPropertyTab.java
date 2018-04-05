@@ -31,10 +31,10 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 /**
  * The Class RcasePropertyPage is the own property page of the R-CASE module.
  */
-public class ReqAuditPropertyTab extends AbstractModulePropertyPage {
+public class ObjAuditPropertyTab extends AbstractModulePropertyPage {
 
     ModelElement element;
-    ReqAuditPropertyManager reqAuditPropertyPage;
+    ObjAuditPropertyManager reqAuditPropertyPage;
 
     /**
      * Instantiates a new rcase property page.
@@ -48,13 +48,13 @@ public class ReqAuditPropertyTab extends AbstractModulePropertyPage {
      * @param bitmap
      *            the bitmap
      */
-    public ReqAuditPropertyTab(IModule module, String name, String label, String bitmap) {
+    public ObjAuditPropertyTab(IModule module, String name, String label, String bitmap) {
 	super(module, name, label, bitmap);
     }
 
     private void init(List<MObject> selectedElements) {
 	element = (ModelElement) selectedElements.get(0);
-	this.reqAuditPropertyPage = new ReqAuditPropertyManager();
+	this.reqAuditPropertyPage = new ObjAuditPropertyManager();
     }
 
     /*
