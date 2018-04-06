@@ -58,11 +58,17 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
 		paletteRoot.add(createNodesGroup(toolRegistry));
 		paletteRoot.add(createObjectivesLinksGroup(toolRegistry));
 		paletteRoot.add(createRequirementsLinksGroup(toolRegistry));
-		paletteRoot.add(createDefaultNotesGroup(toolRegistry));
+		paletteRoot.add(createNotesGroup(toolRegistry));
 		paletteRoot.add(createDefaultFreeDrawingGroup(toolRegistry));
     }
 
-    /*
+    private org.eclipse.gef.palette.PaletteEntry createNotesGroup(IDiagramService toolRegistry) {
+		String groupName = I18nMessageService.getString("ScopePaletteGroup.Nodes");
+		String[] toolNames = new String[] { RCaseTools.RATIONALE,"CREATE_NOTE", "CREATE_CONSTRAINT", "CREATE_EXTERNDOCUMENT" };
+		return createGroup(groupName, toolNames, toolRegistry, 0);
+	}
+
+	/*
      * (non-Javadoc)
      * 
      * @see org.modelio.api.diagram.IDiagramCustomizer#keepBasePalette()
@@ -103,9 +109,6 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
 			RCaseTools.TOOL_VERIFY, RCaseTools.TOOL_REFINE, RCaseTools.TOOL_TRACEABILITY };
 		return createGroup(groupName, toolNames, toolRegistry, 0);
     }
-
-
-    
 
 
     /**
