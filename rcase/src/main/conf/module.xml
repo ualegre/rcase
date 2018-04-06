@@ -134,6 +134,9 @@
             <Stereotype name="RationaleStereotype" metaclass="Note" is-hidden="false" label="%RationaleStereotype.label" uid="55585124-df08-4a6c-9f2f-d7c5c3af4088">
                 <Icon path="res/icons/requirements/notes/rationale_16.png"/>
             </Stereotype>
+            <Stereotype name="ProblemStereotype" metaclass="Note" is-hidden="false" label="%ProblemStereotype.label" uid="fd9c812c-fcdc-4740-bfec-5dca492716ac">
+                <Icon path="res/icons/requirements/notes/problem_16.png"/>
+            </Stereotype>
             <Stereotype name="RequirementsDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%RequirementsDiagramStereotype.label" uid="ef810f79-c808-4f48-943f-27c2d8c74333">
                 <Icon path="res/icons/requirements/requirements_diagram.png"/>
                 <Image path="res/icons/requirements/requirements_diagram.png"/>
@@ -625,7 +628,7 @@
                 </Handler>
             </Tool>
             <Tool id="Problem" label="%Problem.label" tooltip="%Problem.tooltip" image="%Problem.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.notes.ProblemNoteTool">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.ProblemNoteTool">
                     <HParameter name="metaclass" value="Note"/>
                 </Handler>
             </Tool>

@@ -18,7 +18,7 @@
  * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.diagrams.context.tools.notes;
+package edu.casetools.rcase.modelio.diagrams.requirements.tools.notes;
 
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
