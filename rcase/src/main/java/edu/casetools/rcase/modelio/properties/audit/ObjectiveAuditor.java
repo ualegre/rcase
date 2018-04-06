@@ -86,16 +86,21 @@ public class ObjectiveAuditor {
 
 	private SATISFACTION auditSiblings(List<MObject> andChildrenObjectives, List<MObject> orChildrenObjectives,
 			List<MObject> xorChildrenObjectives) {
-		SATISFACTION result;
+		SATISFACTION result = null;
 		SATISFACTION andResult = null, orResult = null, siblingResult = null, xorResult = null;
-		if(!andChildrenObjectives.isEmpty())
+		if(!andChildrenObjectives.isEmpty()){
 			andResult =  auditAndObjectives(andChildrenObjectives);
+			result = andResult;
+		}
 		if (!orChildrenObjectives.isEmpty()){
 			orResult = auditOrObjectives(orChildrenObjectives);
-			if(!andChildrenObjectives.isEmpty())
-				siblingResult = addSiblingResult(andResult,orResult);				
+			result = orResult;
+			if(!andChildrenObjectives.isEmpty()){
+				siblingResult = addSiblingResult(andResult,orResult);	
+				result = siblingResult;
+			}
 		}
-		if(!xorChildrenObjectives.isEmpty())
+		if(!xorChildrenObjectives.isEmpty()){
 			xorResult = auditXorObjectives(xorChildrenObjectives);
 			if(!andChildrenObjectives.isEmpty()){
 				if(siblingResult!=null)
@@ -106,6 +111,7 @@ public class ObjectiveAuditor {
 				result = addSiblingResult(orResult,xorResult);
 			} else
 				result = xorResult;
+		}
 		return result;
 	}
 
