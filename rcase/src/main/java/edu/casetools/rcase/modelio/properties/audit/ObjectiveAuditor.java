@@ -28,10 +28,10 @@ public class ObjectiveAuditor {
 
 	
 	public ObjectiveAuditor(){
-		satisfactionResults = new HashMap<>();
 	}
 	
 	public VERDICT audit(){
+		satisfactionResults = new HashMap<>();
 		auditSatisfactionFunctions();		
 		for(Entry<MObject, SATISFACTION> entry : satisfactionResults.entrySet()){
 			ModelElement objective = (ModelElement) entry.getKey();
@@ -67,7 +67,7 @@ public class ObjectiveAuditor {
 	
 
 
-	public SATISFACTION  auditHighLevelObjective(MObject objective){
+	private SATISFACTION  auditHighLevelObjective(MObject objective){
 		List<MObject> andChildrenObjectives = getChildrenObjectives(objective, RCaseStereotypes.STEREOTYPE_AND);
 		List<MObject> orChildrenObjectives  = getChildrenObjectives(objective, RCaseStereotypes.STEREOTYPE_OR);
 		List<MObject> xorChildrenObjectives = getChildrenObjectives(objective, RCaseStereotypes.STEREOTYPE_XOR);
@@ -164,7 +164,7 @@ public class ObjectiveAuditor {
 		return satAuditor;
 	}
 
-	public List<MObject> getChildrenObjectives(MObject objective, String stereotypeName){		
+	private List<MObject> getChildrenObjectives(MObject objective, String stereotypeName){		
 		List<MObject> childrenObjective = new ArrayList<>();
 		for (Iterator<?> localIterator = ((ModelElement) objective).getImpactedDependency().iterator(); localIterator.hasNext();) {
 		    Dependency relationship = (Dependency) localIterator.next();
@@ -179,7 +179,7 @@ public class ObjectiveAuditor {
 	}
 	
 
-	public List<MObject> getAllHigherLevelObjectives(){
+	private List<MObject> getAllHigherLevelObjectives(){
 		List<MObject> lowerLevelObjectives = new ArrayList<>();
 		for(MObject objective : getAllObjectives()){	
 			if(!hasContribution(objective)) 
@@ -188,7 +188,7 @@ public class ObjectiveAuditor {
 		return lowerLevelObjectives;
 	}
 	
-	public List<MObject> getAllObjectives(){
+	private List<MObject> getAllObjectives(){
 		return TableUtils.getInstance().getAllElementsStereotypedAs(new ArrayList<>(), RCaseStereotypes.STEREOTYPE_OBJECTIVE);
 	}
 
@@ -205,7 +205,7 @@ public class ObjectiveAuditor {
 		return hasContribution;
 	}
 	
-	public SATISFACTION auditLowLevelObjectives(MObject objective){
+	private SATISFACTION auditLowLevelObjectives(MObject objective){
 		SatisfactionAuditor satAuditor = new SatisfactionAuditor();
 
 		for (Iterator<?> localIterator = ((ModelElement) objective).getImpactedDependency().iterator(); localIterator.hasNext();) {
@@ -257,7 +257,9 @@ public class ObjectiveAuditor {
 	}
 	
 	public HashMap<MObject,SATISFACTION> getSatisfactionResults(){
-		return satisfactionResults;
+		if (satisfactionResults!= null)
+			return satisfactionResults;
+		else return new HashMap<MObject,SATISFACTION>();
 	}
 	
 

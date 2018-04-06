@@ -25,6 +25,7 @@ public class ObjAuditPropertyPage implements IPropertyContent {
 	    	for (Entry<MObject, SATISFACTION> entry : auditRules.getSatisfactionResults().entrySet()){
 	    		table.addConsultProperty(entry.getKey().getName(), entry.getValue().toString());
 	    	} 		
+	    	auditRules = null;
 
 	    }
 
