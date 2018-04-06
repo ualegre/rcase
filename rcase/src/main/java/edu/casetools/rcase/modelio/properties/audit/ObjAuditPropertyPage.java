@@ -7,7 +7,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
-import edu.casetools.rcase.modelio.properties.audit.ObjAuditRuleManager.SATISFACTION;
+import edu.casetools.rcase.modelio.properties.audit.SatisfactionAuditor.SATISFACTION;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 
 public class ObjAuditPropertyPage implements IPropertyContent {
@@ -20,7 +20,7 @@ public class ObjAuditPropertyPage implements IPropertyContent {
 	    @Override
 	    public void update(ModelElement element, IModulePropertyTable table) {
 		
-	    	ObjAuditRuleManager auditRules = new ObjAuditRuleManager();
+	    	ObjectiveAuditor auditRules = new ObjectiveAuditor();
 	    	table.addConsultProperty(I18nMessageService.getString("Ui.Verdict.Name"), auditRules.audit().toString());
 	    	for (Entry<MObject, SATISFACTION> entry : auditRules.getSatisfactionResults().entrySet()){
 	    		table.addConsultProperty(entry.getKey().getName(), entry.getValue().toString());
