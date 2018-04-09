@@ -26,78 +26,82 @@ package edu.casetools.rcase.module.api;
 public class RCaseTools {
 
     // Elements
-    public static final String TOOL_REQUIREMENTCONTAINER = "RequirementContainerTool";
+    public static final String TOOL_REQUIREMENTCONTAINER  = "RequirementContainerTool";
 
-    public static final String TOOL_REQUIREMENT = "RequirementTool";
+    public static final String TOOL_REQUIREMENT 		  = "RequirementTool";
 
     public static final String TOOL_SITUATION_OF_INTEREST = "SituationOfInterestTool";
 
-    public static final String TOOL_TESTCASE = "TestCaseTool";
+    public static final String TOOL_TESTCASE 			  = "TestCaseTool";
 
     // Relations
 
-    public static final String TOOL_PART = "ReqPart";
+    public static final String TOOL_PART 		 = "ReqPart";
 
-    public static final String TOOL_COPY = "ReqCopy";
+    public static final String TOOL_COPY 		 = "ReqCopy";
 
-    public static final String TOOL_DERIVE = "ReqDerive";
+    public static final String TOOL_DERIVE 		 = "ReqDerive";
 
-    public static final String TOOL_SATISFY = "ReqSatisfy";
+    public static final String TOOL_SATISFY 	 = "ReqSatisfy";
 
-    public static final String TOOL_VERIFY = "ReqVerify";
+    public static final String TOOL_VERIFY 		 = "ReqVerify";
 
-    public static final String TOOL_REFINE = "ReqRefine";
+    public static final String TOOL_REFINE 		 = "ReqRefine";
 
     public static final String TOOL_TRACEABILITY = "CREATE_TRACEABILITY";
 
     // Elements
 
-    public static final String TOOL_CONTEXT_ATTRIBUTE = "ContextAttributeTool";
+    public static final String TOOL_CONTEXT_ATTRIBUTE 	= "ContextAttributeTool";
 
-    public static final String TOOL_USE_CASE = "UseCaseTool";
+    public static final String TOOL_USE_CASE 			= "UseCaseTool";
 
-    public static final String TOOL_NOTE = "NoteTool";
+    public static final String TOOL_NOTE 				= "NoteTool";
 
     // Relations
-    public static final String TOOL_CONTEXT_DEPENDENCY = "ContextDependencyTool";
+    public static final String TOOL_CONTEXT_DEPENDENCY 	= "ContextDependencyTool";
+    
+    public static final String TOOL_CONTEXT_IDENTIFIES 	= "IdentifiesTool";
 
-    public static final String TOOL_CONTEXT_IDENTIFIES = "IdentifiesTool";
-
-    public static final String TOOL_CONTEXT_DERIVE = "ContextDeriveTool";
+    public static final String TOOL_CONTEXT_DERIVE 		= "ContextDeriveTool";
 
     // Elements
 
-    public static final String TOOL_USECASE = "UseCaseTool";
+    public static final String TOOL_USECASE 		= "UseCaseTool";
 
-    public static final String TOOL_PROBLEM = "ProblemTool";
+    public static final String TOOL_PROBLEM 		= "ProblemTool";
 
-    public static final String TOOL_RATIONALE = "RationaleTool";
+    public static final String TOOL_RATIONALE 		= "RationaleTool";
+    
+    public static final String TOOL_SUPPORT 		= "SupportTool";
+    
+    public static final String TOOL_DENY 			= "DenyTool";
 
-    public static final String TOOL_TRIGGERS = "TriggersTool";
+    public static final String TOOL_TRIGGERS 		= "TriggersTool";
 
-	public static final String TOOL_STAKEHOLDER = "StakeholderTool";
+	public static final String TOOL_STAKEHOLDER 	= "StakeholderTool";
 
-	public static final String TOOL_USER_PROFILE = "UserProfileTool";
+	public static final String TOOL_USER_PROFILE 	= "UserProfileTool";
 
-	public static final String TOOL_VALUE = "ValueTool";
+	public static final String TOOL_VALUE 			= "ValueTool";
 
-	public static final String TOOL_VALUE_ENHANCER = "ValueEnhancerTool";
+	public static final String TOOL_VALUE_ENHANCER 	= "ValueEnhancerTool";
 
-	public static final String TOOL_PARTICIPATION = "ParticipationTool";
+	public static final String TOOL_PARTICIPATION 	= "ParticipationTool";
 
-	public static final String TOOL_GRID = "GridTool";
+	public static final String TOOL_GRID 			= "GridTool";
 
 	public static final String TOOL_ETHICAL_PROFILE = "EthicalProfileTool";
 
-	public static final String TOOL_INTERESTED_IN = "InterestedInTool";
+	public static final String TOOL_INTERESTED_IN 	= "InterestedInTool";
 
-	public static final String TOOL_REQUEST = "RequestTool";
+	public static final String TOOL_REQUEST 		= "RequestTool";
 
-	public static final String TOOL_HAS = "HasTool";
+	public static final String TOOL_HAS 			= "HasTool";
 	
-	public static final String TOOL_INFLUENCE = "InfluenceTool";
+	public static final String TOOL_INFLUENCE 		= "InfluenceTool";
 	
-	public static final String TOOL_ENHANCE = "EnhanceTool";
+	public static final String TOOL_ENHANCE 		= "EnhanceTool";
 
 	public static final String TOOL_PROVIDE = "ProvideTool";
 
