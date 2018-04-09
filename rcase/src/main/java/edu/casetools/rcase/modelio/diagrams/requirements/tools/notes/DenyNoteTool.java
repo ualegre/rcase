@@ -29,12 +29,14 @@ import org.modelio.metamodel.uml.infrastructure.Note;
 
 import edu.casetools.rcase.modelio.diagrams.NoteTool;
 import edu.casetools.rcase.module.api.RCaseNotes;
+import edu.casetools.rcase.module.api.RCaseStereotypes;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
  * The Class ProblemNoteDiagramCommand is the tool for creating a Problem Note.
  */
-public class ArgumentationNoteTool extends NoteTool {
+public class DenyNoteTool extends NoteTool {
 
     /*
      * (non-Javadoc)
@@ -58,7 +60,9 @@ public class ArgumentationNoteTool extends NoteTool {
      */
     @Override
     protected Note createOwnNote(IUmlModel model, ModelElement owner) throws ExtensionNotFoundException {
-    	return DiagramUtils.getInstance().createNote(model, owner, RCaseNotes.NOTE_SUPPORT);
+    	Note note = DiagramUtils.getInstance().createNote(model, owner, RCaseNotes.NOTE_SUPPORT);
+    	note.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_ARGUMENTATION);
+    	return note;
     }
 
 }

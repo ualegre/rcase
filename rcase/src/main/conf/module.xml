@@ -194,6 +194,9 @@
             <Stereotype name="EqualStereotype" metaclass="Dependency" is-hidden="false" label="%EqualStereotype.label" uid="a6b4af6e-995d-488b-bd81-bdace7b7a156">
                 <Icon path="res/icons/requirements/relations/equals_16.png"/>
             </Stereotype>
+            <Stereotype name="ArgumentationStereotype" metaclass="Note" is-hidden="false" label="%ArgumentationStereotype.label" uid="58013c41-8972-41e4-9fe4-ce33b4b81bb7">
+                <Icon path="res/icons/requirements/notes/argumentation_16.png"/>
+            </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/context_diagram.png"/>
                 <Image path="res/icons/context_diagram.png"/>
@@ -255,9 +258,9 @@
                 <NoteTypes>
                     <NoteType name="ProblemNote" label="%Notetype.Problem.label" is-hidden="false" uid="1ad015af-22be-459b-9e74-c390e7df59d3" mime-type="text/plain"/>
                     <NoteType name="RationaleNote" label="%Notetype.Rationale.label" is-hidden="false" uid="bcc04d68-18f3-4f4b-ac5f-2351e5e8c9a9" mime-type="text/plain"/>
-                    <NoteType name="ArgumentationNote" label="%Notetype.Argumentation.label" is-hidden="false" uid="" mime-type="text/plain"/>
-                    <NoteType name="SupportNote" label="%Notetype.Support.label" is-hidden="false" uid="" mime-type="text/plain"/>
-                    <NoteType name="DenyNote" label="%Notetype.Deny.label" is-hidden="false" uid="" mime-type="text/plain"/>
+                    <NoteType name="ArgumentationNote" label="%Notetype.Argumentation.label" is-hidden="false" uid="24f3aa3c-4fac-4f1e-aef2-1f7773ea4287" mime-type="text/plain"/>
+                    <NoteType name="SupportNote" label="%Notetype.Support.label" is-hidden="false" uid="116dd29a-5876-46f5-ad2f-bd1d142254fe" mime-type="text/plain"/>
+                    <NoteType name="DenyNote" label="%Notetype.Deny.label" is-hidden="false" uid="51db6272-bb52-4f38-b053-d3596df1543f" mime-type="text/plain"/>
                 </NoteTypes>
             </MetaclassReference>
         </Profile>

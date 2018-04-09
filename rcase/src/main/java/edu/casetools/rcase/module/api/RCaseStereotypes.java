@@ -48,6 +48,9 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_SATISFY = "SatisfyStereotype";
 
     public static final String STEREOTYPE_REFINE = "RefineStereotype";
+    
+	public static final String STEREOTYPE_ARGUMENTATION = "StereotypeArgumentation";
+	
 
     // Diagram
     public static final String STEREOTYPE_DIAGRAM_CONTEXT = "ContextDiagramStereotype";
@@ -104,6 +107,7 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_HURT = "HurtStereotype";
 	public static final String STEREOTYPE_BREAK = "BreakStereotype";
 	public static final String STEREOTYPE_EQUAL = "EqualStereotype";
+
 	
 	
 
