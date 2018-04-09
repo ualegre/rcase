@@ -255,6 +255,9 @@
                 <NoteTypes>
                     <NoteType name="ProblemNote" label="%Notetype.Problem.label" is-hidden="false" uid="1ad015af-22be-459b-9e74-c390e7df59d3" mime-type="text/plain"/>
                     <NoteType name="RationaleNote" label="%Notetype.Rationale.label" is-hidden="false" uid="bcc04d68-18f3-4f4b-ac5f-2351e5e8c9a9" mime-type="text/plain"/>
+                    <NoteType name="ArgumentationNote" label="%Notetype.Argumentation.label" is-hidden="false" uid="" mime-type="text/plain"/>
+                    <NoteType name="SupportNote" label="%Notetype.Support.label" is-hidden="false" uid="" mime-type="text/plain"/>
+                    <NoteType name="DenyNote" label="%Notetype.Deny.label" is-hidden="false" uid="" mime-type="text/plain"/>
                 </NoteTypes>
             </MetaclassReference>
         </Profile>
@@ -629,6 +632,16 @@
             </Tool>
             <Tool id="RationaleTool" label="%RationaleTool.label" tooltip="%RationaleTool.tooltip" image="%RationaleTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.RationaleNoteTool">
+                    <HParameter name="metaclass" value="Note"/>
+                </Handler>
+            </Tool>
+            <Tool id="SupportTool" label="%SupportTool.label" tooltip="%SupportTool.tooltip" image="%SupportTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.SupportNoteTool">
+                    <HParameter name="metaclass" value="Note"/>
+                </Handler>
+            </Tool>
+            <Tool id="DenyTool" label="%DenyTool.label" tooltip="%DenyTool.tooltip" image="%DenyTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.DenyNoteTool">
                     <HParameter name="metaclass" value="Note"/>
                 </Handler>
             </Tool>
