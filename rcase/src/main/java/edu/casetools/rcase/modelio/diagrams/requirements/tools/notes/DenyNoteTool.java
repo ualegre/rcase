@@ -30,7 +30,6 @@ import org.modelio.metamodel.uml.infrastructure.Note;
 import edu.casetools.rcase.modelio.diagrams.NoteTool;
 import edu.casetools.rcase.module.api.RCaseNotes;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**

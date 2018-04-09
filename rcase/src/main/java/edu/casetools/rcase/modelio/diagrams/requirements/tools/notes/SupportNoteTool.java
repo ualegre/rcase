@@ -20,21 +20,16 @@
  */
 package edu.casetools.rcase.modelio.diagrams.requirements.tools.notes;
 
-import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Note;
-import org.modelio.metamodel.uml.infrastructure.Stereotype;
-import org.modelio.metamodel.uml.statik.Class;
 
 import edu.casetools.rcase.modelio.diagrams.NoteTool;
 import edu.casetools.rcase.module.api.RCaseNotes;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
-import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
