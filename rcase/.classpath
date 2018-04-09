@@ -22,14 +22,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Unai/.m2/repository/org/modelio/org.modelio.core.kernel/3.7.0.201710061511/org.modelio.core.kernel-3.7.0.201710061511.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.modelio"/>
-			<attribute name="maven.artifactId" value="org.modelio.core.kernel"/>
-			<attribute name="maven.version" value="3.7.0.201710061511"/>
-			<attribute name="maven.scope" value="provided"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -131,12 +131,6 @@
             <Stereotype name="HindersStereotype" metaclass="Dependency" is-hidden="false" label="%HindersStereotype.label" uid="c60c8b3b-c28d-482e-88ba-f2df807b3304">
                 <Icon path="res/icons/objectives/relations/hinders_16.png"/>
             </Stereotype>
-            <Stereotype name="RationaleStereotype" metaclass="Note" is-hidden="false" label="%RationaleStereotype.label" uid="">
-                <Icon path="%RationaleTool.image"/>
-            </Stereotype>
-            <Stereotype name="ProblemStereotype" metaclass="Note" is-hidden="false" label="%ProblemStereotype.label" uid="">
-                <Icon path="%ProblemTool.image"/>
-            </Stereotype>
             <Stereotype name="RequirementsDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%RequirementsDiagramStereotype.label" uid="ef810f79-c808-4f48-943f-27c2d8c74333">
                 <Icon path="res/icons/requirements/requirements_diagram.png"/>
                 <Image path="res/icons/requirements/requirements_diagram.png"/>
@@ -258,9 +252,10 @@
                 <TagTypes/>
             </Stereotype>
             <MetaclassReference uid="08dbbc2b-9618-430c-823c-0795122efa3a" metaclass="ModelElement">
-                <TagTypes>
-                    <TagType name="TagName" uid="2727e4d0-b3ae-4518-85af-1639a76380e6" label="Name" parameter-card="1" is-hidden="false" is-signed="false"/>
-                </TagTypes>
+                <NoteTypes>
+                    <NoteType name="ProblemNote" label="%Notetype.Problem.label" is-hidden="false" uid="1ad015af-22be-459b-9e74-c390e7df59d3" mime-type="text/plain"/>
+                    <NoteType name="RationaleNote" label="%Notetype.Rationale.label" is-hidden="false" uid="bcc04d68-18f3-4f4b-ac5f-2351e5e8c9a9" mime-type="text/plain"/>
+                </NoteTypes>
             </MetaclassReference>
         </Profile>
     </Profiles>
@@ -630,13 +625,11 @@
             <Tool id="ProblemTool" label="%ProblemTool.label" tooltip="%ProblemTool.tooltip" image="%ProblemTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.ProblemNoteTool">
                     <HParameter name="metaclass" value="Note"/>
-                    <HParameter name="stereotype" value="ProblemStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="RationaleTool" label="%RationaleTool.label" tooltip="%RationaleTool.tooltip" image="%RationaleTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.RationaleNoteTool">
                     <HParameter name="metaclass" value="Note"/>
-                    <HParameter name="stereotype" value="RationaleStereotype"/>
                 </Handler>
             </Tool>
         </Tools>

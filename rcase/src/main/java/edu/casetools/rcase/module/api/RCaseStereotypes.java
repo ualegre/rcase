@@ -83,8 +83,6 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_HAS = "HasStereotype";
 	public static final String STEREOTYPE_INFLUENCE = "InfluenceStereotype";
 	public static final String STEREOTYPE_ENHANCE = "EnhanceStereotype";
-	public static final String STEREOTYPE_RATIONALE = "RationaleStereotype";
-	public static final String STEREOTYPE_PROBLEM = "ProblemStereotype";
 	
 	public static final String STEREOTYPE_DIAGRAM_OBJECTIVE = "ObjectiveDiagramStereotype";
 	public static final String STEREOTYPE_GOAL = "GoalStereotype";
