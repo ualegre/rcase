@@ -40,6 +40,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 
 /**
  * The Class NoteTool has the common methods to create the tool of a note.
@@ -123,5 +124,15 @@ public abstract class NoteTool extends DefaultAttachedBoxTool {
     @Override
     public void actionPerformedInDiagram(IDiagramHandle arg0, Rectangle arg1) {
     }
+    
+	protected Note addNoteStereotype(Note object, String stereotype) {
+		try {
+			object.addStereotype(RCasePeerModule.MODULE_NAME, stereotype);
+		} catch (ExtensionNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return object;
+	}
 
 }

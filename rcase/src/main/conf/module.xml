@@ -194,7 +194,7 @@
             <Stereotype name="EqualStereotype" metaclass="Dependency" is-hidden="false" label="%EqualStereotype.label" uid="a6b4af6e-995d-488b-bd81-bdace7b7a156">
                 <Icon path="res/icons/requirements/relations/equals_16.png"/>
             </Stereotype>
-            <Stereotype name="ArgumentationStereotype" metaclass="Class" is-hidden="false" label="%ArgumentationStereotype.label" uid="58013c41-8972-41e4-9fe4-ce33b4b81bb7">
+            <Stereotype name="ArgumentationStereotype" metaclass="Note" is-hidden="false" label="%ArgumentationStereotype.label" uid="fd8fed8e-da7f-455c-a888-2242800ef58c">
                 <Icon path="res/icons/requirements/notes/argumentation_16.png"/>
             </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">

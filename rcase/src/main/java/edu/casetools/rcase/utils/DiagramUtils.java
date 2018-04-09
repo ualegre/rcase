@@ -245,7 +245,7 @@ public class DiagramUtils {
      */
     public Note createNote(IUmlModel model, ModelElement owner, String stereotypeName)
 	    throws ExtensionNotFoundException {
-	return model.createNote(RCasePeerModule.MODULE_NAME, stereotypeName, owner, "");
+    	return model.createNote(RCasePeerModule.MODULE_NAME, stereotypeName, owner, "");
     }
 
     /**
