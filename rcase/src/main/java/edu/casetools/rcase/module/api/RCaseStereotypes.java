@@ -49,7 +49,7 @@ public class RCaseStereotypes {
 
     public static final String STEREOTYPE_REFINE = "RefineStereotype";
     
-	public static final String STEREOTYPE_ARGUMENTATION = "StereotypeArgumentation";
+	public static final String STEREOTYPE_ARGUMENTATION = "ArgumentationStereotype";
 	
 
     // Diagram
