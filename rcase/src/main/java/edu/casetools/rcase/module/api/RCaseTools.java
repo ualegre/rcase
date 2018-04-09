@@ -69,9 +69,9 @@ public class RCaseTools {
 
     public static final String TOOL_USECASE = "UseCaseTool";
 
-    public static final String PROBLEM = "Problem";
+    public static final String TOOL_PROBLEM = "ProblemTool";
 
-    public static final String RATIONALE = "Rationale";
+    public static final String TOOL_RATIONALE = "RationaleTool";
 
     public static final String TOOL_TRIGGERS = "TriggersTool";
 

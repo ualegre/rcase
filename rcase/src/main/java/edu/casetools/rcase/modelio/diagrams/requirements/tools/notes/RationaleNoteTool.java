@@ -28,7 +28,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Note;
 
 import edu.casetools.rcase.modelio.diagrams.NoteTool;
-import edu.casetools.rcase.module.api.RCaseTools;
+import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
@@ -59,7 +59,7 @@ public class RationaleNoteTool extends NoteTool {
      */
     @Override
     protected Note createOwnNote(IUmlModel model, ModelElement owner) throws ExtensionNotFoundException {
-	return DiagramUtils.getInstance().createNote(model, owner, RCaseTools.RATIONALE);
+	return DiagramUtils.getInstance().createNote(model, owner, RCaseStereotypes.STEREOTYPE_RATIONALE);
     }
 
 }

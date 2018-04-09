@@ -64,7 +64,7 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
 
     private org.eclipse.gef.palette.PaletteEntry createNotesGroup(IDiagramService toolRegistry) {
 		String groupName = I18nMessageService.getString("ScopePaletteGroup.Nodes");
-		String[] toolNames = new String[] { RCaseTools.RATIONALE, RCaseTools.PROBLEM, "CREATE_NOTE", "CREATE_CONSTRAINT", "CREATE_EXTERNDOCUMENT" };
+		String[] toolNames = new String[] { RCaseTools.TOOL_RATIONALE, RCaseTools.TOOL_PROBLEM, "CREATE_NOTE", "CREATE_CONSTRAINT", "CREATE_EXTERNDOCUMENT" };
 		return createGroup(groupName, toolNames, toolRegistry, 0);
 	}
 
