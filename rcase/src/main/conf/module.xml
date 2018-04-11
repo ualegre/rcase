@@ -221,6 +221,15 @@
                 </TagTypes>
             </Stereotype>
             <Stereotype name="SituationOfInterestStereotype" metaclass="Class" is-hidden="false" label="%SituationOfInterestStereotype.label" uid="7454269e-aa2f-4534-8d2a-4224ccca5577">
+                <Icon path="res/icons/situations/elements/situation_16.png"/>
+                <Image path="res/icons/situations/elements/situation_64.png"/>
+                <TagTypes>
+                    <TagType name="SOIId" uid="28536190-5b6e-4a32-88df-17b2a9feef03" label="%SituationOfInterestStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="SOIDescription" uid="8b8b9cb6-5186-4fb1-8f14-f39932a05346" label="%SituationOfInterestStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="SOIFrequency" uid="" label="%SituationOfInterestStereotype.properties.detection" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="SOIRecommendation" uid="" label="%SituationOfInterestStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>                </TagTypes>
+            </Stereotype>
+            <Stereotype name="ContextAwareFeatureStereotype" metaclass="Class" is-hidden="false" label="%ContextAwareFeatureStereotypeStereotype.label" uid="">
                 <Icon path="res/icons/situation_16.png"/>
                 <Image path="res/icons/situation_64.png"/>
                 <TagTypes>
