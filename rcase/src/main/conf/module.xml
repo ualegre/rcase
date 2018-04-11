@@ -198,8 +198,8 @@
                 <Icon path="res/icons/requirements/notes/argumentation_16.png"/>
             </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
-                <Icon path="res/icons/context_diagram.png"/>
-                <Image path="res/icons/context_diagram.png"/>
+                <Icon path="res/icons/situations/soi_diagram.png"/>
+                <Image path="res/icons/situations/soi_diagram.png"/>
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="UseCaseDiagram" metaclass="UseCaseDiagram" is-hidden="false" label="%UseCaseDiagramStereotype.label" uid="7b6c0ef8-e2a3-4a6f-9838-33edbe9e1a1b">
