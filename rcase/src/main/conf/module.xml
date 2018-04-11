@@ -212,7 +212,7 @@
                 <Image path="res/icons/usecase_16.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
+            <Stereotype name="SituationsOfInterestDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%SituationsOfInterestDiagramStereotype.label" uid="">
                 <Icon path="res/icons/situations/soi_diagram.png"/>
                 <Image path="res/icons/situations/soi_diagram.png"/>
                 <TagTypes/>
@@ -240,6 +240,11 @@
             <Stereotype name="TriggersStereotype" metaclass="Dependency" is-hidden="false" label="%TriggersStereotype.label" uid="b62eca7a-05f3-481b-a29d-24899f211a5c">
                 <Icon path="%ContextDependencyTool.image"/>
                 <Image path="%ContextDependencyTool.image"/>
+                <TagTypes/>
+            </Stereotype>
+            <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
+                <Icon path="res/icons/situations/soi_diagram.png"/>
+                <Image path="res/icons/situations/soi_diagram.png"/>
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
@@ -279,6 +284,65 @@
     <Parameters/>
     <Gui>
         <Commands>
+            <Command id="CreateUseCaseDiagram" label="%CreateUseCaseDiagram.label" tooltip="%CreateUseCaseDiagram.tooltip" image="%CreateUseCaseDiagram.image" group="%CreateUseCaseDiagram.group" modify-model="true" group-image="%CreateUseCaseDiagram.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateUseCaseDiagram"/>
+            </Command>
+            <Command id="CreateStakeholderDiagram" label="%CreateStakeholderDiagram.label" tooltip="%CreateStakeholderDiagram.tooltip" image="%CreateStakeholderDiagram.image" group="%CreateStakeholderDiagram.group" modify-model="true" group-image="%CreateStakeholderDiagram.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateStakeholderDiagram"/>
+            </Command>
+            <Command id="CreateObjectiveDiagram" label="%CreateObjectiveDiagram.label" tooltip="%CreateObjectiveDiagram.tooltip" image="%CreateObjectiveDiagram.image" group="%CreateObjectiveDiagram.group" modify-model="true" group-image="%CreateObjectiveDiagram.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateObjectiveDiagram"/>
+            </Command>
+            <Command id="CreateRequirementsDiagram" label="%CreateRequirementsDiagram.label" tooltip="%CreateRequirementsDiagram.tooltip" image="%CreateRequirementsDiagram.image" group="%CreateRequirementsDiagram.group" modify-model="true" group-image="%CreateRequirementsDiagram.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateRequirementsDiagram"/>
+            </Command>
+            <Command id="CreateContextDependencyDiagram" label="%CreateContextDependencyDiagram.label" tooltip="%CreateContextDependencyDiagram.tooltip" image="%CreateContextDependencyDiagram.image" group="%CreateContextDependencyDiagram.group" modify-model="true" group-image="%CreateContextDependencyDiagram.groupimage">
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateContextDependencyDiagram"/>
+            </Command>
+            <Command id="CreateUseCase" label="%CreateUseCase.label" tooltip="%CreateUseCase.tooltip" image="%CreateUseCase.image" group="%CreateUseCase.group" modify-model="true" group-image="%CreateUseCase.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateUseCase">
+                    <HParameter name="metaclass" value="UseCase"/>
+                    <HParameter name="stereotype" value="UseCaseStereotype"/>
+                </Handler>
+            </Command>
+            <Command id="CreateRequirementContainer" label="%CreateRequirementContainer.label" tooltip="%CreateRequirementContainer.tooltip" image="%CreateRequirementContainer.image" group="%CreateRequirementContainer.group" modify-model="true" group-image="%CreateRequirementContainer.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateRequirementContainer">
+                    <HParameter name="metaclass" value="RequirementContainer"/>
+                    <HParameter name="stereotype" value="RequirementContainerStereotype"/>
+                </Handler>
+            </Command>
+            <Command id="CreateRequirement" label="%CreateRequirement.label" tooltip="%CreateRequirement.tooltip" image="%CreateRequirement.image" group="%CreateRequirement.group" modify-model="true" group-image="%CreateRequirement.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateRequirement">
+                    <HParameter name="metaclass" value="Requirement"/>
+                    <HParameter name="stereotype" value="RequirementStereotype"/>
+                </Handler>
+            </Command>
+            <Command id="CreateTestCase" label="%CreateTestCase.label" tooltip="%CreateTestCase.tooltip" image="%CreateTestCase.image" group="%CreateTestCase.group" modify-model="true" group-image="%CreateTestCase.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateTestCase">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="TestCase"/>
+                </Handler>
+            </Command>
+            <Command id="CreateSituationOfInterest" label="%CreateSituationOfInterest.label" tooltip="%CreateSituationOfInterest.tooltip" image="%CreateSituationOfInterest.image" group="%CreateSituationOfInterest.group" modify-model="true" group-image="%CreateSituationOfInterest.groupimage">
+                <Scope metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateSituationOfInterest">
+                    <HParameter name="metaclass" value="SituationOfInteres"/>
+                    <HParameter name="stereotype" value="SituationOfInterestStereotype"/>
+                </Handler>
+            </Command>
+            <Command id="CreateContextAttribute" label="%CreateContextAttribute.label" tooltip="%CreateContextAttribute.tooltip" image="%CreateContextAttribute.image" group="%CreateContextAttribute.group" modify-model="true" group-image="%CreateContextAttribute.groupimage">
+                <Scope metaclass="Package"/>
+                <Scope metaclass="Class"/>
+                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateContextAttribute"/>
+            </Command>
             <Command id="OpenDependencyTable" label="%OpenDependencyTable.label" tooltip="%OpenDependencyTable.tooltip" image="%OpenDependencyTable.image" group="%OpenDependencyTable.group" modify-model="true" group-image="%OpenDependencyTable.groupimage">
                 <Scope metaclass="ModelTree"/>
                 <Handler class="edu.casetools.rcase.modelio.menu.tables.OpenDependencyTable"/>
@@ -290,65 +354,6 @@
             <Command id="OpenContextModelTable" label="%OpenContextModelTable.label" tooltip="%OpenContextModelTable.tooltip" image="%OpenContextModelTable.image" group="%OpenContextModelTable.group" modify-model="true" group-image="%OpenContextModelTable.groupimage">
                 <Scope metaclass="ModelTree"/>
                 <Handler class="edu.casetools.rcase.modelio.menu.tables.OpenContextModelTable"/>
-            </Command>
-            <Command id="CreateRequirement" label="%CreateRequirement.label" tooltip="%CreateRequirement.tooltip" image="%CreateRequirement.image" group="%CreateRequirement.group" modify-model="true" group-image="%CreateRequirement.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateRequirement">
-                    <HParameter name="metaclass" value="Requirement"/>
-                    <HParameter name="stereotype" value="RequirementStereotype"/>
-                </Handler>
-            </Command>
-            <Command id="CreateSituationOfInterest" label="%CreateSituationOfInterest.label" tooltip="%CreateSituationOfInterest.tooltip" image="%CreateSituationOfInterest.image" group="%CreateSituationOfInterest.group" modify-model="true" group-image="%CreateSituationOfInterest.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateSituationOfInterest">
-                    <HParameter name="metaclass" value="SituationOfInteres"/>
-                    <HParameter name="stereotype" value="SituationOfInterestStereotype"/>
-                </Handler>
-            </Command>
-            <Command id="CreateRequirementContainer" label="%CreateRequirementContainer.label" tooltip="%CreateRequirementContainer.tooltip" image="%CreateRequirementContainer.image" group="%CreateRequirementContainer.group" modify-model="true" group-image="%CreateRequirementContainer.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateRequirementContainer">
-                    <HParameter name="metaclass" value="RequirementContainer"/>
-                    <HParameter name="stereotype" value="RequirementContainerStereotype"/>
-                </Handler>
-            </Command>
-            <Command id="CreateTestCase" label="%CreateTestCase.label" tooltip="%CreateTestCase.tooltip" image="%CreateTestCase.image" group="%CreateTestCase.group" modify-model="true" group-image="%CreateTestCase.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateTestCase">
-                    <HParameter name="metaclass" value="Class"/>
-                    <HParameter name="stereotype" value="TestCase"/>
-                </Handler>
-            </Command>
-            <Command id="CreateUseCase" label="%CreateUseCase.label" tooltip="%CreateUseCase.tooltip" image="%CreateUseCase.image" group="%CreateUseCase.group" modify-model="true" group-image="%CreateUseCase.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateUseCase">
-                    <HParameter name="metaclass" value="UseCase"/>
-                    <HParameter name="stereotype" value="UseCaseStereotype"/>
-                </Handler>
-            </Command>
-            <Command id="CreateStakeholderDiagram" label="%CreateStakeholderDiagram.label" tooltip="%CreateStakeholderDiagram.tooltip" image="%CreateStakeholderDiagram.image" group="%CreateStakeholderDiagram.group" modify-model="true" group-image="%CreateStakeholderDiagram.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateStakeholderDiagram"/>
-            </Command>
-            <Command id="CreateObjectiveDiagram" label="%CreateObjectiveDiagram.label" tooltip="%CreateObjectiveDiagram.tooltip" image="%CreateObjectiveDiagram.image" group="%CreateObjectiveDiagram.group" modify-model="true" group-image="%CreateObjectiveDiagram.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateObjectiveDiagram"/>
-            </Command>
-            <Command id="CreateContextAttribute" label="%CreateContextAttribute.label" tooltip="%CreateContextAttribute.tooltip" image="%CreateContextAttribute.image" group="%CreateContextAttribute.group" modify-model="true" group-image="%CreateContextAttribute.groupimage">
-                <Scope metaclass="Package"/>
-                <Scope metaclass="Class"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.nodes.CreateContextAttribute"/>
-            </Command>
-            <Command id="CreateContextDependencyDiagram" label="%CreateContextDependencyDiagram.label" tooltip="%CreateContextDependencyDiagram.tooltip" image="%CreateContextDependencyDiagram.image" group="%CreateContextDependencyDiagram.group" modify-model="true" group-image="%CreateContextDependencyDiagram.groupimage">
-                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateContextDependencyDiagram"/>
-            </Command>
-            <Command id="CreateRequirementsDiagram" label="%CreateRequirementsDiagram.label" tooltip="%CreateRequirementsDiagram.tooltip" image="%CreateRequirementsDiagram.image" group="%CreateRequirementsDiagram.group" modify-model="true" group-image="%CreateRequirementsDiagram.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateRequirementsDiagram"/>
-            </Command>
-            <Command id="CreateUseCaseDiagram" label="%CreateUseCaseDiagram.label" tooltip="%CreateUseCaseDiagram.tooltip" image="%CreateUseCaseDiagram.image" group="%CreateUseCaseDiagram.group" modify-model="true" group-image="%CreateUseCaseDiagram.groupimage">
-                <Scope metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateUseCaseDiagram"/>
             </Command>
         </Commands>
         <Tools>
@@ -695,6 +700,9 @@
             <DiagramType base-diagram="StaticDiagram" stereotype="RequirementsDiagramStereotype">
                 <Palette keepBasePalette="false"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.RequirementDiagramCustomizer"/>
+            </DiagramType>
+            <DiagramType base-diagram="StaticDiagram" stereotype="SituationsOfInterestDiagramStereotype">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.situations.SituationsOfInterestDiagramCustomizer"/>
             </DiagramType>
             <DiagramType base-diagram="StaticDiagram" stereotype="ContextDiagramStereotype">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.ContextDependencyDiagramCustomizer"/>
