@@ -126,6 +126,12 @@ public class PropertyManager {
 				.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
 		    this.propertyPage = new ContextAttributePropertyPage();
 		}
+		
+		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE, RCaseModule.getInstance().getModuleContext()
+					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+			    this.propertyPage = new ContextAwareFeaturePropertyPage();
+		}
 	
 		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT,
 			RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
@@ -186,13 +192,6 @@ public class PropertyManager {
 					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
 			    this.propertyPage = new TestCasePropertyPage();
 		}
-		
-		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
-				RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE, RCaseModule.getInstance().getModuleContext()
-					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
-			    this.propertyPage = new ContextAwareFeaturePropertyPage();
-		}
-	    
 	    
 	
     }
