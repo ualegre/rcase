@@ -75,7 +75,7 @@ public class RCaseTools {
 	public static final String TOOL_EQUALS 		= "EqualTool";
 	
     public static final String TOOL_SITUATION_OF_INTEREST = "SituationOfInterestTool";   
-	public static final String TOOL_CONTEXT_AWARE_FEATURE = "ContextAttributeTool";
+	public static final String TOOL_CONTEXT_AWARE_FEATURE = "ContextAwareFeatureTool";
     public static final String TOOL_TRIGGERS 			  = "TriggersTool";	
 	public static final String TOOL_ARISES 				  = "ArisesTool";	
     // Elements

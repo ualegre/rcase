@@ -76,7 +76,7 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_BREAK 			= "BreakStereotype";
 	public static final String STEREOTYPE_EQUAL 			= "EqualStereotype";
 	
-    public static final String STEREOTYPE_DIAGRAM_SITUATION_OF_INTEREST = "SituationOfInterestDiagramStereotype";  
+    public static final String STEREOTYPE_DIAGRAM_SITUATIONS_OF_INTEREST = "SituationOfInterestDiagramStereotype";  
     public static final String STEREOTYPE_SITUATION_OF_INTEREST 		= "SituationOfInterestStereotype";
 	public static final String STEREOTYPE_CONTEXT_AWARE_FEATURE 		= "ContextAwareFeatureStereotype";
     public static final String STEREOTYPE_TRIGGERS 						= "TriggersStereotype";
