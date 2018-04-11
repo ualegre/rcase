@@ -237,9 +237,14 @@
                     <TagType name="CAFRecommendation" uid="caff627b-5762-4bb9-ba07-ed088a6ea866" label="%ContextAwareFeatureStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
+            <Stereotype name="ArisesStereotype" metaclass="Dependency" is-hidden="false" label="%ArisesStereotype.label" uid="">
+                <Icon path="%ArisesTool.image"/>
+                <Image path="%ArisesTool.image"/>
+                <TagTypes/>
+            </Stereotype>
             <Stereotype name="TriggersStereotype" metaclass="Dependency" is-hidden="false" label="%TriggersStereotype.label" uid="b62eca7a-05f3-481b-a29d-24899f211a5c">
-                <Icon path="%ContextDependencyTool.image"/>
-                <Image path="%ContextDependencyTool.image"/>
+                <Icon path="%TriggersTool.image"/>
+                <Image path="%TriggersTool.image"/>
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
@@ -642,11 +647,19 @@
                 </Handler>
             </Tool>
             <Tool id="TriggersTool" label="%TriggersTool.label" tooltip="%TriggersTool.tooltip" image="%TriggersTool.image">
-                <Scope-source metaclass="ContextAttributeStereotype"/>
+                <Scope-source metaclass="ModelTree"/>
                 <Scope-target stereotype="ModelTree"/>
                 <Handler class="edu.casetools.rcase.modelio.diagrams.situations.tools.relations.TriggersTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="TriggersStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ArisesTool" label="%ArisesTool.label" tooltip="%ArisesTool.tooltip" image="%ArisesTool.image">
+                <Scope-source metaclass="ModelTree"/>
+                <Scope-target stereotype="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.diagrams.situations.tools.relations.ArisesTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="stereotype" value="ArisesStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="ContextDependencyTool" label="%ContextDependencyTool.label" tooltip="%ContextDependencyTool.tooltip" image="%ContextDependencyTool.image">
