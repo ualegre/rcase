@@ -84,7 +84,7 @@ public class ArisesTool extends RelationTool {
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
 	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
-		RCaseStereotypes.STEREOTYPE_TRIGGERS);
+		RCaseStereotypes.STEREOTYPE_ARISES);
     }
 
 }

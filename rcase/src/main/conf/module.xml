@@ -212,7 +212,7 @@
                 <Image path="res/icons/usecase_16.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="SituationsOfInterestDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%SituationsOfInterestDiagramStereotype.label" uid="">
+            <Stereotype name="SituationsOfInterestDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%SituationsOfInterestDiagramStereotype.label" uid="7460abcf-88cd-4134-80a1-7d2bf428a2c1">
                 <Icon path="res/icons/situations/soi_diagram.png"/>
                 <Image path="res/icons/situations/soi_diagram.png"/>
                 <TagTypes/>
@@ -237,7 +237,7 @@
                     <TagType name="CAFRecommendation" uid="caff627b-5762-4bb9-ba07-ed088a6ea866" label="%ContextAwareFeatureStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="ArisesStereotype" metaclass="Dependency" is-hidden="false" label="%ArisesStereotype.label" uid="">
+            <Stereotype name="ArisesStereotype" metaclass="Dependency" is-hidden="false" label="%ArisesStereotype.label" uid="87e91235-bbcb-4dc8-b214-90ed03546dcf">
                 <Icon path="%ArisesTool.image"/>
                 <Image path="%ArisesTool.image"/>
                 <TagTypes/>
