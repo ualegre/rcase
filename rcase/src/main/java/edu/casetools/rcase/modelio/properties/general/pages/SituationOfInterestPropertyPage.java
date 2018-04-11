@@ -53,7 +53,11 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	    break;
 	case 4:
 	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DETECTION, value, element);
+		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, value, element);
+	    break;
+	case 5:
+	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, value, element);
 	    break;
 	default:
 	    break;
@@ -75,8 +79,18 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
 
 	property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DETECTION, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagDescription"), property);
+			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, element);
+		table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency"), property,
+				new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"),
+					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"),
+					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High") });
+		
+	property = PropertiesUtils.getInstance()
+			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, element);
+		table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property,
+				new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Recommended"),
+					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.RecommendedWarning"),
+					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.NotRecommended") });
 
 	checkDependencies(element, table);
 

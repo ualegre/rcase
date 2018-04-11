@@ -47,10 +47,12 @@ public class RCaseProperties {
 
     public static final String PROPERTY_SITUATION_OF_INTEREST_ID = "SOIId";
 
-    public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "SOIText";
+    public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "SOIDescription";
+    
+	public static final String PROPERTY_SITUATION_OF_INTEREST_FREQUENCY = "SOIFrequency";
 
-    public static final String PROPERTY_SITUATION_OF_INTEREST_DETECTION = "SOIDetection";
-
+	public static final String PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION = "SOIRecommendation";
+	
     /****************************************************************************
      * Context Attribute related properties
      **************************************************************************/
@@ -118,6 +120,8 @@ public class RCaseProperties {
 	public static final String PROPERTY_TESTCASE_DESCRIPTION = "TestCaseTagText";
 
 	public static final String PROPERTY_TESTCASE_VERDICT = "TestCaseVerdict";
+
+
 
     private RCaseProperties() {
 
