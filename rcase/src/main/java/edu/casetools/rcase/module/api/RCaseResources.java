@@ -25,18 +25,16 @@ package edu.casetools.rcase.module.api;
  */
 
 public class RCaseResources {
+	
     /****************************************************************************
      * Styles
      **************************************************************************/
-    public static final String STYLE_CONTEXT_DIAGRAM = "context_dependency_diagram.style";
-
-    public static final String STYLE_REQUIREMENTS_DIAGRAM = "requirements_diagram.style";
-
-    public static final String STYLE_USECASE_DIAGRAM = "use_case_diagram.style";
-    
-	public static final String STYLE_STAKEHOLDER_DIAGRAM = "stakeholder_diagram.style";
-	
-	public static final String STYLE_OBJECTIVE_DIAGRAM = "objective_diagram.style";
+    public static final String STYLE_CONTEXT_DIAGRAM 				= "context_dependency_diagram.style";
+    public static final String STYLE_REQUIREMENTS_DIAGRAM 			= "requirements_diagram.style";
+    public static final String STYLE_USECASE_DIAGRAM 				= "use_case_diagram.style";
+	public static final String STYLE_STAKEHOLDER_DIAGRAM 			= "stakeholder_diagram.style";
+	public static final String STYLE_OBJECTIVE_DIAGRAM 			    = "objective_diagram.style";
+	public static final String STYLE_SITUATIONS_OF_INTEREST_DIAGRAM = "situations_of_interest_diagram.style";
 
     /****************************************************************************
      * Icons
@@ -44,12 +42,8 @@ public class RCaseResources {
 
     public static final String ICON_DEPENDENCY_TABLE = "res/icons/matrix_16.png";
     public static final String ICON_CONTAINER_TABLE = ICON_DEPENDENCY_TABLE;
-
     public static final String ICON_CONTEXT_MODEL_TABLE = "res/icons/matrix_16.png";
-
     public static final String ICON_MODULE = "/res/icons/module_16.png";
-
-
 
     private RCaseResources() {
 
