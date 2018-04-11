@@ -36,37 +36,37 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
-/**
- * The Class RequirementContainerTool is the tool for creating a Requirement
- * Container.
- */
-public class GoalTool extends ElementTool {
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see edu.casesuite.modelio.diagrams.ElementTool# createOwnElement
-     * (org.modelio.api.model.IModelingSession,
-     * org.modelio.vcore.smkernel.mapi.MObject)
-     */
-    @Override
-    public MObject createOwnElement(IModelingSession session, MObject element) {
-	String name = I18nMessageService.getString("Names.Goal");
-	Class object = DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
-		RCaseStereotypes.STEREOTYPE_GOAL);
-	return addObjectiveStereotype(object);
-
-}
-
-private Class addObjectiveStereotype(Class object) {
-	try {
-		object.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OBJECTIVE);
-	} catch (ExtensionNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	/**
+	 * The Class RequirementContainerTool is the tool for creating a Requirement
+	 * Container.
+	 */
+	public class GoalTool extends ElementTool {
+	
+	    /*
+	     * (non-Javadoc)
+	     * 
+	     * @see edu.casesuite.modelio.diagrams.ElementTool# createOwnElement
+	     * (org.modelio.api.model.IModelingSession,
+	     * org.modelio.vcore.smkernel.mapi.MObject)
+	     */
+	    @Override
+	    public MObject createOwnElement(IModelingSession session, MObject element) {
+		String name = I18nMessageService.getString("Names.Goal");
+		Class object = DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
+			RCaseStereotypes.STEREOTYPE_GOAL);
+		return addObjectiveStereotype(object);
+	
 	}
-	return object;
-}
+
+	private Class addObjectiveStereotype(Class object) {
+		try {
+			object.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OBJECTIVE);
+		} catch (ExtensionNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return object;
+	}
 
     /*
      * (non-Javadoc)

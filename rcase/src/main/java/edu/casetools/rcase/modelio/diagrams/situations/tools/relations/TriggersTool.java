@@ -46,8 +46,8 @@ public class TriggersTool extends RelationTool {
      */
     @Override
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
-	ModelElement element = (ModelElement) target.getElement();
-	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
+		ModelElement element = (ModelElement) target.getElement();
+		return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
     }
 
     /*
@@ -61,8 +61,8 @@ public class TriggersTool extends RelationTool {
      */
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
-	ModelElement element = (ModelElement) target.getElement();
-	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+		ModelElement element = (ModelElement) target.getElement();
+		return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
@@ -74,8 +74,8 @@ public class TriggersTool extends RelationTool {
      */
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
-	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
-		RCaseStereotypes.STEREOTYPE_TRIGGERS);
+		return DiagramUtils.getInstance().createDependency(originElement, targetElement,
+			RCaseStereotypes.STEREOTYPE_TRIGGERS);
     }
 
 }

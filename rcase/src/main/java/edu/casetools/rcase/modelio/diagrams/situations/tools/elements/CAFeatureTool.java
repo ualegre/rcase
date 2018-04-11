@@ -25,12 +25,15 @@ import java.util.List;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramNode;
 import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
+import org.modelio.metamodel.uml.statik.Class;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.diagrams.ElementTool;
 import edu.casetools.rcase.module.api.RCaseColours;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
@@ -47,11 +50,22 @@ public class CAFeatureTool extends ElementTool {
      */
     @Override
     public MObject createOwnElement(IModelingSession session, MObject element) {
-	String name = I18nMessageService.getString("Names.ContextAwareFeature");
-
-	return DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
-		RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE);
+		String name = I18nMessageService.getString("Names.ContextAwareFeature");
+	
+		Class myClass =  DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
+			RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE);
+		return addRequirementStereotype(myClass);
     }
+    
+	private Class addRequirementStereotype(Class object) {
+		try {
+			object.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+		} catch (ExtensionNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return object;
+	}
 
     /*
      * (non-Javadoc)
