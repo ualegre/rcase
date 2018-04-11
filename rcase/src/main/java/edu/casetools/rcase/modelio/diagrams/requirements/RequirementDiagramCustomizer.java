@@ -90,7 +90,7 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
     
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 		String groupName = I18nMessageService.getString("ScopePaletteGroup.Nodes");
-		String[] toolNames = new String[] { RCaseTools.TOOL_GOAL,RCaseTools.TOOL_SOFT_GOAL, RCaseTools.TOOL_REQUIREMENTCONTAINER, RCaseTools.TOOL_REQUIREMENT,
+		String[] toolNames = new String[] { RCaseTools.TOOL_GOAL, RCaseTools.TOOL_SOFT_GOAL, RCaseTools.TOOL_REQUIREMENTCONTAINER, RCaseTools.TOOL_REQUIREMENT,
 			RCaseTools.TOOL_TESTCASE };
 		return createGroup(groupName, toolNames, toolRegistry, 0);
     }
@@ -104,8 +104,8 @@ public class RequirementDiagramCustomizer extends DiagramCustomizer implements I
 
     private org.eclipse.gef.palette.PaletteEntry createRequirementsLinksGroup(IDiagramService toolRegistry) {
 		String groupName = I18nMessageService.getString("ScopePaletteGroup.Links.Requirements");
-		String[] toolNames = new String[] { RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_TRIGGERS,
-			RCaseTools.TOOL_PART, RCaseTools.TOOL_COPY, RCaseTools.TOOL_DERIVE, RCaseTools.TOOL_SATISFY,
+		String[] toolNames = new String[] { 
+				RCaseTools.TOOL_DERIVE, RCaseTools.TOOL_PART, RCaseTools.TOOL_COPY, RCaseTools.TOOL_SATISFY,
 			RCaseTools.TOOL_VERIFY, RCaseTools.TOOL_REFINE, RCaseTools.TOOL_TRACEABILITY };
 		return createGroup(groupName, toolNames, toolRegistry, 0);
     }
