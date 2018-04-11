@@ -41,29 +41,18 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
 
 	switch (row) {
 		case 1:
-		    element.setName(value);
-		    break;
-		case 2:
-		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_ID, value, element);
-		    break;
-		case 3:
-		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_DESCRIPTION, value, element);
-		    break;
-		case 4:
 		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_TYPE, value, element);
 		    break;
-		case 5:
+		case 2:
 		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_INTERACTION, value, element);
 		    break;
-		case 6:
+		case 3:
 		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, value, element);
 		    break;
-		case 7:
+		case 4:
 		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_RECOMMENDATION, value, element);
 		    break;
@@ -76,17 +65,7 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
 
-	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
-
 	String property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_ID, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagId"), property);
-
-	property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_DESCRIPTION, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
-
-	property = PropertiesUtils.getInstance()
 			.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_TYPE, element);
 		table.addProperty(I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType"), property,
 				new String[] { I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType.Info"),

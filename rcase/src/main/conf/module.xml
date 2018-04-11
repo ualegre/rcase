@@ -231,9 +231,7 @@
                 <Icon path="res/icons/situations/elements/ca_feature_16.png"/>
                 <Image path="res/icons/situations/elements/ca_feature_64.png"/>
                 <TagTypes>
-                    <TagType name="CAFId" uid="6f1db24b-827a-42a0-8040-4b588d3a8b65" label="%ContextAwareFeatureStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CAFDescription" uid="" label="%ContextAwareFeatureStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CAFType" uid="" label="%ContextAwareFeatureStereotype.properties.type" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CAFType" uid="1160f194-6577-40eb-b741-343b4d43e4e2" label="%ContextAwareFeatureStereotype.properties.type" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="CAFInteraction" uid="4b849361-4ef2-4747-9f15-ce5a68f1b944" label="%ContextAwareFeatureStereotype.properties.interaction" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="CAFCost" uid="505103f0-d740-4664-959f-088f58cd3214" label="%ContextAwareFeatureStereotype.properties.cost" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="CAFRecommendation" uid="caff627b-5762-4bb9-ba07-ed088a6ea866" label="%ContextAwareFeatureStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>

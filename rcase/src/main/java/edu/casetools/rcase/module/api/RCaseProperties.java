@@ -121,10 +121,6 @@ public class RCaseProperties {
 
 	public static final String PROPERTY_TESTCASE_VERDICT = "TestCaseVerdict";
 
-	public static final String PROPERTY_CONTEXT_AWARE_FEATURE_ID = "CAFId";
-
-	public static final String PROPERTY_CONTEXT_AWARE_FEATURE_DESCRIPTION = "CAFDescription";
-
 	public static final String PROPERTY_CONTEXT_AWARE_FEATURE_TYPE = "CAFType";
 
 	public static final String PROPERTY_CONTEXT_AWARE_FEATURE_INTERACTION = "CAFInteraction";
