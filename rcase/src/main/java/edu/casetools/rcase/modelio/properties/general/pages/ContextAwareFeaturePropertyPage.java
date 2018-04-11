@@ -34,33 +34,41 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
-public class SituationOfInterestPropertyPage implements IPropertyContent {
+public class ContextAwareFeaturePropertyPage implements IPropertyContent {
 
     @Override
     public void changeProperty(ModelElement element, int row, String value) {
 
 	switch (row) {
-	case 1:
-	    element.setName(value);
-	    break;
-	case 2:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_ID, value, element);
-	    break;
-	case 3:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, value, element);
-	    break;
-	case 4:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, value, element);
-	    break;
-	case 5:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, value, element);
-	    break;
-	default:
-	    break;
+		case 1:
+		    element.setName(value);
+		    break;
+		case 2:
+		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_ID, value, element);
+		    break;
+		case 3:
+		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_DESCRIPTION, value, element);
+		    break;
+		case 4:
+		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_TYPE, value, element);
+		    break;
+		case 5:
+		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_INTERACTION, value, element);
+		    break;
+		case 6:
+		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, value, element);
+		    break;
+		case 7:
+		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    RCaseProperties.PROPERTY_CONTEXT_AWARE_RECOMMENDATION, value, element);
+		    break;
+		default:
+		    break;
 	}
 
     }
@@ -71,11 +79,11 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 
 	String property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_ID, element);
+		.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_ID, element);
 	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagId"), property);
 
 	property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, element);
+		.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_DESCRIPTION, element);
 	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
 
 	property = PropertiesUtils.getInstance()
@@ -87,7 +95,7 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 					I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType.TagInfo") });
 	
 	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, element);
+			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, element);
 		table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency"), property,
 				new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"),
 					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"),

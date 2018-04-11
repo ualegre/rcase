@@ -31,6 +31,7 @@ import org.modelio.metamodel.uml.statik.Class;
 import edu.casetools.rcase.modelio.properties.CommonPropertyPage;
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.modelio.properties.general.pages.ContextAttributePropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.ContextAwareFeaturePropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.EthicalProfilePropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.ObjectivePropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.ParticipationPropertyPage;
@@ -184,6 +185,12 @@ public class PropertyManager {
 				RCaseStereotypes.STEREOTYPE_TESTCASE, RCaseModule.getInstance().getModuleContext()
 					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
 			    this.propertyPage = new TestCasePropertyPage();
+		}
+		
+		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE, RCaseModule.getInstance().getModuleContext()
+					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+			    this.propertyPage = new ContextAwareFeaturePropertyPage();
 		}
 	    
 	    
