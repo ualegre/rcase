@@ -300,6 +300,9 @@
                 <Scope metaclass="ModelTree"/>
                 <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateRequirementsDiagram"/>
             </Command>
+            <Command id="CreateSituationsOfInterestDiagram" label="%CreateSituationsOfInterestDiagram.label" tooltip="%CreateSituationsOfInterestDiagram.tooltip" image="%CreateSituationsOfInterestDiagram.image" group="%CreateSituationsOfInterestDiagram.group" modify-model="true" group-image="%CreateSituationsOfInterestDiagram.groupimage">
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateContextDependencyDiagram"/>
+            </Command>
             <Command id="CreateContextDependencyDiagram" label="%CreateContextDependencyDiagram.label" tooltip="%CreateContextDependencyDiagram.tooltip" image="%CreateContextDependencyDiagram.image" group="%CreateContextDependencyDiagram.group" modify-model="true" group-image="%CreateContextDependencyDiagram.groupimage">
                 <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateContextDependencyDiagram"/>
             </Command>
@@ -678,10 +681,11 @@
             <CommandRef refid="CreateSituationOfInterest"/>
             <CommandRef refid="CreateTestCase"/>
             <CommandRef refid="CreateContextAttribute"/>
+            <CommandRef refid="CreateUseCaseDiagram"/>
             <CommandRef refid="CreateStakeholderDiagram"/>
             <CommandRef refid="CreateObjectiveDiagram"/>
             <CommandRef refid="CreateRequirementsDiagram"/>
-            <CommandRef refid="CreateUseCaseDiagram"/>
+            <CommandRef refid="CreateSituationsOfInterestDiagram"/>
             <CommandRef refid="CreateContextDependencyDiagram"/>
             <CommandRef refid="OpenContainerTable"/>
             <CommandRef refid="OpenDependencyTable"/>
