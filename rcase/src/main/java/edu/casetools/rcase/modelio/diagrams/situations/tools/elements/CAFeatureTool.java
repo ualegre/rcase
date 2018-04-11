@@ -47,7 +47,7 @@ public class CAFeatureTool extends ElementTool {
      */
     @Override
     public MObject createOwnElement(IModelingSession session, MObject element) {
-	String name = I18nMessageService.getString("Names.ContextAwareFeatures");
+	String name = I18nMessageService.getString("Names.ContextAwareFeature");
 
 	return DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
 		RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE);

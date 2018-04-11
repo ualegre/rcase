@@ -53,7 +53,7 @@ public class ArisesTool extends RelationTool {
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
 		ModelElement element = (ModelElement) target.getElement();
 		isSituationOfInterest = element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
-	return true;
+		return true;
     }
 
     /*
@@ -69,7 +69,7 @@ public class ArisesTool extends RelationTool {
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
     	ModelElement element = (ModelElement) target.getElement();
     	if(isSituationOfInterest)
-    		return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OBJECTIVE);
+    		return true;
     	else
     		return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
     }
