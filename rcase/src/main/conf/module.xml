@@ -136,6 +136,11 @@
                 <Image path="res/icons/requirements/requirements_diagram.png"/>
                 <TagTypes/>
             </Stereotype>
+            <Stereotype name="RequirementContainerStereotype" metaclass="Package" is-hidden="false" label="%RequirementContainerStereotype.label" uid="cb19ff30-98c8-43f1-b098-e5d8ceba2782">
+                <Icon path="res/icons/requirements/elements/requirements_container_16.png"/>
+                <Image path="%RequirementTool.image"/>
+                <TagTypes/>
+            </Stereotype>
             <Stereotype name="RequirementStereotype" metaclass="Class" is-hidden="false" label="%RequirementStereotype.label" uid="ab289f43-9605-4853-a2f9-03e665e2754a">
                 <Icon path="res/icons/requirements/elements/requirements_16.png"/>
                 <Image path="res/icons/requirements/elements/requirements_64.png"/>
@@ -218,17 +223,24 @@
                 <TagTypes>
                     <TagType name="SOIId" uid="28536190-5b6e-4a32-88df-17b2a9feef03" label="%SituationOfInterestStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="SOIDescription" uid="8b8b9cb6-5186-4fb1-8f14-f39932a05346" label="%SituationOfInterestStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="SOIFrequency" uid="" label="%SituationOfInterestStereotype.properties.detection" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="SOIRecommendation" uid="" label="%SituationOfInterestStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>                </TagTypes>
+                    <TagType name="SOIFrequency" uid="045a504b-74de-4d1a-a408-a2e9a0130331" label="%SituationOfInterestStereotype.properties.detection" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="SOIRecommendation" uid="f6387a30-8b57-485e-9761-4665c67efd3c" label="%SituationOfInterestStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
             </Stereotype>
-            <Stereotype name="ContextAwareFeatureStereotype" metaclass="Class" is-hidden="false" label="%ContextAwareFeatureStereotypeStereotype.label" uid="">
+            <Stereotype name="ContextAwareFeatureStereotype" metaclass="Class" is-hidden="false" label="%ContextAwareFeatureStereotypeStereotype.label" uid="a080fe16-5bee-4b0e-bc2d-203865c965b6">
                 <Icon path="res/icons/situations/elements/ca_feature_16.png"/>
                 <Image path="res/icons/situations/elements/ca_feature_64.png"/>
                 <TagTypes>
-                    <TagType name="CAFId" uid="" label="%ContextAwareFeatureStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CAFInteraction" uid="" label="%ContextAwareFeatureStereotype.properties.interaction" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CAFCost" uid="" label="%ContextAwareFeatureStereotype.properties.cost" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CAFRecommendation" uid="" label="%ContextAwareFeatureStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>                </TagTypes>
+                    <TagType name="CAFId" uid="6f1db24b-827a-42a0-8040-4b588d3a8b65" label="%ContextAwareFeatureStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CAFInteraction" uid="4b849361-4ef2-4747-9f15-ce5a68f1b944" label="%ContextAwareFeatureStereotype.properties.interaction" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CAFCost" uid="505103f0-d740-4664-959f-088f58cd3214" label="%ContextAwareFeatureStereotype.properties.cost" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CAFRecommendation" uid="caff627b-5762-4bb9-ba07-ed088a6ea866" label="%ContextAwareFeatureStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="TriggersStereotype" metaclass="Dependency" is-hidden="false" label="%TriggersStereotype.label" uid="b62eca7a-05f3-481b-a29d-24899f211a5c">
+                <Icon path="%ContextDependencyTool.image"/>
+                <Image path="%ContextDependencyTool.image"/>
+                <TagTypes/>
             </Stereotype>
             <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
                 <Icon path="res/icons/context_16.png"/>
@@ -237,16 +249,6 @@
                     <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextDependencyStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="CATagText" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextDependencyStereotype.properties.text" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
-            </Stereotype>
-            <Stereotype name="RequirementContainerStereotype" metaclass="Package" is-hidden="false" label="%RequirementContainerStereotype.label" uid="cb19ff30-98c8-43f1-b098-e5d8ceba2782">
-                <Icon path="res/icons/requirements/elements/requirements_container_16.png"/>
-                <Image path="%RequirementTool.image"/>
-                <TagTypes/>
-            </Stereotype>
-            <Stereotype name="TriggersStereotype" metaclass="Dependency" is-hidden="false" label="%TriggersStereotype.label" uid="b62eca7a-05f3-481b-a29d-24899f211a5c">
-                <Icon path="%ContextDependencyTool.image"/>
-                <Image path="%ContextDependencyTool.image"/>
-                <TagTypes/>
             </Stereotype>
             <Stereotype name="ContextDependencyStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDependencyStereotype.label" uid="51d9ee5e-84f2-4f31-bbfe-5c2ac97d5569">
                 <Icon path="%ContextDependencyTool.image"/>
@@ -634,7 +636,7 @@
             <Tool id="TriggersTool" label="%TriggersTool.label" tooltip="%TriggersTool.tooltip" image="%TriggersTool.image">
                 <Scope-source metaclass="ContextAttributeStereotype"/>
                 <Scope-target stereotype="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.relations.TriggersTool">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.situations.tools.relations.TriggersTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="TriggersStereotype"/>
                 </Handler>
@@ -681,6 +683,9 @@
             <CommandRef refid="OpenContextModelTable"/>
         </ContextualMenu>
         <Diagrams>
+            <DiagramType base-diagram="UseCaseDiagram" stereotype="UseCaseDiagram">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.UseCaseDiagramCustomizer"/>
+            </DiagramType>
             <DiagramType base-diagram="StaticDiagram" stereotype="StakeholderDiagramStereotype">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.StakeholderDiagramCustomizer"/>
             </DiagramType>
@@ -693,9 +698,6 @@
             </DiagramType>
             <DiagramType base-diagram="StaticDiagram" stereotype="ContextDiagramStereotype">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.ContextDependencyDiagramCustomizer"/>
-            </DiagramType>
-            <DiagramType base-diagram="UseCaseDiagram" stereotype="UseCaseDiagram">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.UseCaseDiagramCustomizer"/>
             </DiagramType>
         </Diagrams>
         <Views>
