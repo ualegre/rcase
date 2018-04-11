@@ -175,7 +175,7 @@ public abstract class ElementTool extends DefaultBoxTool {
     }
     
     protected  void setDefaultRepresentationConfigs(IDiagramNode dnode) {
-	    dnode.setProperty("REPMODE", "STRUCTURED");
+	    dnode.setProperty("REPMODE", "SIMPLE");
 	    dnode.setProperty("FILLMODE", "SOLID");
 	    dnode.setProperty("LINECOLOR", "0,0,0");
 	    dnode.setProperty("TEXTCOLOR", "0,0,0");
