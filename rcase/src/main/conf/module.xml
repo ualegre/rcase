@@ -197,11 +197,6 @@
             <Stereotype name="ArgumentationStereotype" metaclass="Note" is-hidden="false" label="%ArgumentationStereotype.label" uid="fd8fed8e-da7f-455c-a888-2242800ef58c">
                 <Icon path="res/icons/requirements/notes/argumentation_16.png"/>
             </Stereotype>
-            <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
-                <Icon path="res/icons/situations/soi_diagram.png"/>
-                <Image path="res/icons/situations/soi_diagram.png"/>
-                <TagTypes/>
-            </Stereotype>
             <Stereotype name="UseCaseDiagram" metaclass="UseCaseDiagram" is-hidden="false" label="%UseCaseDiagramStereotype.label" uid="7b6c0ef8-e2a3-4a6f-9838-33edbe9e1a1b">
                 <Icon path="res/icons/usecase_diagram.png"/>
                 <Image path="res/icons/usecase_diagram.png"/>
@@ -212,13 +207,10 @@
                 <Image path="res/icons/usecase_16.png"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
-                <Icon path="res/icons/context_16.png"/>
-                <Image path="res/icons/context_look_64.png"/>
-                <TagTypes>
-                    <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextDependencyStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CATagText" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextDependencyStereotype.properties.text" parameter-card="1" is-hidden="false" is-signed="false"/>
-                </TagTypes>
+            <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
+                <Icon path="res/icons/situations/soi_diagram.png"/>
+                <Image path="res/icons/situations/soi_diagram.png"/>
+                <TagTypes/>
             </Stereotype>
             <Stereotype name="SituationOfInterestStereotype" metaclass="Class" is-hidden="false" label="%SituationOfInterestStereotype.label" uid="7454269e-aa2f-4534-8d2a-4224ccca5577">
                 <Icon path="res/icons/situations/elements/situation_16.png"/>
@@ -230,13 +222,21 @@
                     <TagType name="SOIRecommendation" uid="" label="%SituationOfInterestStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>                </TagTypes>
             </Stereotype>
             <Stereotype name="ContextAwareFeatureStereotype" metaclass="Class" is-hidden="false" label="%ContextAwareFeatureStereotypeStereotype.label" uid="">
-                <Icon path="res/icons/situation_16.png"/>
-                <Image path="res/icons/situation_64.png"/>
+                <Icon path="res/icons/situations/elements/ca_feature_16.png"/>
+                <Image path="res/icons/situations/elements/ca_feature_64.png"/>
                 <TagTypes>
-                    <TagType name="SOIId" uid="28536190-5b6e-4a32-88df-17b2a9feef03" label="%SituationOfInterestStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="SOIDescription" uid="8b8b9cb6-5186-4fb1-8f14-f39932a05346" label="%SituationOfInterestStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="SOIFrequency" uid="" label="%SituationOfInterestStereotype.properties.detection" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="SOIRecommendation" uid="" label="%SituationOfInterestStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>                </TagTypes>
+                    <TagType name="CAFId" uid="" label="%ContextAwareFeatureStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CAFInteraction" uid="" label="%ContextAwareFeatureStereotype.properties.interaction" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CAFCost" uid="" label="%ContextAwareFeatureStereotype.properties.cost" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CAFRecommendation" uid="" label="%ContextAwareFeatureStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>                </TagTypes>
+            </Stereotype>
+            <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
+                <Icon path="res/icons/context_16.png"/>
+                <Image path="res/icons/context_look_64.png"/>
+                <TagTypes>
+                    <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextDependencyStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagText" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextDependencyStereotype.properties.text" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
             </Stereotype>
             <Stereotype name="RequirementContainerStereotype" metaclass="Package" is-hidden="false" label="%RequirementContainerStereotype.label" uid="cb19ff30-98c8-43f1-b098-e5d8ceba2782">
                 <Icon path="res/icons/requirements/elements/requirements_container_16.png"/>
@@ -502,6 +502,12 @@
                     <HParameter name="stereotype" value="RequirementStereotype"/>
                 </Handler>
             </Tool>
+            <Tool id="UseCaseTool" label="%UseCaseTool.label" tooltip="%UseCaseTool.tooltip" image="%UseCaseTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.tools.UseCaseTool">
+                    <HParameter name="metaclass" value="UseCase"/>
+                    <HParameter name="stereotype" value="UseCaseStereotype"/>
+                </Handler>
+            </Tool>
             <Tool id="RequirementContainerTool" label="%RequirementContainerTool.label" tooltip="%RequirementContainerTool.tooltip" image="%RequirementContainerTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.RequirementContainerTool">
                     <HParameter name="metaclass" value="Class"/>
@@ -586,10 +592,36 @@
                     <HParameter name="stereotype" value="EqualStereotype"/>
                 </Handler>
             </Tool>
-            <Tool id="UseCaseTool" label="%UseCaseTool.label" tooltip="%UseCaseTool.tooltip" image="%UseCaseTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.usecase.tools.UseCaseTool">
-                    <HParameter name="metaclass" value="UseCase"/>
-                    <HParameter name="stereotype" value="UseCaseStereotype"/>
+            <Tool id="ProblemTool" label="%ProblemTool.label" tooltip="%ProblemTool.tooltip" image="%ProblemTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.ProblemNoteTool">
+                    <HParameter name="metaclass" value="Note"/>
+                </Handler>
+            </Tool>
+            <Tool id="RationaleTool" label="%RationaleTool.label" tooltip="%RationaleTool.tooltip" image="%RationaleTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.RationaleNoteTool">
+                    <HParameter name="metaclass" value="Note"/>
+                </Handler>
+            </Tool>
+            <Tool id="SupportTool" label="%SupportTool.label" tooltip="%SupportTool.tooltip" image="%SupportTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.SupportNoteTool">
+                    <HParameter name="metaclass" value="Note"/>
+                </Handler>
+            </Tool>
+            <Tool id="DenyTool" label="%DenyTool.label" tooltip="%DenyTool.tooltip" image="%DenyTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.DenyNoteTool">
+                    <HParameter name="metaclass" value="Note"/>
+                </Handler>
+            </Tool>
+            <Tool id="SituationOfInterestTool" label="%SituationOfInterestTool.label" tooltip="%SituationOfInterestTool.tooltip" image="%SituationOfInterestTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.situations.tools.elements.SituationOfInterestTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="SituationOfInterestStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ContextAwareFeatureTool" label="%ContextAwareFeatureTool.label" tooltip="%ContextAwareFeatureTool.tooltip" image="%ContextAwareFeatureTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.situations.tools.elements.CAFeatureTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="ContextAwareFeatureStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="ContextAttributeTool" label="%ContextAttributeTool.label" tooltip="%ContextAttributeTool.tooltip" image="%ContextAttributeTool.image">
@@ -597,12 +629,6 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.elements.ContextAttributeTool">
                     <HParameter name="metaclass" value="Class"/>
                     <HParameter name="stereotype" value="ContextAttributeStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="SituationOfInterestTool" label="%SituationOfInterestTool.label" tooltip="%SituationOfInterestTool.tooltip" image="%SituationOfInterestTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.elements.SituationOfInterestTool">
-                    <HParameter name="metaclass" value="Class"/>
-                    <HParameter name="stereotype" value="SituationOfInterestStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="TriggersTool" label="%TriggersTool.label" tooltip="%TriggersTool.tooltip" image="%TriggersTool.image">
@@ -635,26 +661,6 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.DeriveTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="ContextDeriveStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="ProblemTool" label="%ProblemTool.label" tooltip="%ProblemTool.tooltip" image="%ProblemTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.ProblemNoteTool">
-                    <HParameter name="metaclass" value="Note"/>
-                </Handler>
-            </Tool>
-            <Tool id="RationaleTool" label="%RationaleTool.label" tooltip="%RationaleTool.tooltip" image="%RationaleTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.RationaleNoteTool">
-                    <HParameter name="metaclass" value="Note"/>
-                </Handler>
-            </Tool>
-            <Tool id="SupportTool" label="%SupportTool.label" tooltip="%SupportTool.tooltip" image="%SupportTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.SupportNoteTool">
-                    <HParameter name="metaclass" value="Note"/>
-                </Handler>
-            </Tool>
-            <Tool id="DenyTool" label="%DenyTool.label" tooltip="%DenyTool.tooltip" image="%DenyTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.requirements.tools.notes.DenyNoteTool">
-                    <HParameter name="metaclass" value="Note"/>
                 </Handler>
             </Tool>
         </Tools>
