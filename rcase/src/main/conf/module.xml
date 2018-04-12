@@ -247,7 +247,7 @@
                 <Image path="%TriggersTool.image"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="ContextDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%ContextDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
+            <Stereotype name="SituationDetectionPlanDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%SituationDetectionPlanDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
                 <Icon path="res/icons/situations/soi_diagram.png"/>
                 <Image path="res/icons/situations/soi_diagram.png"/>
                 <TagTypes/>
@@ -257,7 +257,8 @@
                 <Image path="res/icons/plan/elements/context_look_64.png"/>
                 <TagTypes>
                     <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextDependencyStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CATagText" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextDependencyStereotype.properties.text" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagDescription" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextDependencyStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagAccuracy" uid="" label="%ContextDependencyStereotype.properties.accuracy" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="ContextDependencyStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDependencyStereotype.label" uid="51d9ee5e-84f2-4f31-bbfe-5c2ac97d5569">
@@ -670,8 +671,6 @@
                     <HParameter name="stereotype" value="ContextDependencyStereotype"/>
                 </Handler>
             </Tool>
-<<<<<<< HEAD
-=======
             <Tool id="DetectsTool" label="%DetectsTool.label" tooltip="%DetectsTool.tooltip" image="%DetectsTool.image">
                 <Scope-source metaclass="ModelTree"/>
                 <Scope-target stereotype="DetectsStereotype"/>
@@ -680,7 +679,6 @@
                     <HParameter name="stereotype" value="DetectsStereotype"/>
                 </Handler>
             </Tool>
->>>>>>> identifies
             <Tool id="ContextDeriveTool" label="%ContextDeriveTool.label" tooltip="%ContextDeriveTool.tooltip" image="%ContextDeriveTool.image">
                 <Scope-source stereotype="ContextAttributeStereotype"/>
                 <Scope-target stereotype="ContextAttributeStereotype"/>
@@ -724,7 +722,7 @@
             <DiagramType base-diagram="StaticDiagram" stereotype="SituationsOfInterestDiagramStereotype">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.situations.SituationsOfInterestDiagramCustomizer"/>
             </DiagramType>
-            <DiagramType base-diagram="StaticDiagram" stereotype="ContextDiagramStereotype">
+            <DiagramType base-diagram="StaticDiagram" stereotype="SituationDetectionPlanDiagramStereotype">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.ContextDependencyDiagramCustomizer"/>
             </DiagramType>
         </Diagrams>

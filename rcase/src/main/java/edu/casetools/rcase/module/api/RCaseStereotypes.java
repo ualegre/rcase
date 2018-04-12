@@ -82,7 +82,7 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_TRIGGERS 						 = "TriggersStereotype";
     public static final String STEREOTYPE_ARISES   						 = 	"ArisesStereotype";
     
-    public static final String STEREOTYPE_DIAGRAM_CONTEXT 	= "ContextDiagramStereotype";
+    public static final String STEREOTYPE_DIAGRAM_SITUATION_DETECTION_PLAN 	= "SituationDetectionPlanDiagramStereotype";
     public static final String STEREOTYPE_CONTEXT_ATTRIBUTE = "ContextAttributeStereotype";
     
     public static final String STEREOTYPE_CONTEXT_DERIVE 	 = "ContextDeriveStereotype";

@@ -34,33 +34,9 @@ public class RCaseProperties {
     public static final String PROPERTY_NAME = "Name";
 
     /****************************************************************************
-     * Requirement related properties
+     * Stakeholder related properties
      **************************************************************************/
-
-    public static final String PROPERTY_REQUIREMENT_ID = "ReqTagId";
-
-    public static final String PROPERTY_REQUIREMENT_DESCRIPTION = "TagText";
-
-    /****************************************************************************
-     * Situation of Interest related properties
-     **************************************************************************/
-
-    public static final String PROPERTY_SITUATION_OF_INTEREST_ID = "SOIId";
-
-    public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "SOIDescription";
-    
-	public static final String PROPERTY_SITUATION_OF_INTEREST_FREQUENCY = "SOIFrequency";
-
-	public static final String PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION = "SOIRecommendation";
-	
-    /****************************************************************************
-     * Context Attribute related properties
-     **************************************************************************/
-    // Context Attribute
-    public static final String PROPERTY_CONTEXT_ID = "CATagId";
-
-    public static final String PROPERTY_CONTEXT_TEXT = "CATagText";
-
+    // Stakeholder
 	public static final String PROPERTY_STAKEHOLDER_ID = "StakTagId";
 
 	public static final String PROPERTY_STAKEHOLDER_DESCRIPTION = "StakTagDescription";
@@ -129,7 +105,35 @@ public class RCaseProperties {
 
 	public static final String PROPERTY_CONTEXT_AWARE_RECOMMENDATION = "CAFRecommendation";
 
+    /****************************************************************************
+     * Requirement related properties
+     **************************************************************************/
 
+    public static final String PROPERTY_REQUIREMENT_ID = "ReqTagId";
+
+    public static final String PROPERTY_REQUIREMENT_DESCRIPTION = "TagText";
+
+    /****************************************************************************
+     * Situation of Interest related properties
+     **************************************************************************/
+
+    public static final String PROPERTY_SITUATION_OF_INTEREST_ID = "SOIId";
+
+    public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "SOIDescription";
+    
+	public static final String PROPERTY_SITUATION_OF_INTEREST_FREQUENCY = "SOIFrequency";
+
+	public static final String PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION = "SOIRecommendation";
+	
+    /****************************************************************************
+     * Context Attribute related properties
+     **************************************************************************/
+    // Context Attribute
+    public static final String PROPERTY_CONTEXT_ATT_ID = "CATagId";
+
+    public static final String PROPERTY_CONTEXT_ATT_DESCRIPTION = "CATagDescription";
+    
+    public static final String PROPERTY_CONTEXT_ATT_ACCURACY = "CATagAccuracy";
 
     private RCaseProperties() {
 

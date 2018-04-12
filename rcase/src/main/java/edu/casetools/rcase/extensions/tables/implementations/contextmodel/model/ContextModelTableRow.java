@@ -21,11 +21,11 @@ public class ContextModelTableRow {
 	values = new ArrayList<>();
 	values.add(ContextAttribute.getName());
 	// TagId
-	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, ContextAttribute));
+	values.add(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ATT_ID, ContextAttribute));
 
 	// TagText
 	values.add(
-		PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_TEXT, ContextAttribute));
+		PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ATT_DESCRIPTION, ContextAttribute));
 
     }
 

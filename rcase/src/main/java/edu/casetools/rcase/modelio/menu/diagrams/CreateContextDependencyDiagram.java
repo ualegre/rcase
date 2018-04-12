@@ -49,7 +49,7 @@ public class CreateContextDependencyDiagram extends CreateDiagram {
     protected StaticDiagram createOwnDiagram(List<MObject> selectedElements, IModelingSession session) {
 	String name = I18nMessageService.getString("Ui.Command.Create.CreateContextDependencyDiagram.Label");
 	StaticDiagram diagram = DiagramUtils.getInstance().createDiagram(selectedElements, session, name,
-		RCaseStereotypes.STEREOTYPE_DIAGRAM_CONTEXT);
+		RCaseStereotypes.STEREOTYPE_DIAGRAM_SITUATION_DETECTION_PLAN);
 	diagram = (StaticDiagram) addStyle(diagram, RCaseResources.STYLE_CONTEXT_DIAGRAM);
 	return diagram;
     }
