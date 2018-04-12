@@ -11,14 +11,14 @@
  * 
  * R-CASE is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Modelio. If not, see <http://www.gnu.org/licenses/>.
+ * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.diagrams.context.tools.elements;
+package edu.casetools.rcase.modelio.diagrams.plan.tools.elements;
 
 import java.util.List;
 
@@ -28,15 +28,16 @@ import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.diagrams.ElementTool;
+import edu.casetools.rcase.module.api.RCaseColours;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class ContextAttributeTool is the tool for creating a contextual
- * entity.
+ * The Class RequirementContainerTool is the tool for creating a Requirement
+ * Container.
  */
-public class ContextAttributeTool extends ElementTool {
+public class SituationDetectionPlanTool extends ElementTool {
 
     /*
      * (non-Javadoc)
@@ -47,10 +48,9 @@ public class ContextAttributeTool extends ElementTool {
      */
     @Override
     public MObject createOwnElement(IModelingSession session, MObject element) {
-
-	String name = I18nMessageService.getString("Names.ContextAttribute");
-	return DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
-		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
+	String name = I18nMessageService.getString("Names.Plan");
+	return DiagramUtils.getInstance().createPackage(adaptElement(element), session, name,
+		RCaseStereotypes.STEREOTYPE_SITUATION_DETECTION_PLAN);
     }
 
     /*
@@ -64,9 +64,8 @@ public class ContextAttributeTool extends ElementTool {
 
 	if ((null != graph) && (!graph.isEmpty()) && (graph.get(0) instanceof IDiagramNode)) {
 	    IDiagramNode dnode = (IDiagramNode) graph.get(0);
-	    dnode.setProperty("REPMODE", "IMAGE");
-	    dnode.setProperty("INTAUTOUNMASK", "TRUE");
-	    dnode.setProperty("INNERUNMASKFILTER", "ALL");
+	    this.setDefaultRepresentationConfigs(dnode);
+	    dnode.setProperty("FILLCOLOR", RCaseColours.ORANGE1);
 	}
 
 	return graph;

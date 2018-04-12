@@ -83,13 +83,13 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_ARISES   						 = 	"ArisesStereotype";
     
     public static final String STEREOTYPE_DIAGRAM_SITUATION_DETECTION_PLAN 	= "SituationDetectionPlanDiagramStereotype";
-    public static final String STEREOTYPE_CONTEXT_ATTRIBUTE = "ContextAttributeStereotype";
-    
-    public static final String STEREOTYPE_CONTEXT_DERIVE 	 = "ContextDeriveStereotype";
-
-    public static final String STEREOTYPE_CONTEXT_DETECTS = "DetectsStereotype";
+	public static final String STEREOTYPE_SITUATION_DETECTION_PLAN 			= "DetectionPlanStereotype";
+    public static final String STEREOTYPE_CONTEXT_ATTRIBUTE 				= "ContextAttributeStereotype";
+    public static final String STEREOTYPE_CONTEXT_DERIVE 	 				= "ContextDeriveStereotype";
+    public static final String STEREOTYPE_CONTEXT_DETECTS 					= "DetectsStereotype";
 
     public static final String DEFAULT_STEREOTYPE = STEREOTYPE_COPY;
+
 	
     private RCaseStereotypes() {
 

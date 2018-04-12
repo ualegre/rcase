@@ -18,7 +18,7 @@
  * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.diagrams.context.tools.relations;
+package edu.casetools.rcase.modelio.diagrams.plan.tools.relations;
 
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
@@ -33,7 +33,7 @@ import edu.casetools.rcase.utils.DiagramUtils;
 /**
  * The Class DeriveTool is the tool for creating a Context Derive relation.
  */
-public class DetectsTool extends RelationTool {
+public class DeriveTool extends RelationTool {
 
     /*
      * (non-Javadoc)
@@ -62,7 +62,7 @@ public class DetectsTool extends RelationTool {
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
 	ModelElement element = (ModelElement) target.getElement();
-	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
+	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
     }
 
     /*
@@ -75,7 +75,7 @@ public class DetectsTool extends RelationTool {
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
 	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
-		RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS);
+		RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE);
     }
 
 }

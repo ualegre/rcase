@@ -18,7 +18,7 @@
  * along with Modelio.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-package edu.casetools.rcase.modelio.diagrams.context;
+package edu.casetools.rcase.modelio.diagrams.plan;
 
 import java.util.List;
 import java.util.Map;
@@ -61,7 +61,8 @@ public class SituationDetectionPlanDiagramCustomizer extends DiagramCustomizer i
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
-	String[] toolNames = new String[] { RCaseTools.TOOL_CONTEXT_ATTRIBUTE, RCaseTools.TOOL_SITUATION_OF_INTEREST };
+	String[] toolNames = new String[] { RCaseTools.TOOL_SITUATION_OF_INTEREST, RCaseTools.TOOL_SITUATION_DETECTION_PLAN, RCaseTools.TOOL_CONTEXT_ATTRIBUTE, 
+			RCaseTools.TOOL_GOAL, RCaseTools.TOOL_SOFT_GOAL };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
@@ -74,7 +75,7 @@ public class SituationDetectionPlanDiagramCustomizer extends DiagramCustomizer i
 
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
-	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DERIVE, RCaseTools.TOOL_CONTEXT_IDENTIFIES, RCaseTools.TOOL_MAKE, RCaseTools.TOOL_HELP,
+	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DERIVE, RCaseTools.TOOL_DETECTS, RCaseTools.TOOL_MAKE, RCaseTools.TOOL_HELP,
 			RCaseTools.TOOL_UNKNOWN, RCaseTools.TOOL_HURT, RCaseTools.TOOL_BREAK, RCaseTools.TOOL_EQUALS,
 		 RCaseTools.TOOL_TRACEABILITY  }, toolRegistry, 0);
     }

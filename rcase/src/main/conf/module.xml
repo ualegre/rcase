@@ -254,11 +254,23 @@
             </Stereotype>
             <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">
                 <Icon path="res/icons/plan/elements/context_16.png"/>
-                <Image path="res/icons/plan/elements/context_look_64.png"/>
+                <Image path="res/icons/plan/elements/context_64.png"/>
                 <TagTypes>
                     <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextAttributeStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
                     <TagType name="CATagDescription" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextAttributeStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CATagAccuracy" uid="" label="%ContextAttributeStereotype.properties.accuracy" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagAccuracy" uid="b68b3c5a-bce0-41ca-8bc6-7cfbec17ba18" label="%ContextAttributeStereotype.properties.accuracy" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="DetectionPlanStereotype" metaclass="Package" is-hidden="false" label="%DetectionPlanStereotype.label" uid="7416d9f6-0177-45be-99f2-8dbd24134a49">
+                <Icon path="res/icons/plan/elements/detection_plan_16.png"/>
+                <Image path="res/icons/plan/elements/detection_plan_64.png"/>
+                <TagTypes>
+                    <TagType name="DPTagId" uid="296ad2b3-559b-42cd-90d0-61320e2599e1" label="%DetectionPlanStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="DPTagDescription" uid="82726335-546e-45a2-a7fa-424b282a33e9" label="%DetectionPlanStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="DPTagRecommendation" uid="3581fe6f-c4ce-4bff-96ae-f16a3c961d26" label="%DetectionPlanStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="DPTagToBeImplemented" uid="60179a2a-914d-4867-8de7-49f1c97de849" label="%DetectionPlanStereotype.properties.toBeImplemented" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="DPTagFailure" uid="5c722367-1093-4bfa-81de-ea5c725ae9f8" label="%DetectionPlanStereotype.properties.failure" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="DPTagImpact" uid="2287a929-932a-4a4d-bd1c-1c0d6e24d0a2" label="%DetectionPlanStereotype.properties.impact" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
             <Stereotype name="DetectsStereotype" metaclass="Dependency" is-hidden="false" label="%DetectsStereotype.label" uid="a5f97076-da2d-4f08-b391-9c0a9341e6f0">
@@ -637,9 +649,16 @@
             </Tool>
             <Tool id="ContextAttributeTool" label="%ContextAttributeTool.label" tooltip="%ContextAttributeTool.tooltip" image="%ContextAttributeTool.image">
                 <Scope-target metaclass="ModelTree"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.elements.ContextAttributeTool">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.plan.tools.elements.ContextAttributeTool">
                     <HParameter name="metaclass" value="Class"/>
                     <HParameter name="stereotype" value="ContextAttributeStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="DetectionPlanTool" label="%DetectionPlanTool.label" tooltip="%DetectionPlanTool.tooltip" image="%DetectionPlanTool.image">
+                <Scope-target metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.diagrams.plan.tools.elements.SituationDetectionPlanTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="DetectionPlanStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="TriggersTool" label="%TriggersTool.label" tooltip="%TriggersTool.tooltip" image="%TriggersTool.image">
@@ -661,7 +680,7 @@
             <Tool id="DetectsTool" label="%DetectsTool.label" tooltip="%DetectsTool.tooltip" image="%DetectsTool.image">
                 <Scope-source metaclass="ModelTree"/>
                 <Scope-target stereotype="DetectsStereotype"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.DetectsTool">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.plan.tools.relations.DetectsTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="DetectsStereotype"/>
                 </Handler>
@@ -669,7 +688,7 @@
             <Tool id="ContextDeriveTool" label="%ContextDeriveTool.label" tooltip="%ContextDeriveTool.tooltip" image="%ContextDeriveTool.image">
                 <Scope-source stereotype="ContextAttributeStereotype"/>
                 <Scope-target stereotype="ContextAttributeStereotype"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.DeriveTool">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.plan.tools.relations.DeriveTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="ContextDeriveStereotype"/>
                 </Handler>
@@ -710,7 +729,7 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.situations.SituationsOfInterestDiagramCustomizer"/>
             </DiagramType>
             <DiagramType base-diagram="StaticDiagram" stereotype="SituationDetectionPlanDiagramStereotype">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.SituationDetectionPlanDiagramCustomizer"/>
+                <Handler class="edu.casetools.rcase.modelio.diagrams.plan.SituationDetectionPlanDiagramCustomizer"/>
             </DiagramType>
         </Diagrams>
         <Views>

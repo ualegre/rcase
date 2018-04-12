@@ -78,16 +78,11 @@ public class RCaseTools {
 	public static final String TOOL_CONTEXT_AWARE_FEATURE = "ContextAwareFeatureTool";
     public static final String TOOL_TRIGGERS 			  = "TriggersTool";	
 	public static final String TOOL_ARISES 				  = "ArisesTool";	
-    // Elements
 
-    public static final String TOOL_CONTEXT_ATTRIBUTE 	= "ContextAttributeTool";
-
-    // Relations
-    
-    public static final String TOOL_CONTEXT_IDENTIFIES 	= "DetectsTool";
-
-    public static final String TOOL_CONTEXT_DERIVE 		= "ContextDeriveTool";
-
+    public static final String TOOL_CONTEXT_ATTRIBUTE 		 = "ContextAttributeTool";
+	public static final String TOOL_SITUATION_DETECTION_PLAN = "DetectionPlanTool";
+    public static final String TOOL_DETECTS 				 = "DetectsTool";
+    public static final String TOOL_CONTEXT_DERIVE 			 = "ContextDeriveTool";
 
     private RCaseTools() {
 
