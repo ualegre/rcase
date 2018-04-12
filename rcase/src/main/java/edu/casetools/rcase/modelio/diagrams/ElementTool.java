@@ -181,6 +181,7 @@ public abstract class ElementTool extends DefaultBoxTool {
 	    dnode.setProperty("TEXTCOLOR", "0,0,0");
 	    dnode.setProperty("INTAUTOUNMASK", "TRUE");
 	    dnode.setProperty("INNERUNMASKFILTER", "ALL");
+	    dnode.setProperty("SHOWSTEREOTYPES", "ICON");
 	}
 
 }

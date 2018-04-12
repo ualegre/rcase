@@ -203,8 +203,8 @@
                 <Icon path="res/icons/requirements/notes/argumentation_16.png"/>
             </Stereotype>
             <Stereotype name="UseCaseDiagram" metaclass="UseCaseDiagram" is-hidden="false" label="%UseCaseDiagramStereotype.label" uid="7b6c0ef8-e2a3-4a6f-9838-33edbe9e1a1b">
-                <Icon path="res/icons/usecase/usecase_diagram.png"/>
-                <Image path="res/icons/usecase/usecase_diagram.png"/>
+                <Icon path="res/icons/usecases/usecase_diagram.png"/>
+                <Image path="res/icons/usecases/usecase_diagram.png"/>
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="UseCaseStereotype" metaclass="UseCase" is-hidden="false" label="Use Case" uid="3de1e727-2eaa-446e-a61f-4df78ee9ec09">
