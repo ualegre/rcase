@@ -194,9 +194,7 @@ public class PropertyManager {
 			    this.propertyPage = new ContextAwareFeaturePropertyPage();
 		}
 		
-		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
-				RCaseStereotypes.STEREOTYPE_SITUATION_DETECTION_PLAN, RCaseModule.getInstance().getModuleContext()
-					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+		if (ster.getName().equals(RCaseStereotypes.STEREOTYPE_SITUATION_DETECTION_PLAN)) {
 			    this.propertyPage = new SituationDetectionPlanPropertyPage();
 		}
 	
