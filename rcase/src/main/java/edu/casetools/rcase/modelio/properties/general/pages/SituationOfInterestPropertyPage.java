@@ -106,7 +106,7 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "ContextDependency", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES, "Identifies", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS, "Detects", element, table);
 	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
     }
 

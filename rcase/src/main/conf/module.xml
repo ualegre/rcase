@@ -265,9 +265,9 @@
                 <Image path="%ContextDependencyTool.image"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="IdentifiesStereotype" metaclass="Dependency" is-hidden="false" label="%IdentifiesStereotype.label" uid="a5f97076-da2d-4f08-b391-9c0a9341e6f0">
-                <Icon path="%IdentifiesTool.image"/>
-                <Image path="%IdentifiesTool.image"/>
+            <Stereotype name="DetectsStereotype" metaclass="Dependency" is-hidden="false" label="%DetectsStereotype.label" uid="a5f97076-da2d-4f08-b391-9c0a9341e6f0">
+                <Icon path="%DetectsTool.image"/>
+                <Image path="%DetectsTool.image"/>
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="ContextDeriveStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDeriveStereotype.label" uid="f65478dc-7d4e-4d4f-891a-9fc076915c58">
@@ -670,12 +670,12 @@
                     <HParameter name="stereotype" value="ContextDependencyStereotype"/>
                 </Handler>
             </Tool>
-            <Tool id="IdentifiesTool" label="%IdentifiesTool.label" tooltip="%IdentifiesTool.tooltip" image="%IdentifiesTool.image">
+            <Tool id="DetectsTool" label="%DetectsTool.label" tooltip="%DetectsTool.tooltip" image="%DetectsTool.image">
                 <Scope-source metaclass="ModelTree"/>
-                <Scope-target stereotype="IdentifiesStereotype"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.IdentifiesTool">
+                <Scope-target stereotype="DetectsStereotype"/>
+                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.DetectsTool">
                     <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="IdentifiesStereotype"/>
+                    <HParameter name="stereotype" value="DetectsStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="ContextDeriveTool" label="%ContextDeriveTool.label" tooltip="%ContextDeriveTool.tooltip" image="%ContextDeriveTool.image">

@@ -33,7 +33,7 @@ import edu.casetools.rcase.utils.DiagramUtils;
 /**
  * The Class DeriveTool is the tool for creating a Context Derive relation.
  */
-public class IdentifiesTool extends RelationTool {
+public class DetectsTool extends RelationTool {
 
     /*
      * (non-Javadoc)
@@ -75,7 +75,7 @@ public class IdentifiesTool extends RelationTool {
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
 	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
-		RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES);
+		RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS);
     }
 
 }
