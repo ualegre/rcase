@@ -227,7 +227,7 @@
                     <TagType name="SOIRecommendation" uid="f6387a30-8b57-485e-9761-4665c67efd3c" label="%SituationOfInterestStereotype.properties.recommendation" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="ContextAwareFeatureStereotype" metaclass="Class" is-hidden="false" label="%ContextAwareFeatureStereotypeStereotype.label" uid="a080fe16-5bee-4b0e-bc2d-203865c965b6">
+            <Stereotype name="ContextAwareFeatureStereotype" metaclass="Class" is-hidden="false" label="%ContextAwareFeatureStereotype.label" uid="a080fe16-5bee-4b0e-bc2d-203865c965b6">
                 <Icon path="res/icons/situations/elements/ca_feature_16.png"/>
                 <Image path="res/icons/situations/elements/ca_feature_64.png"/>
                 <TagTypes>
