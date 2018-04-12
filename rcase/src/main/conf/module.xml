@@ -265,11 +265,6 @@
                 <Image path="%ContextDependencyTool.image"/>
                 <TagTypes/>
             </Stereotype>
-            <Stereotype name="IdentifiesStereotype" metaclass="Dependency" is-hidden="false" label="%IdentifiesStereotype.label" uid="a5f97076-da2d-4f08-b391-9c0a9341e6f0">
-                <Icon path="%IdentifiesTool.image"/>
-                <Image path="%IdentifiesTool.image"/>
-                <TagTypes/>
-            </Stereotype>
             <Stereotype name="ContextDeriveStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDeriveStereotype.label" uid="f65478dc-7d4e-4d4f-891a-9fc076915c58">
                 <Icon path="%ContextDeriveTool.image"/>
                 <Image path="%ContextDeriveTool.image"/>
@@ -668,14 +663,6 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.ContextDependencyTool">
                     <HParameter name="metaclass" value="Dependency"/>
                     <HParameter name="stereotype" value="ContextDependencyStereotype"/>
-                </Handler>
-            </Tool>
-            <Tool id="IdentifiesTool" label="%IdentifiesTool.label" tooltip="%IdentifiesTool.tooltip" image="%IdentifiesTool.image">
-                <Scope-source metaclass="ModelTree"/>
-                <Scope-target stereotype="IdentifiesStereotype"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.IdentifiesTool">
-                    <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="IdentifiesStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="ContextDeriveTool" label="%ContextDeriveTool.label" tooltip="%ContextDeriveTool.tooltip" image="%ContextDeriveTool.image">

@@ -87,7 +87,6 @@ public class RCaseStereotypes {
     
     public static final String STEREOTYPE_CONTEXT_DERIVE 	 = "ContextDeriveStereotype";
     public static final String STEREOTYPE_CONTEXT_DEPENDENCY = "ContextDependencyStereotype";
-    public static final String STEREOTYPE_CONTEXT_IDENTIFIES = "IdentifiesStereotype";
 
     public static final String DEFAULT_STEREOTYPE = STEREOTYPE_COPY;
 	
