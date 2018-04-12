@@ -53,13 +53,13 @@ public class CAFeatureTool extends ElementTool {
 		String name = I18nMessageService.getString("Names.ContextAwareFeature");
 	
 		Class myClass =  DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
-			RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE);
-		return addRequirementStereotype(myClass);
+			RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+		return addContextAwareFeatureStereotype(myClass);
     }
     
-	private Class addRequirementStereotype(Class object) {
+	private Class addContextAwareFeatureStereotype(Class object) {
 		try {
-			object.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+			object.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE);
 		} catch (ExtensionNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -248,8 +248,8 @@
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="SituationDetectionPlanDiagramStereotype" metaclass="StaticDiagram" is-hidden="false" label="%SituationDetectionPlanDiagramStereotype.label" uid="c46ba1c0-9581-4b7e-b4e2-f0744a4f04b5">
-                <Icon path="res/icons/situations/soi_diagram.png"/>
-                <Image path="res/icons/situations/soi_diagram.png"/>
+                <Icon path="res/icons/plan/plan_diagram.png"/>
+                <Image path="res/icons/plan/plan_diagram.png"/>
                 <TagTypes/>
             </Stereotype>
             <Stereotype name="ContextAttributeStereotype" metaclass="Class" is-hidden="false" label="%ContextAttributeStereotype.label" uid="3e8ce7a4-43d1-46b2-963a-3ea01c20dc60">

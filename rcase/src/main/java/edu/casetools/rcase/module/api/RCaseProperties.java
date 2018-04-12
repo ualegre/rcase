@@ -135,6 +135,18 @@ public class RCaseProperties {
     
     public static final String PROPERTY_CONTEXT_ATT_ACCURACY = "CATagAccuracy";
 
+	public static final String PROPERTY_SITUATION_DETECTION_PLAN_ID = "DPTagId";
+
+	public static final String PROPERTY_SITUATION_DETECTION_PLAN_DESCRIPTION = "DPTagDescription";
+
+	public static final String PROPERTY_SITUATION_DETECTION_PLAN_RECOMMENDATION = "DPTagRecommendation";
+
+	public static final String PROPERTY_SITUATION_DETECTION_PLAN_TOBEIMPLEMENTED = "DPTagToBeImplemented";
+
+	public static final String PROPERTY_SITUATION_DETECTION_PLAN_FAILURE = "DPTagFailure";
+
+	public static final String PROPERTY_SITUATION_DETECTION_PLAN_IMPACT = "DPTagImpact";
+
     private RCaseProperties() {
 
     }

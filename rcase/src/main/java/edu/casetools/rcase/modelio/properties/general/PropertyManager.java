@@ -37,6 +37,7 @@ import edu.casetools.rcase.modelio.properties.general.pages.ObjectivePropertyPag
 import edu.casetools.rcase.modelio.properties.general.pages.ParticipationPropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.RefineObjPropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.RequirementPropertyPage;
+import edu.casetools.rcase.modelio.properties.general.pages.SituationDetectionPlanPropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.SituationOfInterestPropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.StakeholderPropertyPage;
 import edu.casetools.rcase.modelio.properties.general.pages.TestCasePropertyPage;
@@ -126,13 +127,7 @@ public class PropertyManager {
 				.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
 		    this.propertyPage = new ContextAttributePropertyPage();
 		}
-		
-		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
-				RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE, RCaseModule.getInstance().getModuleContext()
-					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
-			    this.propertyPage = new ContextAwareFeaturePropertyPage();
-		}
-	
+			
 		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT,
 			RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
 				.getMClass(Class.class)))) {
@@ -193,6 +188,17 @@ public class PropertyManager {
 			    this.propertyPage = new TestCasePropertyPage();
 		}
 	    
+		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE, RCaseModule.getInstance().getModuleContext()
+					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+			    this.propertyPage = new ContextAwareFeaturePropertyPage();
+		}
+		
+		if (ster.equals(extensions.getStereotype(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_SITUATION_DETECTION_PLAN, RCaseModule.getInstance().getModuleContext()
+					.getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class)))) {
+			    this.propertyPage = new SituationDetectionPlanPropertyPage();
+		}
 	
     }
     
