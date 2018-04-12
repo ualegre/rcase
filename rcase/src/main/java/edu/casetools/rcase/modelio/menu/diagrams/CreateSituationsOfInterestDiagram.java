@@ -34,7 +34,7 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class CreateContextDependencyDiagram creates a Context Dependency
+ * The Class CreateSituationsOfInterestDiagram creates a Situations of Interest Diagram
  * Diagram.
  */
 public class CreateSituationsOfInterestDiagram extends CreateDiagram {

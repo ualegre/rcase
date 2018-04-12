@@ -83,7 +83,6 @@ public class RCaseTools {
     public static final String TOOL_CONTEXT_ATTRIBUTE 	= "ContextAttributeTool";
 
     // Relations
-    public static final String TOOL_CONTEXT_DEPENDENCY 	= "ContextDependencyTool";
     
     public static final String TOOL_CONTEXT_IDENTIFIES 	= "DetectsTool";
 

@@ -34,10 +34,10 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class CreateContextDependencyDiagram creates a Context Dependency
+ * The Class CreateCreateSituationDetectionPlanDiagram creates a Context Dependency
  * Diagram.
  */
-public class CreateContextDependencyDiagram extends CreateDiagram {
+public class CreateSituationDetectionPlanDiagram extends CreateDiagram {
 
     /*
      * (non-Javadoc)
@@ -47,7 +47,7 @@ public class CreateContextDependencyDiagram extends CreateDiagram {
      */
     @Override
     protected StaticDiagram createOwnDiagram(List<MObject> selectedElements, IModelingSession session) {
-	String name = I18nMessageService.getString("Ui.Command.Create.CreateContextDependencyDiagram.Label");
+	String name = I18nMessageService.getString("Ui.Command.Create.CreateSituationDetectionPlanDiagram.Label");
 	StaticDiagram diagram = DiagramUtils.getInstance().createDiagram(selectedElements, session, name,
 		RCaseStereotypes.STEREOTYPE_DIAGRAM_SITUATION_DETECTION_PLAN);
 	diagram = (StaticDiagram) addStyle(diagram, RCaseResources.STYLE_CONTEXT_DIAGRAM);

@@ -31,7 +31,7 @@ import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
- * The Class ContextDependencyTool is the tool for creating a Context Dependency
+ * The Class ArisesTool is the tool for creating an Arise Dependency
  * relation.
  */
 public class ArisesTool extends RelationTool {

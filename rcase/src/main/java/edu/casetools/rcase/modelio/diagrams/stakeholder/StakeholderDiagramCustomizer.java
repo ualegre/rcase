@@ -35,7 +35,7 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
 
 /**
- * The Class ContextDependencyDiagramCustomizer customizes the palette of the
+ * The Class CreateSituationDetectionPlanDiagramCustomizer customizes the palette of the
  * Context Dependency Diagram.
  */
 public class StakeholderDiagramCustomizer extends DiagramCustomizer implements IDiagramCustomizer {

@@ -35,10 +35,10 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
 
 /**
- * The Class ContextDependencyDiagramCustomizer customizes the palette of the
+ * The Class CreateSituationDetectionPlanDiagramCustomizer customizes the palette of the
  * Context Dependency Diagram.
  */
-public class ContextDependencyDiagramCustomizer extends DiagramCustomizer implements IDiagramCustomizer {
+public class SituationDetectionPlanDiagramCustomizer extends DiagramCustomizer implements IDiagramCustomizer {
 
     /*
      * (non-Javadoc)
@@ -74,8 +74,9 @@ public class ContextDependencyDiagramCustomizer extends DiagramCustomizer implem
 
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
-	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DERIVE, RCaseTools.TOOL_CONTEXT_IDENTIFIES,
-		RCaseTools.TOOL_CONTEXT_DEPENDENCY, RCaseTools.TOOL_TRACEABILITY  }, toolRegistry, 0);
+	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DERIVE, RCaseTools.TOOL_CONTEXT_IDENTIFIES, RCaseTools.TOOL_MAKE, RCaseTools.TOOL_HELP,
+			RCaseTools.TOOL_UNKNOWN, RCaseTools.TOOL_HURT, RCaseTools.TOOL_BREAK, RCaseTools.TOOL_EQUALS,
+		 RCaseTools.TOOL_TRACEABILITY  }, toolRegistry, 0);
     }
 
     /**

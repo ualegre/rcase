@@ -256,15 +256,10 @@
                 <Icon path="res/icons/plan/elements/context_16.png"/>
                 <Image path="res/icons/plan/elements/context_look_64.png"/>
                 <TagTypes>
-                    <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextDependencyStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CATagDescription" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextDependencyStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="CATagAccuracy" uid="" label="%ContextDependencyStereotype.properties.accuracy" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagId" uid="02040735-9308-49af-9a80-4cff5f095ed0" label="%ContextAttributeStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagDescription" uid="063180e5-b460-4d03-926a-e5010c1ac9b8" label="%ContextAttributeStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CATagAccuracy" uid="" label="%ContextAttributeStereotype.properties.accuracy" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
-            </Stereotype>
-            <Stereotype name="ContextDependencyStereotype" metaclass="Dependency" is-hidden="false" label="%ContextDependencyStereotype.label" uid="51d9ee5e-84f2-4f31-bbfe-5c2ac97d5569">
-                <Icon path="%ContextDependencyTool.image"/>
-                <Image path="%ContextDependencyTool.image"/>
-                <TagTypes/>
             </Stereotype>
             <Stereotype name="DetectsStereotype" metaclass="Dependency" is-hidden="false" label="%DetectsStereotype.label" uid="a5f97076-da2d-4f08-b391-9c0a9341e6f0">
                 <Icon path="%DetectsTool.image"/>
@@ -309,8 +304,8 @@
             <Command id="CreateSituationsOfInterestDiagram" label="%CreateSituationsOfInterestDiagram.label" tooltip="%CreateSituationsOfInterestDiagram.tooltip" image="%CreateSituationsOfInterestDiagram.image" group="%CreateSituationsOfInterestDiagram.group" modify-model="true" group-image="%CreateSituationsOfInterestDiagram.groupimage">
                 <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateSituationsOfInterestDiagram"/>
             </Command>
-            <Command id="CreateContextDependencyDiagram" label="%CreateContextDependencyDiagram.label" tooltip="%CreateContextDependencyDiagram.tooltip" image="%CreateContextDependencyDiagram.image" group="%CreateContextDependencyDiagram.group" modify-model="true" group-image="%CreateContextDependencyDiagram.groupimage">
-                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateContextDependencyDiagram"/>
+            <Command id="CreateSituationDetectionPlanDiagram" label="%CreateSituationDetectionPlanDiagram.label" tooltip="%CreateSituationDetectionPlanDiagram.tooltip" image="%CreateSituationDetectionPlanDiagram.image" group="%CreateSituationDetectionPlanDiagram.group" modify-model="true" group-image="%CreateSituationDetectionPlanDiagram.groupimage">
+                <Handler class="edu.casetools.rcase.modelio.menu.diagrams.CreateSituationDetectionPlanDiagram"/>
             </Command>
             <Command id="CreateUseCase" label="%CreateUseCase.label" tooltip="%CreateUseCase.tooltip" image="%CreateUseCase.image" group="%CreateUseCase.group" modify-model="true" group-image="%CreateUseCase.groupimage">
                 <Scope metaclass="ModelTree"/>
@@ -663,14 +658,6 @@
                     <HParameter name="stereotype" value="ArisesStereotype"/>
                 </Handler>
             </Tool>
-            <Tool id="ContextDependencyTool" label="%ContextDependencyTool.label" tooltip="%ContextDependencyTool.tooltip" image="%ContextDependencyTool.image">
-                <Scope-source metaclass="ModelTree"/>
-                <Scope-target stereotype="ContextAttributeStereotype"/>
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.tools.relations.ContextDependencyTool">
-                    <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="ContextDependencyStereotype"/>
-                </Handler>
-            </Tool>
             <Tool id="DetectsTool" label="%DetectsTool.label" tooltip="%DetectsTool.tooltip" image="%DetectsTool.image">
                 <Scope-source metaclass="ModelTree"/>
                 <Scope-target stereotype="DetectsStereotype"/>
@@ -700,7 +687,7 @@
             <CommandRef refid="CreateObjectiveDiagram"/>
             <CommandRef refid="CreateRequirementsDiagram"/>
             <CommandRef refid="CreateSituationsOfInterestDiagram"/>
-            <CommandRef refid="CreateContextDependencyDiagram"/>
+            <CommandRef refid="CreateSituationDetectionPlanDiagram"/>
             <CommandRef refid="OpenContainerTable"/>
             <CommandRef refid="OpenDependencyTable"/>
             <CommandRef refid="OpenContextModelTable"/>
@@ -723,7 +710,7 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.situations.SituationsOfInterestDiagramCustomizer"/>
             </DiagramType>
             <DiagramType base-diagram="StaticDiagram" stereotype="SituationDetectionPlanDiagramStereotype">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.context.ContextDependencyDiagramCustomizer"/>
+                <Handler class="edu.casetools.rcase.modelio.diagrams.context.SituationDetectionPlanDiagramCustomizer"/>
             </DiagramType>
         </Diagrams>
         <Views>
