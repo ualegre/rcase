@@ -49,13 +49,13 @@ public class ContextAttributePropertyPage implements IPropertyContent {
 	    switch (row) {
 	    case 1:
 		PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-			RCaseProperties.PROPERTY_CONTEXT_ID, value, element);
+			RCaseProperties.PROPERTY_CONTEXT_ATT_ID, value, element);
 		break;
 	    case 2:
 		element.setName(value);
 		break;
 	    case 3:
-		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_TEXT, value);
+		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_ATT_DESCRIPTION, value);
 		break;
 	    default:
 		break;
@@ -70,13 +70,13 @@ public class ContextAttributePropertyPage implements IPropertyContent {
     public void update(ModelElement element, IModulePropertyTable table) {
 
 	// TagId
-	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ID, element);
+	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ATT_ID, element);
 	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagId"), string);
 
 	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 
 	// TagText
-	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_TEXT, element);
+	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ATT_DESCRIPTION, element);
 	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagText"), string);
 
 	checkDependencies(element, table);
