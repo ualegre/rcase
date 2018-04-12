@@ -84,7 +84,14 @@ public class RCaseTools {
 
     // Relations
     public static final String TOOL_CONTEXT_DEPENDENCY 	= "ContextDependencyTool";
+<<<<<<< HEAD
         public static final String TOOL_CONTEXT_DERIVE 	= "ContextDeriveTool";
+=======
+    
+    public static final String TOOL_CONTEXT_IDENTIFIES 	= "DetectsTool";
+
+    public static final String TOOL_CONTEXT_DERIVE 		= "ContextDeriveTool";
+>>>>>>> identifies
 
     // Elements
 

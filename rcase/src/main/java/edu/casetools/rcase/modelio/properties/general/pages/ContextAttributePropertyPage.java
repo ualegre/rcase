@@ -83,6 +83,10 @@ public class ContextAttributePropertyPage implements IPropertyContent {
     }
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
+<<<<<<< HEAD
+=======
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS, "Detects", element, table);
+>>>>>>> identifies
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE, "Derives", element, table);
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "Dependency", element, table);
     }

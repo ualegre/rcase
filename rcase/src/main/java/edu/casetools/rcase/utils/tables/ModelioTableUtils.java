@@ -368,7 +368,7 @@ public class ModelioTableUtils {
 	ArrayList<MObject> list = new ArrayList<>();
 	for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
 	    Dependency dependency = (Dependency) localIterator.next();
-	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_IDENTIFIES)) {
+	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS)) {
 		list.add(dependency.getImpacted());
 	    }
 	}

@@ -93,6 +93,10 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "ContextDependency", element, table);
+<<<<<<< HEAD
+=======
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS, "Detects", element, table);
+>>>>>>> identifies
 	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
     }
 

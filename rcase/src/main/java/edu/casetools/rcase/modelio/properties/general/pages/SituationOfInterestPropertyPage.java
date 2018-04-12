@@ -105,8 +105,14 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
     }
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
+<<<<<<< HEAD
 		checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "ContextDependency", element, table);
 		checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
+=======
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DEPENDENCY, "ContextDependency", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS, "Detects", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
+>>>>>>> identifies
     }
 
     private void checkDependency(String stereotype, String name, ModelElement element, IModulePropertyTable table) {
