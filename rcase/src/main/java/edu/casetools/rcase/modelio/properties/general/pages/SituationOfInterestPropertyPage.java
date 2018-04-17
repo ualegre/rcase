@@ -77,14 +77,6 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	property = PropertiesUtils.getInstance()
 		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, element);
 	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
-
-	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_TYPE, element);
-		table.addProperty(I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType"), property,
-				new String[] { I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType.Info"),
-					I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType.Execute"),
-					I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType.Adapt"),
-					I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType.TagInfo") });
 	
 	property = PropertiesUtils.getInstance()
 			.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, element);
