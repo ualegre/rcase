@@ -37,7 +37,7 @@ import edu.casetools.rcase.utils.DiagramUtils;
  * The Class ContextAttributeTool is the tool for creating a contextual
  * entity.
  */
-public class ContextAttributeTool extends ElementTool {
+public class ContextPreferenceTool extends ElementTool {
 
     /*
      * (non-Javadoc)
@@ -49,9 +49,9 @@ public class ContextAttributeTool extends ElementTool {
     @Override
     public MObject createOwnElement(IModelingSession session, MObject element) {
 
-	String name = I18nMessageService.getString("Names.ContextAttribute");
+	String name = I18nMessageService.getString("Names.ContextPreference");
 	return DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
-		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
+		RCaseStereotypes.STEREOTYPE_CONTEXT_PREFERENCE);
     }
 
     /*
@@ -68,7 +68,7 @@ public class ContextAttributeTool extends ElementTool {
 	    dnode.setProperty("REPMODE", "IMAGE");
 	    dnode.setProperty("INTAUTOUNMASK", "TRUE");
 	    dnode.setProperty("INNERUNMASKFILTER", "ALL");
-	    dnode.setProperty("FILLCOLOR", RCaseColours.GREEN3);
+	    dnode.setProperty("FILLCOLOR", RCaseColours.GREEN2);
 	}
 
 	return graph;

@@ -261,6 +261,15 @@
                     <TagType name="CATagAccuracy" uid="b68b3c5a-bce0-41ca-8bc6-7cfbec17ba18" label="%ContextAttributeStereotype.properties.accuracy" parameter-card="1" is-hidden="false" is-signed="false"/>
                 </TagTypes>
             </Stereotype>
+            <Stereotype name="ContextPreferenceStereotype" metaclass="Class" is-hidden="false" label="%ContextPreferenceStereotype.label" uid="96588898-ed8c-4a99-95a9-f5774222687f">
+                <Icon path="res/icons/plan/elements/context_16.png"/>
+                <Image path="res/icons/plan/elements/context_64.png"/>
+                <TagTypes>
+                    <TagType name="CPTagId" uid="e0887589-4845-47c4-9599-8c8ed02b4ac7" label="%ContextAttributeStereotype.properties.id" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CPTagDescription" uid="dd7327fd-6f1b-40c7-bff6-885ff638c610" label="%ContextAttributeStereotype.properties.description" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType name="CPTagAccuracy" uid="38c53b80-3acc-4880-9020-bfb724557b1f" label="%ContextAttributeStereotype.properties.accuracy" parameter-card="1" is-hidden="false" is-signed="false"/>
+                </TagTypes>
+            </Stereotype>
             <Stereotype name="DetectionPlanStereotype" metaclass="Package" is-hidden="false" label="%DetectionPlanStereotype.label" uid="7416d9f6-0177-45be-99f2-8dbd24134a49">
                 <Icon path="res/icons/plan/elements/detection_plan_16.png"/>
                 <Image path="res/icons/plan/elements/detection_plan_64.png"/>
@@ -652,6 +661,13 @@
                 <Handler class="edu.casetools.rcase.modelio.diagrams.plan.tools.elements.ContextAttributeTool">
                     <HParameter name="metaclass" value="Class"/>
                     <HParameter name="stereotype" value="ContextAttributeStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="ContextPreferenceTool" label="%ContextPreferenceTool.label" tooltip="%ContextPreferenceTool.tooltip" image="%ContextPreferenceTool.image">
+                <Scope-target metaclass="ModelTree"/>
+                <Handler class="edu.casetools.rcase.modelio.diagrams.plan.tools.elements.ContextPreferenceTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="ContextPreferenceStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="DetectionPlanTool" label="%DetectionPlanTool.label" tooltip="%DetectionPlanTool.tooltip" image="%DetectionPlanTool.image">

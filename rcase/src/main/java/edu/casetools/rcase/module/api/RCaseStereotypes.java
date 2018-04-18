@@ -89,6 +89,7 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_CONTEXT_DETECTS 					= "DetectsStereotype";
 
     public static final String DEFAULT_STEREOTYPE = STEREOTYPE_COPY;
+	public static final String STEREOTYPE_CONTEXT_PREFERENCE = "ContextPreferenceStereotype";
 
 	
     private RCaseStereotypes() {

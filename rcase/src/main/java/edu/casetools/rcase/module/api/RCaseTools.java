@@ -80,9 +80,11 @@ public class RCaseTools {
 	public static final String TOOL_ARISES 				  = "ArisesTool";	
 
     public static final String TOOL_CONTEXT_ATTRIBUTE 		 = "ContextAttributeTool";
+	public static final String TOOL_CONTEXT_PREFERENCE 		 = "ContextPreferenceTool";
 	public static final String TOOL_SITUATION_DETECTION_PLAN = "DetectionPlanTool";
     public static final String TOOL_DETECTS 				 = "DetectsTool";
     public static final String TOOL_CONTEXT_DERIVE 			 = "ContextDeriveTool";
+
 
     private RCaseTools() {
 

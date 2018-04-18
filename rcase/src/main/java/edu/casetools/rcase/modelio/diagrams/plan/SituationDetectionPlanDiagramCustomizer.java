@@ -61,7 +61,7 @@ public class SituationDetectionPlanDiagramCustomizer extends DiagramCustomizer i
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
-	String[] toolNames = new String[] { RCaseTools.TOOL_SITUATION_OF_INTEREST, RCaseTools.TOOL_SITUATION_DETECTION_PLAN, RCaseTools.TOOL_CONTEXT_ATTRIBUTE, 
+	String[] toolNames = new String[] { RCaseTools.TOOL_SITUATION_OF_INTEREST, RCaseTools.TOOL_SITUATION_DETECTION_PLAN, RCaseTools.TOOL_CONTEXT_ATTRIBUTE, RCaseTools.TOOL_CONTEXT_PREFERENCE,
 			RCaseTools.TOOL_GOAL, RCaseTools.TOOL_SOFT_GOAL };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }

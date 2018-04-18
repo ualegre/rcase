@@ -46,8 +46,9 @@ public class DeriveTool extends RelationTool {
     @Override
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
 	ModelElement element = (ModelElement) target.getElement();
-	return (element.getStatus().isModifiable()) && (element.isStereotyped(RCasePeerModule.MODULE_NAME,
-		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE));
+	return (element.getStatus().isModifiable()) && ((element.isStereotyped(RCasePeerModule.MODULE_NAME,
+		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE)||element.isStereotyped(RCasePeerModule.MODULE_NAME,
+				RCaseStereotypes.STEREOTYPE_CONTEXT_PREFERENCE)));
     }
 
     /*
@@ -62,7 +63,8 @@ public class DeriveTool extends RelationTool {
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
 	ModelElement element = (ModelElement) target.getElement();
-	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
+	return element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE) ||
+			element.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_PREFERENCE);
     }
 
     /*
