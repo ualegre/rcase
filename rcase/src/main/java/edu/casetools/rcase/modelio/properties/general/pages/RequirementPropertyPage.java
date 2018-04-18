@@ -50,10 +50,6 @@ public class RequirementPropertyPage implements IPropertyContent {
 			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_REQUIREMENT_DESCRIPTION, value, element);
 			    break;
-			case 4:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-				    RCaseProperties.PROPERTY_REQUIREMENT_CATEGORY, value, element);
-			    break;
 			case 5:
 			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_REQUIREMENT_TYPE, value, element);
@@ -76,9 +72,9 @@ public class RequirementPropertyPage implements IPropertyContent {
 			element);
 		table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagText"), property);
 		
-		property = getRequirementCategory(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_TYPE,
+		property = getRequirementCategory(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_CATEGORY,
 					element));
-		table.addProperty(I18nMessageService.getString("Ui.Requirement.Property.TagCategory"), property);
+		table.addConsultProperty(I18nMessageService.getString("Ui.Requirement.Property.TagCategory"), property);
 			
 		property = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_REQUIREMENT_TYPE,
 				element);

@@ -74,25 +74,31 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
 					I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagType.TagInfo") });
 	
 	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, element);
-		table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency"), property,
+			.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_INTERACTION, element);
+		table.addProperty(I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagInteraction"), property,
+				new String[] { I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagInteraction.Active"),
+					I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagInteraction.Passive") });
+		
+	property = PropertiesUtils.getInstance()
+			.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, element);
+		table.addProperty(I18nMessageService.getString("Ui.ContextAwareFeature.Property.TagCost"), property,
 				new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"),
 					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"),
 					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High") });
 		
 	property = PropertiesUtils.getInstance()
 			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, element);
-		table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property,
-				new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"),
-					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"),
-					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended") });
+		table.addConsultProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property);
+//				,new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"),
+//					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"),
+//					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended") });
 
 	checkDependencies(element, table);
 
     }
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
-	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS, "Detects", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_ARISES, "Arises", element, table);
 	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
     }
 

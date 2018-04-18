@@ -67,7 +67,7 @@ public class SituationsOfInterestDiagramCustomizer extends DiagramCustomizer imp
 
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
-	return createGroup(groupName, new String[] { RCaseTools.TOOL_ARISES, RCaseTools.TOOL_TRIGGERS}, toolRegistry, 0);
+	return createGroup(groupName, new String[] { RCaseTools.TOOL_ARISES, RCaseTools.TOOL_TRIGGERS, RCaseTools.TOOL_DERIVE, RCaseTools.TOOL_TRACEABILITY}, toolRegistry, 0);
     }
 
     /**
