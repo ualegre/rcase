@@ -136,6 +136,13 @@ public class RCaseProperties {
     public static final String PROPERTY_CONTEXT_ATT_DESCRIPTION = "CATagDescription";
     
     public static final String PROPERTY_CONTEXT_ATT_ACCURACY = "CATagAccuracy";
+    
+    public static final String PROPERTY_CONTEXT_PREF_ID = "CPTagId";
+
+    public static final String PROPERTY_CONTEXT_PREF_DESCRIPTION = "CPTagDescription";
+    
+    public static final String PROPERTY_CONTEXT_PREF_ACCURACY = "PTagAccuracy";
+
 
 	public static final String PROPERTY_SITUATION_DETECTION_PLAN_ID = "DPTagId";
 

@@ -22,8 +22,12 @@ package edu.casetools.rcase.modelio.properties.general.pages;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import org.eclipse.core.runtime.AssertionFailedException;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
+import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
@@ -34,33 +38,30 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
-public class SituationOfInterestPropertyPage implements IPropertyContent {
+public class ContextPreferencePropertyPage implements IPropertyContent {
 
+    private static final Logger logger = Logger.getLogger(ContextPreferencePropertyPage.class.getName());
+
+    // TODO Reduce the complexity of the switch case
     @Override
     public void changeProperty(ModelElement element, int row, String value) {
-
-	switch (row) {
-	case 1:
-	    element.setName(value);
-	    break;
-	case 2:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_ID, value, element);
-	    break;
-	case 3:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, value, element);
-	    break;
-	case 4:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_PRIORITY, value, element);
-	    break;
-	case 5:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, value, element);
-	    break;
-	default:
-	    break;
+	try {
+	    switch (row) {
+	    case 1:
+		PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			RCaseProperties.PROPERTY_CONTEXT_PREF_ID, value, element);
+		break;
+	    case 2:
+		element.setName(value);
+		break;
+	    case 3:
+		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_PREF_DESCRIPTION, value);
+		break;
+	    default:
+		break;
+	    }
+	} catch (ExtensionNotFoundException | AssertionFailedException e) {
+	    logger.log(Level.SEVERE, e.getMessage(), e);
 	}
 
     }
@@ -68,44 +69,22 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
     @Override
     public void update(ModelElement element, IModulePropertyTable table) {
 
+	// TagId
+	String string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_PREF_ID, element);
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagId"), string);
+
 	table.addProperty(RCaseProperties.PROPERTY_NAME, element.getName());
 
-	String property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_ID, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagId"), property);
-
-	property = PropertiesUtils.getInstance()
-		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, element);
-	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
-	
-	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_PRIORITY, element);
-		table.addProperty(I18nMessageService.getString("Objective.properties.prioritytype"), property,
-				new String[] { I18nMessageService.getString("Objective.properties.prioritytype.normal"),
-					I18nMessageService.getString("Objective.properties.prioritytype.important"),
-					I18nMessageService.getString("Objective.properties.prioritytype.critical") });
-	
-	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, element);
-		table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency"), property,
-				new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"),
-					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"),
-					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High") });
-		
-	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, element);
-		table.addConsultProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property);
-//				,new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"),
-//					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"),
-//					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended") });
+	// TagText
+	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_PREF_DESCRIPTION, element);
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagText"), string);
 
 	checkDependencies(element, table);
-
     }
 
     private void checkDependencies(ModelElement element, IModulePropertyTable table) {
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS, "Detects", element, table);
-	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
+	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE, "Derives", element, table);
     }
 
     private void checkDependency(String stereotype, String name, ModelElement element, IModulePropertyTable table) {
