@@ -121,6 +121,8 @@ public class RCaseProperties {
 
     public static final String PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION = "SOIDescription";
     
+	public static final String PROPERTY_SITUATION_OF_INTEREST_PRIORITY = "SOIPriority";
+    
 	public static final String PROPERTY_SITUATION_OF_INTEREST_FREQUENCY = "SOIFrequency";
 
 	public static final String PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION = "SOIRecommendation";
@@ -146,6 +148,7 @@ public class RCaseProperties {
 	public static final String PROPERTY_SITUATION_DETECTION_PLAN_FAILURE = "DPTagFailure";
 
 	public static final String PROPERTY_SITUATION_DETECTION_PLAN_IMPACT = "DPTagImpact";
+
 
     private RCaseProperties() {
 

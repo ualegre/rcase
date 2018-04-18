@@ -55,6 +55,10 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, value, element);
 	    break;
+	case 5:
+	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, value, element);
+	    break;
 	default:
 	    break;
 	}
@@ -73,6 +77,13 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	property = PropertiesUtils.getInstance()
 		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, element);
 	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
+	
+	property = PropertiesUtils.getInstance()
+			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_PRIORITY, element);
+		table.addProperty(I18nMessageService.getString("Objective.properties.prioritytype"), property,
+				new String[] { I18nMessageService.getString("Objective.properties.prioritytype.normal"),
+					I18nMessageService.getString("Objective.properties.prioritytype.important"),
+					I18nMessageService.getString("Objective.properties.prioritytype.critical") });
 	
 	property = PropertiesUtils.getInstance()
 			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, element);
