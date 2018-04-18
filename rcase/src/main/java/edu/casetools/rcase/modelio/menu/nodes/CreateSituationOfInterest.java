@@ -24,12 +24,16 @@ import java.util.List;
 
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.module.IModule;
+import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.menu.CreateElement;
+import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.PropertiesUtils;
 
 /**
  * The Class CreateRequirement creates a Requirement from the contextual menu.
@@ -45,8 +49,12 @@ public class CreateSituationOfInterest extends CreateElement {
     @Override
     public void createOwnElement(List<MObject> selectedElements, IModelingSession session) {
 	String name = I18nMessageService.getString("Names.SituationOfInterest");
-	DiagramUtils.getInstance().createClass(selectedElements, session, name,
+	MObject soi = DiagramUtils.getInstance().createClass(selectedElements, session, name,
 		RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
+	
+	PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotEvaluated"), (ModelElement)soi);
+	
 
     }
 

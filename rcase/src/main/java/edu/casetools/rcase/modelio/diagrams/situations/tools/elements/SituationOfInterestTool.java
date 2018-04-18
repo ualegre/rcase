@@ -25,13 +25,17 @@ import java.util.List;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramNode;
 import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.diagrams.ElementTool;
 import edu.casetools.rcase.module.api.RCaseColours;
+import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.PropertiesUtils;
 
 /**
  * The Class RequirementTool is the tool for creating a Requirement.
@@ -49,8 +53,13 @@ public class SituationOfInterestTool extends ElementTool {
     public MObject createOwnElement(IModelingSession session, MObject element) {
 	String name = I18nMessageService.getString("Names.SituationOfInterest");
 
-	return DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
+	MObject soi =  DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
 		RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
+	
+	PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotEvaluated"), (ModelElement)soi);
+	
+	return soi;
     }
 
     /*

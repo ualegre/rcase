@@ -55,10 +55,6 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, value, element);
 	    break;
-	case 5:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
-		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, value, element);
-	    break;
 	default:
 	    break;
 	}
@@ -79,7 +75,7 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagText"), property);
 	
 	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, element);
+			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, element);
 		table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency"), property,
 				new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"),
 					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"),
@@ -87,10 +83,10 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 		
 	property = PropertiesUtils.getInstance()
 			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, element);
-		table.addProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property,
-				new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"),
-					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"),
-					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended") });
+		table.addConsultProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property);
+//				,new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"),
+//					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"),
+//					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended") });
 
 	checkDependencies(element, table);
 
