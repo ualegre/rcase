@@ -22,6 +22,7 @@ package edu.casetools.rcase.modelio.menu;
 
 import java.util.List;
 
+import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.diagram.IDiagramService;
 import org.modelio.api.modelio.diagram.dg.IDiagramDG;
@@ -36,12 +37,12 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.i18n.I18nMessageService;
-import edu.casetools.rcase.module.impl.RCaseModule;
 
 /**
  * The Class CreateDiagram has the common methods to create a diagram.
  */
-public abstract class CreateDiagram extends DefaultModuleCommandHandler {
+@SuppressWarnings("deprecation")
+public abstract class CreateStaticDiagram extends DefaultModuleCommandHandler {
 
     /*
      * (non-Javadoc)
@@ -51,14 +52,14 @@ public abstract class CreateDiagram extends DefaultModuleCommandHandler {
      */
     @Override
     public void actionPerformed(List<MObject> selectedElements, IModule module) {
-	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
+	IModelingSession session = Modelio.getInstance().getModelingSession();
 	ITransaction transaction = session
 		.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "Activity" }));
 
 	StaticDiagram diagram = createOwnDiagram(selectedElements, session);
 
 	if (null != diagram)
-	    RCaseModule.getInstance().getModuleContext().getModelioServices().getEditionService().openEditor(diagram);
+	    Modelio.getInstance().getEditionService().openEditor(diagram);
 	transaction.commit();
 
     }
@@ -104,7 +105,7 @@ public abstract class CreateDiagram extends DefaultModuleCommandHandler {
      * @return the diagram where the style has been changed.
      */
     protected AbstractDiagram addStyle(AbstractDiagram diagram, String styleName) {
-	IDiagramService ds = RCaseModule.getInstance().getModuleContext().getModelioServices().getDiagramService();
+	IDiagramService ds = Modelio.getInstance().getDiagramService();
 	IDiagramHandle handler = ds.getDiagramHandle(diagram);
 	IDiagramDG dg = handler.getDiagramNode();
 

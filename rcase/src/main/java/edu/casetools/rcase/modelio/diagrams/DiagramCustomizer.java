@@ -26,6 +26,8 @@ import org.eclipse.gef.palette.PaletteEntry;
 import org.eclipse.gef.palette.SelectionToolEntry;
 import org.modelio.api.modelio.diagram.IDiagramService;
 
+import com.modeliosoft.modelio.javadesigner.annotations.objid;
+
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 
 /**
@@ -97,5 +99,21 @@ public class DiagramCustomizer {
 	}
 	group.setInitialState(initialState);
 	return group;
+    }
+    
+    /**
+     * Creates the note and constraint and dependency group.
+     * 
+     * @param imageService
+     *            service used to get metaclasses bitmaps.
+     * @return The created group.
+     */
+    @objid("7a1a5af2-55b6-11e2-877f-002564c97630")
+    protected PaletteDrawer createCommonGroup(IDiagramService toolRegistry) {
+	// common group
+	String groupName = I18nMessageService.getString("ContextCommunicationPaletteGroup.Common");
+	String[] toolNames = new String[] { "CREATE_NOTE", "CREATE_CONSTRAINT", "CREATE_EXTERNDOCUMENT",
+		"CREATE_DEPENDENCY", "CREATE_TRACEABILITY", "CREATE_RELATED_DIAGRAM_LINK" };
+	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 }

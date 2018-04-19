@@ -28,7 +28,7 @@ import org.modelio.metamodel.diagrams.StaticDiagram;
 import org.modelio.metamodel.diagrams.UseCaseDiagram;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.modelio.menu.CreateDiagram;
+import edu.casetools.rcase.modelio.menu.CreateStaticDiagram;
 import edu.casetools.rcase.module.api.RCaseResources;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
@@ -38,7 +38,7 @@ import edu.casetools.rcase.utils.DiagramUtils;
 /**
  * The Class CreateUseCaseDiagram creates a Use Case Diagram.
  */
-public class CreateUseCaseDiagram extends CreateDiagram {
+public class CreateUseCaseDiagram extends CreateStaticDiagram {
 
     /*
      * (non-Javadoc)

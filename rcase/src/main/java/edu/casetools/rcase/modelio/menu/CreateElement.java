@@ -22,6 +22,7 @@ package edu.casetools.rcase.modelio.menu;
 
 import java.util.List;
 
+import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.api.module.IModule;
@@ -30,11 +31,11 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.i18n.I18nMessageService;
-import edu.casetools.rcase.module.impl.RCaseModule;
 
 /**
  * The Class CreateElement has the common methods to create an element.
  */
+@SuppressWarnings("deprecation")
 public abstract class CreateElement extends DefaultModuleCommandHandler {
 
     /**
@@ -56,7 +57,7 @@ public abstract class CreateElement extends DefaultModuleCommandHandler {
     @Override
     public void actionPerformed(List<MObject> selectedElements, IModule module) {
 
-	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
+	IModelingSession session = Modelio.getInstance().getModelingSession();
 	ITransaction transaction = session.createTransaction(
 		I18nMessageService.getString("Info.Session.Create", new String[] { "Create Element" }));
 	createOwnElement(selectedElements, session);

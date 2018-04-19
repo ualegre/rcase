@@ -27,7 +27,7 @@ import org.modelio.api.module.IModule;
 import org.modelio.metamodel.diagrams.StaticDiagram;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.modelio.menu.CreateDiagram;
+import edu.casetools.rcase.modelio.menu.CreateStaticDiagram;
 import edu.casetools.rcase.module.api.RCaseResources;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
@@ -38,7 +38,7 @@ import edu.casetools.rcase.utils.DiagramUtils;
  * The Class CreateSituationsOfInterestDiagram creates a Situations of Interest Diagram
  * Diagram.
  */
-public class CreateSituationsOfInterestDiagram extends CreateDiagram {
+public class CreateSituationsOfInterestDiagram extends CreateStaticDiagram {
 
     /*
      * (non-Javadoc)
