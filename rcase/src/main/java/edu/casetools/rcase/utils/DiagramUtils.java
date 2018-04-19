@@ -162,9 +162,9 @@ public class DiagramUtils {
      *            the stereotype name
      * @return the package
      */
-    public Package createPackage(List<MObject> selectedElements, IModelingSession session, String name,
+    public Package createPackage(AbstractJavaModule module, List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
-	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, RCaseModule.getInstance()
+	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, module
 		.getModuleContext().getModelioServices().getMetamodelService().getMetamodel().getMClass(Package.class));
 
 	for (MObject element : selectedElements) {
