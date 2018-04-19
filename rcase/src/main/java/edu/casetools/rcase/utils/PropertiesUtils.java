@@ -27,6 +27,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.eclipse.emf.common.util.EList;
+import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
@@ -38,6 +40,7 @@ import org.modelio.metamodel.uml.infrastructure.TagType;
 import org.modelio.metamodel.uml.infrastructure.TaggedValue;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
+import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
 // TODO: Auto-generated Javadoc
@@ -110,6 +113,22 @@ public class PropertiesUtils {
 	return false;
     }
 
+    
+    public String[] getAllElements(AbstractJavaModule module, String moduleName, String stereotypeName, String emptyCase) {
+		MObject state;
+		ArrayList<MObject> stateList = new ArrayList<>();
+	
+		stateList = (ArrayList<MObject>) TableUtils.getInstance().getAllElementsStereotypedAs(module, moduleName, stateList,
+			stereotypeName);
+		String[] stateNames = new String[stateList.size() + 1];
+		stateNames[0] = new String(emptyCase);
+		for (int i = 0; i < stateList.size(); i++) {
+		    state = stateList.get(i);
+		    stateNames[i + 1] = state.getName();
+		}
+		return stateNames;
+    }
+    
     
     /**
      * Accept.
@@ -456,6 +475,48 @@ public class PropertiesUtils {
 	}
 
 	return false;
+    }
+    
+    public void removeOldTracedElements(String moduleName, String stereotype, ModelElement element) {
+
+    	for (MObject child : element.getCompositionChildren()) {
+    	    if (child instanceof ModelElement) {
+    		ModelElement auxiliarChild = (ModelElement) child;
+    		if (auxiliarChild.isStereotyped("ModelerModule", "trace")) {
+    		    deleteElement(moduleName, stereotype, auxiliarChild);
+    		}
+    	    }
+
+    	}
+
+    }
+    
+    private void deleteElement(String moduleName, String stereotype, ModelElement auxiliarChild) {
+		if (auxiliarChild instanceof Dependency) {
+		    Dependency dependency = (Dependency) auxiliarChild;
+		    ModelElement target = dependency.getDependsOn();
+		    if (target.isStereotyped(moduleName, stereotype))
+			auxiliarChild.delete();
+	
+		}
+    }
+
+
+    public void traceElement(AbstractJavaModule module, ModelElement element, String value) {
+		IModelingSession session = module.getModuleContext().getModelingSession();
+		ITransaction transaction = session
+			.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "" }));
+		ModelElement contextAttribute = (ModelElement) ModelioUtils.getInstance().getElementByName(module, value);
+	
+		try {
+		    session.getModel().createDependency(element, contextAttribute, "ModelerModule", "trace");
+		    transaction.commit();
+		} catch (ExtensionNotFoundException e) {
+		    logger.log(Level.SEVERE, e.getMessage(), e);
+		} finally {
+		    transaction.close();
+		}
+
     }
 
 }
