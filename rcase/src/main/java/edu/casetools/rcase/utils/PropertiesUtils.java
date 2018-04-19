@@ -38,9 +38,6 @@ import org.modelio.metamodel.uml.infrastructure.TagType;
 import org.modelio.metamodel.uml.infrastructure.TaggedValue;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.module.api.RCaseProperties;
-
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
 // TODO: Auto-generated Javadoc
@@ -185,12 +182,12 @@ public class PropertiesUtils {
      *            the element
      * @return the list
      */
-    public List<Stereotype> computePropertyList(ModelElement element) {
+    public List<Stereotype> computePropertyList(String moduleName, ModelElement element) {
 	List<Stereotype> result = new ArrayList<>();
 	int i = 0;
 
 	for (Stereotype ster : element.getExtension()) {
-	    if ((ster.getOwner().getOwnerModule().getName().equals(RCasePeerModule.MODULE_NAME))
+	    if ((ster.getOwner().getOwnerModule().getName().equals(moduleName))
 		    && (!result.contains(ster))) {
 		result.add(ster);
 
@@ -429,7 +426,7 @@ public class PropertiesUtils {
 	    }
 	}
 
-	if (tagtype.equals(RCaseProperties.PROPERTY_NAME)) {
+	if (tagtype.equals("Name")) {
 	    return element.getName();
 	}
 

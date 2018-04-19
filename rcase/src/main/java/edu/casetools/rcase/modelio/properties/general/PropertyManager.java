@@ -111,7 +111,7 @@ public class PropertyManager {
     private void init(ModelElement element) {
 	this.propertyPage = null;
 	extensions = RCaseModule.getInstance().getModuleContext().getModelingSession().getMetamodelExtensions();
-	sterList = PropertiesUtils.getInstance().computePropertyList(element);
+	sterList = PropertiesUtils.getInstance().computePropertyList(RCasePeerModule.MODULE_NAME, element);
     }
 
     private void updatePropertyPage(ModelElement element, IModulePropertyTable table) {
