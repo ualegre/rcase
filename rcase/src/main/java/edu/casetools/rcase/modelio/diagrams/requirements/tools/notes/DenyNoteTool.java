@@ -61,7 +61,7 @@ public class DenyNoteTool extends NoteTool {
     @Override
     protected Note createOwnNote(IUmlModel model, ModelElement owner) throws ExtensionNotFoundException {
     	Note note = ElementUtils.getInstance().createNote(model, RCasePeerModule.MODULE_NAME, owner, RCaseNotes.NOTE_DENY);
-    	return addNoteStereotype(note, RCaseStereotypes.STEREOTYPE_ARGUMENTATION);
+    	return addNoteStereotype(RCasePeerModule.MODULE_NAME, note, RCaseStereotypes.STEREOTYPE_ARGUMENTATION);
     }
 
 }

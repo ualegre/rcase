@@ -36,7 +36,6 @@ import org.modelio.api.modelio.diagram.InvalidSourcePointException;
 import org.modelio.api.modelio.diagram.tools.DefaultLinkTool;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
-import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
@@ -46,6 +45,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
  * The Class RelationTool has the common methods to create the tool of a
  * relation.
  */
+@SuppressWarnings("deprecation")
 public abstract class RelationTool extends DefaultLinkTool {
 
     private static final Logger logger = Logger.getLogger(RelationTool.class.getName());
@@ -75,7 +75,6 @@ public abstract class RelationTool extends DefaultLinkTool {
     @Override
     public void actionPerformed(IDiagramHandle representation, IDiagramGraphic origin, IDiagramGraphic target,
 	    IDiagramLink.LinkRouterKind kind, ILinkPath path) {
-	@SuppressWarnings("deprecation")
 	IModelingSession session = Modelio.getInstance().getModelingSession(); 
 	ITransaction transaction = session
 		.createTransaction("Create");

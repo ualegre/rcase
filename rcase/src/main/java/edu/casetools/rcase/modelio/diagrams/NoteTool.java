@@ -25,6 +25,7 @@ import java.util.logging.Logger;
 
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.diagram.IDiagramLink;
@@ -38,13 +39,11 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Note;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.module.i18n.I18nMessageService;
-import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 
 /**
  * The Class NoteTool has the common methods to create the tool of a note.
  */
+@SuppressWarnings("deprecation")
 public abstract class NoteTool extends DefaultAttachedBoxTool {
 
     private static final Logger logger = Logger.getLogger(NoteTool.class.getName());
@@ -79,10 +78,10 @@ public abstract class NoteTool extends DefaultAttachedBoxTool {
     @Override
     public void actionPerformed(IDiagramHandle paramIDiagramHandle, IDiagramGraphic paramIDiagramGraphic,
 	    IDiagramLink.LinkRouterKind paramLinkRouterKind, ILinkPath paramILinkPath, Point paramPoint) {
-	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
+	IModelingSession session = Modelio.getInstance().getModelingSession();
 	IUmlModel model = session.getModel();
 	ITransaction transaction = session
-		.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "" }));
+		.createTransaction("Create");
 	try {
 	    ModelElement owner = (ModelElement) paramIDiagramGraphic.getElement();
 
@@ -125,9 +124,9 @@ public abstract class NoteTool extends DefaultAttachedBoxTool {
     public void actionPerformedInDiagram(IDiagramHandle arg0, Rectangle arg1) {
     }
     
-	protected Note addNoteStereotype(Note object, String stereotype) {
+	protected Note addNoteStereotype(String moduleName, Note object, String stereotype) {
 		try {
-			object.addStereotype(RCasePeerModule.MODULE_NAME, stereotype);
+			object.addStereotype(moduleName, stereotype);
 		} catch (ExtensionNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
