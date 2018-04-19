@@ -58,8 +58,8 @@ public class DependencyTableDataHandler implements Serializable {
 
 	auxiliarData = filterHeaders(auxiliarData);
 
-	auxiliarData.xHeaderList = (ArrayList<MObject>) TableUtils.getInstance().getHeader(data.xStereotypes);
-	auxiliarData.yHeaderList = (ArrayList<MObject>) TableUtils.getInstance().getHeader(data.yStereotypes);
+	auxiliarData.xHeaderList = (ArrayList<MObject>) TableUtils.getInstance().getHeader(RCaseModule.getInstance(), data.xStereotypes);
+	auxiliarData.yHeaderList = (ArrayList<MObject>) TableUtils.getInstance().getHeader(RCaseModule.getInstance(), data.yStereotypes);
 
 	return auxiliarData;
 

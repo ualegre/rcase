@@ -44,7 +44,6 @@ import org.modelio.metamodel.uml.statik.NameSpace;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DiagramUtils.
  */
@@ -86,7 +85,7 @@ public class DiagramUtils {
 	for (MObject element : selectedElements) {
 	    StaticDiagram diagram;
 	    diagram = session.getModel().createStaticDiagram(name, (ModelElement) element, stereotype);
-	    ElementUtils.getInstance().setFreeName(diagram, name);
+	    ElementUtils.getInstance().setFreeName(module, diagram, name);
 	    return diagram;
 	}
 	return null;
@@ -113,7 +112,7 @@ public class DiagramUtils {
 	for (MObject element : selectedElements) {
 	    UseCaseDiagram diagram;
 	    diagram = session.getModel().createUseCaseDiagram(name, (ModelElement) element, stereotype);
-	    ElementUtils.getInstance().setFreeName(diagram, name);
+	    ElementUtils.getInstance().setFreeName(module, diagram, name);
 	    return diagram;
 	}
 	return null;
@@ -126,10 +125,10 @@ public class DiagramUtils {
     	    if (owner instanceof Interaction)
     		interaction = (Interaction) owner;
     	    else
-    		interaction = createInteraction((ModelElement) owner, session, diagramName);
+    		interaction = createInteraction(module, (ModelElement) owner, session, diagramName);
 
     	    if (!findOwnedCollaborations(interaction, diagramName))
-    		createCollaboration(interaction, session, diagramName);
+    		createCollaboration(module, interaction, session, diagramName);
 
     	    SequenceDiagram diagram = createSequenceDiagram(module, moduleName, diagramName, stereotype, interaction, session);
 
@@ -144,7 +143,7 @@ public class DiagramUtils {
     	    IModelingSession session) {
     	SequenceDiagram diagram = session.getModel().createSequenceDiagram();
     	diagram.setOrigin(interaction);
-    	ElementUtils.getInstance().setFreeName(diagram, diagramName);
+    	ElementUtils.getInstance().setFreeName(module, diagram, diagramName);
     	try {
     	    Stereotype sysSeqSter = session.getMetamodelExtensions().getStereotype(moduleName,
     		    stereotype, module.getModuleContext().getModelioServices().getMetamodelService()
@@ -156,15 +155,15 @@ public class DiagramUtils {
     	return diagram;
         }
 
-        private static void createCollaboration(Interaction interaction, IModelingSession session, String name) {
+        private static void createCollaboration(AbstractJavaModule module, Interaction interaction, IModelingSession session, String name) {
 	    	Collaboration locals = session.getModel().createCollaboration();
-	    	ElementUtils.getInstance().setFreeName(locals, name);
+	    	ElementUtils.getInstance().setFreeName(module, locals, name);
 	    	interaction.getOwnedCollaboration().add(locals);
         }
 
-        private static void createCollaboration(CommunicationInteraction interaction, IModelingSession session, String name) {
+        private static void createCollaboration(AbstractJavaModule module, CommunicationInteraction interaction, IModelingSession session, String name) {
 	    	Collaboration locals = session.getModel().createCollaboration();
-	    	ElementUtils.getInstance().setFreeName(locals, name);
+	    	ElementUtils.getInstance().setFreeName(module, locals, name);
 	    	interaction.getOwnedCollaboration().add(locals);
         }
 
@@ -180,13 +179,26 @@ public class DiagramUtils {
 	    	return notFound;
 
         }
+        
+        private static boolean findOwnedCollaborations(CommunicationInteraction interaction, String name) {
+        	boolean notFound = false;
+        	for (Collaboration colla : interaction.getOwnedCollaboration()) {
+        	    if (colla.getName().equals(name)) {
+        		notFound = true;
+        		break;
+        	    }
+
+        	}
+        	return notFound;
+            }
 
 
-        private static Interaction createInteraction(ModelElement owner, IModelingSession session, String name) {
+
+        private static Interaction createInteraction(AbstractJavaModule module, ModelElement owner, IModelingSession session, String name) {
 	    	Interaction interaction;
 	    	interaction = session.getModel().createInteraction();
 	    	interaction.setOwner((NameSpace) owner);
-	    	ElementUtils.getInstance().setFreeName(interaction,name);
+	    	ElementUtils.getInstance().setFreeName(module, interaction,name);
 	    	return interaction;
         }
 
@@ -200,8 +212,8 @@ public class DiagramUtils {
     	    else
     		interaction = createCommunicationInteraction(module, (ModelElement) owner, session, diagramName);
 
-    	    if (!findOwnedCollaborations((Interaction) interaction,diagramName))
-    		createCollaboration(interaction, session,diagramName);
+    	    if (!findOwnedCollaborations(interaction,diagramName))
+    		createCollaboration(module, interaction, session,diagramName);
 
     	    CommunicationDiagram diagram = createCommunicationDiagram(module, moduleName, diagramName, stereotype, interaction, session);
 
@@ -218,7 +230,7 @@ public class DiagramUtils {
     		.createElement(module.getModuleContext().getModelioServices().getMetamodelService()
     			.getMetamodel().getMClass(CommunicationInteraction.class).getName());
     	interaction.setOwner((NameSpace) owner);
-    	ElementUtils.getInstance().setFreeName(interaction,name);
+    	ElementUtils.getInstance().setFreeName(module, interaction,name);
     	return interaction;
         }
 
@@ -227,7 +239,7 @@ public class DiagramUtils {
 	    	CommunicationDiagram diagram = session.getModel().createCommunicationDiagram(
 	    			diagramName, interaction, null);
 	    	diagram.setOrigin(interaction);
-	    	ElementUtils.getInstance().setFreeName(diagram, diagramName);
+	    	ElementUtils.getInstance().setFreeName(module, diagram, diagramName);
 	    	try {
 	    	    Stereotype sysSeqSter = session.getMetamodelExtensions().getStereotype(moduleName,
 	    		    stereotype, module.getModuleContext().getModelioServices().getMetamodelService()
@@ -239,7 +251,7 @@ public class DiagramUtils {
 	    	return diagram;
         }
 
-        public CommunicationMessage createCommunicationMessage(String moduleName, IUmlModel model, ModelElement owner, String stereotypeName, String name) {
+        public CommunicationMessage createCommunicationMessage(AbstractJavaModule module, String moduleName, IUmlModel model, ModelElement owner, String stereotypeName, String name) {
 	    	CommunicationMessage createdElement = model.createCommunicationMessage();
 	    	createdElement.setChannel((CommunicationChannel) owner);
 	    	createdElement.setOwnerTemplateParameter(((UmlModelElement) owner).getOwnerTemplateParameter());
@@ -248,7 +260,7 @@ public class DiagramUtils {
 	    	} catch (ExtensionNotFoundException e) {
 	    	    logger.log(Level.SEVERE, e.getMessage(), e);
 	    	}
-	    	ElementUtils.getInstance().setFreeName(createdElement, name);
+	    	ElementUtils.getInstance().setFreeName(module, createdElement, name);
 	    	return createdElement;
         }
 

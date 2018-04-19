@@ -25,14 +25,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.modelio.api.modelio.model.IModelingSession;
+import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.mda.Project;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.metamodel.uml.statik.GeneralClass;
-import org.modelio.metamodel.uml.statik.Package;
 import org.modelio.vcore.smkernel.mapi.MObject;
-
-import edu.casetools.rcase.module.impl.RCaseModule;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -59,9 +57,9 @@ public class ModelioUtils {
      *
      * @return the all elements
      */
-    public List<MObject> getAllElements() {
+    public List<MObject> getAllElements(AbstractJavaModule module) {
 	ArrayList<MObject> vector = new ArrayList<>();
-	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
+	IModelingSession session = module.getModuleContext().getModelingSession();
 	for (MObject rootObj : session.getModel().getModelRoots()) {
 	    if (((rootObj instanceof GeneralClass) || (rootObj instanceof Project))
 		    && (!rootObj.getName().equals(LOCAL_MODULE))) {
@@ -79,7 +77,7 @@ public class ModelioUtils {
 	ArrayList<MObject> auxiliarVector = vector;
 	for (MObject child : project.getCompositionChildren()) {
 
-	    if (child instanceof Package) {
+	    if (!child.getCompositionChildren().isEmpty()) {
 		auxiliarVector = getElementsFromMObject(auxiliarVector, child);
 	    }
 
@@ -96,8 +94,8 @@ public class ModelioUtils {
      *            the element name
      * @return the stereotype of element by name
      */
-    public Stereotype getStereotypeOfElementByName(String elementName) {
-	ModelElement element = (ModelElement) getElementByName(elementName);
+    public Stereotype getStereotypeOfElementByName(AbstractJavaModule module, String elementName) {
+	ModelElement element = (ModelElement) getElementByName(module, elementName);
 	if (element != null) {
 	    EList<Stereotype> extensions = element.getExtension();
 	    for (Stereotype stereotype : extensions) {
@@ -114,13 +112,24 @@ public class ModelioUtils {
      *            the element name
      * @return the element by name
      */
-    public MObject getElementByName(String elementName) {
-	List<MObject> elementsList = this.getAllElements();
+    public MObject getElementByName(AbstractJavaModule module, String elementName) {
+	List<MObject> elementsList = this.getAllElements(module);
 	for (MObject element : elementsList) {
 	    if (element.getName().equals(elementName))
 		return element;
 	}
 	return null;
+    }
+
+    public String getProjectName(AbstractJavaModule module) {
+	IModelingSession session = module.getModuleContext().getModelingSession();
+	for (MObject rootObj : session.getModel().getModelRoots()) {
+	    if (((rootObj instanceof GeneralClass) || (rootObj instanceof Project))
+		    && (!rootObj.getName().equals(LOCAL_MODULE))) {
+		return rootObj.getName();
+	    }
+	}
+	return "";
     }
 
 }

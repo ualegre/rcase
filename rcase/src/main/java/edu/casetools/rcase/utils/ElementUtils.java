@@ -20,7 +20,6 @@
  */
 package edu.casetools.rcase.utils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,8 +37,6 @@ import org.modelio.metamodel.uml.statik.Class;
 import org.modelio.metamodel.uml.statik.NameSpace;
 import org.modelio.metamodel.uml.statik.Package;
 import org.modelio.vcore.smkernel.mapi.MObject;
-
-import edu.casetools.rcase.utils.tables.TableUtils;
 
 
 // TODO: Auto-generated Javadoc
@@ -70,8 +67,8 @@ public class ElementUtils {
      * @param testedName
      *            the tested name
      */
-    public void setFreeName(ModelElement element, String testedName) {
-	List<MObject> nameList = ModelioUtils.getInstance().getAllElements();
+    public void setFreeName(AbstractJavaModule module, ModelElement element, String testedName) {
+	List<MObject> nameList = ModelioUtils.getInstance().getAllElements(module);
 	String extension = "";
 	int i = 1;
 	while (nameExists(nameList, testedName + extension)) {
@@ -99,50 +96,7 @@ public class ElementUtils {
 	return false;
     }
     
-    /**
-     * Sets the free property.
-     *
-     * @param element
-     *            the element
-     * @param testedName
-     *            the tested name
-     */
-    public void setFreeProperty(ModelElement element, String moduleName, String stereotypeName, String propertyName) {
-	List<MObject> elementsList = new ArrayList<>();
-	elementsList = TableUtils.getInstance().getAllElementsStereotypedAs(elementsList, stereotypeName);
-
-	int i = 0;
-	while (propertyExists(elementsList, Integer.toString(i), moduleName, propertyName)) {
-	    i++;
-	}
-
-	try {
-	    element.putTagValue(moduleName, propertyName, Integer.toString(i));
-	} catch (ExtensionNotFoundException e) {
-	    logger.log(Level.SEVERE, e.getMessage(), e);
-	}
-    }
-    
-    /**
-     * Property exists.
-     *
-     * @param elementsList
-     *            the name list
-     * @param name
-     *            the name
-     * @return true, if successful
-     */
-    public boolean propertyExists(List<MObject> elementsList, String name, String moduleName, String propertyName) {
-
-	for (MObject object : elementsList) {
-	    String propertyValue = ((ModelElement) object).getTagValue(moduleName, propertyName);
-	    if (propertyValue != null && propertyValue.equals(name))
-		return true;
-	}
-
-	return false;
-    }
-
+ 
 
 
     /**
@@ -164,7 +118,7 @@ public class ElementUtils {
 		.getModuleContext().getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class));
 	for (MObject element : selectedElements) {
 	    Class createdElement = session.getModel().createClass(name, (NameSpace) element, stereotype);
-	    this.setFreeName(createdElement, name);
+	    this.setFreeName(module, createdElement, name);
 	    return createdElement;
 	}
 	return null;
@@ -190,7 +144,7 @@ public class ElementUtils {
 
 	for (MObject element : selectedElements) {
 	    UseCase createdElement = session.getModel().createUseCase(name, (NameSpace) element, stereotype);
-	    this.setFreeName(createdElement, name);
+	    this.setFreeName(module, createdElement, name);
 	    return createdElement;
 	}
 	return null;
@@ -216,7 +170,7 @@ public class ElementUtils {
 
 	for (MObject element : selectedElements) {
 	    Package createdElement = session.getModel().createPackage(name, (NameSpace) element, stereotype);
-	    this.setFreeName(createdElement, name);
+	    this.setFreeName(module, createdElement, name);
 	    return createdElement;
 	}
 	return null;

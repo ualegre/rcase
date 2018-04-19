@@ -28,6 +28,7 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.table.TableCellRenderer;
 
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.tables.ModelioTableUtils;
 
 public class ColumnHeaderRenderer implements TableCellRenderer {
@@ -45,7 +46,7 @@ public class ColumnHeaderRenderer implements TableCellRenderer {
 
 	Border headerBorder = UIManager.getBorder("TableHeader.cellBorder");
 
-	JLabel label = ModelioTableUtils.getInstance().createJLabel((String) value);
+	JLabel label = ModelioTableUtils.getInstance().createJLabel(RCaseModule.getInstance(), (String) value);
 
 	label.setBorder(headerBorder);
 

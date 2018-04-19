@@ -32,6 +32,7 @@ import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.api.modelio.model.IUmlModel;
+import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
@@ -348,14 +349,14 @@ public class ModelioTableUtils {
      *            the element name
      * @return the j label
      */
-    public JLabel createJLabel(String elementName) {
+    public JLabel createJLabel(AbstractJavaModule module, String elementName) {
 	Stereotype stereotype;
 	ImageIcon icon;
 	JLabel label = new JLabel();
 	label.setText(elementName);
 	label.setOpaque(true);
 
-	stereotype = ModelioUtils.getInstance().getStereotypeOfElementByName(elementName);
+	stereotype = ModelioUtils.getInstance().getStereotypeOfElementByName(module, elementName);
 	if (stereotype != null) {
 	    icon = ResourcesManager.getInstance().createImageIcon(stereotype.getIcon());
 	    label.setIcon(icon);

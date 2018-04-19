@@ -33,6 +33,7 @@ import edu.casetools.rcase.extensions.excel.model.CellType;
 import edu.casetools.rcase.extensions.excel.model.TableCell;
 import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableModel;
 import edu.casetools.rcase.module.api.RCaseExporter;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.ExcelUtils;
 import edu.casetools.rcase.utils.tables.ModelioTableUtils;
 
@@ -110,7 +111,7 @@ public class DependencyTableExporter extends Exporter implements Serializable {
     private void createColumnHeadersStereotypes(List<MObject> columnHeader, int columnNumber, Row row) {
 	int auxiliarColumnNumber = columnNumber;
 	for (MObject element : columnHeader) {
-	    String value = ExcelUtils.getInstance().getStereotype(element.getName());
+	    String value = ExcelUtils.getInstance().getStereotype(RCaseModule.getInstance(), element.getName());
 	    auxiliarColumnNumber = createColumnCellContent(auxiliarColumnNumber, row, value);
 
 	}
@@ -148,7 +149,7 @@ public class DependencyTableExporter extends Exporter implements Serializable {
 	Row row = sheet.createRow(rowNumber);
 
 	if (null != actualRowHeader) {
-	    String content = ExcelUtils.getInstance().getStereotype(actualRowHeader.getName());
+	    String content = ExcelUtils.getInstance().getStereotype(RCaseModule.getInstance(), actualRowHeader.getName());
 	    createRowHeader(row, content, columnNumber);
 	    columnNumber++;
 	    createRowHeader(row, actualRowHeader.getName(), columnNumber);

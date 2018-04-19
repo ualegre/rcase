@@ -32,6 +32,7 @@ import edu.casetools.rcase.extensions.tables.implementations.container.view.Tabl
 import edu.casetools.rcase.module.api.RCaseResources;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
 // TODO: Auto-generated Javadoc
@@ -66,7 +67,7 @@ public class ContainerTable extends TableWindow {
     }
 
     private void initTitle() {
-	List<MObject> list = TableUtils.getInstance().getRequirementsContainers();
+	List<MObject> list = TableUtils.getInstance().getRequirementsContainers(RCaseModule.getInstance());
 	String name = "";
 
 	if ((null != list) && (!list.isEmpty()))
@@ -134,7 +135,7 @@ public class ContainerTable extends TableWindow {
 
     private MObject findContainer(String command) {
 	List<MObject> list = new ArrayList<>();
-	list = TableUtils.getInstance().getAllElementsStereotypedAs(list,
+	list = TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), list,
 		RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 	for (MObject container : list) {
 	    if (container.getName().equals(command))

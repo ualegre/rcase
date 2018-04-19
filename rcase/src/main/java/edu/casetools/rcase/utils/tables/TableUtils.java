@@ -27,6 +27,7 @@ import java.util.List;
 import javax.swing.ListModel;
 
 import org.modelio.api.modelio.model.IMetamodelExtensions;
+import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.uml.behavior.usecaseModel.UseCase;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
@@ -66,12 +67,12 @@ public class TableUtils {
      *            the stereotype vector
      * @return the header
      */
-    public List<MObject> getHeader(List<Stereotype> stereotypeVector) {
+    public List<MObject> getHeader(AbstractJavaModule module, List<Stereotype> stereotypeVector) {
 
 	List<MObject> linesHeader = new ArrayList<>();
 
 	for (Stereotype stereotype : stereotypeVector) {
-	    linesHeader = getAllElementsStereotypedAs(linesHeader, stereotype.getName());
+	    linesHeader = getAllElementsStereotypedAs(module, linesHeader, stereotype.getName());
 	}
 
 	return linesHeader;
@@ -86,8 +87,8 @@ public class TableUtils {
      *            the stereotype
      * @return the all elements stereotyped as
      */
-    public List<MObject> getAllElementsStereotypedAs(List<MObject> list, String stereotype) {
-	List<MObject> allElements = ModelioUtils.getInstance().getAllElements();
+    public List<MObject> getAllElementsStereotypedAs(AbstractJavaModule module, List<MObject> list, String stereotype) {
+	List<MObject> allElements = ModelioUtils.getInstance().getAllElements(module);
 
 	for (MObject object : allElements) {
 	    if (((ModelElement) object).isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
@@ -102,9 +103,9 @@ public class TableUtils {
      *
      * @return the requirements containers
      */
-    public List<MObject> getRequirementsContainers() {
+    public List<MObject> getRequirementsContainers(AbstractJavaModule module) {
 	List<MObject> list = new ArrayList<>();
-	list = getAllElementsStereotypedAs(list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
+	list = getAllElementsStereotypedAs(module, list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 	return list;
     }
 
@@ -115,9 +116,9 @@ public class TableUtils {
      *            the name
      * @return the requirement container
      */
-    public MObject getRequirementContainer(String name) {
+    public MObject getRequirementContainer(AbstractJavaModule module, String name) {
 	List<MObject> list = new ArrayList<>();
-	list = getAllElementsStereotypedAs(list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
+	list = getAllElementsStereotypedAs(module, list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 
 	for (MObject requirementContainer : list) {
 	    if (requirementContainer.getName().equals(name))

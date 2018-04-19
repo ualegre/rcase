@@ -14,6 +14,7 @@ import edu.casetools.rcase.modelio.properties.audit.SatisfactionAuditor.SATISFAC
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 import edu.casetools.rcase.utils.tables.TableUtils;
@@ -189,7 +190,7 @@ public class ObjectiveAuditor {
 	}
 	
 	private List<MObject> getAllObjectives(){
-		return TableUtils.getInstance().getAllElementsStereotypedAs(new ArrayList<>(), RCaseStereotypes.STEREOTYPE_OBJECTIVE);
+		return TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), new ArrayList<>(), RCaseStereotypes.STEREOTYPE_OBJECTIVE);
 	}
 
 	private boolean hasContribution(MObject objective) {

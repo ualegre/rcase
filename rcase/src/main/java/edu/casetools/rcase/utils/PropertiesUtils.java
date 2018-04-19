@@ -28,6 +28,7 @@ import java.util.logging.Logger;
 
 import org.eclipse.emf.common.util.EList;
 import org.modelio.api.modelio.model.IUmlModel;
+import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
@@ -40,6 +41,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
+import edu.casetools.rcase.utils.tables.TableUtils;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -67,6 +69,51 @@ public class PropertiesUtils {
 	return instance;
     }
 
+    /**
+     * Sets the free property.
+     *
+     * @param element
+     *            the element
+     * @param testedName
+     *            the tested name
+     */
+    public void setFreeProperty(AbstractJavaModule module, ModelElement element, String moduleName, String stereotypeName, String propertyName) {
+	List<MObject> elementsList = new ArrayList<>();
+	elementsList = TableUtils.getInstance().getAllElementsStereotypedAs(module, elementsList, stereotypeName);
+
+	int i = 0;
+	while (propertyExists(elementsList, Integer.toString(i), moduleName, propertyName)) {
+	    i++;
+	}
+
+	try {
+	    element.putTagValue(moduleName, propertyName, Integer.toString(i));
+	} catch (ExtensionNotFoundException e) {
+	    logger.log(Level.SEVERE, e.getMessage(), e);
+	}
+    }
+    
+    /**
+     * Property exists.
+     *
+     * @param elementsList
+     *            the name list
+     * @param name
+     *            the name
+     * @return true, if successful
+     */
+    public boolean propertyExists(List<MObject> elementsList, String name, String moduleName, String propertyName) {
+
+	for (MObject object : elementsList) {
+	    String propertyValue = ((ModelElement) object).getTagValue(moduleName, propertyName);
+	    if (propertyValue != null && propertyValue.equals(name))
+		return true;
+	}
+
+	return false;
+    }
+
+    
     /**
      * Accept.
      *

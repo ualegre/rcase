@@ -32,6 +32,7 @@ import edu.casetools.rcase.extensions.tables.headers.TableHeaderData;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.ModelioUtils;
 import edu.casetools.rcase.utils.tables.ModelioTableUtils;
 import edu.casetools.rcase.utils.tables.TableUtils;
@@ -139,7 +140,7 @@ public class ContextModelTableData implements Serializable {
     }
 
     private void updateScope() {
-	MObject element = ModelioUtils.getInstance().getElementByName(scope);
+	MObject element = ModelioUtils.getInstance().getElementByName(RCaseModule.getInstance(), scope);
 	ArrayList<MObject> ContextAttributes = ModelioTableUtils.getInstance()
 		.getContextAttributesFromSituationOfInterest((ModelElement) element);
 	dataList = new ArrayList<>();
@@ -156,7 +157,7 @@ public class ContextModelTableData implements Serializable {
     private void updateAll() {
 	dataList = new ArrayList<>();
 	ArrayList<MObject> list = new ArrayList<>();
-	list = (ArrayList<MObject>) TableUtils.getInstance().getAllElementsStereotypedAs(list,
+	list = (ArrayList<MObject>) TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), list,
 		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
 	setContextAttributes(list);
     }

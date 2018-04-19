@@ -20,6 +20,7 @@
  */
 package edu.casetools.rcase.utils;
 
+import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 
 import edu.casetools.rcase.module.i18n.I18nMessageService;
@@ -165,8 +166,8 @@ public class ExcelUtils {
      *            the element name
      * @return the stereotype
      */
-    public String getStereotype(String elementName) {
-	Stereotype stereotype = ModelioUtils.getInstance().getStereotypeOfElementByName(elementName);
+    public String getStereotype(AbstractJavaModule module, String elementName) {
+	Stereotype stereotype = ModelioUtils.getInstance().getStereotypeOfElementByName(module, elementName);
 	if (null != stereotype)
 	    return STRING_STEREOTYPE_OPEN + stereotype.getName() + STRING_STEREOTYPE_CLOSE;
 	else
