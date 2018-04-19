@@ -26,12 +26,11 @@ import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundExcept
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
-
 import edu.casetools.rcase.modelio.diagrams.RelationTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
-import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.ElementUtils;
 
 /**
  * The Class CopyTool is the tool for creating a Copy relation.
@@ -75,7 +74,7 @@ public class AndTool extends RelationTool {
      */
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
-    	Dependency dependency = DiagramUtils.getInstance().createDependency(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, originElement, targetElement,
+    	Dependency dependency = ElementUtils.getInstance().createDependency(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, originElement, targetElement,
 		RCaseStereotypes.STEREOTYPE_REFINEOBJ);
     	addStereotype(dependency);
     	return dependency;

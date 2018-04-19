@@ -48,7 +48,7 @@ public class CreateStakeholderDiagram extends CreateDiagram {
     @Override
     protected StaticDiagram createOwnDiagram(List<MObject> selectedElements, IModelingSession session) {
 	String name = I18nMessageService.getString("Ui.Command.CreateStakeholderDiagram.Label");
-	StaticDiagram diagram = DiagramUtils.getInstance().createDiagram(RCaseModule.getInstance(), selectedElements, session, name,
+	StaticDiagram diagram = DiagramUtils.getInstance().createStaticDiagram(RCaseModule.getInstance(), selectedElements, session, name,
 		RCaseStereotypes.STEREOTYPE_DIAGRAM_STAKEHOLDER);
 	diagram = (StaticDiagram) addStyle(diagram, RCaseResources.STYLE_STAKEHOLDER_DIAGRAM);
 	return diagram;

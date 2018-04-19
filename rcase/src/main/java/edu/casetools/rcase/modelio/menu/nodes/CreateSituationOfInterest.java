@@ -33,7 +33,7 @@ import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
-import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.ElementUtils;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
 /**
@@ -50,7 +50,7 @@ public class CreateSituationOfInterest extends CreateElement {
     @Override
     public void createOwnElement(List<MObject> selectedElements, IModelingSession session) {
 	String name = I18nMessageService.getString("Names.SituationOfInterest");
-	MObject soi = DiagramUtils.getInstance().createClass(RCaseModule.getInstance(), selectedElements, session, name,
+	MObject soi = ElementUtils.getInstance().createClass(RCaseModule.getInstance(), selectedElements, session, name,
 		RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
 	
 	PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,

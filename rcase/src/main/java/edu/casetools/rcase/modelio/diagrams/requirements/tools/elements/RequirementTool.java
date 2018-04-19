@@ -31,7 +31,7 @@ import edu.casetools.rcase.modelio.diagrams.ElementTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.ElementUtils;
 
 /**
  * The Class RequirementTool is the tool for creating a Requirement.
@@ -49,7 +49,7 @@ public class RequirementTool extends ElementTool {
     public MObject createOwnElement(IModelingSession session, MObject element) {
 	String name = I18nMessageService.getString("Names.Requirement");
 
-	return DiagramUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
+	return ElementUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
 		RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 

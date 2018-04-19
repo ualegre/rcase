@@ -30,7 +30,7 @@ import edu.casetools.rcase.modelio.menu.CreateElement;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.ElementUtils;
 
 /**
  * The Class CreateRequirementContainer creates a Requirement Container from the
@@ -47,7 +47,7 @@ public class CreateRequirementContainer extends CreateElement {
     @Override
     public void createOwnElement(List<MObject> selectedElements, IModelingSession session) {
 	String name = I18nMessageService.getString("Names.RequirementContainer");
-	DiagramUtils.getInstance().createPackage(RCaseModule.getInstance(), selectedElements, session, name,
+	ElementUtils.getInstance().createPackage(RCaseModule.getInstance(), selectedElements, session, name,
 		RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 
     }

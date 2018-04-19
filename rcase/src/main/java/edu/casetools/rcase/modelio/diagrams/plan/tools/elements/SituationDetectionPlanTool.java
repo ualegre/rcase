@@ -32,7 +32,7 @@ import edu.casetools.rcase.module.api.RCaseColours;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.ElementUtils;
 
 /**
  * The Class RequirementContainerTool is the tool for creating a Requirement
@@ -50,7 +50,7 @@ public class SituationDetectionPlanTool extends ElementTool {
     @Override
     public MObject createOwnElement(IModelingSession session, MObject element) {
 	String name = I18nMessageService.getString("Names.Plan");
-	return DiagramUtils.getInstance().createPackage(RCaseModule.getInstance(), adaptElement(element), session, name,
+	return ElementUtils.getInstance().createPackage(RCaseModule.getInstance(), adaptElement(element), session, name,
 		RCaseStereotypes.STEREOTYPE_SITUATION_DETECTION_PLAN);
     }
 

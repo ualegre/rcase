@@ -31,7 +31,7 @@ import edu.casetools.rcase.modelio.diagrams.ElementTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.ElementUtils;
 
 /**
  * The Class UseCaseTool is the tool for creating a Use Case.
@@ -48,7 +48,7 @@ public class UseCaseTool extends ElementTool {
     @Override
     public MObject createOwnElement(IModelingSession session, MObject element) {
 	String name = I18nMessageService.getString("Names.UseCase");
-	return DiagramUtils.getInstance().createUseCase(RCaseModule.getInstance(), adaptElement(element), session, name,
+	return ElementUtils.getInstance().createUseCase(RCaseModule.getInstance(), adaptElement(element), session, name,
 		RCaseStereotypes.STEREOTYPE_USECASE);
     }
 

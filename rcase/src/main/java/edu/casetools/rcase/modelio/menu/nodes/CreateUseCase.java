@@ -30,7 +30,7 @@ import edu.casetools.rcase.modelio.menu.CreateElement;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.ElementUtils;
 
 /**
  * The Class CreateUseCase creates a USe Case from the contextual menu.
@@ -46,7 +46,7 @@ public class CreateUseCase extends CreateElement {
     @Override
     public void createOwnElement(List<MObject> selectedElements, IModelingSession session) {
 	String name = I18nMessageService.getString("Names.UseCase");
-	DiagramUtils.getInstance().createUseCase(RCaseModule.getInstance(), selectedElements, session, name, RCaseStereotypes.STEREOTYPE_USECASE);
+	ElementUtils.getInstance().createUseCase(RCaseModule.getInstance(), selectedElements, session, name, RCaseStereotypes.STEREOTYPE_USECASE);
 
     }
 

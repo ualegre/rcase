@@ -29,7 +29,7 @@ import edu.casetools.rcase.modelio.diagrams.RelationTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
-import edu.casetools.rcase.utils.DiagramUtils;
+import edu.casetools.rcase.utils.ElementUtils;
 
 /**
  * The Class VerifyTool is the tool for creating a Verify relation.
@@ -72,7 +72,7 @@ public class VerifyTool extends RelationTool {
      */
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
-	return DiagramUtils.getInstance().createDependency(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, originElement, targetElement,
+	return ElementUtils.getInstance().createDependency(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, originElement, targetElement,
 		RCaseStereotypes.STEREOTYPE_VERIFY);
     }
 
