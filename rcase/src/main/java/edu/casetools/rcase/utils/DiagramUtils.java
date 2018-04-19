@@ -258,9 +258,9 @@ public class DiagramUtils {
      *            the stereotype
      * @return the dependency
      */
-    public Dependency createDependency(String moduleName, ModelElement origin, ModelElement target, String stereotype) {
+    public Dependency createDependency(AbstractJavaModule module, String moduleName, ModelElement origin, ModelElement target, String stereotype) {
 	try {
-	    Dependency dependency = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel()
+	    Dependency dependency = module.getModuleContext().getModelingSession().getModel()
 		    .createDependency(origin, target, moduleName, stereotype);
 	    dependency.setName("");
 	    return dependency;
