@@ -118,7 +118,7 @@ public class DiagramUtils {
 		.getModuleContext().getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class));
 	for (MObject element : selectedElements) {
 	    Class createdElement = session.getModel().createClass(name, (NameSpace) element, stereotype);
-	    DiagramUtils.getInstance().setFreeName(createdElement, name);
+	    this.setFreeName(createdElement, name);
 	    return createdElement;
 	}
 	return null;
@@ -144,7 +144,7 @@ public class DiagramUtils {
 
 	for (MObject element : selectedElements) {
 	    UseCase createdElement = session.getModel().createUseCase(name, (NameSpace) element, stereotype);
-	    DiagramUtils.getInstance().setFreeName(createdElement, name);
+	    this.setFreeName(createdElement, name);
 	    return createdElement;
 	}
 	return null;
@@ -170,7 +170,7 @@ public class DiagramUtils {
 
 	for (MObject element : selectedElements) {
 	    Package createdElement = session.getModel().createPackage(name, (NameSpace) element, stereotype);
-	    DiagramUtils.getInstance().setFreeName(createdElement, name);
+	    this.setFreeName(createdElement, name);
 	    return createdElement;
 	}
 	return null;
@@ -197,7 +197,7 @@ public class DiagramUtils {
 	for (MObject element : selectedElements) {
 	    StaticDiagram diagram;
 	    diagram = session.getModel().createStaticDiagram(name, (ModelElement) element, stereotype);
-	    DiagramUtils.getInstance().setFreeName(diagram, name);
+	    this.setFreeName(diagram, name);
 	    return diagram;
 	}
 	return null;
@@ -224,7 +224,7 @@ public class DiagramUtils {
 	for (MObject element : selectedElements) {
 	    UseCaseDiagram diagram;
 	    diagram = session.getModel().createUseCaseDiagram(name, (ModelElement) element, stereotype);
-	    DiagramUtils.getInstance().setFreeName(diagram, name);
+	    this.setFreeName(diagram, name);
 	    return diagram;
 	}
 	return null;
