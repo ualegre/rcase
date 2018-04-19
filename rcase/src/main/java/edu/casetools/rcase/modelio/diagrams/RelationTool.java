@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.modelio.api.modelio.Modelio;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.diagram.IDiagramLink;
@@ -40,7 +41,6 @@ import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.module.i18n.I18nMessageService;
 
 /**
  * The Class RelationTool has the common methods to create the tool of a
@@ -49,11 +49,7 @@ import edu.casetools.rcase.module.i18n.I18nMessageService;
 public abstract class RelationTool extends DefaultLinkTool {
 
     private static final Logger logger = Logger.getLogger(RelationTool.class.getName());
-    private AbstractJavaModule module; 
-    
-    public RelationTool (AbstractJavaModule module){
-    	this.module = module;
-    }
+
     
     /**
      * Creates the customized dependency.
@@ -79,7 +75,8 @@ public abstract class RelationTool extends DefaultLinkTool {
     @Override
     public void actionPerformed(IDiagramHandle representation, IDiagramGraphic origin, IDiagramGraphic target,
 	    IDiagramLink.LinkRouterKind kind, ILinkPath path) {
-	IModelingSession session = module.getModuleContext().getModelingSession();
+	@SuppressWarnings("deprecation")
+	IModelingSession session = Modelio.getInstance().getModelingSession(); 
 	ITransaction transaction = session
 		.createTransaction("Create");
 
