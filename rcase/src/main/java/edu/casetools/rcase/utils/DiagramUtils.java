@@ -26,6 +26,7 @@ import java.util.logging.Logger;
 
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.IUmlModel;
+import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.diagrams.StaticDiagram;
 import org.modelio.metamodel.diagrams.UseCaseDiagram;
 import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
@@ -112,9 +113,9 @@ public class DiagramUtils {
      *            the stereotype name
      * @return the class
      */
-    public Class createClass(List<MObject> selectedElements, IModelingSession session, String name,
+    public Class createClass(AbstractJavaModule module, List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
-	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, RCaseModule.getInstance()
+	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, module
 		.getModuleContext().getModelioServices().getMetamodelService().getMetamodel().getMClass(Class.class));
 	for (MObject element : selectedElements) {
 	    Class createdElement = session.getModel().createClass(name, (NameSpace) element, stereotype);

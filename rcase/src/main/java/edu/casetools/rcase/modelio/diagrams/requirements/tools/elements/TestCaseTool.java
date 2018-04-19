@@ -30,6 +30,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 import edu.casetools.rcase.modelio.diagrams.ElementTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
@@ -48,7 +49,7 @@ public class TestCaseTool extends ElementTool {
     public MObject createOwnElement(IModelingSession session, MObject element) {
 	String name = I18nMessageService.getString("Names.TestCase");
 
-	return DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
+	return DiagramUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
 		RCaseStereotypes.STEREOTYPE_TESTCASE);
     }
 
