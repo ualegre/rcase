@@ -29,6 +29,7 @@ import org.modelio.metamodel.uml.infrastructure.Stereotype;
 
 import edu.casetools.rcase.extensions.tables.implementations.traceability.DependencyTable;
 import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableData;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
@@ -68,7 +69,7 @@ public class ComboBoxListener implements ActionListener {
 	@SuppressWarnings("unchecked")
 	JComboBox<String> combo = (JComboBox<String>) event.getSource();
 	String selection = (String) combo.getSelectedItem();
-	Stereotype stereotype = TableUtils.getInstance().getDependencyStereotpyeFromName(RCasePeerModule.MODULE_NAME, selection);
+	Stereotype stereotype = TableUtils.getInstance().getDependencyStereotpyeFromName(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, selection);
 
 	if (null != stereotype) {
 	    DependencyTableData data = this.main.getTablePanel().getTableModel().getData();

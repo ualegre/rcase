@@ -37,6 +37,7 @@ import edu.casetools.rcase.extensions.tables.implementations.traceability.Depend
 import edu.casetools.rcase.extensions.tables.implementations.traceability.control.ComboBoxListener;
 import edu.casetools.rcase.extensions.tables.implementations.traceability.control.MatrixMenuListener;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
 // TODO: Auto-generated Javadoc
@@ -112,7 +113,7 @@ public class MatrixMenu extends JPanel {
     public String refresh() {
 	List<String> content = new ArrayList<>();
 
-	List<Stereotype> stereotypes = TableUtils.getInstance().getAllDependenciesStereotypes();
+	List<Stereotype> stereotypes = TableUtils.getInstance().getAllDependenciesStereotypes(RCaseModule.getInstance());
 	if (null != stereotypes) {
 	    for (Stereotype s : stereotypes) {
 		content.add(s.getName());
