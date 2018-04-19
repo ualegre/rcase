@@ -46,7 +46,7 @@ public class EnhanceTool extends RelationTool {
      */
     @Override
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
-    	return acceptElement(target, RCaseStereotypes.STEREOTYPE_VALUE);
+    	return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_VALUE);
     }
 
     /*
@@ -60,7 +60,7 @@ public class EnhanceTool extends RelationTool {
      */
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
-    	return acceptElement(target, RCaseStereotypes.STEREOTYPE_VALUE_ENHANCER);
+    	return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_VALUE_ENHANCER);
     }
 
     /*

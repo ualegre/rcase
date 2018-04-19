@@ -35,13 +35,12 @@ import org.modelio.api.modelio.diagram.InvalidSourcePointException;
 import org.modelio.api.modelio.diagram.tools.DefaultLinkTool;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
+import org.modelio.api.module.AbstractJavaModule;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.i18n.I18nMessageService;
-import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 
 /**
  * The Class RelationTool has the common methods to create the tool of a
@@ -50,7 +49,12 @@ import edu.casetools.rcase.module.impl.RCasePeerModule;
 public abstract class RelationTool extends DefaultLinkTool {
 
     private static final Logger logger = Logger.getLogger(RelationTool.class.getName());
-
+    private AbstractJavaModule module; 
+    
+    public RelationTool (AbstractJavaModule module){
+    	this.module = module;
+    }
+    
     /**
      * Creates the customized dependency.
      *
@@ -75,9 +79,9 @@ public abstract class RelationTool extends DefaultLinkTool {
     @Override
     public void actionPerformed(IDiagramHandle representation, IDiagramGraphic origin, IDiagramGraphic target,
 	    IDiagramLink.LinkRouterKind kind, ILinkPath path) {
-	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
+	IModelingSession session = module.getModuleContext().getModelingSession();
 	ITransaction transaction = session
-		.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "" }));
+		.createTransaction("Create");
 
 	try {
 	    ModelElement originElement = (ModelElement) origin.getElement();
@@ -150,10 +154,10 @@ public abstract class RelationTool extends DefaultLinkTool {
      * 
      * @return true, if successful
      */
-    protected boolean acceptElement(IDiagramGraphic target, String stereotype) {
+    protected boolean acceptElement(String moduleName, IDiagramGraphic target, String stereotype) {
 	if (target.getElement() instanceof ModelElement) {
 	    ModelElement modelElement = (ModelElement) target.getElement();
-	    if (modelElement.isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
+	    if (modelElement.isStereotyped(moduleName, stereotype))
 		return modelElement.getStatus().isModifiable();
 	}
 	return false;

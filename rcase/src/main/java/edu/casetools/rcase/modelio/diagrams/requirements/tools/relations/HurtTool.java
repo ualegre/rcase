@@ -48,7 +48,7 @@ public class HurtTool extends RelationTool {
     @Override
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
 
-	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+	return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
@@ -62,7 +62,7 @@ public class HurtTool extends RelationTool {
      */
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
-	return acceptElement(target, RCaseStereotypes.STEREOTYPE_OBJECTIVE);
+	return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_OBJECTIVE);
     }
 
     /*

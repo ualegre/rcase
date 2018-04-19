@@ -60,7 +60,7 @@ public class VerifyTool extends RelationTool {
      */
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
-	return acceptElement(target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+	return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
     }
 
     /*
