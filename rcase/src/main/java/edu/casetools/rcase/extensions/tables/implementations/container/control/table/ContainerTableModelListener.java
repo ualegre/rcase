@@ -80,7 +80,7 @@ public class ContainerTableModelListener implements TableModelListener {
 	try {
 	    transaction = session.createTransaction(
 		    I18nMessageService.getString("Info.Session.Create", new String[] { " Update Property" }));
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME, tagName, value,
+	    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, tagName, value,
 		    (ModelElement) element);
 	    transaction.commit();
 	    transaction.close();

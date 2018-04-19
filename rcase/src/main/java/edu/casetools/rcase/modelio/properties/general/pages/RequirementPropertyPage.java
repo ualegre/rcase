@@ -31,6 +31,7 @@ import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -40,18 +41,18 @@ public class RequirementPropertyPage implements IPropertyContent {
     public void changeProperty(ModelElement element, int row, String value) {
 		switch (row) {
 			case 1:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_REQUIREMENT_ID, value, element);
 			    break;
 			case 2:
 			    element.setName(value);
 			    break;
 			case 3:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_REQUIREMENT_DESCRIPTION, value, element);
 			    break;
 			case 5:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_REQUIREMENT_TYPE, value, element);
 			    break;
 			default:

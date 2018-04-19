@@ -57,7 +57,7 @@ public class SituationOfInterestTool extends ElementTool {
 	MObject soi =  ElementUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
 		RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
 	
-	PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+	PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotEvaluated"), (ModelElement)soi);
 	
 	return soi;

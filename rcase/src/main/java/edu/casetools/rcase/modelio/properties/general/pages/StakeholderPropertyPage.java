@@ -26,6 +26,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -35,26 +36,26 @@ public class StakeholderPropertyPage implements IPropertyContent {
     public void changeProperty(ModelElement element, int row, String value) {
 		switch (row) {
 			case 1:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_STAKEHOLDER_ID, value, element);
 			    break;
 			case 2:
 			    element.setName(value);
 			    break;
 			case 3:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_STAKEHOLDER_DESCRIPTION, value, element);
 			    break;
 			case 4:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_STAKEHOLDER_TYPE, value, element);
 			    break;
 			case 5:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_STAKEHOLDER_SUPPORT, value, element);
 			    break;		
 			case 6:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_STAKEHOLDER_POWER, value, element);
 			    break;					    
 			default:

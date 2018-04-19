@@ -31,6 +31,7 @@ import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -41,19 +42,19 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
 
 	switch (row) {
 		case 1:
-		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_TYPE, value, element);
 		    break;
 		case 2:
-		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_INTERACTION, value, element);
 		    break;
 		case 3:
-		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, value, element);
 		    break;
 		case 4:
-		    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_RECOMMENDATION, value, element);
 		    break;
 		default:

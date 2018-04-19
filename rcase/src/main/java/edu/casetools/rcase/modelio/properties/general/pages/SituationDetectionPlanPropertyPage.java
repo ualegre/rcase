@@ -26,6 +26,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -38,27 +39,27 @@ public class SituationDetectionPlanPropertyPage implements IPropertyContent {
 			    element.setName(value);
 			    break;
 			case 2:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_SITUATION_DETECTION_PLAN_ID, value, element);
 			    break;
 			case 3:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_SITUATION_DETECTION_PLAN_DESCRIPTION, value, element);
 			    break;
 			case 4:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_SITUATION_DETECTION_PLAN_RECOMMENDATION, value, element);
 			    break;
 			case 5:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_SITUATION_DETECTION_PLAN_TOBEIMPLEMENTED, value, element);
 			    break;
 			case 6:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_SITUATION_DETECTION_PLAN_FAILURE, value, element);
 			    break;
 			case 7:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_SITUATION_DETECTION_PLAN_IMPACT, value, element);
 			    break;
 			default:

@@ -31,6 +31,7 @@ import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -44,19 +45,19 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 	    element.setName(value);
 	    break;
 	case 2:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+	    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_ID, value, element);
 	    break;
 	case 3:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+	    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_DESCRIPTION, value, element);
 	    break;
 	case 4:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+	    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_PRIORITY, value, element);
 	    break;
 	case 5:
-	    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+	    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, value, element);
 	    break;
 	default:

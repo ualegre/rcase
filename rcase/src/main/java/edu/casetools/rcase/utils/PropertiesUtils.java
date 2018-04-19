@@ -39,7 +39,7 @@ import org.modelio.metamodel.uml.infrastructure.TaggedValue;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.api.RCaseProperties;
-import edu.casetools.rcase.module.impl.RCaseModule;
+
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
@@ -121,8 +121,8 @@ public class PropertiesUtils {
      *            the selected element
      * @return true, if successful
      */
-    public boolean accept(MObject selectedElement) {
-	IUmlModel model = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel();
+    public boolean accept(AbstractJavaModule module, MObject selectedElement) {
+	IUmlModel model = module.getModuleContext().getModelingSession().getModel();
 
 	for (MObject libRoot : model.getLibraryRoots()) {
 	    if (selectedElement.equals(libRoot))
@@ -226,13 +226,13 @@ public class PropertiesUtils {
      * @param stereotypeLink
      *            the stereotype link
      */
-    public void addValue(String modulename, String name, String value, ModelElement element, ModelElement related,
+    public void addValue(AbstractJavaModule module, String modulename, String name, String value, ModelElement element, ModelElement related,
 	    String modulelink, String stereotypeLink) {
 	boolean exist = false;
 
 	TaggedValue tag = null;
 	EList<TaggedValue> tagElements = element.getTag();
-	IUmlModel model = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel();
+	IUmlModel model = module.getModuleContext().getModelingSession().getModel();
 
 	if (!tagElements.isEmpty()) {
 	    for (TaggedValue currentTag : tagElements) {
@@ -257,7 +257,7 @@ public class PropertiesUtils {
 
 	}
 
-	setTaggedValue(tag, element, value, related, modulelink, stereotypeLink);
+	setTaggedValue(module, tag, element, value, related, modulelink, stereotypeLink);
     }
 
     /**
@@ -272,7 +272,7 @@ public class PropertiesUtils {
      * @param element
      *            the element
      */
-    public void findAndAddValue(String modulename, String name, String values, ModelElement element) {
+    public void findAndAddValue(AbstractJavaModule module, String modulename, String name, String values, ModelElement element) {
 	boolean exist = false;
 	EList<TaggedValue> tagElements = element.getTag();
 	TaggedValue tagValueFound = null;
@@ -289,26 +289,26 @@ public class PropertiesUtils {
 
 	}
 
-	addValue(modulename, name, values, element, exist, tagValueFound);
+	addValue(module, modulename, name, values, element, exist, tagValueFound);
     }
 
-    private void addValue(String modulename, String name, String values, ModelElement element, boolean exist,
+    private void addValue(AbstractJavaModule module, String modulename, String name, String values, ModelElement element, boolean exist,
 	    TaggedValue tagValueFound) {
 	if (!exist) {
-	    createTaggedValue(modulename, name, values, element);
+	    createTaggedValue(module, modulename, name, values, element);
 	} else if ((tagValueFound != null) && (tagValueFound.getDefinition().getParamNumber().equals(ZERO))) {
 	    tagValueFound.delete();
 	} else
-	    setTaggedValue(name, element, values);
+	    setTaggedValue(module, name, element, values);
     }
 
-    private void createTaggedValue(String modulename, String name, String values, ModelElement element) {
+    private void createTaggedValue(AbstractJavaModule module, String modulename, String name, String values, ModelElement element) {
 	try {
-	    TaggedValue taggedValue = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel()
+	    TaggedValue taggedValue = module.getModuleContext().getModelingSession().getModel()
 		    .createTaggedValue(modulename, name, element);
 	    element.getTag().add(taggedValue);
 	    if (!taggedValue.getDefinition().getParamNumber().equals(ZERO))
-		setTaggedValue(name, element, values);
+		setTaggedValue(module, name, element, values);
 	} catch (ExtensionNotFoundException e) {
 	    logger.log(Level.WARNING, e.getMessage(), e);
 	}
@@ -324,9 +324,9 @@ public class PropertiesUtils {
      * @param value
      *            the value
      */
-    public void setTaggedValue(String name, ModelElement elt, String value) {
+    public void setTaggedValue(AbstractJavaModule module, String name, ModelElement elt, String value) {
 	EList<TaggedValue> tagElements = elt.getTag();
-	IUmlModel model = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel();
+	IUmlModel model = module.getModuleContext().getModelingSession().getModel();
 	if (!tagElements.isEmpty()) {
 	    for (TaggedValue tag : tagElements) {
 		String tagname = tag.getDefinition().getName();
@@ -374,10 +374,10 @@ public class PropertiesUtils {
      * @param stereotypeLink
      *            the stereotype link
      */
-    public void setTaggedValue(TaggedValue foundTagValue, ModelElement elt, String value, ModelElement related,
+    public void setTaggedValue(AbstractJavaModule module, TaggedValue foundTagValue, ModelElement elt, String value, ModelElement related,
 	    String modulelink, String stereotypeLink) {
 	TagParameter firstElt;
-	IUmlModel model = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel();
+	IUmlModel model = module.getModuleContext().getModelingSession().getModel();
 	ArrayList<Dependency> linksList = new ArrayList<>(elt.getDependsOnDependency());
 	for (Dependency existingLinks : linksList) {
 	    if (existingLinks.isStereotyped(modulelink, stereotypeLink)) {

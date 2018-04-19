@@ -53,7 +53,7 @@ public class CreateSituationOfInterest extends CreateElement {
 	MObject soi = ElementUtils.getInstance().createClass(RCaseModule.getInstance(), selectedElements, session, name,
 		RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST);
 	
-	PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+	PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 		    RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotEvaluated"), (ModelElement)soi);
 	
 

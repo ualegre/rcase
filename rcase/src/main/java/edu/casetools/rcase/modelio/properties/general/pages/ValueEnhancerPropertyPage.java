@@ -26,6 +26,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -35,18 +36,18 @@ public class ValueEnhancerPropertyPage implements IPropertyContent {
     public void changeProperty(ModelElement element, int row, String value) {
 		switch (row) {
 			case 1:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_VALUE_ENHANCER_ID, value, element);
 			    break;
 			case 2:
 			    element.setName(value);
 			    break;
 			case 3:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_VALUE_ENHANCER_DESCRIPTION, value, element);
 			    break;
 			case 4:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_VALUE_ENHANCER_TYPE, value, element);
 			    break;
 			default:

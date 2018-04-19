@@ -26,6 +26,7 @@ import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import edu.casetools.rcase.modelio.properties.IPropertyContent;
 import edu.casetools.rcase.module.api.RCaseProperties;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 
@@ -35,34 +36,34 @@ public class EthicalProfilePropertyPage implements IPropertyContent {
     public void changeProperty(ModelElement element, int row, String value) {
 		switch (row) {
 			case 1:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_ETHICAL_PROFILE_ID, value, element);
 			    break;
 			case 2:
 			    element.setName(value);
 			    break;
 			case 3:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_ETHICAL_PROFILE_DESCRIPTION, value, element);
 			    break;
 			case 4:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_ETHICAL_PROFILE_GOV_DEPENDENCY, value, element);
 			    break;
 			case 5:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_ETHICAL_PROFILE_VULNERABILITY, value, element);
 			    break;		
 			case 6:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_ETHICAL_PROFILE_GRAVITY, value, element);
 			    break;	
 			case 7:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_ETHICAL_PROFILE_VALUE_IN_RISK, value, element);
 			    break;		
 			case 8:
-			    PropertiesUtils.getInstance().findAndAddValue(RCasePeerModule.MODULE_NAME,
+			    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 				    RCaseProperties.PROPERTY_ETHICAL_PROFILE_POLICY_IMPACT, value, element);
 			    break;	
 			default:
