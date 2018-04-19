@@ -31,6 +31,7 @@ import edu.casetools.rcase.modelio.menu.CreateDiagram;
 import edu.casetools.rcase.module.api.RCaseResources;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
@@ -48,7 +49,7 @@ public class CreateSituationsOfInterestDiagram extends CreateDiagram {
     @Override
     protected StaticDiagram createOwnDiagram(List<MObject> selectedElements, IModelingSession session) {
 		String name = I18nMessageService.getString("Ui.Command.Create.CreateSituationsOfInterestDiagram.Label");
-		StaticDiagram diagram = DiagramUtils.getInstance().createDiagram(selectedElements, session, name,
+		StaticDiagram diagram = DiagramUtils.getInstance().createDiagram(RCaseModule.getInstance(), selectedElements, session, name,
 			RCaseStereotypes.STEREOTYPE_DIAGRAM_SITUATIONS_OF_INTEREST);
 		diagram = (StaticDiagram) addStyle(diagram, RCaseResources.STYLE_SITUATIONS_OF_INTEREST_DIAGRAM);
 		return diagram;

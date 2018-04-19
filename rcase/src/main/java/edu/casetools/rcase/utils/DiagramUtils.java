@@ -188,10 +188,10 @@ public class DiagramUtils {
      *            the stereotype name
      * @return the static diagram
      */
-    public StaticDiagram createDiagram(List<MObject> selectedElements, IModelingSession session, String name,
+    public StaticDiagram createDiagram(AbstractJavaModule module, List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
 	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName,
-		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+		module.getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
 			.getMClass(StaticDiagram.class));
 	for (MObject element : selectedElements) {
 	    StaticDiagram diagram;
