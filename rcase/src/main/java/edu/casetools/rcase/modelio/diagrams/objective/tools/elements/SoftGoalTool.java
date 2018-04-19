@@ -33,6 +33,7 @@ import edu.casetools.rcase.modelio.diagrams.ElementTool;
 import edu.casetools.rcase.module.api.RCaseColours;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
@@ -53,7 +54,7 @@ public class SoftGoalTool extends ElementTool {
     public MObject createOwnElement(IModelingSession session, MObject element) {
 
 		String name = I18nMessageService.getString("Names.SoftGoal");
-		Class object = DiagramUtils.getInstance().createClass(adaptElement(element), session, name,
+		Class object = DiagramUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
 			RCaseStereotypes.STEREOTYPE_SOFT_GOAL);
 		return addObjectiveStereotype(object);
 	

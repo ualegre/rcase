@@ -40,8 +40,6 @@ import org.modelio.metamodel.uml.statik.NameSpace;
 import org.modelio.metamodel.uml.statik.Package;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.module.impl.RCaseModule;
-
 
 // TODO: Auto-generated Javadoc
 /**
@@ -138,9 +136,9 @@ public class DiagramUtils {
      *            the stereotype name
      * @return the use case
      */
-    public UseCase createUseCase(List<MObject> selectedElements, IModelingSession session, String name,
+    public UseCase createUseCase(AbstractJavaModule module, List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
-	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, RCaseModule.getInstance()
+	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName, module
 		.getModuleContext().getModelioServices().getMetamodelService().getMetamodel().getMClass(UseCase.class));
 
 	for (MObject element : selectedElements) {
