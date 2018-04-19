@@ -76,7 +76,7 @@ public class DeriveTool extends RelationTool {
      */
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
-	return DiagramUtils.getInstance().createDependency(originElement, targetElement,
+	return DiagramUtils.getInstance().createDependency(RCasePeerModule.MODULE_NAME, originElement, targetElement,
 		RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE);
     }
 

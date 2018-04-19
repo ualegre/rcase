@@ -73,7 +73,7 @@ public class XorTool extends RelationTool {
      */
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
-    	Dependency dependency = DiagramUtils.getInstance().createDependency(originElement, targetElement,
+    	Dependency dependency = DiagramUtils.getInstance().createDependency(RCasePeerModule.MODULE_NAME, originElement, targetElement,
 		RCaseStereotypes.STEREOTYPE_REFINEOBJ);
     	addStereotype(dependency);
     	return dependency;

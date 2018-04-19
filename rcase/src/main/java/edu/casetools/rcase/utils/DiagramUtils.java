@@ -259,10 +259,10 @@ public class DiagramUtils {
      *            the stereotype
      * @return the dependency
      */
-    public Dependency createDependency(ModelElement origin, ModelElement target, String stereotype) {
+    public Dependency createDependency(String moduleName, ModelElement origin, ModelElement target, String stereotype) {
 	try {
 	    Dependency dependency = RCaseModule.getInstance().getModuleContext().getModelingSession().getModel()
-		    .createDependency(origin, target, RCasePeerModule.MODULE_NAME, stereotype);
+		    .createDependency(origin, target, moduleName, stereotype);
 	    dependency.setName("");
 	    return dependency;
 	} catch (ExtensionNotFoundException e) {

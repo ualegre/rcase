@@ -26,6 +26,7 @@ import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundExcept
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 
+
 import edu.casetools.rcase.modelio.diagrams.RelationTool;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
@@ -73,7 +74,7 @@ public class AndTool extends RelationTool {
      */
     @Override
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
-    	Dependency dependency = DiagramUtils.getInstance().createDependency(originElement, targetElement,
+    	Dependency dependency = DiagramUtils.getInstance().createDependency(RCasePeerModule.MODULE_NAME, originElement, targetElement,
 		RCaseStereotypes.STEREOTYPE_REFINEOBJ);
     	addStereotype(dependency);
     	return dependency;
