@@ -29,6 +29,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.extensions.tables.headers.TableHeaderData;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.PropertiesUtils;
 import edu.casetools.rcase.utils.tables.ModelioTableUtils;
@@ -136,7 +137,7 @@ public class ContainerTableModel extends AbstractTableModel {
     }
 
     public void removeSelectedRow(int rowNumber) {
-	ModelioTableUtils.getInstance().removeRequirement(this.data.getDataList().get(rowNumber).getRequirement());
+	ModelioTableUtils.getInstance().removeRequirement(RCaseModule.getInstance(), this.data.getDataList().get(rowNumber).getRequirement());
 	this.data.getDataList().remove(rowNumber);
 	fireTableRowsInserted(this.data.getDataList().size() - 1, this.data.getDataList().size() - 1);
     }

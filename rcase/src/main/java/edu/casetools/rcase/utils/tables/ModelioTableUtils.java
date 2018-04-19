@@ -21,7 +21,6 @@
 package edu.casetools.rcase.utils.tables;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -45,10 +44,6 @@ import org.modelio.metamodel.uml.statik.Link;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableData;
-import edu.casetools.rcase.module.api.RCaseStereotypes;
-import edu.casetools.rcase.module.i18n.I18nMessageService;
-import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.ModelioUtils;
 import edu.casetools.rcase.utils.ResourcesManager;
 
@@ -114,10 +109,10 @@ public class ModelioTableUtils {
      * @param requirement
      *            the requirement
      */
-    public void removeRequirement(MObject requirement) {
-	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
+    public void removeRequirement(AbstractJavaModule module, MObject requirement) {
+	IModelingSession session = module.getModuleContext().getModelingSession();
 	ITransaction transaction = session
-		.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "" }));
+		.createTransaction("Create");
 	requirement.delete();
 	transaction.commit();
 	transaction.close();
@@ -171,31 +166,6 @@ public class ModelioTableUtils {
     }
 
     /**
-     * Gets the possible values.
-     *
-     * @return the possible values
-     */
-    public Vector<String> getResponsibilityPossibleValues() {
-	String[] values = new String[] {
-		I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Pull"),
-		I18nMessageService.getString("Ui.ContextAttribute.Property.TagResponsibility.Push") };
-	Vector<String> result = new Vector<String>(Arrays.asList(values));
-
-	return result;
-    }
-
-    public Vector<String> getLibTypesPossibleValues() {
-	String[] values = new String[] { I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.None"),
-		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Sensor"),
-		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Location"),
-		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Broadcast"),
-		I18nMessageService.getString("Ui.ContextAttribute.Property.TagLibType.Bluetooth") };
-	Vector<String> result = new Vector<String>(Arrays.asList(values));
-
-	return result;
-    }
-
-    /**
      * Sets the val.
      *
      * @param col
@@ -207,19 +177,19 @@ public class ModelioTableUtils {
      * @param value
      *            the value
      */
-    public void setVal(Object col, Object row, Object depth, Object value) {
-	IModelingSession session = RCaseModule.getInstance().getModuleContext().getModelingSession();
+    public void setVal(AbstractJavaModule module, Object col, Object row, Object depth, Object value) {
+	IModelingSession session = module.getModuleContext().getModelingSession();
 	IUmlModel model = session.getModel();
 	ModelElement source = (ModelElement) row;
 	ModelElement target = (ModelElement) col;
 	Stereotype ster = (Stereotype) depth;
 
 	ITransaction transaction = session
-		.createTransaction(I18nMessageService.getString("Info.Session.Create", new String[] { "" }));
+		.createTransaction("Create");
 	if (ster.getBaseClassName().equals(Dependency.class.getSimpleName())) {
 	    setDependencyValue(model, target, source, ster, value);
 	} else if (ster.getBaseClassName().equals(Connector.class.getSimpleName())) {
-	    setConnectorValue(model, target, source, ster, value);
+	    setConnectorValue(module, model, target, source, ster, value);
 	}
 
 	transaction.commit();
@@ -274,13 +244,13 @@ public class ModelioTableUtils {
 	}
     }
 
-    private void setConnectorValue(IUmlModel model, ModelElement target, ModelElement source, Stereotype ster,
+    private void setConnectorValue(AbstractJavaModule module, IUmlModel model, ModelElement target, ModelElement source, Stereotype ster,
 	    Object value) {
 	ConnectorEnd fend = null;
 	fend = createConnectorEnd(target, source, ster, fend);
 
 	if ((null == fend) && ((value.equals("->")) || (value.equals("<->")) || (value.equals("<-")))) {
-	    createConnectorValue(model, target, source, ster, value);
+	    createConnectorValue(module, model, target, source, ster, value);
 	} else if ((null != fend) && (value.equals(""))) {
 	    fend.getOpposite().delete();
 	    fend.getLink().delete();
@@ -292,13 +262,13 @@ public class ModelioTableUtils {
 	}
     }
 
-    private void createConnectorValue(IUmlModel model, ModelElement target, ModelElement source, Stereotype ster,
+    private void createConnectorValue(AbstractJavaModule module, IUmlModel model, ModelElement target, ModelElement source, Stereotype ster,
 	    Object value) {
-	IMetamodelExtensions extensions = RCaseModule.getInstance().getModuleContext().getModelingSession()
+	IMetamodelExtensions extensions = module.getModuleContext().getModelingSession()
 		.getMetamodelExtensions();
 	Connector co = model.createConnector((BindableInstance) source, (BindableInstance) target, "");
 	Stereotype coster = extensions.getStereotype(ster.getModule().getName(), ster.getName(),
-		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+		module.getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
 			.getMClass(Connector.class));
 	setNavigableLinks(ster, value, co, coster);
     }
@@ -365,11 +335,11 @@ public class ModelioTableUtils {
 	return label;
     }
 
-    public ArrayList<MObject> getContextAttributesFromSituationOfInterest(ModelElement element) {
+    public ArrayList<MObject> getContextAttributesFromSituationOfInterest(String moduleName, ModelElement element, String stereotypeName) {
 	ArrayList<MObject> list = new ArrayList<>();
 	for (Iterator<?> localIterator = element.getImpactedDependency().iterator(); localIterator.hasNext();) {
 	    Dependency dependency = (Dependency) localIterator.next();
-	    if (dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS)) {
+	    if (dependency.isStereotyped(moduleName, stereotypeName)) {
 		list.add(dependency.getImpacted());
 	    }
 	}

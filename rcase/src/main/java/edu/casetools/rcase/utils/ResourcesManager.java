@@ -26,7 +26,6 @@ import javax.swing.ImageIcon;
 
 import org.modelio.api.module.IModule;
 
-import edu.casetools.rcase.module.i18n.I18nMessageService;
 
 /**
  * The Class ResourcesManager manages the resources of the system such as Images
@@ -83,16 +82,16 @@ public class ResourcesManager {
 		+ File.separator + "style" + File.separator + styleName;
     }
 
-    /**
-     * Gets the property name.
-     *
-     * @param propertyName
-     *            the property name
-     * @return the property name
-     */
-    public String getPropertyName(String propertyName) {
-	return I18nMessageService.getString("Ui.Property." + propertyName + ".Name");
-    }
+//    /**
+//     * Gets the property name.
+//     *
+//     * @param propertyName
+//     *            the property name
+//     * @return the property name
+//     */
+//    public String getPropertyName(String propertyName) {
+//	return I18nMessageService.getString("Ui.Property." + propertyName + ".Name");
+//    }
 
     /**
      * Register styles.

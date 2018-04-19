@@ -29,6 +29,7 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableEditor;
 import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableModel;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.tables.ModelioTableUtils;
 
 // TODO: Auto-generated Javadoc
@@ -71,7 +72,7 @@ public class TableEditorListener implements ActionListener {
         MObject target =
             this.model.getData().getyHeaderList().get(this.editor.getRow());
 
-        ModelioTableUtils.getInstance().setVal(origin, target,
+        ModelioTableUtils.getInstance().setVal(RCaseModule.getInstance(), origin, target,
             this.model.getData().getLinkStereotype(),
             combobox.getSelectedItem().toString());
 
