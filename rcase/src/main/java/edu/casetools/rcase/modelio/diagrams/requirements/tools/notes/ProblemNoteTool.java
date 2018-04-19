@@ -29,6 +29,7 @@ import org.modelio.metamodel.uml.infrastructure.Note;
 
 import edu.casetools.rcase.modelio.diagrams.NoteTool;
 import edu.casetools.rcase.module.api.RCaseNotes;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
@@ -58,7 +59,7 @@ public class ProblemNoteTool extends NoteTool {
      */
     @Override
     protected Note createOwnNote(IUmlModel model, ModelElement owner) throws ExtensionNotFoundException {
-    	return DiagramUtils.getInstance().createNote(model, owner, RCaseNotes.NOTE_PROBLEM);
+    	return DiagramUtils.getInstance().createNote(model, RCasePeerModule.MODULE_NAME, owner, RCaseNotes.NOTE_PROBLEM);
     }
 
 }

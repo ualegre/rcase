@@ -30,6 +30,7 @@ import org.modelio.metamodel.uml.infrastructure.Note;
 import edu.casetools.rcase.modelio.diagrams.NoteTool;
 import edu.casetools.rcase.module.api.RCaseNotes;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
@@ -59,7 +60,7 @@ public class DenyNoteTool extends NoteTool {
      */
     @Override
     protected Note createOwnNote(IUmlModel model, ModelElement owner) throws ExtensionNotFoundException {
-    	Note note = DiagramUtils.getInstance().createNote(model, owner, RCaseNotes.NOTE_DENY);
+    	Note note = DiagramUtils.getInstance().createNote(model, RCasePeerModule.MODULE_NAME, owner, RCaseNotes.NOTE_DENY);
     	return addNoteStereotype(note, RCaseStereotypes.STEREOTYPE_ARGUMENTATION);
     }
 

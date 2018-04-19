@@ -40,7 +40,7 @@ import org.modelio.metamodel.uml.statik.Package;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
+
 
 // TODO: Auto-generated Javadoc
 /**
@@ -243,9 +243,9 @@ public class DiagramUtils {
      * @throws ExtensionNotFoundException
      *             the extension not found exception
      */
-    public Note createNote(IUmlModel model, ModelElement owner, String stereotypeName)
+    public Note createNote(IUmlModel model, String moduleName, ModelElement owner, String stereotypeName)
 	    throws ExtensionNotFoundException {
-    	return model.createNote(RCasePeerModule.MODULE_NAME, stereotypeName, owner, "");
+    	return model.createNote(moduleName, stereotypeName, owner, "");
     }
 
     /**
