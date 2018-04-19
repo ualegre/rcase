@@ -32,6 +32,7 @@ import edu.casetools.rcase.modelio.menu.CreateDiagram;
 import edu.casetools.rcase.module.api.RCaseResources;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
+import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.utils.DiagramUtils;
 
 /**
@@ -48,7 +49,7 @@ public class CreateUseCaseDiagram extends CreateDiagram {
     @Override
     protected StaticDiagram createOwnDiagram(List<MObject> selectedElements, IModelingSession session) {
 	String name = I18nMessageService.getString("Ui.Command.CreateUseCaseDiagram.Label");
-	UseCaseDiagram diagram = DiagramUtils.getInstance().createUseCaseDiagram(selectedElements, session, name,
+	UseCaseDiagram diagram = DiagramUtils.getInstance().createUseCaseDiagram(RCaseModule.getInstance(), selectedElements, session, name,
 		RCaseStereotypes.STEREOTYPE_DIAGRAM_USECASE);
 	diagram = (UseCaseDiagram) addStyle(diagram, RCaseResources.STYLE_USECASE_DIAGRAM);
 	return diagram;

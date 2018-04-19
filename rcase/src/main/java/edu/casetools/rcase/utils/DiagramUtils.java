@@ -215,10 +215,10 @@ public class DiagramUtils {
      *            the stereotype name
      * @return the use case diagram
      */
-    public UseCaseDiagram createUseCaseDiagram(List<MObject> selectedElements, IModelingSession session, String name,
+    public UseCaseDiagram createUseCaseDiagram(AbstractJavaModule module, List<MObject> selectedElements, IModelingSession session, String name,
 	    String stereotypeName) {
 	Stereotype stereotype = session.getMetamodelExtensions().getStereotype(stereotypeName,
-		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
+		module.getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
 			.getMClass(UseCaseDiagram.class));
 	for (MObject element : selectedElements) {
 	    UseCaseDiagram diagram;
