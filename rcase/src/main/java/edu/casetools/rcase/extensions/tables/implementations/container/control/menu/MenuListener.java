@@ -30,6 +30,7 @@ import edu.casetools.rcase.extensions.excel.view.ContainerTableFileChooser;
 import edu.casetools.rcase.extensions.tables.implementations.container.ContainerTable;
 import edu.casetools.rcase.modelio.menu.nodes.CreateRequirement;
 import edu.casetools.rcase.modelio.menu.nodes.CreateRequirementContainer;
+import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
@@ -70,7 +71,7 @@ public class MenuListener implements ActionListener {
     private void addRequirement() {
 	ArrayList<MObject> containerAdaptor = new ArrayList<>();
 	String name = (String) this.mainWindow.getMenu().getComboBox().getSelectedItem();
-	MObject container = TableUtils.getInstance().getRequirementContainer(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, name);
+	MObject container = TableUtils.getInstance().getRequirementContainer(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, name, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 	if (container != null) {
 	    containerAdaptor.add(container);
 	    this.createRequirement.actionPerformed(containerAdaptor, null);

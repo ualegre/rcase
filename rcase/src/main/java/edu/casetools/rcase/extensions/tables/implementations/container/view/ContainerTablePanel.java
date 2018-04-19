@@ -33,6 +33,7 @@ import edu.casetools.rcase.extensions.tables.TablePanel;
 import edu.casetools.rcase.extensions.tables.implementations.container.ContainerTable;
 import edu.casetools.rcase.extensions.tables.implementations.container.control.table.ContainerTableModelListener;
 import edu.casetools.rcase.extensions.tables.implementations.container.model.ContainerTableModel;
+import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.impl.RCaseModule;
 import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.RowHeaderUtils;
@@ -67,7 +68,7 @@ public class ContainerTablePanel extends TablePanel {
      *            the main
      */
     public void initTableModel(ContainerTable main) {
-	List<MObject> list = TableUtils.getInstance().getRequirementsContainers(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME);
+	List<MObject> list = TableUtils.getInstance().getRequirementsContainers(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 
 	if ((null != list) && (!list.isEmpty()))
 	    this.tableModel = new ContainerTableModel(list.get(0));

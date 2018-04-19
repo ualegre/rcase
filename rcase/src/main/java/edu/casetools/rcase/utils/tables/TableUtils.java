@@ -35,7 +35,6 @@ import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.metamodel.uml.statik.Class;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
-import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.utils.ModelioUtils;
 
 // TODO: Auto-generated Javadoc
@@ -101,9 +100,9 @@ public class TableUtils {
      *
      * @return the requirements containers
      */
-    public List<MObject> getRequirementsContainers(AbstractJavaModule module, String moduleName) {
+    public List<MObject> getRequirementsContainers(AbstractJavaModule module, String moduleName, String stereotypeName) {
 	List<MObject> list = new ArrayList<>();
-	list = getAllElementsStereotypedAs(module, moduleName, list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
+	list = getAllElementsStereotypedAs(module, moduleName, list, stereotypeName);
 	return list;
     }
 
@@ -114,9 +113,9 @@ public class TableUtils {
      *            the name
      * @return the requirement container
      */
-    public MObject getRequirementContainer(AbstractJavaModule module, String moduleName, String name) {
+    public MObject getRequirementContainer(AbstractJavaModule module, String moduleName, String name, String stereotypeName) {
 	List<MObject> list = new ArrayList<>();
-	list = getAllElementsStereotypedAs(module, moduleName, list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
+	list = getAllElementsStereotypedAs(module, moduleName, list, stereotypeName);
 
 	for (MObject requirementContainer : list) {
 	    if (requirementContainer.getName().equals(name))

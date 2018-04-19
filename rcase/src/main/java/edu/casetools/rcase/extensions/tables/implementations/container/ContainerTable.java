@@ -68,7 +68,7 @@ public class ContainerTable extends TableWindow {
     }
 
     private void initTitle() {
-	List<MObject> list = TableUtils.getInstance().getRequirementsContainers(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME);
+	List<MObject> list = TableUtils.getInstance().getRequirementsContainers(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 	String name = "";
 
 	if ((null != list) && (!list.isEmpty()))
