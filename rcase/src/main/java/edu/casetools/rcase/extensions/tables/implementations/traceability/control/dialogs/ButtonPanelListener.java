@@ -32,6 +32,7 @@ import edu.casetools.rcase.extensions.tables.implementations.traceability.Depend
 import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableData;
 import edu.casetools.rcase.extensions.tables.implementations.traceability.view.edit.EditDialog;
 import edu.casetools.rcase.module.api.RCaseView;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
 // TODO: Auto-generated Javadoc
@@ -118,7 +119,7 @@ public class ButtonPanelListener implements ActionListener {
     private List<Stereotype> getFilteredStereotypes() {
 	ListModel<String> filteredStereotypeNames = this.dialog.getDualListBox().getColumnFilteredStereotypeNames();
 
-	return TableUtils.getInstance().getStereotypesFromNames(filteredStereotypeNames);
+	return TableUtils.getInstance().getStereotypesFromNames(RCasePeerModule.MODULE_NAME, filteredStereotypeNames);
     }
 
 }

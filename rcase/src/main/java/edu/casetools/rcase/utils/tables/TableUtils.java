@@ -37,7 +37,6 @@ import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.ModelioUtils;
 
 // TODO: Auto-generated Javadoc
@@ -67,12 +66,12 @@ public class TableUtils {
      *            the stereotype vector
      * @return the header
      */
-    public List<MObject> getHeader(AbstractJavaModule module, List<Stereotype> stereotypeVector) {
+    public List<MObject> getHeader(AbstractJavaModule module, String moduleName, List<Stereotype> stereotypeVector) {
 
 	List<MObject> linesHeader = new ArrayList<>();
 
 	for (Stereotype stereotype : stereotypeVector) {
-	    linesHeader = getAllElementsStereotypedAs(module, linesHeader, stereotype.getName());
+	    linesHeader = getAllElementsStereotypedAs(module, moduleName, linesHeader, stereotype.getName());
 	}
 
 	return linesHeader;
@@ -87,11 +86,11 @@ public class TableUtils {
      *            the stereotype
      * @return the all elements stereotyped as
      */
-    public List<MObject> getAllElementsStereotypedAs(AbstractJavaModule module, List<MObject> list, String stereotype) {
+    public List<MObject> getAllElementsStereotypedAs(AbstractJavaModule module, String moduleName, List<MObject> list, String stereotype) {
 	List<MObject> allElements = ModelioUtils.getInstance().getAllElements(module);
 
 	for (MObject object : allElements) {
-	    if (((ModelElement) object).isStereotyped(RCasePeerModule.MODULE_NAME, stereotype))
+	    if (((ModelElement) object).isStereotyped(moduleName, stereotype))
 		list.add(object);
 	}
 
@@ -103,9 +102,9 @@ public class TableUtils {
      *
      * @return the requirements containers
      */
-    public List<MObject> getRequirementsContainers(AbstractJavaModule module) {
+    public List<MObject> getRequirementsContainers(AbstractJavaModule module, String moduleName) {
 	List<MObject> list = new ArrayList<>();
-	list = getAllElementsStereotypedAs(module, list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
+	list = getAllElementsStereotypedAs(module, moduleName, list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 	return list;
     }
 
@@ -116,9 +115,9 @@ public class TableUtils {
      *            the name
      * @return the requirement container
      */
-    public MObject getRequirementContainer(AbstractJavaModule module, String name) {
+    public MObject getRequirementContainer(AbstractJavaModule module, String moduleName, String name) {
 	List<MObject> list = new ArrayList<>();
-	list = getAllElementsStereotypedAs(module, list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
+	list = getAllElementsStereotypedAs(module, moduleName, list, RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 
 	for (MObject requirementContainer : list) {
 	    if (requirementContainer.getName().equals(name))
@@ -170,10 +169,10 @@ public class TableUtils {
      *            the stereotype name
      * @return the dependency stereotpye from name
      */
-    public Stereotype getDependencyStereotpyeFromName(String stereotypeName) {
+    public Stereotype getDependencyStereotpyeFromName(String moduleName, String stereotypeName) {
 	IMetamodelExtensions stereotypes = RCaseModule.getInstance().getModuleContext().getModelingSession()
 		.getMetamodelExtensions();
-	return stereotypes.getStereotype(RCasePeerModule.MODULE_NAME, stereotypeName,
+	return stereotypes.getStereotype(moduleName, stereotypeName,
 		RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService().getMetamodel()
 			.getMClass(Dependency.class));
 
@@ -186,13 +185,13 @@ public class TableUtils {
      *            the stereotype names
      * @return the stereotypes from names
      */
-    public List<Stereotype> getStereotypesFromNames(ListModel<String> stereotypeNames) {
+    public List<Stereotype> getStereotypesFromNames(String moduleName, ListModel<String> stereotypeNames) {
 	IMetamodelExtensions stereotypes = RCaseModule.getInstance().getModuleContext().getModelingSession()
 		.getMetamodelExtensions();
 	Stereotype stereotype;
 	ArrayList<Stereotype> xStereotypes = new ArrayList<>();
 	for (int i = 0; i < stereotypeNames.getSize(); i++) {
-	    stereotype = stereotypes.getStereotype(RCasePeerModule.MODULE_NAME, stereotypeNames.getElementAt(i),
+	    stereotype = stereotypes.getStereotype(moduleName, stereotypeNames.getElementAt(i),
 		    RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService()
 			    .getMetamodel().getMClass(Class.class));
 	    if (null != stereotype)
@@ -200,7 +199,7 @@ public class TableUtils {
 	}
 
 	for (int i = 0; i < stereotypeNames.getSize(); i++) {
-	    stereotype = stereotypes.getStereotype(RCasePeerModule.MODULE_NAME, stereotypeNames.getElementAt(i),
+	    stereotype = stereotypes.getStereotype(moduleName, stereotypeNames.getElementAt(i),
 		    RCaseModule.getInstance().getModuleContext().getModelioServices().getMetamodelService()
 			    .getMetamodel().getMClass(UseCase.class));
 	    if (null != stereotype)

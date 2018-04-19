@@ -30,6 +30,7 @@ import org.modelio.metamodel.uml.statik.Class;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.module.impl.RCaseModule;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.ModelioTableUtils;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
@@ -58,8 +59,8 @@ public class DependencyTableDataHandler implements Serializable {
 
 	auxiliarData = filterHeaders(auxiliarData);
 
-	auxiliarData.xHeaderList = (ArrayList<MObject>) TableUtils.getInstance().getHeader(RCaseModule.getInstance(), data.xStereotypes);
-	auxiliarData.yHeaderList = (ArrayList<MObject>) TableUtils.getInstance().getHeader(RCaseModule.getInstance(), data.yStereotypes);
+	auxiliarData.xHeaderList = (ArrayList<MObject>) TableUtils.getInstance().getHeader(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, data.xStereotypes);
+	auxiliarData.yHeaderList = (ArrayList<MObject>) TableUtils.getInstance().getHeader(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, data.yStereotypes);
 
 	return auxiliarData;
 

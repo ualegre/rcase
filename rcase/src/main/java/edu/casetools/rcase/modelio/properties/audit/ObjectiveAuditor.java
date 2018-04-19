@@ -190,7 +190,7 @@ public class ObjectiveAuditor {
 	}
 	
 	private List<MObject> getAllObjectives(){
-		return TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), new ArrayList<>(), RCaseStereotypes.STEREOTYPE_OBJECTIVE);
+		return TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, new ArrayList<>(), RCaseStereotypes.STEREOTYPE_OBJECTIVE);
 	}
 
 	private boolean hasContribution(MObject objective) {

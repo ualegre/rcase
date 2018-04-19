@@ -32,6 +32,7 @@ import edu.casetools.rcase.modelio.menu.nodes.CreateRequirement;
 import edu.casetools.rcase.modelio.menu.nodes.CreateRequirementContainer;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
 public class MenuListener implements ActionListener {
@@ -69,7 +70,7 @@ public class MenuListener implements ActionListener {
     private void addRequirement() {
 	ArrayList<MObject> containerAdaptor = new ArrayList<>();
 	String name = (String) this.mainWindow.getMenu().getComboBox().getSelectedItem();
-	MObject container = TableUtils.getInstance().getRequirementContainer(RCaseModule.getInstance(), name);
+	MObject container = TableUtils.getInstance().getRequirementContainer(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, name);
 	if (container != null) {
 	    containerAdaptor.add(container);
 	    this.createRequirement.actionPerformed(containerAdaptor, null);

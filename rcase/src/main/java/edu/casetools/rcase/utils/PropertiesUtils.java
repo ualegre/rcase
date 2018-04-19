@@ -76,7 +76,7 @@ public class PropertiesUtils {
      */
     public void setFreeProperty(AbstractJavaModule module, ModelElement element, String moduleName, String stereotypeName, String propertyName) {
 	List<MObject> elementsList = new ArrayList<>();
-	elementsList = TableUtils.getInstance().getAllElementsStereotypedAs(module, elementsList, stereotypeName);
+	elementsList = TableUtils.getInstance().getAllElementsStereotypedAs(module, moduleName, elementsList, stereotypeName);
 
 	int i = 0;
 	while (propertyExists(elementsList, Integer.toString(i), moduleName, propertyName)) {

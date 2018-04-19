@@ -39,6 +39,7 @@ import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.api.RCaseView;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.tables.TableUtils;
 
 // TODO: Auto-generated Javadoc
@@ -89,7 +90,7 @@ public class TableMenu extends JPanel {
     private List<String> createDependencyList() {
 	List<String> linkList = new ArrayList<>();
 	List<MObject> list = new ArrayList<>();
-	list = TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), list,
+	list = TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, list,
 		RCaseStereotypes.STEREOTYPE_REQUIREMENT_CONTAINER);
 
 	for (MObject container : list) {

@@ -264,7 +264,7 @@ public class DependencyTableData implements Serializable {
      */
     public void setLinkStereotype(String linkStereotypeName) {
 	Stereotype auxiliarLinkStereotype = TableUtils.getInstance()
-		.getDependencyStereotpyeFromName(linkStereotypeName);
+		.getDependencyStereotpyeFromName(RCasePeerModule.MODULE_NAME, linkStereotypeName);
 	if (null != auxiliarLinkStereotype)
 	    this.linkStereotype = auxiliarLinkStereotype;
     }

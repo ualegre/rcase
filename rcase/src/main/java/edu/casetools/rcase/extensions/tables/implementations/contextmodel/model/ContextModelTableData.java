@@ -158,7 +158,7 @@ public class ContextModelTableData implements Serializable {
     private void updateAll() {
 	dataList = new ArrayList<>();
 	ArrayList<MObject> list = new ArrayList<>();
-	list = (ArrayList<MObject>) TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), list,
+	list = (ArrayList<MObject>) TableUtils.getInstance().getAllElementsStereotypedAs(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, list,
 		RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
 	setContextAttributes(list);
     }
