@@ -38,6 +38,8 @@ import org.modelio.metamodel.uml.statik.NameSpace;
 import org.modelio.metamodel.uml.statik.Package;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
+import edu.casetools.rcase.module.impl.RCasePeerModule;
+
 
 // TODO: Auto-generated Javadoc
 /**
@@ -216,6 +218,16 @@ public class ElementUtils {
 	}
 	return null;
     }
+    
+	public ModelElement addStereotype(ModelElement element, String stereotypeName) {
+		try {
+			element.addStereotype(RCasePeerModule.MODULE_NAME, stereotypeName);
+		} catch (ExtensionNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return element;
+	}
     
 
 }
