@@ -76,17 +76,8 @@ public class OrTool extends RelationTool {
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
     	Dependency dependency = ElementUtils.getInstance().createDependency(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, originElement, targetElement,
 		RCaseStereotypes.STEREOTYPE_REFINEOBJ);
-    	addStereotype(dependency);
+    	dependency = (Dependency) ElementUtils.getInstance().addStereotype(dependency, RCaseStereotypes.STEREOTYPE_OR);
     	return dependency;
     }
-
-	private void addStereotype(Dependency dependency) {
-		try {
-			dependency.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OR);
-		} catch (ExtensionNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
 }

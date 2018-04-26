@@ -54,20 +54,11 @@ import edu.casetools.rcase.utils.ElementUtils;
 	    public MObject createOwnElement(IModelingSession session, MObject element) {
 		String name = I18nMessageService.getString("Names.Goal");
 		Class object = ElementUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
-			RCaseStereotypes.STEREOTYPE_GOAL);
-		return addObjectiveStereotype(object);
+			RCaseStereotypes.STEREOTYPE_OBJECTIVE);
+		return ElementUtils.getInstance().addStereotype(object, RCaseStereotypes.STEREOTYPE_GOAL);
 	
 	}
 
-	private Class addObjectiveStereotype(Class object) {
-		try {
-			object.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OBJECTIVE);
-		} catch (ExtensionNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return object;
-	}
 
     /*
      * (non-Javadoc)

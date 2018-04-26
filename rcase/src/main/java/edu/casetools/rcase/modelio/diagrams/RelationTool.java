@@ -100,7 +100,7 @@ public abstract class RelationTool extends DefaultLinkTool {
 	}
     }
 
-    private void createLink(IDiagramLink.LinkRouterKind kind, ILinkPath path, IDiagramGraphic graphic) {
+    protected void createLink(IDiagramLink.LinkRouterKind kind, ILinkPath path, IDiagramGraphic graphic) {
 	IDiagramLink link = (IDiagramLink) graphic;
 	if (null != link) {
 	    link.setRouterKind(kind);

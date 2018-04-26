@@ -26,6 +26,7 @@ import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramNode;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
+import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.statik.Class;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
@@ -51,24 +52,15 @@ public class SoftGoalTool extends ElementTool {
      * org.modelio.vcore.smkernel.mapi.MObject)
      */
     @Override
-    public MObject createOwnElement(IModelingSession session, MObject element) {
+    public Class createOwnElement(IModelingSession session, MObject element) {
 
 		String name = I18nMessageService.getString("Names.SoftGoal");
-		Class object = ElementUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
-			RCaseStereotypes.STEREOTYPE_SOFT_GOAL);
-		return addObjectiveStereotype(object);
+		ModelElement object = ElementUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
+				RCaseStereotypes.STEREOTYPE_OBJECTIVE);
+		return (Class) ElementUtils.getInstance().addStereotype(object, RCaseStereotypes.STEREOTYPE_SOFT_GOAL);
 	
     }
 
-	private Class addObjectiveStereotype(Class object) {
-		try {
-			object.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_OBJECTIVE);
-		} catch (ExtensionNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return object;
-	}
 
     /*
      * (non-Javadoc)

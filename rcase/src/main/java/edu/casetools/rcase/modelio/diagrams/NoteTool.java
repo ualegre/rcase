@@ -124,14 +124,5 @@ public abstract class NoteTool extends DefaultAttachedBoxTool {
     public void actionPerformedInDiagram(IDiagramHandle arg0, Rectangle arg1) {
     }
     
-	protected Note addNoteStereotype(String moduleName, Note object, String stereotype) {
-		try {
-			object.addStereotype(moduleName, stereotype);
-		} catch (ExtensionNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return object;
-	}
 
 }

@@ -60,7 +60,7 @@ public class RationaleNoteTool extends NoteTool {
      */
     @Override
     protected Note createOwnNote(IUmlModel model, ModelElement owner) throws ExtensionNotFoundException {
-	return ElementUtils.getInstance().createNote(model, RCasePeerModule.MODULE_NAME, owner, RCaseNotes.NOTE_RATIONALE);
+    	return ElementUtils.getInstance().createNote(model, RCasePeerModule.MODULE_NAME, owner, RCaseNotes.NOTE_RATIONALE);
     }
 
 }

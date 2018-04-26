@@ -76,17 +76,7 @@ public class EqualTool extends RelationTool {
     public Dependency createDependency(ModelElement originElement, ModelElement targetElement) {
     	Dependency dependency = ElementUtils.getInstance().createDependency(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME, originElement, targetElement,
 		RCaseStereotypes.STEREOTYPE_CONTRIBUTION);
-    	addStereotype(dependency);
-    	return dependency;
+    	return (Dependency) ElementUtils.getInstance().addStereotype(dependency, RCaseStereotypes.STEREOTYPE_EQUAL);
     }
-
-	private void addStereotype(Dependency dependency) {
-		try {
-			dependency.addStereotype(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_EQUAL);
-		} catch (ExtensionNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
 }
