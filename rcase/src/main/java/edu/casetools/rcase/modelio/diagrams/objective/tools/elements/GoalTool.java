@@ -33,6 +33,7 @@ import edu.casetools.rcase.module.api.RCaseColours;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
+import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.ElementUtils;
 
 	/**
@@ -53,7 +54,7 @@ import edu.casetools.rcase.utils.ElementUtils;
 		String name = I18nMessageService.getString("Names.Goal");
 		Class object = ElementUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
 			RCaseStereotypes.STEREOTYPE_OBJECTIVE);
-		return ElementUtils.getInstance().addStereotype(object, RCaseStereotypes.STEREOTYPE_GOAL);
+		return ElementUtils.getInstance().addStereotype(RCasePeerModule.MODULE_NAME, object, RCaseStereotypes.STEREOTYPE_GOAL);
 	
 	}
 
