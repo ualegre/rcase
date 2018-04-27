@@ -88,8 +88,10 @@ public class TableUtils {
 	List<MObject> allElements = ModelioUtils.getInstance().getAllElements(module);
 
 	for (MObject object : allElements) {
-	    if (((ModelElement) object).isStereotyped(moduleName, stereotype))
-		list.add(object);
+	    if (object instanceof ModelElement){
+	    	if(((ModelElement) object).isStereotyped(moduleName, stereotype))
+	    		list.add(object);
+	    }
 	}
 
 	return list;
