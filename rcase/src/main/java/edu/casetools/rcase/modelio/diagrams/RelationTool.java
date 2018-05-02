@@ -151,8 +151,9 @@ public abstract class RelationTool extends DefaultLinkTool {
      * @return true, if successful
      */
     protected boolean acceptElement(String moduleName, IDiagramGraphic target, String stereotype) {
-	if (target.getElement() instanceof ModelElement) {
-	    ModelElement modelElement = (ModelElement) target.getElement();
+    	ModelElement modelElement = null;
+    	if (target.getElement() instanceof ModelElement) {
+	    modelElement = (ModelElement) target.getElement();
 	    if (modelElement.isStereotyped(moduleName, stereotype))
 		return modelElement.getStatus().isModifiable();
 	}

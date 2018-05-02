@@ -61,13 +61,15 @@ public class SituationsOfInterestDiagramCustomizer extends DiagramCustomizer imp
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
-	String[] toolNames = new String[] { RCaseTools.TOOL_SITUATION_OF_INTEREST, RCaseTools.TOOL_CONTEXT_AWARE_FEATURE };
+	String[] toolNames = new String[] { RCaseTools.TOOL_SITUATION_OF_INTEREST, RCaseTools.TOOL_CONTEXT_AWARE_FEATURE, RCaseTools.TOOL_GOAL, RCaseTools.TOOL_SOFT_GOAL, RCaseTools.TOOL_REQUIREMENTCONTAINER, RCaseTools.TOOL_REQUIREMENT,
+			RCaseTools.TOOL_TESTCASE };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
-	return createGroup(groupName, new String[] { RCaseTools.TOOL_ARISES, RCaseTools.TOOL_TRIGGERS, RCaseTools.TOOL_DERIVE, RCaseTools.TOOL_TRACEABILITY}, toolRegistry, 0);
+	return createGroup(groupName, new String[] { RCaseTools.TOOL_ARISES, RCaseTools.TOOL_TRIGGERS, RCaseTools.TOOL_DERIVE, RCaseTools.TOOL_TRACEABILITY, RCaseTools.TOOL_MAKE, RCaseTools.TOOL_HELP,
+			RCaseTools.TOOL_UNKNOWN, RCaseTools.TOOL_HURT, RCaseTools.TOOL_BREAK, RCaseTools.TOOL_EQUALS}, toolRegistry, 0);
     }
 
     /**
