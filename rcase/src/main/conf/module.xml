@@ -29,6 +29,14 @@
                 <Icon path="res/icons/stakeholder/element/userprofile_16.png"/>
                 <Image path="res/icons/stakeholder/element/userprofile_64.png"/>
             </Stereotype>
+            <Stereotype name="UserProfileFeatureStereotype" metaclass="Class" is-hidden="false" label="%UserProfileFeatureStereotype.label" uid="75c5d779-c4f9-409f-a9dd-638a34513ef5">
+                <Icon path="res/icons/stakeholder/element/user_profile_feature_16.png"/>
+                <Image path="res/icons/stakeholder/element/user_profile_feature_16.png"/>
+            </Stereotype>
+            <Stereotype name="UserProfileFeatureInstanceStereotype" metaclass="Class" is-hidden="false" label="%UserProfileFeatureInstanceStereotype.label" uid="2a68a40f-4354-48e3-b309-173a1f29d830">
+                <Icon path="res/icons/stakeholder/element/user_profile_feature_instance_16.png"/>
+                <Image path="res/icons/stakeholder/element/user_profile_feature_instance_16.png"/>
+            </Stereotype>
             <Stereotype name="ValueStereotype" metaclass="Class" is-hidden="false" label="%ValueStereotype.label" uid="c8edfdf9-b9e6-4be1-9971-49867221ba47">
                 <Icon path="res/icons/stakeholder/element/value_16.png"/>
                 <TagTypes>
@@ -77,8 +85,8 @@
             <Stereotype name="ProvideStereotype" metaclass="Dependency" is-hidden="false" label="%ProvideStereotype.label" uid="6073afda-18f6-4d60-bf01-a40563300d55">
                 <Icon path="res/icons/stakeholder/relation/provide_16.png"/>
             </Stereotype>
-            <Stereotype name="HasStereotype" metaclass="Dependency" is-hidden="false" label="%HasStereotype.label" uid="744e4f0b-d962-4c5d-a9ce-9984440d8eff">
-                <Icon path="res/icons/stakeholder/relation/has_16.png"/>
+            <Stereotype name="ProfilesStereotype" metaclass="Dependency" is-hidden="false" label="%ProfilesStereotype.label" uid="744e4f0b-d962-4c5d-a9ce-9984440d8eff">
+                <Icon path="res/icons/stakeholder/relation/profiles_16.png"/>
             </Stereotype>
             <Stereotype name="InfluenceStereotype" metaclass="Dependency" is-hidden="false" label="%InfluencesStereotype.label" uid="a926d93e-8b27-4792-8e51-5801c22bd152">
                 <Icon path="res/icons/stakeholder/relation/influence_16.png"/>
@@ -395,6 +403,18 @@
                     <HParameter name="stereotype" value="UserProfileStereotype"/>
                 </Handler>
             </Tool>
+            <Tool id="UserProfileFeatureTool" label="%UserProfileFeatureTool.label" tooltip="%UserProfileFeatureTool.tooltip" image="%UserProfileFeatureTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.UserProfileFeatureTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="UserProfileFeatureStereotype"/>
+                </Handler>
+            </Tool>
+            <Tool id="UserProfileFeatureInstanceTool" label="%UserProfileFeatureInstanceTool.label" tooltip="%UserProfileFeatureInstanceTool.tooltip" image="%UserProfileFeatureInstanceTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.UserProfileFeatureInstanceTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="stereotype" value="UserProfileFeatureInstanceStereotype"/>
+                </Handler>
+            </Tool>
             <Tool id="ValueTool" label="%ValueTool.label" tooltip="%ValueTool.tooltip" image="%ValueTool.image">
                 <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.elements.ValueTool">
                     <HParameter name="metaclass" value="Class"/>
@@ -445,10 +465,10 @@
                     <HParameter name="stereotype" value="ProvideStereotype"/>
                 </Handler>
             </Tool>
-            <Tool id="HasTool" label="%HasTool.label" tooltip="%HasTool.tooltip" image="%HasTool.image">
-                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.relations.HasTool">
+            <Tool id="ProfilesTool" label="%ProfilesTool.label" tooltip="%ProfilesTool.tooltip" image="%ProfilesTool.image">
+                <Handler class="edu.casetools.rcase.modelio.diagrams.stakeholder.tools.relations.ProfilesTool">
                     <HParameter name="metaclass" value="Dependency"/>
-                    <HParameter name="stereotype" value="HasStereotype"/>
+                    <HParameter name="stereotype" value="ProfilesStereotype"/>
                 </Handler>
             </Tool>
             <Tool id="InfluenceTool" label="%InfluenceTool.label" tooltip="%InfluenceTool.tooltip" image="%InfluenceTool.image">

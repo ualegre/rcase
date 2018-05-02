@@ -25,7 +25,6 @@ import java.util.List;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramNode;
 import org.modelio.api.modelio.model.IModelingSession;
-import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
 import edu.casetools.rcase.modelio.diagrams.ElementTool;
@@ -33,7 +32,6 @@ import edu.casetools.rcase.module.api.RCaseColours;
 import edu.casetools.rcase.module.api.RCaseStereotypes;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 import edu.casetools.rcase.module.impl.RCaseModule;
-import edu.casetools.rcase.module.impl.RCasePeerModule;
 import edu.casetools.rcase.utils.ElementUtils;
 
 /**
@@ -53,9 +51,8 @@ public class UserProfileTool extends ElementTool {
     public MObject createOwnElement(IModelingSession session, MObject element) {
 
 	String name = I18nMessageService.getString("Names.UserProfile");
-	ModelElement userProfile = ElementUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
-		RCaseStereotypes.STEREOTYPE_STAKEHOLDER);
-	return ElementUtils.getInstance().addStereotype(RCasePeerModule.MODULE_NAME, userProfile, RCaseStereotypes.STEREOTYPE_USER_PROFILE);
+	return ElementUtils.getInstance().createClass(RCaseModule.getInstance(), adaptElement(element), session, name,
+		RCaseStereotypes.STEREOTYPE_USER_PROFILE);
     }
 
     /*

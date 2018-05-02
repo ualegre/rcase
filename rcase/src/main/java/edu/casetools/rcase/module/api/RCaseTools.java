@@ -25,8 +25,10 @@ package edu.casetools.rcase.module.api;
  */
 public class RCaseTools {
 
-	public static final String TOOL_STAKEHOLDER 	= "StakeholderTool";
-	public static final String TOOL_USER_PROFILE 	= "UserProfileTool";
+	public static final String TOOL_STAKEHOLDER 					= "StakeholderTool";
+	public static final String TOOL_USER_PROFILE 					= "UserProfileTool";
+	public static final String TOOL_USER_PROFILE_FEATURE 			= "UserProfileFeatureTool";
+	public static final String TOOL_USER_PROFILE_FEATURE_INSTANCE 	= "UserProfileFeatureInstanceTool";	
 	public static final String TOOL_VALUE 			= "ValueTool";
 	public static final String TOOL_VALUE_ENHANCER 	= "ValueEnhancerTool";
 	public static final String TOOL_PARTICIPATION 	= "ParticipationTool";
@@ -34,7 +36,7 @@ public class RCaseTools {
 	public static final String TOOL_ETHICAL_PROFILE = "EthicalProfileTool";
 	public static final String TOOL_INTERESTED_IN 	= "InterestedInTool";
 	public static final String TOOL_REQUEST 		= "RequestTool";
-	public static final String TOOL_HAS 			= "HasTool";
+	public static final String TOOL_PROFILES 		= "ProfilesTool";
 	public static final String TOOL_INFLUENCE 		= "InfluenceTool";	
 	public static final String TOOL_ENHANCE 		= "EnhanceTool";
 	public static final String TOOL_PROVIDE 		= "ProvideTool";
@@ -84,6 +86,10 @@ public class RCaseTools {
 	public static final String TOOL_SITUATION_DETECTION_PLAN = "DetectionPlanTool";
     public static final String TOOL_DETECTS 				 = "DetectsTool";
     public static final String TOOL_CONTEXT_DERIVE 			 = "ContextDeriveTool";
+    
+	public static final String TOOL_UML_AGGREGATION = "SysMLUMLAggregation";
+	public static final String TOOL_UML_COMPOSITION = "SysMLUMLComposition";	
+	public static final String TOOL_UML_ASSOCIATION = "SysMLUMLAssociation";
 
 
     private RCaseTools() {

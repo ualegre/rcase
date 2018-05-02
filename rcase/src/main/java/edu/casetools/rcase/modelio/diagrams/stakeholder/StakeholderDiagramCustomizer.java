@@ -62,7 +62,8 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Bloc");
-	String[] toolNames = new String[] { RCaseTools.TOOL_STAKEHOLDER, RCaseTools.TOOL_USER_PROFILE, RCaseTools.TOOL_VALUE, 
+	String[] toolNames = new String[] { RCaseTools.TOOL_STAKEHOLDER, RCaseTools.TOOL_USER_PROFILE, RCaseTools.TOOL_USER_PROFILE_FEATURE,
+										RCaseTools.TOOL_USER_PROFILE_FEATURE_INSTANCE, RCaseTools.TOOL_VALUE, 
 										RCaseTools.TOOL_VALUE_ENHANCER, RCaseTools.TOOL_PARTICIPATION, RCaseTools.TOOL_ETHICAL_PROFILE };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
@@ -77,7 +78,7 @@ public class StakeholderDiagramCustomizer extends DiagramCustomizer implements I
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
 	String[] toolNames = new String[] { RCaseTools.TOOL_INTERESTED_IN, RCaseTools.TOOL_REQUEST,
-			RCaseTools.TOOL_PROVIDE, RCaseTools.TOOL_HAS, RCaseTools.TOOL_INFLUENCE, RCaseTools.TOOL_ENHANCE, RCaseTools.TOOL_TRACEABILITY  };
+			RCaseTools.TOOL_PROVIDE, RCaseTools.TOOL_PROFILES, RCaseTools.TOOL_INFLUENCE, RCaseTools.TOOL_ENHANCE, RCaseTools.TOOL_TRACEABILITY, RCaseTools.TOOL_UML_AGGREGATION, RCaseTools.TOOL_UML_COMPOSITION, RCaseTools.TOOL_UML_ASSOCIATION  };
 	return createGroup(groupName, toolNames, toolRegistry, 0);
     }
 

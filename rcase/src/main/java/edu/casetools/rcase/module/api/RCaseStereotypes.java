@@ -29,9 +29,11 @@ public class RCaseStereotypes {
     public static final String STEREOTYPE_DIAGRAM_USECASE = "UseCaseDiagram"; 
     public static final String STEREOTYPE_USECASE 		  = "UseCaseStereotype";
     
-	public static final String STEREOTYPE_DIAGRAM_STAKEHOLDER = "StakeholderDiagramStereotype";
-	public static final String STEREOTYPE_STAKEHOLDER 		  = "StakeholderStereotype";
-	public static final String STEREOTYPE_USER_PROFILE 		  = "UserProfileStereotype";
+	public static final String STEREOTYPE_DIAGRAM_STAKEHOLDER 			= "StakeholderDiagramStereotype";
+	public static final String STEREOTYPE_STAKEHOLDER 		  			= "StakeholderStereotype";
+	public static final String STEREOTYPE_USER_PROFILE 		  		  	= "UserProfileStereotype";
+	public static final String STEREOTYPE_USER_PROFILE_FEATURE 		  	= "UserProfileFeatureStereotype";
+	public static final String STEREOTYPE_USER_PROFILE_FEATURE_INSTANCE = "UserProfileFeatureInstanceStereotype";
 	public static final String STEREOTYPE_VALUE 			  = "ValueStereotype";
 	public static final String STEREOTYPE_VALUE_ENHANCER 	  = "ValueEnhancerStereotype";
 	public static final String STEREOTYPE_PARTICIPATION 	  = "ParticipationStereotype";
@@ -40,7 +42,7 @@ public class RCaseStereotypes {
 	public static final String STEREOTYPE_INTERESTED_IN 	  = "InterestedInStereotype";
 	public static final String STEREOTYPE_REQUEST 			  = "RequestStereotype";
 	public static final String STEREOTYPE_PROVIDE 			  = "ProvideStereotype";
-	public static final String STEREOTYPE_HAS 				  = "HasStereotype";
+	public static final String STEREOTYPE_PROFILES 				  = "ProfilesStereotype";
 	public static final String STEREOTYPE_INFLUENCE 		  = "InfluenceStereotype";
 	public static final String STEREOTYPE_ENHANCE 			  = "EnhanceStereotype";
 	
