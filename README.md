@@ -7,8 +7,10 @@ The module includes the following features:
 * Stakeholder Diagram
 * Objective Diagram	
 * Requirements Diagram (SysML)
-* Requirements traceability matrixes
-* Requirements tables
+* Situation of Interest Diagram
+* Situation Detection Plan Diagram
+* Requirements traceability matrixes (SysML)
+* Requirements tables (SysML)
 * Automated documentation generation (spreadsheets)
 
 More information on the theoretical aspects of this module can be found in:
@@ -20,7 +22,7 @@ More information on the theoretical aspects of this module can be found in:
 Modelio is an open-source modelling tool which is freely available to be [downloaded](https://www.modelio.org/downloads/download-modelio.html) from its [official website](http://www.modelio.org). The current Modelio version for which this module is compatible is v3.7. Modelio, and therefore this module, is available for Linux, Windows and Mac. Follow the [Modelio Quick-start guide](https://www.modelio.org/quick-start-pages-35.html) provided in the official Modelio website to install the program in your preferred operating system. The guide also includes how to download .jmdac modules from the official [Modelio store](http://store.modelio.org/resource/modules.html), as well as how to use them in the different Modelio projects. 
 ### Instructions for developers
 For developing this module, it is recommended to have the Eclipse RCP neon with Maven (M2e) and Git (EGit) plugins correctly installed. Then, follow the steps:
-1. Clone this repository to your local harddrive.
+1. Clone this repository to your local hard disk.
 2. Open an Eclipse RCP neon instance in your preferred workspace (different than the folder where you have downloaded your repository)
 3. Click on Import -> Existing Maven Projects -> (Select as root directory the folder where you have cloned your repo). EGit should automatically detect 
 that you are using a repository.
@@ -48,5 +50,6 @@ The stereotypes of the UML profile introduced as part of the new diagrams availa
 * [Hand Drawn Goods](https://www.flaticon.com/authors/hand-drawn-goods).
 
 ## Developer Contact
+This work has been created as part of the doctoral thesis contribution of Unai Alegre-Ibarra. The repository is open to pull-requests. 
 * author: Unai Alegre-Ibarra
 * e-mail: u.alegre@mdx.ac.uk
