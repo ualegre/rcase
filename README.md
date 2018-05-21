@@ -18,10 +18,16 @@ that you are using a repository.
 3. Enjoy. =)
 
 ## License 
-* see [LICENSE](https://github.com/casetools/rcase/blob/master/LICENSE.md) file
+* This project is licensed under the [GNU General Public License v3.0](https://github.com/casetools/rcase/blob/master/LICENSE.md).
 
-### Third party libraries and icons
-* see [LIBRARIES](https://github.com/casetools/rcase/blob/master/LIBRARIES.md) file
+### Third party libraries 
+* [poi-3.14-20160307.jar](https://poi.apache.org), [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* [poi-ooxml-3.14-20160307.jar](https://poi.apache.org), [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* [poi-ooxml-schemas-3.14-20160307.jar](https://poi.apache.org), [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* [xml-apis-2.0.2.jar](https://xerces.apache.org/xml-commons/), [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* [xmlbeans-2.6.0.jar](https://xmlbeans.apache.org/), [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+### Third party icons
 * Icons are made by [Flaticon](https://www.flaticon.com/), [Freepik](https://www.flaticon.com/authors/freepik), [GraphicsBay](http://www.flaticon.com/authors/graphicsbay), [Pixel Perfect] (https://www.flaticon.com/authors/pixel-perfect), [Dave Gandy] (http://www.flaticon.com/authors/dave-gandy), [Gregor Cresnar] (https://www.flaticon.com/authors/gregor-cresnar), and [Hand Drawn Goods] (https://www.flaticon.com/authors/hand-drawn-goods).
 
 ## Developer Contact
