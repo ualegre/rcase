@@ -19,7 +19,12 @@ More information on the theoretical aspects of this module can be found in:
 
 ## How-to use the content of this repository
 ### Instructions for users
-Modelio is an open-source modelling tool which is freely available to be [downloaded](https://www.modelio.org/downloads/download-modelio.html) from its [official website](http://www.modelio.org). The current Modelio version for which this module is compatible is v3.7. Modelio, and therefore this module, is available for Linux, Windows and Mac. Follow the [Modelio Quick-start guide](https://www.modelio.org/quick-start-pages-35.html) provided in the official Modelio website to install the program in your preferred operating system. The guide also includes how to download .jmdac modules from the official [Modelio store](http://store.modelio.org/resource/modules.html), as well as how to use them in the different Modelio projects. 
+Modelio is an open-source modelling tool which is freely available to be [downloaded](https://www.modelio.org/downloads/download-modelio.html) from its [official website](http://www.modelio.org). The current Modelio version for which this module is compatible is v3.7. Modelio, and therefore this module, is available for Linux, Windows and Mac. Follow the [Modelio Quick-start guide](https://www.modelio.org/quick-start-pages-35.html) provided in the official Modelio website to install the program in your preferred operating system. 
+
+In order to install the RC-ASE Modelio module, follow the [official guide for working with modules](https://www.modelio.org/quick-start-pages-35/928-modelio/quick-start-35x/132-working-with-modules-35.html). You can download the RC-ASE Modelio module (.jmdac) directly from the [rcase/target](https://github.com/ualegre/rcase/blob/master/rcase/target/) folder of the repository. The module binaries can be directly downloaded below: 
+
+* [RC-ASE v0.4.7](https://github.com/ualegre/rcase/raw/master/rcase/target/RCase_0.4.7.jmdac)
+
 ### Instructions for developers
 For developing this module, it is recommended to have the Eclipse RCP neon with Maven (M2e) and Git (EGit) plugins correctly installed. Then, follow the steps:
 1. Clone this repository to your local hard disk.
@@ -40,8 +45,7 @@ The project uses the following third party libraries:
 * [xmlbeans-2.6.0.jar](https://xmlbeans.apache.org/), [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 ### Third party icons
-The stereotypes of the UML profile introduced as part of the new diagrams available include different icons, which have been made and released for free use by: 
-* [Flaticon](https://www.flaticon.com/)
+The stereotypes of the UML profile introduced as part of the new diagrams available include different icons, which have been made and released for free use by the following users of [Flaticon](https://www.flaticon.com/): 
 * [Freepik](https://www.flaticon.com/authors/freepik)
 * [GraphicsBay](http://www.flaticon.com/authors/graphicsbay)
 * [Pixel Perfect](https://www.flaticon.com/authors/pixel-perfect)
