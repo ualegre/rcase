@@ -21,7 +21,7 @@ More information on the theoretical aspects of this module can be found in:
 ### Instructions for users
 Modelio is an open-source modelling tool which is freely available to be [downloaded](https://www.modelio.org/downloads/download-modelio.html) from its [official website](http://www.modelio.org). The current Modelio version for which this module is compatible is v3.7. Modelio, and therefore this module, is available for Linux, Windows and Mac. Follow the [Modelio Quick-start guide](https://www.modelio.org/quick-start-pages-35.html) provided in the official Modelio website to install the program in your preferred operating system. 
 
-In order to install the RC-ASE Modelio module, follow the [official guide for working with modules](https://www.modelio.org/quick-start-pages-35/928-modelio/quick-start-35x/132-working-with-modules-35.html). You can download the RC-ASE Modelio module (.jmdac) directly from the [rcase/target](https://github.com/ualegre/rcase/blob/master/rcase/target/) folder of the repository. The module binaries can be directly downloaded below: 
+In order to install the RC-ASE Modelio module, follow the [official guide for working with modules](https://www.modelio.org/quick-start-pages-35/928-modelio/quick-start-35x/132-working-with-modules-35.html). You can download the latest RC-ASE Modelio module (.jmdac) directly from the [rcase/target](https://github.com/ualegre/rcase/blob/master/rcase/target/) folder of the repository. Other versions of the binaries can be directly downloaded below: 
 
 * [RC-ASE v0.4.7](https://github.com/ualegre/rcase/raw/master/rcase/target/RCase_0.4.7.jmdac)
 
