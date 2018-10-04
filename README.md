@@ -1,6 +1,8 @@
 RC-ASE: Requirements for Context-Aware Systems Engineering
 ======
 [![Build Status](https://img.shields.io/badge/casetools-rcase-blue.svg)](https://travis-ci.org/joemccann/dillinger) [![Build Status](https://img.shields.io/badge/version-0.4.8-green.svg)](https://travis-ci.org/joemccann/dillinger) 
+======
+
 [Modelio](https://www.modelio.org/) is an open-source modelling project. The project in this repository contains the code and [binaries](https://github.com/ualegre/rcase/tree/master/rcase/target) of a Modelio module 
 which has been created in order to aid developers of context-aware systems during the requirements elicitation development stage. It is complementary to another Modelio module for supporting the design and code generation of context-aware systems [DC-ASE](https://github.com/ualegre/dcase). It is recommended to install and use together with (at least) the open-source version of the [SysML Architect Modelio Module](http://store.modelio.org/resource/modules/sysml-architect-open-source.html).  
 
