@@ -38,6 +38,7 @@ import edu.casetools.rcase.module.impl.RCaseModule;
  * The Class CreateSituationDetectionPlanDiagramCustomizer customizes the palette of the
  * Context Dependency Diagram.
  */
+
 public class SituationDetectionPlanDiagramCustomizer extends DiagramCustomizer implements IDiagramCustomizer {
 
     /*
@@ -49,14 +50,14 @@ public class SituationDetectionPlanDiagramCustomizer extends DiagramCustomizer i
      */
     @Override
     public void fillPalette(PaletteRoot paletteRoot) {
-	IDiagramService toolRegistry = RCaseModule.getInstance().getModuleContext().getModelioServices()
-		.getDiagramService();
-
-	paletteRoot.add(createBasics());
-	paletteRoot.add(createNodesGroup(toolRegistry));
-	paletteRoot.add(createRelationsGroup(toolRegistry));
-	paletteRoot.add(createNotesGroup(toolRegistry));
-	paletteRoot.add(createDefaultFreeDrawingGroup(toolRegistry));
+		IDiagramService toolRegistry = RCaseModule.getInstance().getModuleContext().getModelioServices()
+			.getDiagramService();
+	
+		paletteRoot.add(createBasics());
+		paletteRoot.add(createNodesGroup(toolRegistry));
+		paletteRoot.add(createRelationsGroup(toolRegistry));
+		paletteRoot.add(createNotesGroup(toolRegistry));
+		paletteRoot.add(createDefaultFreeDrawingGroup(toolRegistry));
     }
 
     private org.eclipse.gef.palette.PaletteEntry createNodesGroup(IDiagramService toolRegistry) {
@@ -76,7 +77,7 @@ public class SituationDetectionPlanDiagramCustomizer extends DiagramCustomizer i
     private org.eclipse.gef.palette.PaletteEntry createRelationsGroup(IDiagramService toolRegistry) {
 	String groupName = I18nMessageService.getString("ContextPaletteGroup.Dependency");
 	return createGroup(groupName, new String[] { RCaseTools.TOOL_CONTEXT_DERIVE, RCaseTools.TOOL_DETECTS, RCaseTools.TOOL_MAKE, RCaseTools.TOOL_HELP,
-			RCaseTools.TOOL_UNKNOWN, RCaseTools.TOOL_HURT, RCaseTools.TOOL_BREAK, RCaseTools.TOOL_EQUALS,
+			RCaseTools.TOOL_UNKNOWN, RCaseTools.TOOL_HURT, RCaseTools.TOOL_BREAK, RCaseTools.TOOL_EQUALS, RCaseTools.TOOL_COPY,
 		 RCaseTools.TOOL_TRACEABILITY  }, toolRegistry, 0);
     }
 

@@ -35,7 +35,13 @@ import edu.casetools.rcase.utils.ElementUtils;
  * The Class CopyTool is the tool for creating a Copy relation.
  */
 public class CopyTool extends RelationTool {
-
+	boolean requirement;
+	boolean contextAttribute;
+	
+	public CopyTool(){
+		requirement = false;
+		contextAttribute = false;
+	}
     /*
      * (non-Javadoc)
      * 
@@ -46,8 +52,9 @@ public class CopyTool extends RelationTool {
      */
     @Override
     public boolean acceptFirstElement(IDiagramHandle representation, IDiagramGraphic target) {
-
-	return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+    	requirement = acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+    	contextAttribute = acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
+	return requirement || contextAttribute;
     }
 
     /*
@@ -61,7 +68,9 @@ public class CopyTool extends RelationTool {
      */
     @Override
     public boolean acceptSecondElement(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic target) {
-	return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+    	if(requirement) return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_REQUIREMENT);
+    	else if(contextAttribute) return acceptElement(RCasePeerModule.MODULE_NAME, target, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE);
+    	else return false;
     }
 
     /*

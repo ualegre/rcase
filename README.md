@@ -1,5 +1,6 @@
 RC-ASE: Requirements for Context-Aware Systems Engineering
 ======
+[![Build Status](https://img.shields.io/badge/casetools-rcase-blue.svg)](https://travis-ci.org/joemccann/dillinger) [![Build Status](https://img.shields.io/badge/version-0.4.8-green.svg)](https://travis-ci.org/joemccann/dillinger) 
 [Modelio](https://www.modelio.org/) is an open-source modelling project. The project in this repository contains the code and [binaries](https://github.com/ualegre/rcase/tree/master/rcase/target) of a Modelio module 
 which has been created in order to aid developers of context-aware systems during the requirements elicitation development stage. It is complementary to another Modelio module for supporting the design and code generation of context-aware systems [DC-ASE](https://github.com/ualegre/dcase). It is recommended to install and use together with (at least) the open-source version of the [SysML Architect Modelio Module](http://store.modelio.org/resource/modules/sysml-architect-open-source.html).  
 
@@ -13,17 +14,16 @@ The module includes the following features:
 * Requirements tables (SysML)
 * Automated documentation generation (spreadsheets)
 
-More information on the theoretical aspects of this module can be found in:
-* [Engineering context-aware systems and applications: A survey](https://doi.org/10.1016/j.jss.2016.02.010)
-* [Perspectives on engineering more usable context-aware systems](https://doi.org/10.1007/s12652-018-0863-7)
-
-## How-to use the content of this repository
+More information on the theoretical aspects of this module can be found in: [^fn1] [^fn2] [^fn3]. 
+[^fn1]: *Unai Alegre-Ibarra, Juan Carlos Augusto and Tony Clark, Engineering context-aware systems and applications: A survey, Journal of Systems and Software, Volume 117, Pages 55-83, Elsevier.* **Download here:** [Mirror 1](https://doi.org/10.1016/j.jss.2016.02.010) [Mirror 2](http://eprints.mdx.ac.uk/18845/)
+[^fn2]: *Unai Alegre-Ibarra, Juan Carlos Augusto and Carl Evans, Perspectives on engineering more usable context-aware systems, Journal of Ambient Intelligence and Humanized Computing, Volume 9, Number 5, Pages 1593-1609.* **Download here:** [Mirror 1](https://doi.org/10.1007/s12652-018-0863-7) [Mirror 2](http://eprints.mdx.ac.uk/24280/)
+[^fn3]: *Unai Alegre-Ibarra and Juan Carlos Augusto and Carl Evans, RC-ASEF: An open-source tool-supported requirements elicitation framework for context-aware systems development, Proceedings of the 2018 Federated Conference on Computer Science and Information Systems, FedCSIS, Poland, 2018, Pages 829-838.* **Download here:** [Mirror 1](https://doi.org/10.15439/2018F136) ## How-to use the content of this repository
 ### Instructions for users
 Modelio is an open-source modelling tool which is freely available to be [downloaded](https://www.modelio.org/downloads/download-modelio.html) from its [official website](http://www.modelio.org). The current Modelio version for which this module is compatible is v3.7. Modelio, and therefore this module, is available for Linux, Windows and Mac. Follow the [Modelio Quick-start guide](https://www.modelio.org/quick-start-pages-35.html) provided in the official Modelio website to install the program in your preferred operating system. 
 
 In order to install the RC-ASE Modelio module, follow the [official guide for working with modules](https://www.modelio.org/quick-start-pages-35/928-modelio/quick-start-35x/132-working-with-modules-35.html). You can download the latest RC-ASE Modelio module (.jmdac) directly from the [rcase/target](https://github.com/ualegre/rcase/blob/master/rcase/target/) folder of the repository. Other versions of the binaries can be directly downloaded below: 
 
-* [RC-ASE v0.4.7](https://github.com/ualegre/rcase/raw/master/rcase/target/RCase_0.4.7.jmdac)
+* [RC-ASE v0.4.8](https://github.com/ualegre/rcase/raw/master/rcase/target/RCase_0.4.8.jmdac)
 
 ### Instructions for developers
 For developing this module, it is recommended to have the Eclipse RCP neon with Maven (M2e) and Git (EGit) plugins correctly installed. Then, follow the steps:

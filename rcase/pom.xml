@@ -6,7 +6,7 @@
 	<!-- definition -->
 	<groupId>edu.casetools</groupId>
 	<artifactId>rcase</artifactId>
-	<version>0.4.7</version>
+	<version>0.4.8</version>
 
 	<name>RCase</name>
 
@@ -91,31 +91,6 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.modelio</groupId>
-				<artifactId>modelio-maven-plugin</artifactId>
-				<version>3.7.0.01</version>
-				<executions>
-					<execution>
-						<id>ModuleValidation</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>module-validation</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>ResourceManagement</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>module-configuration</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<moduleFile>${project.basedir}/src/main/conf/module.xml</moduleFile>
 				</configuration>
 			</plugin>
 
