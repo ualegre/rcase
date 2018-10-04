@@ -27,7 +27,8 @@ More information on the theoretical aspects of this module can be found in:
 3. *RC-ASEF: An open-source tool-supported requirements elicitation framework for context-aware systems development, Proceedings of the 2018 Federated Conference on Computer Science and Information Systems, FedCSIS, Poland, 2018, Pages 829-838, IEEE.*   
 **Download here:** 
 	* [Mirror 1](https://doi.org/10.15439/2018F136)  
-
+	* [Mirror 2](https://annals-csis.org/proceedings/2018/drp/pdf/136.pdf)  
+	
 ## How-to use the content of this repository
 ### Instructions for users
 Modelio is an open-source modelling tool which is freely available to be [downloaded](https://www.modelio.org/downloads/download-modelio.html) from its [official website](http://www.modelio.org). The current Modelio version for which this module is compatible is v3.7. Modelio, and therefore this module, is available for Linux, Windows and Mac. Follow the [Modelio Quick-start guide](https://www.modelio.org/quick-start-pages-35.html) provided in the official Modelio website to install the program in your preferred operating system. 
