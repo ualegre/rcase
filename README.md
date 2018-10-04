@@ -1,6 +1,6 @@
-RC-ASE: Requirements for Context-Aware Systems Engineering
-======
+RC-ASE: Requirements for Context-Aware Systems Engineering  
 [![Build Status](https://img.shields.io/badge/casetools-rcase-blue.svg)](https://travis-ci.org/joemccann/dillinger) [![Build Status](https://img.shields.io/badge/version-0.4.8-green.svg)](https://travis-ci.org/joemccann/dillinger)  
+======
 
 [Modelio](https://www.modelio.org/) is an open-source modelling project. The project in this repository contains the code and [binaries](https://github.com/ualegre/rcase/tree/master/rcase/target) of a Modelio module 
 which has been created in order to aid developers of context-aware systems during the requirements elicitation development stage. It is complementary to another Modelio module for supporting the design and code generation of context-aware systems [DC-ASE](https://github.com/ualegre/dcase). It is recommended to be installed and used together with (at least) the open-source version of the [SysML Architect Modelio Module](http://store.modelio.org/resource/modules/sysml-architect-open-source.html).  
@@ -20,11 +20,11 @@ More information on the theoretical aspects of this module can be found in:
 **Download here:** 
 	* [Mirror 1](https://doi.org/10.1016/j.jss.2016.02.010) 
 	* [Mirror 2](http://eprints.mdx.ac.uk/18845/)
-2. *Unai Alegre-Ibarra, Juan Carlos Augusto and Carl Evans, Perspectives on engineering more usable context-aware systems, Journal of Ambient Intelligence and Humanized Computing, Volume 9, Number 5, Pages 1593-1609.*  
+2. *Unai Alegre-Ibarra, Juan Carlos Augusto and Carl Evans, Perspectives on engineering more usable context-aware systems, Journal of Ambient Intelligence and Humanized Computing, Volume 9, Number 5, Pages 1593-1609, Springer.*  
 **Download here:** 
 	* [Mirror 1](https://doi.org/10.1007/s12652-018-0863-7) 
 	* [Mirror 2](http://eprints.mdx.ac.uk/24280/)
-3. *Unai Alegre-Ibarra and Juan Carlos Augusto and Carl Evans, RC-ASEF: An open-source tool-supported requirements elicitation framework for context-aware systems development, Proceedings of the 2018 Federated Conference on Computer Science and Information Systems, FedCSIS, Poland, 2018, Pages 829-838.*   
+3. *Unai Alegre-Ibarra and Juan Carlos Augusto and Carl Evans, RC-ASEF: An open-source tool-supported requirements elicitation framework for context-aware systems development, Proceedings of the 2018 Federated Conference on Computer Science and Information Systems, FedCSIS, Poland, 2018, Pages 829-838, IEEE.*   
 **Download here:** 
 	* [Mirror 1](https://doi.org/10.15439/2018F136)  
 
