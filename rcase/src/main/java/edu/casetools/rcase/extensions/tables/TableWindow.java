@@ -23,6 +23,9 @@ package edu.casetools.rcase.extensions.tables;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 import edu.casetools.rcase.utils.ResourcesManager;
 
@@ -62,7 +65,26 @@ public class TableWindow extends JFrame {
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.pack();
         this.setVisible(true);
-
+        setSystemLookAndFeel();
     }
 
+	private void setSystemLookAndFeel() {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			SwingUtilities.updateComponentTreeUI(this);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+    
 }

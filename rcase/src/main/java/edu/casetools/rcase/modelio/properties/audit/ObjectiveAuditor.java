@@ -26,7 +26,7 @@ public class ObjectiveAuditor {
 	
 	public enum VERDICT {PASS, WARNING, FAIL, UNDEFINED_PRIORITY};
 	private HashMap<MObject,SATISFACTION> satisfactionResults;
-
+	private ModelElement cause;
 	
 	public ObjectiveAuditor(){
 	}
@@ -37,13 +37,16 @@ public class ObjectiveAuditor {
 		for(Entry<MObject, SATISFACTION> entry : satisfactionResults.entrySet()){
 			ModelElement objective = (ModelElement) entry.getKey();
 			if(auditObjectivePriority(objective,"")){
+				setCause(objective);
 				return VERDICT.UNDEFINED_PRIORITY;
 			}
 			if(entry.getValue() == SATISFACTION.DISSATISFIED){
 				if(auditObjectivePriority(objective,CRITICAL)){
+					setCause(objective);
 					return VERDICT.FAIL;
 				}
 				else if(auditObjectivePriority(objective,IMPORTANT)){
+					setCause(objective);
 					return VERDICT.WARNING;
 				}
 			}
@@ -261,6 +264,14 @@ public class ObjectiveAuditor {
 		if (satisfactionResults!= null)
 			return satisfactionResults;
 		else return new HashMap<MObject,SATISFACTION>();
+	}
+
+	public ModelElement getCause() {
+		return cause;
+	}
+
+	public void setCause(ModelElement cause) {
+		this.cause = cause;
 	}
 	
 

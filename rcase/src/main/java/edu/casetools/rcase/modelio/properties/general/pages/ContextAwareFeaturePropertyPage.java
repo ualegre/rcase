@@ -53,10 +53,6 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
 		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, value, element);
 		    break;
-		case 4:
-		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
-			    RCaseProperties.PROPERTY_CONTEXT_AWARE_RECOMMENDATION, value, element);
-		    break;
 		default:
 		    break;
 	}
@@ -87,8 +83,7 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
 					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"),
 					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High") });
 		
-	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, element);
+	property = getContextAwareFeatureRecommendation(element);
 		table.addConsultProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property);
 //				,new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"),
 //					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"),
@@ -98,7 +93,129 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
 
     }
 
-    private void checkDependencies(ModelElement element, IModulePropertyTable table) {
+    private String getContextAwareFeatureRecommendation(ModelElement caf) {
+		String result = "";
+		boolean hasEntered = false;
+    	for(Dependency dependency : caf.getImpactedDependency()){
+			if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_TRIGGERS)){
+				ModelElement soi = dependency.getImpacted();
+				if(soi.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_OF_INTEREST)){
+					if(hasEntered) return "CONTEXT ATTRIBUTE: "+caf.getName()+" HAS MORE THAN ONE SITUATION OF INTEREST";	
+					result = getRecommendation(caf,soi);
+					hasEntered = true;
+					
+				}
+			} 
+		}
+    	if(!hasEntered){
+    		for(Dependency dependency : caf.getDependsOnDependency()){
+    			if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_DERIVE)){
+    				if(dependency.getDependsOn().isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_AWARE_FEATURE)){
+    					return getContextAwareFeatureRecommendation(dependency.getDependsOn());
+    				}
+    			}
+    		}
+    	}
+		return result;
+	}
+
+	private String getRecommendation(ModelElement caf, ModelElement soi) {
+		String frequency = PropertiesUtils.getInstance()
+		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_FREQUENCY, soi);
+		
+		String cost = PropertiesUtils.getInstance()
+		.getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, caf);
+		
+		String recommendation = PropertiesUtils.getInstance()
+		.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, soi);
+		
+		return getRecommendation(frequency,cost,recommendation);
+	}
+
+	private String getRecommendation(String frequency, String cost, String recommendation) {
+		if(frequency.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"))){
+			if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				}
+			} else if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				}
+			} else if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				}
+			}
+		} else if(frequency.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"))){
+			if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended");
+				}
+			} else if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				}
+			} else if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				}
+			}
+		} else if(frequency.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High"))){
+			if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended");
+				}
+			} else if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				}
+			} else if(cost.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High"))){
+				if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended");
+				} else if(recommendation.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+					return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning");
+				}
+			}
+		}
+		return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotEvaluated");
+	}
+
+	private void checkDependencies(ModelElement element, IModulePropertyTable table) {
 	checkDependency(RCaseStereotypes.STEREOTYPE_ARISES, "Arises", element, table);
 	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
     }

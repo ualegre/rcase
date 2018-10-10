@@ -22,6 +22,10 @@ package edu.casetools.rcase.extensions.tables.implementations.traceability;
 
 import java.awt.BorderLayout;
 
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 import edu.casetools.rcase.extensions.tables.TableWindow;
 import edu.casetools.rcase.extensions.tables.implementations.traceability.model.DependencyTableData;
 import edu.casetools.rcase.extensions.tables.implementations.traceability.view.DependencyTablePanel;
@@ -60,8 +64,28 @@ public class DependencyTable extends TableWindow {
 	this.setLayout(new BorderLayout());
 	this.add(this.menu, BorderLayout.NORTH);
 	this.add(this.tablePanel, BorderLayout.CENTER);
+	setSystemLookAndFeel();
     }
 
+    private void setSystemLookAndFeel() {
+ 		try {
+ 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+ 			SwingUtilities.updateComponentTreeUI(this);
+ 		} catch (ClassNotFoundException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		} catch (InstantiationException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		} catch (IllegalAccessException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		} catch (UnsupportedLookAndFeelException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+ 	}
+    
     /**
      * Gets the table panel.
      *

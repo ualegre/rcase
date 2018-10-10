@@ -28,6 +28,7 @@ import org.modelio.api.module.propertiesPage.AbstractModulePropertyPage;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.vcore.smkernel.mapi.MObject;
 
+import edu.casetools.rcase.modelio.properties.audit.ObjectiveAuditor.VERDICT;
 import edu.casetools.rcase.modelio.properties.audit.SatisfactionAuditor.SATISFACTION;
 import edu.casetools.rcase.module.i18n.I18nMessageService;
 
@@ -65,10 +66,24 @@ public class ObjAuditPropertyPage extends AbstractModulePropertyPage {
 	@Override
 	public void update(List<MObject> elements, IModulePropertyTable table) {
 		ObjectiveAuditor auditRules = new ObjectiveAuditor();
-		table.addConsultProperty(I18nMessageService.getString("Ui.Verdict.Name"), auditRules.audit().toString());
+		String verdictCauseMessage = getVerdictCauseMessage(auditRules);
+		table.addConsultProperty(I18nMessageService.getString("Ui.Verdict.Name"), verdictCauseMessage);
 		for (Entry<MObject, SATISFACTION> entry : auditRules.getSatisfactionResults().entrySet()){
 			table.addConsultProperty(entry.getKey().getName(), entry.getValue().toString());
 		} 		
 		auditRules = null;
+	}
+
+	private String getVerdictCauseMessage(ObjectiveAuditor auditRules) {
+		switch(auditRules.audit()){
+		case FAIL:
+			return VERDICT.FAIL.toString();
+		case UNDEFINED_PRIORITY:
+			return VERDICT.UNDEFINED_PRIORITY.toString() + " in objective: "+auditRules.getCause().getName();
+		case WARNING:
+			return VERDICT.FAIL.toString();
+		default:
+			return VERDICT.PASS.toString();
+		}
 	}
 }

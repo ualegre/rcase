@@ -22,6 +22,7 @@ package edu.casetools.rcase.modelio.properties.general.pages;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
@@ -93,9 +94,8 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"),
 					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High") });
 		
-	property = PropertiesUtils.getInstance()
-			.getTaggedValue(RCaseProperties.PROPERTY_SITUATION_OF_INTEREST_RECOMMENDATION, element);
-		table.addConsultProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property);
+	property = getSOIRecommendationValue(element);
+			table.addConsultProperty(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation"), property);
 //				,new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"),
 //					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"),
 //					I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.NotRecommended") });
@@ -104,7 +104,30 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 
     }
 
-    private void checkDependencies(ModelElement element, IModulePropertyTable table) {
+    private String getSOIRecommendationValue(ModelElement element) {
+    	List<String> recommendations = new ArrayList<>();
+		for(Dependency dependency : element.getDependsOnDependency()){
+			if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS)){
+				if(dependency.getDependsOn().isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_DETECTION_PLAN)){
+					recommendations.add(SituationDetectionPlanPropertyPage.getSOIDetectionPlanRecommendationValue(dependency.getDependsOn()));
+				}
+			}
+		}
+		return checkRecommendationValues(recommendations);
+	}
+
+	private String checkRecommendationValues(List<String> recommendations) {
+		if(recommendations.contains(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended"))){
+			return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Recommended");
+		} else if (recommendations.contains(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.RecommendedWarning"))){
+			return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Undetermined");
+		} else if (recommendations.contains(I18nMessageService.getString(""))){
+			return I18nMessageService.getString("");
+		}
+		return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagRecommendation.Undetermined");
+	}
+
+	private void checkDependencies(ModelElement element, IModulePropertyTable table) {
 	checkDependency(RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS, "Detects", element, table);
 	checkDependency(RCaseStereotypes.STEREOTYPE_TRIGGERS, "Triggers", element, table);
     }
