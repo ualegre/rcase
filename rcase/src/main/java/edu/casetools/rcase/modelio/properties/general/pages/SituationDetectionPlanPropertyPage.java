@@ -248,17 +248,71 @@ public class SituationDetectionPlanPropertyPage implements IPropertyContent {
 	}
 
 	private static String getFailureLikelihoodLevel(ModelElement detectionPlan) {
-		List<MObject> primaryContextAttributes = getPrimaryContextAttributes(detectionPlan);
-		for(MObject contextAttribute : primaryContextAttributes){
-			
+		List<MObject> highestLevelContextAttributes = getHighestLevelContextAttributes(detectionPlan);
+		List<String> failureLikelihood = new ArrayList<>();
+		for(MObject contextAttribute : highestLevelContextAttributes){
+			failureLikelihood.add(propagateFailureLikelihoodLevel((ModelElement)contextAttribute));
+		}
+		
+		return checkFailureLikelihood(failureLikelihood); 
+	}
+
+	private static String propagateFailureLikelihoodLevel(ModelElement contextAttribute) {
+		if(hasNoDependencies(contextAttribute)){ // QUe compruebe que son relaiones derive hacia otros context aware attributes		
+			return getFailureLikeliHood(PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ATT_ACCURACY, contextAttribute));
+		} else {
+			List<String> failureLikelihood = new ArrayList<>();
+			for(Dependency dependency : contextAttribute.getDependsOnDependency()){
+				if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE)){
+					if(dependency.getDependsOn().isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE)){
+						failureLikelihood.add(propagateFailureLikelihoodLevel(dependency.getDependsOn()));
+					}
+				}
+			}
+			return checkFailureLikelihood(failureLikelihood);
+		}
+		
+	}
+
+	private static boolean hasNoDependencies(ModelElement contextAttribute) {
+		List<Dependency> dependencies = contextAttribute.getDependsOnDependency();
+		if(dependencies.isEmpty()) return true;
+		for(Dependency dependency : dependencies){
+			if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE)){
+				if(dependency.getDependsOn().isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE)){
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	private static String checkFailureLikelihood(List<String> failureLikelihood) {
+		if(failureLikelihood.contains(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"))){
+			return  I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low");
+		} else if(failureLikelihood.contains(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"))){
+			return  I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium");
+		} else if(failureLikelihood.contains(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High"))){
+			return  I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High");
 		}
 		return "";
 	}
 
-	private static List<MObject> getPrimaryContextAttributes(ModelElement detectionPlan) {
+	private static String getFailureLikeliHood(String value) {
+		if(value.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High"))){
+			return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low");
+		} else if (value.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"))){
+			return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium");
+		} else if (value.equals(I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"))){
+			return I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High");
+		}
+		return "";
+	}
+
+	private static List<MObject> getHighestLevelContextAttributes(ModelElement detectionPlan) {
 		List<MObject> primaryContextAttributes = new ArrayList<MObject>();
 		for(MObject element : detectionPlan.getCompositionChildren()){
-			if(isPrimary((ModelElement)element)){
+			if(isHighestLevel((ModelElement)element)){
 				primaryContextAttributes.add(element);
 			}
 			//detectionPlan.getCompositionChildren()
@@ -267,10 +321,10 @@ public class SituationDetectionPlanPropertyPage implements IPropertyContent {
 		return primaryContextAttributes;
 	}
 
-	private static boolean isPrimary(ModelElement element) {
-		for(Dependency dependency : element.getDependsOnDependency()){
+	private static boolean isHighestLevel(ModelElement element) {
+		for(Dependency dependency : element.getImpactedDependency()){
 			if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_DERIVE)){
-				if(dependency.getDependsOn().isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE)){
+				if(dependency.getImpacted().isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_ATTRIBUTE)){
 					return false;
 				}
 			}

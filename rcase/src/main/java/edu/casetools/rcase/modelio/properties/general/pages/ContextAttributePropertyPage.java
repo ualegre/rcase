@@ -58,6 +58,9 @@ public class ContextAttributePropertyPage implements IPropertyContent {
 	    case 3:
 		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_ATT_DESCRIPTION, value);
 		break;
+	    case 4:
+		element.putTagValue(RCasePeerModule.MODULE_NAME, RCaseProperties.PROPERTY_CONTEXT_ATT_ACCURACY, value);
+		break;
 	    default:
 		break;
 	    }
@@ -80,6 +83,14 @@ public class ContextAttributePropertyPage implements IPropertyContent {
 	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ATT_DESCRIPTION, element);
 	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagText"), string);
 
+	// TagText
+	string = PropertiesUtils.getInstance().getTaggedValue(RCaseProperties.PROPERTY_CONTEXT_ATT_ACCURACY, element);
+	table.addProperty(I18nMessageService.getString("Ui.ContextAttribute.Property.TagAccuracy"), string,
+			new String[] { I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Low"),
+							I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.Medium"),
+							I18nMessageService.getString("Ui.SituationOfInterest.Property.TagFrequency.High") });
+			
+	
 	checkDependencies(element, table);
     }
 
