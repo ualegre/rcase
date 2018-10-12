@@ -106,10 +106,10 @@ public class SituationOfInterestPropertyPage implements IPropertyContent {
 
     private String getSOIRecommendationValue(ModelElement element) {
     	List<String> recommendations = new ArrayList<>();
-		for(Dependency dependency : element.getDependsOnDependency()){
+		for(Dependency dependency : element.getImpactedDependency()){
 			if(dependency.isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_CONTEXT_DETECTS)){
-				if(dependency.getDependsOn().isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_DETECTION_PLAN)){
-					recommendations.add(SituationDetectionPlanPropertyPage.getSOIDetectionPlanRecommendationValue(dependency.getDependsOn()));
+				if(dependency.getImpacted().isStereotyped(RCasePeerModule.MODULE_NAME, RCaseStereotypes.STEREOTYPE_SITUATION_DETECTION_PLAN)){
+					recommendations.add(SituationDetectionPlanPropertyPage.getSOIDetectionPlanRecommendationValue(dependency.getImpacted()));
 				}
 			}
 		}

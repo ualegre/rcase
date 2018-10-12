@@ -41,15 +41,15 @@ public class ContextAwareFeaturePropertyPage implements IPropertyContent {
     public void changeProperty(ModelElement element, int row, String value) {
 
 	switch (row) {
-		case 1:
+		case 2:
 		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_TYPE, value, element);
 		    break;
-		case 2:
+		case 3:
 		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_INTERACTION, value, element);
 		    break;
-		case 3:
+		case 4:
 		    PropertiesUtils.getInstance().findAndAddValue(RCaseModule.getInstance(), RCasePeerModule.MODULE_NAME,
 			    RCaseProperties.PROPERTY_CONTEXT_AWARE_FEATURE_COST, value, element);
 		    break;
